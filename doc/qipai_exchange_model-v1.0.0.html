@@ -74,8 +74,11 @@
 
     </h5>
     <div class="alert alert-warning">
-        <p>共10个实体类型</p>
+        <p>共13个实体类型</p>
         <ul>
+            <li class="entity-type-name-bookmark">
+                <a href="#GoodsCategory">GoodsCategory 商品类别</a>
+            </li>
             <li class="entity-type-name-bookmark">
                 <a href="#Goods">Goods 商品</a>
             </li>
@@ -106,7 +109,47 @@
             <li class="entity-type-name-bookmark">
                 <a href="#User">User 用户</a>
             </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#UserAddr">UserAddr 用户收货地址</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#WalletBill">WalletBill 钱包账单</a>
+            </li>
         </ul>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsCategory">
+        </a>
+        <h4 class="entity-type-name">GoodsCategory 商品类别</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">编号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">name</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品类别名称</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">reorder</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">添加时间</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;name&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;}</span>
+        </dd>
     </div>
     <div class="alert alert-info">
         <a name="Goods">
@@ -120,6 +163,18 @@
             <span class="entity-field-comment">商品编号</span>
         </dd>
         <dd>
+            <span class="entity-field-name">categoryId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品类别编号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">categoryName</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品类别名称</span>
+        </dd>
+        <dd>
             <span class="entity-field-name">name</span>
             <span class="entity-field-type">String</span>
             <span class="entity-field-required">required</span>
@@ -130,6 +185,18 @@
             <span class="entity-field-type">Integer</span>
             <span class="entity-field-required">required</span>
             <span class="entity-field-comment">商品价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">vipPrice</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">会员价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">goldVipPrice</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">钻石会员(元宝)</span>
         </dd>
         <dd>
             <span class="entity-field-name">reorder</span>
@@ -169,7 +236,7 @@
         </dd>
         <dt class="request-and-response-title">示例</dt>
         <dd>
-            <span class="entity-example">{&quot;price&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;exchangeAmount&quot;:&quot;example&quot;,&quot;detail&quot;:&quot;example&quot;,&quot;stock&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;pictures&quot;:&quot;example&quot;}</span>
+            <span class="entity-example">{&quot;goldVipPrice&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;,&quot;exchangeAmount&quot;:&quot;example&quot;,&quot;categoryName&quot;:&quot;example&quot;,&quot;pictures&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;vipPrice&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;detail&quot;:&quot;example&quot;,&quot;stock&quot;:&quot;example&quot;,&quot;categoryId&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;}</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -341,9 +408,15 @@
             <span class="entity-field-required">optional</span>
             <span class="entity-field-comment">订单状态(0待付款,1待收货,2已完成,3已取消)</span>
         </dd>
+        <dd>
+            <span class="entity-field-name">payChannel</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">支付方式(1微信)</span>
+        </dd>
         <dt class="request-and-response-title">示例</dt>
         <dd>
-            <span class="entity-example">{&quot;transportReceiver&quot;:&quot;example&quot;,&quot;quantity&quot;:&quot;example&quot;,&quot;orderAmount&quot;:&quot;example&quot;,&quot;transportNumber&quot;:&quot;example&quot;,&quot;transportAddr&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;transportPhone&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;transportCompany&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;status&quot;:&quot;example&quot;}</span>
+            <span class="entity-example">{&quot;transportReceiver&quot;:&quot;example&quot;,&quot;quantity&quot;:&quot;example&quot;,&quot;orderAmount&quot;:&quot;example&quot;,&quot;transportNumber&quot;:&quot;example&quot;,&quot;transportAddr&quot;:&quot;example&quot;,&quot;payChannel&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;transportPhone&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;transportCompany&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;status&quot;:&quot;example&quot;}</span>
         </dd>
     </div>
     <div class="alert alert-info">
@@ -591,7 +664,19 @@
             <span class="entity-field-name">walletAmount</span>
             <span class="entity-field-type">Integer</span>
             <span class="entity-field-required">required</span>
-            <span class="entity-field-comment">钱包(元)</span>
+            <span class="entity-field-comment">钱包 - 余额(元)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">walletRealname</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">钱包 - 提现账号姓名</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">walletBankCardNumber</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">钱包 - 银行卡号</span>
         </dd>
         <dd>
             <span class="entity-field-name">consumptionAmount</span>
@@ -631,14 +716,118 @@
         </dd>
         <dt class="request-and-response-title">示例</dt>
         <dd>
-            <span class="entity-example">{&quot;transportReceiver&quot;:&quot;example&quot;,&quot;referenceUserId&quot;:&quot;example&quot;,&quot;phone&quot;:&quot;example&quot;,&quot;level&quot;:&quot;example&quot;,&quot;enable&quot;:&quot;example&quot;,&quot;consumptionAmount&quot;:&quot;example&quot;,&quot;nickname&quot;:&quot;example&quot;,&quot;transportAddr&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;goldIngotAmount&quot;:&quot;example&quot;,&quot;walletAmount&quot;:&quot;example&quot;}</span>
+            <span class="entity-example">{&quot;transportReceiver&quot;:&quot;example&quot;,&quot;referenceUserId&quot;:&quot;example&quot;,&quot;level&quot;:&quot;example&quot;,&quot;consumptionAmount&quot;:&quot;example&quot;,&quot;walletRealname&quot;:&quot;example&quot;,&quot;transportAddr&quot;:&quot;example&quot;,&quot;walletAmount&quot;:&quot;example&quot;,&quot;phone&quot;:&quot;example&quot;,&quot;enable&quot;:&quot;example&quot;,&quot;nickname&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;walletBankCardNumber&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;goldIngotAmount&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="UserAddr">
+        </a>
+        <h4 class="entity-type-name">UserAddr 用户收货地址</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">userId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">phone</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">手机号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">添加时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">favorite</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">是否为默认收货地址(0否1是)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">receiver</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">收货人</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">addr</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">收货地址</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;receiver&quot;:&quot;example&quot;,&quot;phone&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;addr&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;favorite&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="WalletBill">
+        </a>
+        <h4 class="entity-type-name">WalletBill 钱包账单</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">userId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">type</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">类型(1入账,2提现)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">amount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">金额</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">inContributorUserId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">入账 - 贡献用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">inContributorUserLevel</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">入账 - 贡献用户等级(1一级,2二级)</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;amount&quot;:&quot;example&quot;,&quot;inContributorUserId&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;type&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;inContributorUserLevel&quot;:&quot;example&quot;}</span>
         </dd>
     </div>
     <div class="tail">
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/microprograms/micro-relational-data-model-sdk">MicroRelationalDataModelSdk</a>
-            <span>2017.11.06 02:37:52.815</span>
+            <span>2017.11.06 03:07:53.634</span>
         </p>
     </div>
 </body>

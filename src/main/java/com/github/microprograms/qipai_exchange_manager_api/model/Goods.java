@@ -22,6 +22,30 @@ public class Goods {
         this.id = id;
     }
 
+    @Comment(value = "商品类别编号")
+    @Required(value = true)
+    private Integer categoryId;
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    @Comment(value = "商品类别名称")
+    @Required(value = true)
+    private String categoryName;
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     @Comment(value = "商品名")
     @Required(value = true)
     private String name;
@@ -44,6 +68,30 @@ public class Goods {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    @Comment(value = "会员价格(元宝)")
+    @Required(value = true)
+    private Integer vipPrice;
+
+    public Integer getVipPrice() {
+        return vipPrice;
+    }
+
+    public void setVipPrice(Integer vipPrice) {
+        this.vipPrice = vipPrice;
+    }
+
+    @Comment(value = "钻石会员(元宝)")
+    @Required(value = true)
+    private Integer goldVipPrice;
+
+    public Integer getGoldVipPrice() {
+        return goldVipPrice;
+    }
+
+    public void setGoldVipPrice(Integer goldVipPrice) {
+        this.goldVipPrice = goldVipPrice;
     }
 
     @Comment(value = "排序")

@@ -141,4 +141,16 @@ public class GoodsOrder {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    @Comment(value = "支付方式(1微信)")
+    @Required(value = false)
+    private Integer payChannel;
+
+    public Integer getPayChannel() {
+        return payChannel;
+    }
+
+    public void setPayChannel(Integer payChannel) {
+        this.payChannel = payChannel;
+    }
 }

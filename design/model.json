@@ -8,6 +8,44 @@
 	},
 	"entityDefinitions": [
 		{
+			"comment": "商品类别",
+			"fieldDefinitions": [
+				{
+					"comment": "编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "商品类别名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "排序",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "reorder",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "GoodsCategory"
+		},
+		{
 			"comment": "商品",
 			"fieldDefinitions": [
 				{
@@ -16,6 +54,22 @@
 					"javaType": "Integer",
 					"name": "id",
 					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "商品类别编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "categoryId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "商品类别名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "categoryName",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -31,6 +85,22 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "price",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "会员价格(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "vipPrice",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "钻石会员(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goldVipPrice",
 					"primaryKey": 0,
 					"required": true
 				},
@@ -289,6 +359,14 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "status",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "支付方式(1微信)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "payChannel",
 					"primaryKey": 0,
 					"required": false
 				}
@@ -577,10 +655,26 @@
 					"required": true
 				},
 				{
-					"comment": "钱包(元)",
+					"comment": "钱包 - 余额(元)",
 					"example": "example",
 					"javaType": "Integer",
 					"name": "walletAmount",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "钱包 - 提现账号姓名",
+					"example": "example",
+					"javaType": "String",
+					"name": "walletRealname",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "钱包 - 银行卡号",
+					"example": "example",
+					"javaType": "String",
+					"name": "walletBankCardNumber",
 					"primaryKey": 0,
 					"required": true
 				},
@@ -634,6 +728,130 @@
 				}
 			],
 			"javaClassName": "User"
+		},
+		{
+			"comment": "用户收货地址",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "手机号",
+					"example": "example",
+					"javaType": "String",
+					"name": "phone",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "是否为默认收货地址(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "favorite",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "收货人",
+					"example": "example",
+					"javaType": "String",
+					"name": "receiver",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "收货地址",
+					"example": "example",
+					"javaType": "String",
+					"name": "addr",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "UserAddr"
+		},
+		{
+			"comment": "钱包账单",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "类型(1入账,2提现)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "type",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "金额",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "amount",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "入账 - 贡献用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "inContributorUserId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "入账 - 贡献用户等级(1一级,2二级)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "inContributorUserLevel",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "WalletBill"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.model",

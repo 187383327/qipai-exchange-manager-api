@@ -70,7 +70,7 @@ public class User {
         this.goldIngotAmount = goldIngotAmount;
     }
 
-    @Comment(value = "钱包(元)")
+    @Comment(value = "钱包 - 余额(元)")
     @Required(value = true)
     private Integer walletAmount;
 
@@ -80,6 +80,30 @@ public class User {
 
     public void setWalletAmount(Integer walletAmount) {
         this.walletAmount = walletAmount;
+    }
+
+    @Comment(value = "钱包 - 提现账号姓名")
+    @Required(value = true)
+    private String walletRealname;
+
+    public String getWalletRealname() {
+        return walletRealname;
+    }
+
+    public void setWalletRealname(String walletRealname) {
+        this.walletRealname = walletRealname;
+    }
+
+    @Comment(value = "钱包 - 银行卡号")
+    @Required(value = true)
+    private String walletBankCardNumber;
+
+    public String getWalletBankCardNumber() {
+        return walletBankCardNumber;
+    }
+
+    public void setWalletBankCardNumber(String walletBankCardNumber) {
+        this.walletBankCardNumber = walletBankCardNumber;
     }
 
     @Comment(value = "消费金额(元)")
