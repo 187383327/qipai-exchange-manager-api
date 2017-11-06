@@ -1,0 +1,65 @@
+{
+	"comment": "qipai_exchange_model",
+	"databaseAddressDefinition": {
+		"driver": "org.apache.ignite.IgniteJdbcThinDriver",
+		"password": "password",
+		"url": "jdbc:ignite:thin://xzw1/",
+		"user": "user"
+	},
+	"entityDefinitions": [
+		{
+			"comment": "城市",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": 1,
+					"javaType": "Integer",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "名字",
+					"example": "New York",
+					"javaType": "String",
+					"name": "name",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "City"
+		},
+		{
+			"comment": "家",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": 1,
+					"javaType": "Integer",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "名字",
+					"example": "Julius Robert Oppenheimer",
+					"javaType": "String",
+					"name": "name",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "城市ID",
+					"example": 1,
+					"javaType": "Integer",
+					"name": "cityId ",
+					"primaryKey": 0,
+					"required": false
+				}
+			],
+			"javaClassName": "Person"
+		}
+	],
+	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.model",
+	"version": "v1.0.0"
+}

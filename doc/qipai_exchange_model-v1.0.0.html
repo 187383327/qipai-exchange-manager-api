@@ -1,0 +1,144 @@
+
+<!DOCTYPE html/>
+<html lang="zh-CN">
+</html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <title>qipai_exchange_model v1.0.0</title>
+    <style type="text/css">
+    .entity-example {
+          color: gray;
+          font-size: 14px;
+          text-align: center;
+    }
+    .tail {
+          font-size: 14px;
+          text-align: center;
+    }
+    a:visited {
+          color: #333;
+    }
+    .entity-type-name-bookmark {
+          color: #333;
+    }
+    .entity-type-name {
+          color: #515151;
+    }
+    .entity-field-name {
+          color: #00f;
+    }
+    .entity-field-type {
+          color: green;
+    }
+    .entity-field-required {
+          color: #853f26;
+    }
+    .entity-field-comment {
+          color: gray;
+    }
+    .request-and-response-title {
+          color: #13C20F;
+    }
+    .alert {
+          padding: 15px;
+          margin-bottom: 20px;
+          border: 1px solid transparent;
+          border-radius: 4px;
+    }
+    .alert h4,p {
+          margin-top: 0;
+    }
+    .alert-success {
+          background-color: #dff0d8;
+          border-color: #d6e9c6;
+          color: #468847;
+    }
+    .alert-info {
+          background-color: #d9edf7;
+          border-color: #bce8f1;
+          color: #3a87ad;
+    }
+    .alert-warning {
+          background-color: #fcf8e3;
+          border-color: #fbeed5;
+          color: #c09853;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <h4>qipai_exchange_model v1.0.0</h4>
+    </div>
+    <h5>
+
+    </h5>
+    <div class="alert alert-warning">
+        <p>共2个实体类型</p>
+        <ul>
+            <li class="entity-type-name-bookmark">
+                <a href="#City">City 城市</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#Person">Person 家</a>
+            </li>
+        </ul>
+    </div>
+    <div class="alert alert-info">
+        <a name="City">
+        </a>
+        <h4 class="entity-type-name">City 城市</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">name</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">名字</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;name&quot;:&quot;New York&quot;,&quot;id&quot;:1}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Person">
+        </a>
+        <h4 class="entity-type-name">Person 家</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">name</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">名字</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">cityId </span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">城市ID</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;name&quot;:&quot;Julius Robert Oppenheimer&quot;,&quot;cityId &quot;:1,&quot;id&quot;:1}</span>
+        </dd>
+    </div>
+    <div class="tail">
+        <p>
+            <span>GenerateBy</span>
+            <a href="https://github.com/microprograms/micro-relational-data-model-sdk">MicroRelationalDataModelSdk</a>
+            <span>2017.11.06 12:42:11.386</span>
+        </p>
+    </div>
+</body>
