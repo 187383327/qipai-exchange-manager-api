@@ -74,42 +74,282 @@
 
     </h5>
     <div class="alert alert-warning">
-        <p>共2个实体类型</p>
+        <p>共10个实体类型</p>
         <ul>
             <li class="entity-type-name-bookmark">
-                <a href="#City">City 城市</a>
+                <a href="#Goods">Goods 商品</a>
             </li>
             <li class="entity-type-name-bookmark">
-                <a href="#Person">Person 家</a>
+                <a href="#RoomCard">RoomCard 房卡</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#RoomCardOrder">RoomCardOrder 房卡订单</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#GoodsOrder">GoodsOrder 商品订单</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#GoodsOrderItem">GoodsOrderItem 商品订单项</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#NewStock">NewStock 新增入库</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#Banner">Banner 轮播图</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#HotWord">HotWord 热点词</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#WithdrawCash">WithdrawCash 提现</a>
+            </li>
+            <li class="entity-type-name-bookmark">
+                <a href="#User">User 用户</a>
             </li>
         </ul>
     </div>
     <div class="alert alert-info">
-        <a name="City">
+        <a name="Goods">
         </a>
-        <h4 class="entity-type-name">City 城市</h4>
+        <h4 class="entity-type-name">Goods 商品</h4>
         <dt class="request-and-response-title">字段</dt>
         <dd>
             <span class="entity-field-name">*id</span>
             <span class="entity-field-type">Integer</span>
             <span class="entity-field-required">required</span>
-            <span class="entity-field-comment">ID</span>
+            <span class="entity-field-comment">商品编号</span>
         </dd>
         <dd>
             <span class="entity-field-name">name</span>
             <span class="entity-field-type">String</span>
             <span class="entity-field-required">required</span>
-            <span class="entity-field-comment">名字</span>
+            <span class="entity-field-comment">商品名</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">price</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">reorder</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">stock</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">库存</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">exchangeAmount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">兑换量</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">添加时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">pictures</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品主图(JsonArray)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">detail</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">详情(富文本)</span>
         </dd>
         <dt class="request-and-response-title">示例</dt>
         <dd>
-            <span class="entity-example">{&quot;name&quot;:&quot;New York&quot;,&quot;id&quot;:1}</span>
+            <span class="entity-example">{&quot;price&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;exchangeAmount&quot;:&quot;example&quot;,&quot;detail&quot;:&quot;example&quot;,&quot;stock&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;pictures&quot;:&quot;example&quot;}</span>
         </dd>
     </div>
     <div class="alert alert-info">
-        <a name="Person">
+        <a name="RoomCard">
         </a>
-        <h4 class="entity-type-name">Person 家</h4>
+        <h4 class="entity-type-name">RoomCard 房卡</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">编号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">name</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">房卡标题</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">price</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">价格(元)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">goldCoin</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">金币</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">salesVolume</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">销售数量</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">enable</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">是否启用(0否1是)</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;salesVolume&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;enable&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;goldCoin&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="RoomCardOrder">
+        </a>
+        <h4 class="entity-type-name">RoomCardOrder 房卡订单</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">订单号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">提交时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">userId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">roomCardOrderName</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">房卡标题</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">quantity</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">购买数量</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">orderAmount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">订单金额(元)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">status</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">订单状态(0待付款,1待收货,2已完成,3已取消)</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;quantity&quot;:&quot;example&quot;,&quot;orderAmount&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;roomCardOrderName&quot;:&quot;example&quot;,&quot;status&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsOrder">
+        </a>
+        <h4 class="entity-type-name">GoodsOrder 商品订单</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">订单号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">提交时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">userId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportReceiver</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 收货人</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportPhone</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 收货人手机号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportAddr</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 收货地址</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportCompany</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 物流公司</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportNumber</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 物流单号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">quantity</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">商品数量</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">orderAmount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">订单金额(元宝)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">status</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">订单状态(0待付款,1待收货,2已完成,3已取消)</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;transportReceiver&quot;:&quot;example&quot;,&quot;quantity&quot;:&quot;example&quot;,&quot;orderAmount&quot;:&quot;example&quot;,&quot;transportNumber&quot;:&quot;example&quot;,&quot;transportAddr&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;transportPhone&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;transportCompany&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;status&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsOrderItem">
+        </a>
+        <h4 class="entity-type-name">GoodsOrderItem 商品订单项</h4>
         <dt class="request-and-response-title">字段</dt>
         <dd>
             <span class="entity-field-name">*id</span>
@@ -118,27 +358,287 @@
             <span class="entity-field-comment">ID</span>
         </dd>
         <dd>
-            <span class="entity-field-name">name</span>
-            <span class="entity-field-type">String</span>
+            <span class="entity-field-name">orderId</span>
+            <span class="entity-field-type">Integer</span>
             <span class="entity-field-required">required</span>
-            <span class="entity-field-comment">名字</span>
+            <span class="entity-field-comment">订单号</span>
         </dd>
         <dd>
-            <span class="entity-field-name">cityId </span>
+            <span class="entity-field-name">goodsId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品编号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">goodsName</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品名称</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">price</span>
             <span class="entity-field-type">Integer</span>
             <span class="entity-field-required">optional</span>
-            <span class="entity-field-comment">城市ID</span>
+            <span class="entity-field-comment">单价(元宝)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">validStock</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">可购库存</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">quantity</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">购买数量</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">remainingStock</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">剩余库存</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">totalPrice</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">总价(元宝)</span>
         </dd>
         <dt class="request-and-response-title">示例</dt>
         <dd>
-            <span class="entity-example">{&quot;name&quot;:&quot;Julius Robert Oppenheimer&quot;,&quot;cityId &quot;:1,&quot;id&quot;:1}</span>
+            <span class="entity-example">{&quot;quantity&quot;:&quot;example&quot;,&quot;orderId&quot;:&quot;example&quot;,&quot;totalPrice&quot;:&quot;example&quot;,&quot;goodsId&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;validStock&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;remainingStock&quot;:&quot;example&quot;,&quot;goodsName&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="NewStock">
+        </a>
+        <h4 class="entity-type-name">NewStock 新增入库</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">goodsId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品编号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">goodsName</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">商品名称</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">newStock</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">新增库存</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">remainingStock</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">optional</span>
+            <span class="entity-field-comment">剩余库存</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;goodsId&quot;:&quot;example&quot;,&quot;newStock&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;remainingStock&quot;:&quot;example&quot;,&quot;goodsName&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Banner">
+        </a>
+        <h4 class="entity-type-name">Banner 轮播图</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">reorder</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">位置</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">url</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">链接</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;reorder&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;url&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="HotWord">
+        </a>
+        <h4 class="entity-type-name">HotWord 热点词</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">reorder</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">hotWord</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">热点词</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;reorder&quot;:&quot;example&quot;,&quot;hotWord&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="WithdrawCash">
+        </a>
+        <h4 class="entity-type-name">WithdrawCash 提现</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">userId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">amount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">提现金额(元)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">申请时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">status</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">状态(0未审核1已同意2已拒绝)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">rejectReason</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">拒绝原因</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;amount&quot;:&quot;example&quot;,&quot;rejectReason&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;userId&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;status&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="User">
+        </a>
+        <h4 class="entity-type-name">User 用户</h4>
+        <dt class="request-and-response-title">字段</dt>
+        <dd>
+            <span class="entity-field-name">*id</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">nickname</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">用户昵称</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">phone</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">手机号</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">level</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">会员等级</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">goldIngotAmount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">元宝数</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">walletAmount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">钱包(元)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">consumptionAmount</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">消费金额(元)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">dtCreate</span>
+            <span class="entity-field-type">Long</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">注册时间</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">enable</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">是否启用(0否1是)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportReceiver</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 收货人(默认)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">transportAddr</span>
+            <span class="entity-field-type">String</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">物流 - 收货地址(默认)</span>
+        </dd>
+        <dd>
+            <span class="entity-field-name">referenceUserId</span>
+            <span class="entity-field-type">Integer</span>
+            <span class="entity-field-required">required</span>
+            <span class="entity-field-comment">推荐人ID</span>
+        </dd>
+        <dt class="request-and-response-title">示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;transportReceiver&quot;:&quot;example&quot;,&quot;referenceUserId&quot;:&quot;example&quot;,&quot;phone&quot;:&quot;example&quot;,&quot;level&quot;:&quot;example&quot;,&quot;enable&quot;:&quot;example&quot;,&quot;consumptionAmount&quot;:&quot;example&quot;,&quot;nickname&quot;:&quot;example&quot;,&quot;transportAddr&quot;:&quot;example&quot;,&quot;id&quot;:&quot;example&quot;,&quot;dtCreate&quot;:&quot;example&quot;,&quot;goldIngotAmount&quot;:&quot;example&quot;,&quot;walletAmount&quot;:&quot;example&quot;}</span>
         </dd>
     </div>
     <div class="tail">
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/microprograms/micro-relational-data-model-sdk">MicroRelationalDataModelSdk</a>
-            <span>2017.11.06 12:42:11.386</span>
+            <span>2017.11.06 02:37:52.815</span>
         </p>
     </div>
 </body>

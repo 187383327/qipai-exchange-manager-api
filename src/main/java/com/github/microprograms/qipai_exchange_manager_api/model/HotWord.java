@@ -5,9 +5,9 @@ import com.github.microprograms.micro_relational_data_model_runtime.MicroRelatio
 import com.github.microprograms.micro_relational_data_model_runtime.Required;
 import com.github.microprograms.micro_relational_data_model_runtime.PrimaryKey;
 
-@Comment(value = "家")
+@Comment(value = "热点词")
 @MicroRelationalDataModel(version = "v1.0.0")
-public class Person {
+public class HotWord {
 
     @Comment(value = "ID")
     @Required(value = true)
@@ -22,27 +22,27 @@ public class Person {
         this.id = id;
     }
 
-    @Comment(value = "名字")
+    @Comment(value = "排序")
     @Required(value = true)
-    private String name;
+    private Integer reorder;
 
-    public String getName() {
-        return name;
+    public Integer getReorder() {
+        return reorder;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setReorder(Integer reorder) {
+        this.reorder = reorder;
     }
 
-    @Comment(value = "城市ID")
-    @Required(value = false)
-    private Integer cityId ;
+    @Comment(value = "热点词")
+    @Required(value = true)
+    private String hotWord;
 
-    public Integer getCityId () {
-        return cityId ;
+    public String getHotWord() {
+        return hotWord;
     }
 
-    public void setCityId (Integer cityId ) {
-        this.cityId  = cityId ;
+    public void setHotWord(String hotWord) {
+        this.hotWord = hotWord;
     }
 }

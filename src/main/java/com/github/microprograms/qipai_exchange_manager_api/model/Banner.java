@@ -5,9 +5,9 @@ import com.github.microprograms.micro_relational_data_model_runtime.MicroRelatio
 import com.github.microprograms.micro_relational_data_model_runtime.Required;
 import com.github.microprograms.micro_relational_data_model_runtime.PrimaryKey;
 
-@Comment(value = "城市")
+@Comment(value = "轮播图")
 @MicroRelationalDataModel(version = "v1.0.0")
-public class City {
+public class Banner {
 
     @Comment(value = "ID")
     @Required(value = true)
@@ -22,15 +22,27 @@ public class City {
         this.id = id;
     }
 
-    @Comment(value = "名字")
+    @Comment(value = "位置")
     @Required(value = true)
-    private String name;
+    private Integer reorder;
 
-    public String getName() {
-        return name;
+    public Integer getReorder() {
+        return reorder;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setReorder(Integer reorder) {
+        this.reorder = reorder;
+    }
+
+    @Comment(value = "链接")
+    @Required(value = true)
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
