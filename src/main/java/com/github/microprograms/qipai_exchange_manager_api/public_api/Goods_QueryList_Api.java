@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "商品 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.0")
+@MicroApiAnnotation(type = "read", version = "v1.0.1")
 public class Goods_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -118,7 +118,7 @@ public class Goods_QueryList_Api {
         }
 
         @Comment(value = "数据库总行数")
-        @Required(value = false)
+        @Required(value = true)
         private Integer totalRecords;
 
         public Integer getTotalRecords() {

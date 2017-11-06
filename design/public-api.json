@@ -70,7 +70,7 @@
 						"example": "example",
 						"javaType": "Integer",
 						"name": "totalRecords",
-						"required": false
+						"required": true
 					}
 				]
 			},
@@ -142,6 +142,77 @@
 						"example": "example",
 						"javaType": "String",
 						"name": "detail",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "房卡 - 查询列表",
+			"javaClassName": "RoomCard_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "房卡列表",
+						"example": "example",
+						"javaType": "java.util.List<RoomCard>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "数据库总行数",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "totalRecords",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "房卡 - 添加新房卡",
+			"javaClassName": "RoomCard_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "房卡标题",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "价格(元)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "price",
+						"required": true
+					},
+					{
+						"comment": "金币",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "goldCoin",
 						"required": true
 					}
 				]
@@ -921,5 +992,5 @@
 		"port": 8080,
 		"url": "/qipai-exchange-manager-api"
 	},
-	"version": "v1.0.0"
+	"version": "v1.0.1"
 }
