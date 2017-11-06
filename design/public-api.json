@@ -1,30 +1,57 @@
 {
 	"apiDefinitions": [
 		{
-			"comment": "Echo",
-			"description": "原样返回传给服务器的参数",
-			"javaClassName": "HelloWorld_Echo_Api",
+			"comment": "商品 - 查询列表",
+			"javaClassName": "Goods_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
-						"comment": "参数1",
+						"comment": "页码(从0开始)",
 						"example": "example",
-						"javaType": "String",
-						"name": "arg1",
+						"javaType": "Integer",
+						"name": "pageIndex",
 						"required": true
 					},
 					{
-						"comment": "参数2",
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "搜索 - 关键字",
 						"example": "example",
 						"javaType": "String",
-						"name": "arg2",
+						"name": "searchKeyword",
 						"required": false
 					},
 					{
-						"comment": "参数3",
+						"comment": "搜索 - 开始时间戳",
 						"example": "example",
 						"javaType": "Long",
-						"name": "arg3",
+						"name": "searchBeginTimestamp",
+						"required": false
+					},
+					{
+						"comment": "搜索 - 结束时间戳",
+						"example": "example",
+						"javaType": "Long",
+						"name": "searchEndTimestamp",
+						"required": false
+					},
+					{
+						"comment": "搜索 - 最小库存",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "searchMinStock",
+						"required": false
+					},
+					{
+						"comment": "搜索 - 最大库存",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "searchMaxStock",
 						"required": false
 					}
 				]
@@ -32,24 +59,17 @@
 			"responseDefinition": {
 				"fieldDefinitions": [
 					{
-						"comment": "参数1",
+						"comment": "商品列表",
 						"example": "example",
-						"javaType": "String",
-						"name": "arg1",
+						"javaType": "java.util.List<Goods>",
+						"name": "data",
 						"required": true
 					},
 					{
-						"comment": "参数2",
+						"comment": "数据库总行数",
 						"example": "example",
-						"javaType": "String",
-						"name": "arg2",
-						"required": false
-					},
-					{
-						"comment": "参数3",
-						"example": "example",
-						"javaType": "Long",
-						"name": "arg3",
+						"javaType": "Integer",
+						"name": "totalRecords",
 						"required": false
 					}
 				]
@@ -57,22 +77,71 @@
 			"type": "read"
 		},
 		{
-			"comment": "查询服务器时间",
-			"javaClassName": "HelloWorld_QueryTime_Api",
-			"responseDefinition": {
+			"comment": "商品 - 添加新商品",
+			"javaClassName": "Goods_Add_Api",
+			"requestDefinition": {
 				"fieldDefinitions": [
 					{
-						"comment": "服务器时间戳",
+						"comment": "商品类别编号",
 						"example": "example",
-						"javaType": "Long",
-						"name": "timestamp",
+						"javaType": "Integer",
+						"name": "categoryId",
 						"required": true
 					},
 					{
-						"comment": "服务器时间(格式yyyy-MM-dd HH:mm:ss)",
+						"comment": "商品名",
 						"example": "example",
 						"javaType": "String",
-						"name": "time",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "商品价格(元宝)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "price",
+						"required": true
+					},
+					{
+						"comment": "会员价格(元宝)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "vipPrice",
+						"required": true
+					},
+					{
+						"comment": "钻石会员(元宝)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "goldVipPrice",
+						"required": true
+					},
+					{
+						"comment": "排序",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "reorder",
+						"required": true
+					},
+					{
+						"comment": "库存",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "stock",
+						"required": true
+					},
+					{
+						"comment": "商品主图(JsonArray)",
+						"example": "example",
+						"javaType": "String",
+						"name": "pictures",
+						"required": true
+					},
+					{
+						"comment": "详情(富文本)",
+						"example": "example",
+						"javaType": "String",
+						"name": "detail",
 						"required": true
 					}
 				]
@@ -95,6 +164,758 @@
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
+	"modelDefinitions": [
+		{
+			"comment": "商品类别",
+			"fieldDefinitions": [
+				{
+					"comment": "编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "商品类别名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"required": true
+				},
+				{
+					"comment": "排序",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "reorder",
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				}
+			],
+			"javaClassName": "GoodsCategory"
+		},
+		{
+			"comment": "商品",
+			"fieldDefinitions": [
+				{
+					"comment": "商品编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "商品类别编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "categoryId",
+					"required": true
+				},
+				{
+					"comment": "商品类别名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "categoryName",
+					"required": true
+				},
+				{
+					"comment": "商品名",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"required": true
+				},
+				{
+					"comment": "商品价格(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "price",
+					"required": true
+				},
+				{
+					"comment": "会员价格(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "vipPrice",
+					"required": true
+				},
+				{
+					"comment": "钻石会员(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goldVipPrice",
+					"required": true
+				},
+				{
+					"comment": "排序",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "reorder",
+					"required": true
+				},
+				{
+					"comment": "库存",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "stock",
+					"required": true
+				},
+				{
+					"comment": "兑换量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "exchangeAmount",
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "商品主图(JsonArray)",
+					"example": "example",
+					"javaType": "String",
+					"name": "pictures",
+					"required": true
+				},
+				{
+					"comment": "详情(富文本)",
+					"example": "example",
+					"javaType": "String",
+					"name": "detail",
+					"required": true
+				}
+			],
+			"javaClassName": "Goods"
+		},
+		{
+			"comment": "房卡",
+			"fieldDefinitions": [
+				{
+					"comment": "编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "房卡标题",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"required": true
+				},
+				{
+					"comment": "价格(元)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "price",
+					"required": false
+				},
+				{
+					"comment": "金币",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goldCoin",
+					"required": false
+				},
+				{
+					"comment": "销售数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "salesVolume",
+					"required": false
+				},
+				{
+					"comment": "是否启用(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "enable",
+					"required": false
+				}
+			],
+			"javaClassName": "RoomCard"
+		},
+		{
+			"comment": "房卡订单",
+			"fieldDefinitions": [
+				{
+					"comment": "订单号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "提交时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"required": true
+				},
+				{
+					"comment": "房卡标题",
+					"example": "example",
+					"javaType": "String",
+					"name": "roomCardOrderName",
+					"required": true
+				},
+				{
+					"comment": "购买数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "quantity",
+					"required": false
+				},
+				{
+					"comment": "订单金额(元)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "orderAmount",
+					"required": false
+				},
+				{
+					"comment": "订单状态(0待付款,1待收货,2已完成,3已取消)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "status",
+					"required": false
+				}
+			],
+			"javaClassName": "RoomCardOrder"
+		},
+		{
+			"comment": "商品订单",
+			"fieldDefinitions": [
+				{
+					"comment": "订单号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "提交时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"required": true
+				},
+				{
+					"comment": "物流 - 收货人",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportReceiver",
+					"required": true
+				},
+				{
+					"comment": "物流 - 收货人手机号",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportPhone",
+					"required": true
+				},
+				{
+					"comment": "物流 - 收货地址",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportAddr",
+					"required": true
+				},
+				{
+					"comment": "物流 - 物流公司",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportCompany",
+					"required": true
+				},
+				{
+					"comment": "物流 - 物流单号",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportNumber",
+					"required": true
+				},
+				{
+					"comment": "商品数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "quantity",
+					"required": false
+				},
+				{
+					"comment": "订单金额(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "orderAmount",
+					"required": false
+				},
+				{
+					"comment": "订单状态(0待付款,1待收货,2已完成,3已取消)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "status",
+					"required": false
+				},
+				{
+					"comment": "支付方式(1微信)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "payChannel",
+					"required": false
+				}
+			],
+			"javaClassName": "GoodsOrder"
+		},
+		{
+			"comment": "商品订单项",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "订单号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "orderId",
+					"required": true
+				},
+				{
+					"comment": "商品编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goodsId",
+					"required": true
+				},
+				{
+					"comment": "商品名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "goodsName",
+					"required": true
+				},
+				{
+					"comment": "单价(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "price",
+					"required": false
+				},
+				{
+					"comment": "可购库存",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "validStock",
+					"required": false
+				},
+				{
+					"comment": "购买数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "quantity",
+					"required": false
+				},
+				{
+					"comment": "剩余库存",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "remainingStock",
+					"required": false
+				},
+				{
+					"comment": "总价(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "totalPrice",
+					"required": false
+				}
+			],
+			"javaClassName": "GoodsOrderItem"
+		},
+		{
+			"comment": "新增入库",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "商品编号",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goodsId",
+					"required": true
+				},
+				{
+					"comment": "商品名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "goodsName",
+					"required": true
+				},
+				{
+					"comment": "新增库存",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "newStock",
+					"required": false
+				},
+				{
+					"comment": "剩余库存",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "remainingStock",
+					"required": false
+				}
+			],
+			"javaClassName": "NewStock"
+		},
+		{
+			"comment": "轮播图",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "位置",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "reorder",
+					"required": true
+				},
+				{
+					"comment": "链接",
+					"example": "example",
+					"javaType": "String",
+					"name": "url",
+					"required": true
+				}
+			],
+			"javaClassName": "Banner"
+		},
+		{
+			"comment": "热点词",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "排序",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "reorder",
+					"required": true
+				},
+				{
+					"comment": "热点词",
+					"example": "example",
+					"javaType": "String",
+					"name": "hotWord",
+					"required": true
+				}
+			],
+			"javaClassName": "HotWord"
+		},
+		{
+			"comment": "提现",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"required": true
+				},
+				{
+					"comment": "提现金额(元)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "amount",
+					"required": true
+				},
+				{
+					"comment": "申请时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "状态(0未审核1已同意2已拒绝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "status",
+					"required": true
+				},
+				{
+					"comment": "拒绝原因",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "rejectReason",
+					"required": true
+				}
+			],
+			"javaClassName": "WithdrawCash"
+		},
+		{
+			"comment": "用户",
+			"fieldDefinitions": [
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "用户昵称",
+					"example": "example",
+					"javaType": "String",
+					"name": "nickname",
+					"required": true
+				},
+				{
+					"comment": "手机号",
+					"example": "example",
+					"javaType": "String",
+					"name": "phone",
+					"required": true
+				},
+				{
+					"comment": "会员等级",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "level",
+					"required": true
+				},
+				{
+					"comment": "元宝数",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goldIngotAmount",
+					"required": true
+				},
+				{
+					"comment": "钱包 - 余额(元)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "walletAmount",
+					"required": true
+				},
+				{
+					"comment": "钱包 - 提现账号姓名",
+					"example": "example",
+					"javaType": "String",
+					"name": "walletRealname",
+					"required": true
+				},
+				{
+					"comment": "钱包 - 银行卡号",
+					"example": "example",
+					"javaType": "String",
+					"name": "walletBankCardNumber",
+					"required": true
+				},
+				{
+					"comment": "消费金额(元)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "consumptionAmount",
+					"required": true
+				},
+				{
+					"comment": "注册时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "是否启用(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "enable",
+					"required": true
+				},
+				{
+					"comment": "物流 - 收货人(默认)",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportReceiver",
+					"required": true
+				},
+				{
+					"comment": "物流 - 收货地址(默认)",
+					"example": "example",
+					"javaType": "String",
+					"name": "transportAddr",
+					"required": true
+				},
+				{
+					"comment": "推荐人ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "referenceUserId",
+					"required": true
+				}
+			],
+			"javaClassName": "User"
+		},
+		{
+			"comment": "用户收货地址",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"required": true
+				},
+				{
+					"comment": "手机号",
+					"example": "example",
+					"javaType": "String",
+					"name": "phone",
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "是否为默认收货地址(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "favorite",
+					"required": true
+				},
+				{
+					"comment": "收货人",
+					"example": "example",
+					"javaType": "String",
+					"name": "receiver",
+					"required": true
+				},
+				{
+					"comment": "收货地址",
+					"example": "example",
+					"javaType": "String",
+					"name": "addr",
+					"required": true
+				}
+			],
+			"javaClassName": "UserAddr"
+		},
+		{
+			"comment": "钱包账单",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "id",
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "userId",
+					"required": true
+				},
+				{
+					"comment": "类型(1入账,2提现)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "type",
+					"required": true
+				},
+				{
+					"comment": "时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"required": true
+				},
+				{
+					"comment": "金额",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "amount",
+					"required": true
+				},
+				{
+					"comment": "入账 - 贡献用户ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "inContributorUserId",
+					"required": true
+				},
+				{
+					"comment": "入账 - 贡献用户等级(1一级,2二级)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "inContributorUserLevel",
+					"required": true
+				}
+			],
+			"javaClassName": "WalletBill"
+		}
+	],
 	"serverAddressDefinition": {
 		"host": "localhost",
 		"port": 8080,

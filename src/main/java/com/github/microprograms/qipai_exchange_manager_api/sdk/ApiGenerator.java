@@ -15,6 +15,8 @@ public class ApiGenerator {
     public static void publicApi() throws IOException {
         String srcFolder = "src/main/java";
         EngineDefinition engineDefinition = ApiEngineGeneratorUtils.buildEngineDefinition("design/public-api.json");
+        ApiEngineGeneratorUtils.deleteModelJavaFiles(srcFolder, engineDefinition);
+        ApiEngineGeneratorUtils.createModelJavaFiles(srcFolder, engineDefinition);
         ApiEngineGeneratorUtils.updateApiJavaFiles(srcFolder, engineDefinition);
         ApiEngineGeneratorUtils.deleteUnusedApiJavaFiles(srcFolder, engineDefinition);
         ApiEngineGeneratorUtils.updateErrorCodeJavaFile(srcFolder, engineDefinition);

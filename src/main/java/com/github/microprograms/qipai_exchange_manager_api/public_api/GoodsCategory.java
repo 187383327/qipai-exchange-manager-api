@@ -1,0 +1,57 @@
+package com.github.microprograms.qipai_exchange_manager_api.public_api;
+
+import com.github.microprograms.micro_entity_definition_runtime.annotation.MicroEntityAnnotation;
+import com.github.microprograms.micro_entity_definition_runtime.annotation.Comment;
+import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
+
+@MicroEntityAnnotation()
+public class GoodsCategory {
+
+    @Comment(value = "编号")
+    @Required(value = true)
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Comment(value = "商品类别名称")
+    @Required(value = true)
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Comment(value = "排序")
+    @Required(value = true)
+    private Integer reorder;
+
+    public Integer getReorder() {
+        return reorder;
+    }
+
+    public void setReorder(Integer reorder) {
+        this.reorder = reorder;
+    }
+
+    @Comment(value = "添加时间")
+    @Required(value = true)
+    private Long dtCreate;
+
+    public Long getDtCreate() {
+        return dtCreate;
+    }
+
+    public void setDtCreate(Long dtCreate) {
+        this.dtCreate = dtCreate;
+    }
+}
