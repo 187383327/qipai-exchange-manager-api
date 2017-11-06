@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "商品订单项 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.3")
-public class GoodsOrderItem_QueryList_Api {
+@Comment(value = "商品订单 - 查询列表")
+@MicroApiAnnotation(type = "read", version = "v1.0.4")
+public class GoodsOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -105,15 +105,15 @@ public class GoodsOrderItem_QueryList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "商品列表")
+        @Comment(value = "商品订单列表")
         @Required(value = true)
-        private java.util.List<Goods> data;
+        private java.util.List<GoodsOrder> data;
 
-        public java.util.List<Goods> getData() {
+        public java.util.List<GoodsOrder> getData() {
             return data;
         }
 
-        public void setData(java.util.List<Goods> data) {
+        public void setData(java.util.List<GoodsOrder> data) {
             this.data = data;
         }
 

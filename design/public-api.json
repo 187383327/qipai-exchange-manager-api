@@ -454,8 +454,8 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品订单项 - 查询列表",
-			"javaClassName": "GoodsOrderItem_QueryList_Api",
+			"comment": "商品订单 - 查询列表",
+			"javaClassName": "GoodsOrder_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
@@ -512,9 +512,9 @@
 			"responseDefinition": {
 				"fieldDefinitions": [
 					{
-						"comment": "商品列表",
+						"comment": "商品订单列表",
 						"example": "example",
-						"javaType": "java.util.List<Goods>",
+						"javaType": "java.util.List<GoodsOrder>",
 						"name": "data",
 						"required": true
 					},
@@ -523,6 +523,33 @@
 						"example": "example",
 						"javaType": "Integer",
 						"name": "totalRecords",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "商品订单项 - 查询全部",
+			"javaClassName": "GoodsOrderItem_QueryAll_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品订单ID",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "goodsOrderId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品订单项列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<GoodsOrderItem>",
+						"name": "data",
 						"required": true
 					}
 				]
@@ -1302,5 +1329,5 @@
 		"port": 8081,
 		"url": "/qipai-exchange-manager-api"
 	},
-	"version": "v1.0.3"
+	"version": "v1.0.4"
 }

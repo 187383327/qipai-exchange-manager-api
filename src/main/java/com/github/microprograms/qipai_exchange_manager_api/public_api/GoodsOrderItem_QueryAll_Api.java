@@ -6,40 +6,43 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "商品类别 - 新增商品类别")
+@Comment(value = "商品订单项 - 查询全部")
 @MicroApiAnnotation(type = "read", version = "v1.0.4")
-public class GoodsCategory_Add_Api {
+public class GoodsOrderItem_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
+        Resp resp = new Resp();
         return resp;
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别名称")
+        @Comment(value = "商品订单ID")
         @Required(value = true)
-        private String name;
+        private Integer goodsOrderId;
 
-        public String getName() {
-            return name;
+        public Integer getGoodsOrderId() {
+            return goodsOrderId;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setGoodsOrderId(Integer goodsOrderId) {
+            this.goodsOrderId = goodsOrderId;
         }
+    }
 
-        @Comment(value = "排序")
+    public static class Resp extends Response {
+
+        @Comment(value = "商品订单项列表(全部)")
         @Required(value = true)
-        private Integer reorder;
+        private java.util.List<GoodsOrderItem> data;
 
-        public Integer getReorder() {
-            return reorder;
+        public java.util.List<GoodsOrderItem> getData() {
+            return data;
         }
 
-        public void setReorder(Integer reorder) {
-            this.reorder = reorder;
+        public void setData(java.util.List<GoodsOrderItem> data) {
+            this.data = data;
         }
     }
 }
