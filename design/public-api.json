@@ -337,6 +337,45 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "商品类别 - 查询全部",
+			"javaClassName": "GoodsCategory_QueryAll_Api",
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品类别列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<GoodsCategory>",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "商品类别 - 新增商品类别",
+			"javaClassName": "GoodsCategory_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品类别名称",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "排序",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "reorder",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
