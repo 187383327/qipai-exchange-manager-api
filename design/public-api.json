@@ -218,6 +218,125 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "库存 - 查询出库列表",
+			"javaClassName": "Stock_QueryOutList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "搜索 - 关键字",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchKeyword",
+						"required": false
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "出库列表",
+						"example": "example",
+						"javaType": "java.util.List<GoodsOrderItem>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "数据库总行数",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "totalRecords",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "库存 - 查询入库列表",
+			"javaClassName": "Stock_QueryInList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "搜索 - 关键字",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchKeyword",
+						"required": false
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "入库列表",
+						"example": "example",
+						"javaType": "java.util.List<NewStock>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "数据库总行数",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "totalRecords",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "库存 - 新增入库",
+			"javaClassName": "Stock_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品编号",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "goodsId",
+						"required": true
+					},
+					{
+						"comment": "新增入库数量",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "amount",
+						"required": false
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -988,9 +1107,9 @@
 		}
 	],
 	"serverAddressDefinition": {
-		"host": "localhost",
-		"port": 8080,
+		"host": "47.104.17.187",
+		"port": 8081,
 		"url": "/qipai-exchange-manager-api"
 	},
-	"version": "v1.0.1"
+	"version": "v1.0.2"
 }

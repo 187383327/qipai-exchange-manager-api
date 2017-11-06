@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "房卡 - 添加新房卡")
+@Comment(value = "库存 - 新增入库")
 @MicroApiAnnotation(type = "read", version = "v1.0.2")
-public class RoomCard_Add_Api {
+public class Stock_Add_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -18,40 +18,28 @@ public class RoomCard_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "房卡标题")
+        @Comment(value = "商品编号")
         @Required(value = true)
-        private String name;
+        private Integer goodsId;
 
-        public String getName() {
-            return name;
+        public Integer getGoodsId() {
+            return goodsId;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setGoodsId(Integer goodsId) {
+            this.goodsId = goodsId;
         }
 
-        @Comment(value = "价格(元)")
-        @Required(value = true)
-        private Integer price;
+        @Comment(value = "新增入库数量")
+        @Required(value = false)
+        private Integer amount;
 
-        public Integer getPrice() {
-            return price;
+        public Integer getAmount() {
+            return amount;
         }
 
-        public void setPrice(Integer price) {
-            this.price = price;
-        }
-
-        @Comment(value = "金币")
-        @Required(value = true)
-        private Integer goldCoin;
-
-        public Integer getGoldCoin() {
-            return goldCoin;
-        }
-
-        public void setGoldCoin(Integer goldCoin) {
-            this.goldCoin = goldCoin;
+        public void setAmount(Integer amount) {
+            this.amount = amount;
         }
     }
 }
