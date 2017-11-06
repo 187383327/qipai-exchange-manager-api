@@ -452,6 +452,86 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "商品订单项 - 查询列表",
+			"javaClassName": "GoodsOrderItem_QueryList_Api",
+			"requestDefinition": {
+				"comment": "商品 - 查询列表",
+				"javaClassName": "Goods_QueryList_Api",
+				"requestDefinition": {
+					"fieldDefinitions": [
+						{
+							"comment": "页码(从0开始)",
+							"example": "example",
+							"javaType": "Integer",
+							"name": "pageIndex",
+							"required": true
+						},
+						{
+							"comment": "页大小",
+							"example": "example",
+							"javaType": "Integer",
+							"name": "pageSize",
+							"required": true
+						},
+						{
+							"comment": "搜索 - 关键字",
+							"example": "example",
+							"javaType": "String",
+							"name": "searchKeyword",
+							"required": false
+						},
+						{
+							"comment": "搜索 - 开始时间戳",
+							"example": "example",
+							"javaType": "Long",
+							"name": "searchBeginTimestamp",
+							"required": false
+						},
+						{
+							"comment": "搜索 - 结束时间戳",
+							"example": "example",
+							"javaType": "Long",
+							"name": "searchEndTimestamp",
+							"required": false
+						},
+						{
+							"comment": "搜索 - 最小库存",
+							"example": "example",
+							"javaType": "Integer",
+							"name": "searchMinStock",
+							"required": false
+						},
+						{
+							"comment": "搜索 - 最大库存",
+							"example": "example",
+							"javaType": "Integer",
+							"name": "searchMaxStock",
+							"required": false
+						}
+					]
+				},
+				"responseDefinition": {
+					"fieldDefinitions": [
+						{
+							"comment": "商品列表",
+							"example": "example",
+							"javaType": "java.util.List<Goods>",
+							"name": "data",
+							"required": true
+						},
+						{
+							"comment": "数据库总行数",
+							"example": "example",
+							"javaType": "Integer",
+							"name": "totalRecords",
+							"required": true
+						}
+					]
+				},
+				"type": "read"
+			}
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
