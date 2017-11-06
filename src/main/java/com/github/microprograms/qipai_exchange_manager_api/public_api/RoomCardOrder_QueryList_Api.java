@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "库存 - 查询入库列表")
+@Comment(value = "房卡订单 - 查询列表")
 @MicroApiAnnotation(type = "read", version = "v1.0.3")
-public class Stock_QueryInList_Api {
+public class RoomCardOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -53,19 +53,67 @@ public class Stock_QueryInList_Api {
         public void setSearchKeyword(String searchKeyword) {
             this.searchKeyword = searchKeyword;
         }
+
+        @Comment(value = "搜索 - 收货人")
+        @Required(value = false)
+        private String searchTransportReceiver;
+
+        public String getSearchTransportReceiver() {
+            return searchTransportReceiver;
+        }
+
+        public void setSearchTransportReceiver(String searchTransportReceiver) {
+            this.searchTransportReceiver = searchTransportReceiver;
+        }
+
+        @Comment(value = "搜索 - 开始时间戳")
+        @Required(value = false)
+        private Long searchBeginTimestamp;
+
+        public Long getSearchBeginTimestamp() {
+            return searchBeginTimestamp;
+        }
+
+        public void setSearchBeginTimestamp(Long searchBeginTimestamp) {
+            this.searchBeginTimestamp = searchBeginTimestamp;
+        }
+
+        @Comment(value = "搜索 - 结束时间戳")
+        @Required(value = false)
+        private Long searchEndTimestamp;
+
+        public Long getSearchEndTimestamp() {
+            return searchEndTimestamp;
+        }
+
+        public void setSearchEndTimestamp(Long searchEndTimestamp) {
+            this.searchEndTimestamp = searchEndTimestamp;
+        }
+
+        @Comment(value = "搜索 - 订单状态")
+        @Required(value = false)
+        private Integer searchStatus;
+
+        public Integer getSearchStatus() {
+            return searchStatus;
+        }
+
+        public void setSearchStatus(Integer searchStatus) {
+            this.searchStatus = searchStatus;
+        }
     }
 
     public static class Resp extends Response {
 
-        @Comment(value = "入库列表")
+        @Comment(value = "房卡订单列表")
         @Required(value = true)
-        private java.util.List<NewStock> data;
+        private java.util.List<RoomCardOrder> data;
 
-        public java.util.List<NewStock> getData() {
+        public java.util.List<RoomCardOrder> getData() {
             return data;
         }
 
-        public void setData(java.util.List<NewStock> data) {
+        public void setData(java.util.List<RoomCardOrder> data) {
             this.data = data;
         }
 

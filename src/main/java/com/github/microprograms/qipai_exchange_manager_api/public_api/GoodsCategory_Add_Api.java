@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "房卡 - 添加新房卡")
+@Comment(value = "商品类别 - 新增商品类别")
 @MicroApiAnnotation(type = "read", version = "v1.0.3")
-public class RoomCard_Add_Api {
+public class GoodsCategory_Add_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -18,7 +18,7 @@ public class RoomCard_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "房卡标题")
+        @Comment(value = "商品类别名称")
         @Required(value = true)
         private String name;
 
@@ -30,28 +30,16 @@ public class RoomCard_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "价格(元)")
+        @Comment(value = "排序")
         @Required(value = true)
-        private Integer price;
+        private Integer reorder;
 
-        public Integer getPrice() {
-            return price;
+        public Integer getReorder() {
+            return reorder;
         }
 
-        public void setPrice(Integer price) {
-            this.price = price;
-        }
-
-        @Comment(value = "金币")
-        @Required(value = true)
-        private Integer goldCoin;
-
-        public Integer getGoldCoin() {
-            return goldCoin;
-        }
-
-        public void setGoldCoin(Integer goldCoin) {
-            this.goldCoin = goldCoin;
+        public void setReorder(Integer reorder) {
+            this.reorder = reorder;
         }
     }
 }
