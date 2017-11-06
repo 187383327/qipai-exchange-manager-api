@@ -1,4 +1,4 @@
-package com.github.microprograms.qipai_exchange_manager_api.api;
+package com.github.microprograms.qipai_exchange_manager_api.private_api;
 
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Comment;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;

@@ -1,0 +1,96 @@
+{
+	"apiDefinitions": [
+		{
+			"comment": "Echo",
+			"description": "原样返回传给服务器的参数",
+			"javaClassName": "HelloWorld_Echo_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "参数1",
+						"javaType": "String",
+						"name": "arg1",
+						"required": true
+					},
+					{
+						"comment": "参数2",
+						"javaType": "String",
+						"name": "arg2",
+						"required": false
+					},
+					{
+						"comment": "参数3",
+						"javaType": "Long",
+						"name": "arg3",
+						"required": false
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "参数1",
+						"javaType": "String",
+						"name": "arg1",
+						"required": true
+					},
+					{
+						"comment": "参数2",
+						"javaType": "String",
+						"name": "arg2",
+						"required": false
+					},
+					{
+						"comment": "参数3",
+						"javaType": "Long",
+						"name": "arg3",
+						"required": false
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "查询服务器时间",
+			"javaClassName": "HelloWorld_QueryTime_Api",
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "服务器时间戳",
+						"javaType": "Long",
+						"name": "timestamp",
+						"required": true
+					},
+					{
+						"comment": "服务器时间(格式yyyy-MM-dd HH:mm:ss)",
+						"javaType": "String",
+						"name": "time",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		}
+	],
+	"comment": "qipai-exchange-manager-private-api",
+	"description": "小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口。每个接口都已定义快速跳转书签，点击超链接即可跳转。",
+	"errorCodeDefinitions": [
+		{
+			"code": 1010,
+			"message": "资源不存在或已被删除",
+			"name": "not_exists"
+		},
+		{
+			"code": 1011,
+			"message": "字符串太长或太短",
+			"name": "too_long_or_too_short"
+		}
+	],
+	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.private_api",
+	"serverAddressDefinition": {
+		"host": "localhost",
+		"port": 8080,
+		"url": "/qipai-exchange-manager-api"
+	},
+	"version": "v1.0.0"
+}

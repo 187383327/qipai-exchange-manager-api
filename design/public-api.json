@@ -72,7 +72,7 @@
 			"type": "read"
 		}
 	],
-	"comment": "示例API",
+	"comment": "qipai-exchange-manager-api",
 	"description": "小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口。每个接口都已定义快速跳转书签，点击超链接即可跳转。",
 	"errorCodeDefinitions": [
 		{
@@ -86,11 +86,11 @@
 			"name": "too_long_or_too_short"
 		}
 	],
-	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.api",
+	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
 	"serverAddressDefinition": {
 		"host": "localhost",
 		"port": 8080,
-		"url": "/qipai-exchange-manager-api/api"
+		"url": "/qipai-exchange-manager-api"
 	},
 	"version": "v1.0.0"
 }
