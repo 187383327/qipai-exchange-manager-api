@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "房卡 - 添加新房卡")
-@MicroApiAnnotation(type = "read", version = "v1.0.4")
+@MicroApiAnnotation(type = "read", version = "v1.0.5")
 public class RoomCard_Add_Api {
 
     public static Response execute(Request request) throws Exception {

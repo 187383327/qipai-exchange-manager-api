@@ -66,10 +66,10 @@
 						"required": true
 					},
 					{
-						"comment": "数据库总行数",
+						"comment": "分页",
 						"example": "example",
-						"javaType": "Integer",
-						"name": "totalRecords",
+						"javaType": "Pager",
+						"name": "pager",
 						"required": true
 					}
 				]
@@ -179,10 +179,10 @@
 						"required": true
 					},
 					{
-						"comment": "数据库总行数",
+						"comment": "分页",
 						"example": "example",
-						"javaType": "Integer",
-						"name": "totalRecords",
+						"javaType": "Pager",
+						"name": "pager",
 						"required": true
 					}
 				]
@@ -257,10 +257,10 @@
 						"required": true
 					},
 					{
-						"comment": "数据库总行数",
+						"comment": "分页",
 						"example": "example",
-						"javaType": "Integer",
-						"name": "totalRecords",
+						"javaType": "Pager",
+						"name": "pager",
 						"required": true
 					}
 				]
@@ -305,10 +305,10 @@
 						"required": true
 					},
 					{
-						"comment": "数据库总行数",
+						"comment": "分页",
 						"example": "example",
-						"javaType": "Integer",
-						"name": "totalRecords",
+						"javaType": "Pager",
+						"name": "pager",
 						"required": true
 					}
 				]
@@ -443,10 +443,10 @@
 						"required": true
 					},
 					{
-						"comment": "数据库总行数",
+						"comment": "分页",
 						"example": "example",
-						"javaType": "Integer",
-						"name": "totalRecords",
+						"javaType": "Pager",
+						"name": "pager",
 						"required": true
 					}
 				]
@@ -519,10 +519,10 @@
 						"required": true
 					},
 					{
-						"comment": "数据库总行数",
+						"comment": "分页",
 						"example": "example",
-						"javaType": "Integer",
-						"name": "totalRecords",
+						"javaType": "Pager",
+						"name": "pager",
 						"required": true
 					}
 				]
@@ -573,6 +573,54 @@
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
 	"modelDefinitions": [
+		{
+			"comment": "分页",
+			"fieldDefinitions": [
+				{
+					"comment": "页码(从0开始)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "pageIndex",
+					"required": true
+				},
+				{
+					"comment": "页大小",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "pageSize",
+					"required": true
+				},
+				{
+					"comment": "数据库总行数",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "totalRecords",
+					"required": true
+				},
+				{
+					"comment": "总页数",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "totalPages",
+					"required": true
+				},
+				{
+					"comment": "是否为首页(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "isFirstPage",
+					"required": true
+				},
+				{
+					"comment": "是否为尾页(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "isLastPage",
+					"required": true
+				}
+			],
+			"javaClassName": "Pager"
+		},
 		{
 			"comment": "商品类别",
 			"fieldDefinitions": [
@@ -1329,5 +1377,5 @@
 		"port": 8081,
 		"url": "/qipai-exchange-manager-api"
 	},
-	"version": "v1.0.4"
+	"version": "v1.0.5"
 }

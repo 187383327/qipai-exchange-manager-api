@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "房卡 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.4")
+@MicroApiAnnotation(type = "read", version = "v1.0.5")
 public class RoomCard_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -57,16 +57,16 @@ public class RoomCard_QueryList_Api {
             this.data = data;
         }
 
-        @Comment(value = "数据库总行数")
+        @Comment(value = "分页")
         @Required(value = true)
-        private Integer totalRecords;
+        private Pager pager;
 
-        public Integer getTotalRecords() {
-            return totalRecords;
+        public Pager getPager() {
+            return pager;
         }
 
-        public void setTotalRecords(Integer totalRecords) {
-            this.totalRecords = totalRecords;
+        public void setPager(Pager pager) {
+            this.pager = pager;
         }
     }
 }
