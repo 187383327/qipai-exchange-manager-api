@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 
 import com.github.microprograms.ignite_utils.IgniteUtils;
-import com.github.microprograms.ignite_utils.SelectSql;
+import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;

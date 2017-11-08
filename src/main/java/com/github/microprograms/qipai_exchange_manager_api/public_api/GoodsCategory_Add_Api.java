@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.util.UUID;
 
 import com.github.microprograms.ignite_utils.IgniteUtils;
-import com.github.microprograms.ignite_utils.InsertSql;
+import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
