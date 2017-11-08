@@ -558,6 +558,16 @@
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
+    "deployDefinition": {
+        "localMavenProjectHome": "/Users/xuzewei/microprograms/qipai-exchange-manager-api",
+        "localSshPassword": "xzw",
+        "localSshPort": 22,
+        "localSshUser": "xuzewei",
+        "remoteJavaApplicationHome": "qipai-exchange-manager-api",
+        "remoteSshPassword": "Xuzewei2017",
+        "remoteSshPort": 22,
+        "remoteSshUser": "root"
+    },
 	"description": "小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口。每个接口都已定义快速跳转书签，点击超链接即可跳转。",
 	"errorCodeDefinitions": [
 		{
