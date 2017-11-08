@@ -66,6 +66,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.microprograms</groupId>
+            <artifactId>ignite-utils</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-core</artifactId>
             <version>2.3.0</version>
