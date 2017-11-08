@@ -563,7 +563,7 @@
         "localSshPassword": "xzw",
         "localSshPort": 22,
         "localSshUser": "xuzewei",
-        "remoteJavaApplicationHome": "qipai-exchange-manager-api",
+        "remoteJavaApplicationHome": "/opt/microprograms/qipai-exchange-manager-api",
         "remoteSshPassword": "Xuzewei2017",
         "remoteSshPort": 22,
         "remoteSshUser": "root"
