@@ -3,7 +3,7 @@
 	"databaseAddressDefinition": {
 		"driver": "org.apache.ignite.IgniteJdbcThinDriver",
 		"password": "password",
-		"url": "jdbc:ignite:thin://xzw1/",
+		"url": "jdbc:ignite:thin://xzw1/public",
 		"user": "user"
 	},
 	"entityDefinitions": [
@@ -13,7 +13,7 @@
 				{
 					"comment": "编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -51,7 +51,7 @@
 				{
 					"comment": "商品编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -161,7 +161,7 @@
 				{
 					"comment": "编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -215,7 +215,7 @@
 				{
 					"comment": "订单号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -277,7 +277,7 @@
 				{
 					"comment": "订单号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -379,7 +379,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -457,7 +457,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -503,7 +503,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -533,7 +533,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -563,7 +563,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -617,7 +617,7 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -735,7 +735,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -797,7 +797,7 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
 					"required": true
@@ -855,5 +855,5 @@
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.model",
-	"version": "v1.0.0"
+	"version": "v1.0.1"
 }

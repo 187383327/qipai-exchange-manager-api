@@ -9,13 +9,13 @@ public class GoodsOrderItem {
 
     @Comment(value = "ID")
     @Required(value = true)
-    private Integer id;
+    private String id;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

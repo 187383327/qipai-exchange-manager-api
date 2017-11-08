@@ -6,19 +6,19 @@ import com.github.microprograms.micro_relational_data_model_runtime.Required;
 import com.github.microprograms.micro_relational_data_model_runtime.PrimaryKey;
 
 @Comment(value = "商品类别")
-@MicroRelationalDataModel(version = "v1.0.0")
+@MicroRelationalDataModel(version = "v1.0.1")
 public class GoodsCategory {
 
     @Comment(value = "编号")
     @Required(value = true)
     @PrimaryKey(value = 1)
-    private Integer id;
+    private String id;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

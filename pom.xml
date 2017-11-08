@@ -66,6 +66,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.ignite</groupId>
+            <artifactId>ignite-core</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.microprograms</groupId>
             <artifactId>micro-relational-data-model-sdk</artifactId>
             <version>1.0.2.r1</version>

@@ -627,8 +627,9 @@
 				{
 					"comment": "编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -636,6 +637,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "name",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -643,6 +645,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "reorder",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -650,6 +653,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -661,8 +665,9 @@
 				{
 					"comment": "商品编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -670,6 +675,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "categoryId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -677,6 +683,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "categoryName",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -684,6 +691,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "name",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -691,6 +699,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "price",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -698,6 +707,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "vipPrice",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -705,6 +715,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "goldVipPrice",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -712,6 +723,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "reorder",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -719,6 +731,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "stock",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -726,6 +739,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "exchangeAmount",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -733,6 +747,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -740,6 +755,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "pictures",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -747,6 +763,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "detail",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -758,8 +775,9 @@
 				{
 					"comment": "编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -767,6 +785,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "name",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -774,6 +793,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "price",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -781,6 +801,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "goldCoin",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -788,6 +809,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "salesVolume",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -795,6 +817,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "enable",
+					"primaryKey": 0,
 					"required": false
 				}
 			],
@@ -806,8 +829,9 @@
 				{
 					"comment": "订单号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -815,6 +839,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -822,6 +847,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "userId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -829,6 +855,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "roomCardOrderName",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -836,6 +863,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "quantity",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -843,6 +871,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "orderAmount",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -850,6 +879,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "status",
+					"primaryKey": 0,
 					"required": false
 				}
 			],
@@ -861,8 +891,9 @@
 				{
 					"comment": "订单号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -870,6 +901,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -877,6 +909,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "userId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -884,6 +917,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportReceiver",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -891,6 +925,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportPhone",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -898,6 +933,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportAddr",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -905,6 +941,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportCompany",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -912,6 +949,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportNumber",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -919,6 +957,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "quantity",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -926,6 +965,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "orderAmount",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -933,6 +973,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "status",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -940,6 +981,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "payChannel",
+					"primaryKey": 0,
 					"required": false
 				}
 			],
@@ -951,8 +993,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -960,6 +1003,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "orderId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -967,6 +1011,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "goodsId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -974,6 +1019,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "goodsName",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -981,6 +1027,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "price",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -988,6 +1035,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "validStock",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -995,6 +1043,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "quantity",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -1002,6 +1051,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "remainingStock",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -1009,6 +1059,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "totalPrice",
+					"primaryKey": 0,
 					"required": false
 				}
 			],
@@ -1020,8 +1071,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1029,6 +1081,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "goodsId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1036,6 +1089,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "goodsName",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1043,6 +1097,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "newStock",
+					"primaryKey": 0,
 					"required": false
 				},
 				{
@@ -1050,6 +1105,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "remainingStock",
+					"primaryKey": 0,
 					"required": false
 				}
 			],
@@ -1061,8 +1117,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1070,6 +1127,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "reorder",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1077,6 +1135,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "url",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -1088,8 +1147,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1097,6 +1157,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "reorder",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1104,6 +1165,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "hotWord",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -1115,8 +1177,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1124,6 +1187,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "userId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1131,6 +1195,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "amount",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1138,6 +1203,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1145,6 +1211,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "status",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1152,6 +1219,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "rejectReason",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -1163,8 +1231,9 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1172,6 +1241,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "nickname",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1179,6 +1249,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "phone",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1186,6 +1257,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "level",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1193,6 +1265,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "goldIngotAmount",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1200,6 +1273,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "walletAmount",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1207,6 +1281,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "walletRealname",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1214,6 +1289,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "walletBankCardNumber",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1221,6 +1297,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "consumptionAmount",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1228,6 +1305,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1235,6 +1313,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "enable",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1242,6 +1321,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportReceiver",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1249,6 +1329,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "transportAddr",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1256,6 +1337,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "referenceUserId",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -1267,8 +1349,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1276,6 +1359,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "userId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1283,6 +1367,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "phone",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1290,6 +1375,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1297,6 +1383,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "favorite",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1304,6 +1391,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "receiver",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1311,6 +1399,7 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "addr",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -1322,8 +1411,9 @@
 				{
 					"comment": "ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1331,6 +1421,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "userId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1338,6 +1429,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "type",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1345,6 +1437,7 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1352,6 +1445,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "amount",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1359,6 +1453,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "inContributorUserId",
+					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1366,6 +1461,7 @@
 					"example": "example",
 					"javaType": "Integer",
 					"name": "inContributorUserLevel",
+					"primaryKey": 0,
 					"required": true
 				}
 			],
@@ -1377,5 +1473,5 @@
 		"port": 8081,
 		"url": "/qipai-exchange-manager-api"
 	},
-	"version": "v1.0.5"
+	"version": "v1.0.6"
 }
