@@ -3,7 +3,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.UUID;
 
-import com.alibaba.fastjson.JSON;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
@@ -28,12 +27,6 @@ public class GoodsCategory_Add_Api {
         }
         Response resp = new Response();
         return resp;
-    }
-
-    public static void main(String[] args) throws Exception {
-        Req req = new Req();
-        req.setName("家用电器");
-        System.out.println(JSON.toJSONString(execute(req)));
     }
 
     public static class Req extends Request {
