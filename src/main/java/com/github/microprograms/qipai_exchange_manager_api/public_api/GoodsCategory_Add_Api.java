@@ -33,15 +33,12 @@ public class GoodsCategory_Add_Api {
     public static void main(String[] args) throws Exception {
         Req req = new Req();
         req.setName("家用电器");
-        req.setReorder(0);
         System.out.println(JSON.toJSONString(execute(req)));
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别名称")
-        @Required(value = true)
-        private String name;
+        @Comment(value = "商品类别名称") @Required(value = true) private String name;
 
         public String getName() {
             return name;
@@ -51,9 +48,7 @@ public class GoodsCategory_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "排序")
-        @Required(value = true)
-        private Integer reorder;
+        @Comment(value = "排序") @Required(value = true) private Integer reorder;
 
         public Integer getReorder() {
             return reorder;
