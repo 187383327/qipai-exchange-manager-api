@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
@@ -29,7 +28,9 @@ public class GoodsCategory_QueryAll_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "商品类别列表(全部)") @Required(value = true) private java.util.List<GoodsCategory> data;
+        @Comment(value = "商品类别列表(全部)")
+        @Required(value = true)
+        private java.util.List<GoodsCategory> data;
 
         public java.util.List<GoodsCategory> getData() {
             return data;

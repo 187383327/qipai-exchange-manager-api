@@ -1468,10 +1468,15 @@
 			"javaClassName": "WalletBill"
 		}
 	],
-	"serverAddressDefinition": {
-		"host": "47.104.17.187",
-		"port": 8081,
-		"url": "/qipai-exchange-manager-api"
-	},
+    "serverAddressDefinition": {
+        "host": "47.104.17.187",
+        "port": 8081,
+        "url": "/qipai-exchange-manager-api"
+    },
+    "showdocDefinition": {
+        "apiKey": "e10daa276098ee3a100e5c577800075f2008791469",
+        "apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
+        "url": "https://www.showdoc.cc/server/api/item/updateByApi"
+    },
 	"version": "v1.0.6"
 }

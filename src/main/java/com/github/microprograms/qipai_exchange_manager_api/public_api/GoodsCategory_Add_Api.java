@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.util.UUID;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
@@ -32,7 +31,9 @@ public class GoodsCategory_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别名称") @Required(value = true) private String name;
+        @Comment(value = "商品类别名称")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -42,7 +43,9 @@ public class GoodsCategory_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "排序") @Required(value = true) private Integer reorder;
+        @Comment(value = "排序")
+        @Required(value = true)
+        private Integer reorder;
 
         public Integer getReorder() {
             return reorder;
