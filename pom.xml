@@ -97,7 +97,7 @@
         <dependency>
             <groupId>com.github.microprograms</groupId>
             <artifactId>micro-api-sdk</artifactId>
-            <version>1.0.4.r13</version>
+            <version>1.0.5</version>
         </dependency>
         <dependency>
             <groupId>com.github.microprograms</groupId>
