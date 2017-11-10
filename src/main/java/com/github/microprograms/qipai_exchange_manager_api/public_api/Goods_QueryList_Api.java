@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.ComplexCondition;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
+import com.github.microprograms.ignite_utils.sql.dml.LikeCondition;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
 import com.github.microprograms.ignite_utils.sql.dml.Where;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
@@ -33,11 +34,11 @@ public class Goods_QueryList_Api {
         return resp;
     }
 
-    private static ComplexCondition buildFinalCondition(Req req) {
+    private static String buildFinalCondition(Req req) {
         ComplexCondition dtCreate = Where.and(Condition.build("dtCreate>", req.getSearchBeginTimestamp()), Condition.build("dtCreate<", req.getSearchEndTimestamp()));
         ComplexCondition stock = Where.and(Condition.build("stock>", req.getSearchMinStock()), Condition.build("stock<", req.getSearchMaxStock()));
-        Condition keyword = Condition.build("name like", "%" + req.getSearchKeyword() + "%");
-        return Where.and(dtCreate, stock, keyword);
+        LikeCondition keyword = LikeCondition.build("name", req.getSearchKeyword());
+        return Where.and(dtCreate, stock, keyword).toString();
     }
 
     public static class Req extends Request {
