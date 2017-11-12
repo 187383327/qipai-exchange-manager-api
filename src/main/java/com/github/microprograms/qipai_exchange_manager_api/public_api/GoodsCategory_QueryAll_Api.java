@@ -12,15 +12,13 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 查询全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.6")
+@MicroApiAnnotation(type = "read", version = "v1.0.7")
 public class GoodsCategory_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
         Resp resp = new Resp();
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            SelectSql selectSql = new SelectSql();
-            selectSql.tableName(GoodsCategory.class.getSimpleName());
-            ResultSet rs = conn.createStatement().executeQuery(selectSql.build());
+            ResultSet rs = conn.createStatement().executeQuery(new SelectSql(GoodsCategory.class).build());
             resp.setData(IgniteUtils.getJavaObjectList(rs, GoodsCategory.class));
         }
         return resp;

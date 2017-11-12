@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "库存 - 查询入库列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.6")
+@MicroApiAnnotation(type = "read", version = "v1.0.7")
 public class Stock_QueryInList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -71,13 +71,13 @@ public class Stock_QueryInList_Api {
 
         @Comment(value = "分页")
         @Required(value = true)
-        private Pager pager;
+        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
-        public Pager getPager() {
+        public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;
         }
 
-        public void setPager(Pager pager) {
+        public void setPager(com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager) {
             this.pager = pager;
         }
     }
