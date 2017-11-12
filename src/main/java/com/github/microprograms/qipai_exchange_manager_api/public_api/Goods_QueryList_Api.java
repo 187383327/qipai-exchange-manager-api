@@ -2,6 +2,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.ComplexCondition;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
@@ -28,10 +29,10 @@ public class Goods_QueryList_Api {
         PagerRequest pagerRequest = new PagerRequest(req.getPageIndex(), req.getPageSize());
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             String finalCondition = buildFinalCondition(req);
-            ResultSet rs = conn.createStatement().executeQuery(new SelectSql(Goods.class).where(finalCondition).pager(pagerRequest).build());
-            resp.setData(IgniteUtils.getJavaObjectList(rs, Goods.class));
-            int totalRecords = conn.createStatement().executeQuery(new SelectCountSql(Goods.class).where(finalCondition).build()).getInt(1);
-            resp.setPager(new PagerResponse(pagerRequest, totalRecords));
+            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(Goods.class).where(finalCondition).pager(pagerRequest).build());
+            resp.setData(IgniteUtils.getJavaObjectList(selectRs, Goods.class));
+            ResultSet selectCountRs = conn.createStatement().executeQuery(new SelectCountSql(Goods.class).where(finalCondition).build());
+            resp.setPager(new PagerResponse(pagerRequest, IgniteUtils.getCount(selectCountRs)));
         }
         return resp;
     }
