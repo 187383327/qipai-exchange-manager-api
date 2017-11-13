@@ -555,19 +555,51 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "Banner - 查询全部",
+			"javaClassName": "Banner_QueryAll_Api",
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Banner列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<Banner>",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "Banner - 更新全部",
+			"javaClassName": "Banner_UpdateAll_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Banner列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<Banner>",
+						"name": "banners",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
-    "deployDefinition": {
-        "localMavenProjectHome": "/Users/xuzewei/microprograms/qipai-exchange-manager-api",
-        "localSshPassword": "xzw",
-        "localSshPort": 22,
-        "localSshUser": "xuzewei",
-        "remoteJavaApplicationHome": "/opt/microprograms/qipai-exchange-manager-api",
-        "remoteSshPassword": "Xuzewei2017",
-        "remoteSshPort": 22,
-        "remoteSshUser": "root"
-    },
+	"deployDefinition": {
+		"localMavenProjectHome": "/Users/xuzewei/microprograms/qipai-exchange-manager-api",
+		"localSshPassword": "xzw",
+		"localSshPort": 22,
+		"localSshUser": "xuzewei",
+		"remoteJavaApplicationHome": "/opt/microprograms/qipai-exchange-manager-api",
+		"remoteSshPassword": "Xuzewei2017",
+		"remoteSshPort": 22,
+		"remoteSshUser": "root"
+	},
 	"description": "小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口。每个接口都已定义快速跳转书签，点击超链接即可跳转。",
 	"errorCodeDefinitions": [
 		{
@@ -1430,15 +1462,15 @@
 			"javaClassName": "WalletBill"
 		}
 	],
-    "serverAddressDefinition": {
-        "host": "47.104.17.187",
-        "port": 8081,
-        "url": "/qipai-exchange-manager-api"
-    },
-    "showdocDefinition": {
-        "apiKey": "e10daa276098ee3a100e5c577800075f2008791469",
-        "apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
-        "url": "https://www.showdoc.cc/server/api/item/updateByApi"
-    },
-	"version": "v1.0.7"
+	"serverAddressDefinition": {
+		"host": "47.104.17.187",
+		"port": 8081,
+		"url": "/qipai-exchange-manager-api"
+	},
+	"showdocDefinition": {
+		"apiKey": "e10daa276098ee3a100e5c577800075f2008791469",
+		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
+		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
+	},
+	"version": "v1.0.9"
 }
