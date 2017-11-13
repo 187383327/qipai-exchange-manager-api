@@ -76,23 +76,13 @@
     <dependencies>
         <dependency>
             <groupId>com.github.microprograms</groupId>
-            <artifactId>ignite-utils</artifactId>
-            <version>1.0.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.ignite</groupId>
-            <artifactId>ignite-core</artifactId>
-            <version>2.3.0</version>
+            <artifactId>qipai-exchange-core</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.microprograms</groupId>
-            <artifactId>micro-relational-data-model-sdk</artifactId>
-            <version>1.0.2.r1</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
+            <artifactId>ignite-utils</artifactId>
+            <version>1.0.8</version>
         </dependency>
         <dependency>
             <groupId>com.github.microprograms</groupId>
