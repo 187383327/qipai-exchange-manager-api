@@ -10,7 +10,6 @@ import com.github.microprograms.micro_api_sdk.utils.ApiEngineGeneratorUtils;
 public class ApiGenerator {
     public static void main(String[] args) throws IOException {
         publicApi();
-        privateApi();
         publicApiForShowdoc();
     }
 
@@ -19,15 +18,6 @@ public class ApiGenerator {
         EngineDefinition engineDefinition = ApiEngineGeneratorUtils.buildEngineDefinition("design/public-api.json");
         ApiEngineGeneratorUtils.deleteModelJavaFiles(srcFolder, engineDefinition);
         ApiEngineGeneratorUtils.createModelJavaFiles(srcFolder, engineDefinition);
-        ApiEngineGeneratorUtils.updateApiJavaFiles(srcFolder, engineDefinition);
-        ApiEngineGeneratorUtils.deleteUnusedApiJavaFiles(srcFolder, engineDefinition);
-        ApiEngineGeneratorUtils.updateErrorCodeJavaFile(srcFolder, engineDefinition);
-        ApiDocumentUtils.writeApiHtmlDocumentFile("doc", engineDefinition);
-    }
-
-    public static void privateApi() throws IOException {
-        String srcFolder = "src/main/java";
-        EngineDefinition engineDefinition = ApiEngineGeneratorUtils.buildEngineDefinition("design/private-api.json");
         ApiEngineGeneratorUtils.updateApiJavaFiles(srcFolder, engineDefinition);
         ApiEngineGeneratorUtils.deleteUnusedApiJavaFiles(srcFolder, engineDefinition);
         ApiEngineGeneratorUtils.updateErrorCodeJavaFile(srcFolder, engineDefinition);
