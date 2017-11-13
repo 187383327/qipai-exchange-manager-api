@@ -21,13 +21,13 @@ public class NewStock {
 
     @Comment(value = "商品编号")
     @Required(value = true)
-    private Integer goodsId;
+    private String goodsId;
 
-    public Integer getGoodsId() {
+    public String getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(Integer goodsId) {
+    public void setGoodsId(String goodsId) {
         this.goodsId = goodsId;
     }
 

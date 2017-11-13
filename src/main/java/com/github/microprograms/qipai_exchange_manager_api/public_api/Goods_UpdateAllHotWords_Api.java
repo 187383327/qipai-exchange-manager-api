@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.util.UUID;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.DeleteSql;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
@@ -15,7 +14,7 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_Que
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品 - 更新全部搜索热点词")
-@MicroApiAnnotation(type = "read", version = "v1.0.10")
+@MicroApiAnnotation(type = "read", version = "v1.0.13")
 public class Goods_UpdateAllHotWords_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -36,7 +35,9 @@ public class Goods_UpdateAllHotWords_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "搜索热点词列表(全部)") @Required(value = true) private java.util.List<String> hotWords;
+        @Comment(value = "搜索热点词列表(全部)")
+        @Required(value = true)
+        private java.util.List<String> hotWords;
 
         public java.util.List<String> getHotWords() {
             return hotWords;

@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "商品订单项 - 查询全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.10")
+@MicroApiAnnotation(type = "read", version = "v1.0.13")
 public class GoodsOrderItem_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -20,13 +20,13 @@ public class GoodsOrderItem_QueryAll_Api {
 
         @Comment(value = "商品订单ID")
         @Required(value = true)
-        private Integer goodsOrderId;
+        private String goodsOrderId;
 
-        public Integer getGoodsOrderId() {
+        public String getGoodsOrderId() {
             return goodsOrderId;
         }
 
-        public void setGoodsOrderId(Integer goodsOrderId) {
+        public void setGoodsOrderId(String goodsOrderId) {
             this.goodsOrderId = goodsOrderId;
         }
     }

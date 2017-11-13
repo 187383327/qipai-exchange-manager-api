@@ -21,13 +21,13 @@ public class WithdrawCash {
 
     @Comment(value = "用户ID")
     @Required(value = true)
-    private Integer userId;
+    private String userId;
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

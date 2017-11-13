@@ -165,13 +165,13 @@ public class User {
 
     @Comment(value = "推荐人ID")
     @Required(value = true)
-    private Integer referenceUserId;
+    private String referenceUserId;
 
-    public Integer getReferenceUserId() {
+    public String getReferenceUserId() {
         return referenceUserId;
     }
 
-    public void setReferenceUserId(Integer referenceUserId) {
+    public void setReferenceUserId(String referenceUserId) {
         this.referenceUserId = referenceUserId;
     }
 }

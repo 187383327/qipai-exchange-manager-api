@@ -21,25 +21,25 @@ public class GoodsOrderItem {
 
     @Comment(value = "订单号")
     @Required(value = true)
-    private Integer orderId;
+    private String orderId;
 
-    public Integer getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Integer orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
     @Comment(value = "商品编号")
     @Required(value = true)
-    private Integer goodsId;
+    private String goodsId;
 
-    public Integer getGoodsId() {
+    public String getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(Integer goodsId) {
+    public void setGoodsId(String goodsId) {
         this.goodsId = goodsId;
     }
 

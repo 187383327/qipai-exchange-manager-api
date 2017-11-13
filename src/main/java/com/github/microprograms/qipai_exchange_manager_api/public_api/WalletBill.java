@@ -21,13 +21,13 @@ public class WalletBill {
 
     @Comment(value = "用户ID")
     @Required(value = true)
-    private Integer userId;
+    private String userId;
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -69,13 +69,13 @@ public class WalletBill {
 
     @Comment(value = "入账 - 贡献用户ID")
     @Required(value = true)
-    private Integer inContributorUserId;
+    private String inContributorUserId;
 
-    public Integer getInContributorUserId() {
+    public String getInContributorUserId() {
         return inContributorUserId;
     }
 
-    public void setInContributorUserId(Integer inContributorUserId) {
+    public void setInContributorUserId(String inContributorUserId) {
         this.inContributorUserId = inContributorUserId;
     }
 

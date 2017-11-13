@@ -21,13 +21,13 @@ public class Goods {
 
     @Comment(value = "商品类别编号")
     @Required(value = true)
-    private Integer categoryId;
+    private String categoryId;
 
-    public Integer getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 

@@ -84,7 +84,7 @@
 					{
 						"comment": "商品类别编号",
 						"example": "example",
-						"javaType": "Integer",
+						"javaType": "String",
 						"name": "categoryId",
 						"required": true
 					},
@@ -355,7 +355,7 @@
 					{
 						"comment": "商品编号",
 						"example": "example",
-						"javaType": "Integer",
+						"javaType": "String",
 						"name": "goodsId",
 						"required": true
 					},
@@ -569,7 +569,7 @@
 					{
 						"comment": "商品订单ID",
 						"example": "example",
-						"javaType": "Integer",
+						"javaType": "String",
 						"name": "goodsOrderId",
 						"required": true
 					}
@@ -699,7 +699,7 @@
 				{
 					"comment": "商品类别编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "categoryId",
 					"primaryKey": 0,
 					"required": true
@@ -871,7 +871,7 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "userId",
 					"primaryKey": 0,
 					"required": true
@@ -933,7 +933,7 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "userId",
 					"primaryKey": 0,
 					"required": true
@@ -1027,7 +1027,7 @@
 				{
 					"comment": "订单号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "orderId",
 					"primaryKey": 0,
 					"required": true
@@ -1035,7 +1035,7 @@
 				{
 					"comment": "商品编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "goodsId",
 					"primaryKey": 0,
 					"required": true
@@ -1105,7 +1105,7 @@
 				{
 					"comment": "商品编号",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "goodsId",
 					"primaryKey": 0,
 					"required": true
@@ -1211,7 +1211,7 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "userId",
 					"primaryKey": 0,
 					"required": true
@@ -1361,7 +1361,7 @@
 				{
 					"comment": "推荐人ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "referenceUserId",
 					"primaryKey": 0,
 					"required": true
@@ -1383,7 +1383,7 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "userId",
 					"primaryKey": 0,
 					"required": true
@@ -1445,7 +1445,7 @@
 				{
 					"comment": "用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "userId",
 					"primaryKey": 0,
 					"required": true
@@ -1477,7 +1477,7 @@
 				{
 					"comment": "入账 - 贡献用户ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "inContributorUserId",
 					"primaryKey": 0,
 					"required": true
@@ -1504,5 +1504,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.10"
+	"version": "v1.0.13"
 }
