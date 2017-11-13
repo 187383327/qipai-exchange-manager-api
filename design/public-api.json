@@ -149,6 +149,38 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品 - 查询全部搜索热点词",
+			"javaClassName": "Goods_QueryAllHotWords_Api",
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "搜索热点词列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<String>",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "商品 - 更新全部搜索热点词",
+			"javaClassName": "Goods_UpdateAllHotWords_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "搜索热点词列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<String>",
+						"name": "hotWords",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "房卡 - 查询列表",
 			"javaClassName": "RoomCard_QueryList_Api",
 			"requestDefinition": {
@@ -1472,5 +1504,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.9"
+	"version": "v1.0.10"
 }
