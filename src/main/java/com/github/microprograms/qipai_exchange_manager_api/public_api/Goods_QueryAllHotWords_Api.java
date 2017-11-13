@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
+import com.github.microprograms.ignite_utils.sql.dml.Sort;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
@@ -22,7 +23,7 @@ public class Goods_QueryAllHotWords_Api {
     public static Response execute(Request request) throws Exception {
         Resp resp = new Resp();
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            ResultSet rs = conn.createStatement().executeQuery(new SelectSql(HotWord.class).build());
+            ResultSet rs = conn.createStatement().executeQuery(new SelectSql(HotWord.class).sorts(Sort.asc("reorder")).build());
             List<String> hotWords = new ArrayList<>();
             for (HotWord x : IgniteUtils.getJavaObjectList(rs, HotWord.class)) {
                 hotWords.add(x.getHotWord());
