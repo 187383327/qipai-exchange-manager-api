@@ -57,16 +57,17 @@ public class SampleData {
     private static void addBanners() throws Exception {
         Banner_UpdateAll_Api.Req req = new Banner_UpdateAll_Api.Req();
         List<Banner> banners = new ArrayList<>();
-        banners.add(buildBanner("http://47.104.17.187/micro-file-server/1b04a7b5-3773-4fba-9fde-90ab4e56353e.jpg"));
-        banners.add(buildBanner("http://47.104.17.187/micro-file-server/b525089d-4429-4fd0-8d94-7e987ff99341.jpg"));
-        banners.add(buildBanner("http://47.104.17.187/micro-file-server/4348aa6c-30b7-4ffd-b023-41963b5e3257.jpg"));
+        banners.add(buildBanner(1, "http://47.104.17.187/micro-file-server/1b04a7b5-3773-4fba-9fde-90ab4e56353e.jpg"));
+        banners.add(buildBanner(2, "http://47.104.17.187/micro-file-server/b525089d-4429-4fd0-8d94-7e987ff99341.jpg"));
+        banners.add(buildBanner(3, "http://47.104.17.187/micro-file-server/4348aa6c-30b7-4ffd-b023-41963b5e3257.jpg"));
         req.setBanners(banners);
         Banner_UpdateAll_Api.execute(req);
     }
 
-    private static Banner buildBanner(String url) {
+    private static Banner buildBanner(int reorder, String url) {
         Banner banner = new Banner();
         banner.setId(UUID.randomUUID().toString());
+        banner.setReorder(reorder);
         banner.setUrl(url);
         return banner;
     }
