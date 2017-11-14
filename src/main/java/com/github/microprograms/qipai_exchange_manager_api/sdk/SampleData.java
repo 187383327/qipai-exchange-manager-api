@@ -29,9 +29,9 @@ public class SampleData {
     private static void addBanners() throws Exception {
         Banner_UpdateAll_Api.Req req = new Banner_UpdateAll_Api.Req();
         List<Banner> banners = new ArrayList<>();
-        banners.add(buildBanner("url1"));
-        banners.add(buildBanner("url2"));
-        banners.add(buildBanner("url3"));
+        banners.add(buildBanner("http://47.104.17.187/micro-file-server/1b04a7b5-3773-4fba-9fde-90ab4e56353e.jpg"));
+        banners.add(buildBanner("http://47.104.17.187/micro-file-server/b525089d-4429-4fd0-8d94-7e987ff99341.jpg"));
+        banners.add(buildBanner("http://47.104.17.187/micro-file-server/4348aa6c-30b7-4ffd-b023-41963b5e3257.jpg"));
         req.setBanners(banners);
         Banner_UpdateAll_Api.execute(req);
     }
