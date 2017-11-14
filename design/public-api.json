@@ -410,6 +410,52 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品类别 - 删除商品类别",
+			"javaClassName": "GoodsCategory_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品类别ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "categoryId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "商品类别 - 更新商品类别",
+			"javaClassName": "GoodsCategory_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品类别ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "categoryId",
+						"required": true
+					},
+					{
+						"comment": "商品类别名称",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "排序",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "reorder",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "房卡订单 - 查询列表",
 			"javaClassName": "RoomCardOrder_QueryList_Api",
 			"requestDefinition": {
@@ -643,6 +689,11 @@
 			"code": 1011,
 			"message": "字符串太长或太短",
 			"name": "too_long_or_too_short"
+		},
+		{
+			"code": 1012,
+			"message": "缺少必填的参数",
+			"name": "missing_required_parameters"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -1504,5 +1555,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.13"
+	"version": "v1.0.14"
 }

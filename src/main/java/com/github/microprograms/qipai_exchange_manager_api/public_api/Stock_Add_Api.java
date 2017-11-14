@@ -13,7 +13,7 @@ import com.github.microprograms.qipai_exchange_core.model.NewStock;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "库存 - 新增入库")
-@MicroApiAnnotation(type = "read", version = "v1.0.13")
+@MicroApiAnnotation(type = "read", version = "v1.0.14")
 public class Stock_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -31,7 +31,9 @@ public class Stock_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品编号") @Required(value = true) private String goodsId;
+        @Comment(value = "商品编号")
+        @Required(value = true)
+        private String goodsId;
 
         public String getGoodsId() {
             return goodsId;
@@ -41,7 +43,9 @@ public class Stock_Add_Api {
             this.goodsId = goodsId;
         }
 
-        @Comment(value = "新增入库数量") @Required(value = false) private Integer amount;
+        @Comment(value = "新增入库数量")
+        @Required(value = false)
+        private Integer amount;
 
         public Integer getAmount() {
             return amount;
