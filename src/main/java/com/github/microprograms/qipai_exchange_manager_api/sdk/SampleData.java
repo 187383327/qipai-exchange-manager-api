@@ -23,6 +23,7 @@ public class SampleData {
         addGoodsForPhone();
         addGoodsForDomesticAppliance();
         addGoodsForFood();
+        addGoodsForDrink();
         addHotWords();
         addBanners();
         addRoomCards();
@@ -418,6 +419,109 @@ public class SampleData {
         req8.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t5851/56/9123571032/303833/d234e010/5982cb1fNc0786acb.jpg")));
         req8.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req8);
+    }
+
+    private static void addGoodsForDrink() throws Exception {
+        String categoryId = queryGoodsCategoryByName("酒水饮料").getId();
+
+        Goods_Add_Api.Req req1 = new Goods_Add_Api.Req();
+        req1.setCategoryId(categoryId);
+        req1.setName("恩济堂 润fei川贻贝秋梨膏清huo成人无添加秋梨膏雪梨膏 润fei350g+ 川贻贝325g+ 清huo");
+        req1.setStock(999);
+        req1.setPrice(65);
+        req1.setVipPrice(55);
+        req1.setGoldVipPrice(45);
+        req1.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t3835/285/2004267255/402246/20af879/58491066N6fcc5f37.jpg")));
+        req1.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req1);
+
+        Goods_Add_Api.Req req2 = new Goods_Add_Api.Req();
+        req2.setCategoryId(categoryId);
+        req2.setName("大湖饮料 100%果汁 紫葡萄汁 600ml×6瓶（玻璃瓶）");
+        req2.setStock(999);
+        req2.setPrice(108);
+        req2.setVipPrice(98);
+        req2.setGoldVipPrice(88);
+        req2.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t6922/328/894894275/167314/b94218f3/597af908Ne08c3e15.jpg")));
+        req2.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req2);
+
+        Goods_Add_Api.Req req3 = new Goods_Add_Api.Req();
+        req3.setCategoryId(categoryId);
+        req3.setName("椰树 牌椰汁椰子汁 植物蛋白饮料 椰奶245ml*24罐装整箱");
+        req3.setStock(999);
+        req3.setPrice(95);
+        req3.setVipPrice(85);
+        req3.setGoldVipPrice(75);
+        req3.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t3256/258/3295862742/219315/f215c798/57ee14d1N27e2a7b6.jpg")));
+        req3.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req3);
+
+        Goods_Add_Api.Req req4 = new Goods_Add_Api.Req();
+        req4.setCategoryId(categoryId);
+        req4.setName("光明 莫斯利安 常温酸奶酸牛奶(原味)200g*12盒钻石装/礼盒装(新老包装随机发货)");
+        req4.setStock(999);
+        req4.setPrice(56);
+        req4.setVipPrice(46);
+        req4.setGoldVipPrice(36);
+        req4.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t3187/140/2572673133/289541/7a295a03/57e345a2Nc9a907f0.jpg")));
+        req4.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req4);
+
+        Goods_Add_Api.Req req5 = new Goods_Add_Api.Req();
+        req5.setCategoryId(categoryId);
+        req5.setName("信远斋 桂花酸梅汤饮料300ml*12瓶 整箱");
+        req5.setStock(999);
+        req5.setPrice(56);
+        req5.setVipPrice(46);
+        req5.setGoldVipPrice(36);
+        req5.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t5470/187/813799820/404565/e00414f1/5907dc85N6743e74e.jpg")));
+        req5.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req5);
+
+        Goods_Add_Api.Req req6 = new Goods_Add_Api.Req();
+        req6.setCategoryId(categoryId);
+        req6.setName("吕梁野山坡 生榨沙棘饮料 沙棘汁饮料350ml×20瓶");
+        req6.setStock(999);
+        req6.setPrice(160);
+        req6.setVipPrice(150);
+        req6.setGoldVipPrice(140);
+        req6.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t11845/126/557645448/140918/f0c6b9fa/59f2f3e4N6cc09bfc.jpg")));
+        req6.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req6);
+
+        Goods_Add_Api.Req req7 = new Goods_Add_Api.Req();
+        req7.setCategoryId(categoryId);
+        req7.setName("天地壹号 苹果醋饮料650ml×12瓶 整箱");
+        req7.setStock(999);
+        req7.setPrice(208);
+        req7.setVipPrice(198);
+        req7.setGoldVipPrice(188);
+        req7.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t5164/48/2455868102/379208/65a667b3/591aab05N66bca230.jpg")));
+        req7.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req7);
+
+        Goods_Add_Api.Req req8 = new Goods_Add_Api.Req();
+        req8.setCategoryId(categoryId);
+        req8.setName("四川仁寿特产 福仁缘 枇杷原浆饮料 果蔬汁 枇杷果汁 245ml*24听 整箱装");
+        req8.setStock(999);
+        req8.setPrice(118);
+        req8.setVipPrice(108);
+        req8.setGoldVipPrice(98);
+        req8.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t3082/319/321405801/346930/8f153a4b/57b13b01Neb5ace64.jpg")));
+        req8.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req8);
+
+        Goods_Add_Api.Req req9 = new Goods_Add_Api.Req();
+        req9.setCategoryId(categoryId);
+        req9.setName("禾韵（Heyun） 经欧盟有机认证蓝莓深加工产品 蓝莓纯汁无添加饮品纯果汁饮料送礼佳品 180ml*10瓶整箱");
+        req9.setStock(999);
+        req9.setPrice(300);
+        req9.setVipPrice(290);
+        req9.setGoldVipPrice(280);
+        req9.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t4942/323/1271110462/293430/b2a27bfa/58eeecbeN7dc57a08.jpg")));
+        req9.setDetail("这里是详情(富文本)");
+        Goods_Add_Api.execute(req9);
     }
 
     private static void addGoodsCategorys() throws Exception {
