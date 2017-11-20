@@ -149,6 +149,94 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品 - 更新",
+			"javaClassName": "Goods_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "goodsId",
+						"required": true
+					},
+					{
+						"comment": "商品类别编号",
+						"example": "example",
+						"javaType": "String",
+						"name": "categoryId",
+						"required": true
+					},
+					{
+						"comment": "商品名",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "商品价格(元宝)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "price",
+						"required": true
+					},
+					{
+						"comment": "会员价格(元宝)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "vipPrice",
+						"required": true
+					},
+					{
+						"comment": "钻石会员(元宝)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "goldVipPrice",
+						"required": true
+					},
+					{
+						"comment": "排序",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "reorder",
+						"required": true
+					},
+					{
+						"comment": "商品主图(JsonArray)",
+						"example": "example",
+						"javaType": "String",
+						"name": "pictures",
+						"required": true
+					},
+					{
+						"comment": "详情(富文本)",
+						"example": "example",
+						"javaType": "String",
+						"name": "detail",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "商品 - 删除",
+			"javaClassName": "Goods_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "goodsId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "商品 - 查询全部搜索热点词",
 			"javaClassName": "Goods_QueryAllHotWords_Api",
 			"responseDefinition": {
@@ -2030,5 +2118,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.16"
+	"version": "v1.0.17"
 }
