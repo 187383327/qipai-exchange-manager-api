@@ -665,6 +665,137 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "部门 - 查询列表",
+			"javaClassName": "Department_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门列表",
+						"example": "example",
+						"javaType": "java.util.List<Department>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门 - 添加",
+			"javaClassName": "Department_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门名称",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "职能描述",
+						"example": "example",
+						"javaType": "String",
+						"name": "desc",
+						"required": true
+					},
+					{
+						"comment": "权限列表(JsonArray)",
+						"example": "example",
+						"javaType": "String",
+						"name": "permissions",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门 - 删除",
+			"javaClassName": "Department_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门 - 更新",
+			"javaClassName": "Department_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentId",
+						"required": true
+					},
+					{
+						"comment": "部门名称",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "职能描述",
+						"example": "example",
+						"javaType": "String",
+						"name": "desc",
+						"required": true
+					},
+					{
+						"comment": "权限列表(JsonArray)",
+						"example": "example",
+						"javaType": "String",
+						"name": "permissions",
+						"required": true
+					},
+					{
+						"comment": "是否启用(0否1是)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "enable",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -1543,6 +1674,184 @@
 				}
 			],
 			"javaClassName": "WalletBill"
+		},
+		{
+			"comment": "部门",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "部门名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "职能描述",
+					"example": "example",
+					"javaType": "String",
+					"name": "desc",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "权限列表(JsonArray)",
+					"example": "example",
+					"javaType": "String",
+					"name": "permissions",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "成员数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "memberCount",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "是否启用(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "enable",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "Department"
+		},
+		{
+			"comment": "部门成员",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "成员姓名",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "所属部门ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "departmentId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "所属部门名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "departmentName",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "联系电话",
+					"example": "example",
+					"javaType": "String",
+					"name": "phone",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "邮箱地址",
+					"example": "example",
+					"javaType": "String",
+					"name": "emailAddress",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "登录名",
+					"example": "example",
+					"javaType": "String",
+					"name": "loginName",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "登录密码",
+					"example": "example",
+					"javaType": "String",
+					"name": "loginPassword",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "是否启用(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "enable",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "DepartmentMember"
+		},
+		{
+			"comment": "权限",
+			"fieldDefinitions": [
+				{
+					"comment": "权限ID(允许的字符有：英文字母、数字、下划线)",
+					"example": "example",
+					"javaType": "String",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "权限描述",
+					"example": "example",
+					"javaType": "String",
+					"name": "desc",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "Permission"
 		}
 	],
 	"serverAddressDefinition": {
@@ -1555,5 +1864,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.14"
+	"version": "v1.0.15"
 }

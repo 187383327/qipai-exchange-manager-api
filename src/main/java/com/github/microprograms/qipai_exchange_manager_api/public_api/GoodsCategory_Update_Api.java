@@ -3,9 +3,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.Pair;
@@ -19,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 更新商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.14")
+@MicroApiAnnotation(type = "read", version = "v1.0.15")
 public class GoodsCategory_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -47,7 +45,9 @@ public class GoodsCategory_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别ID") @Required(value = true) private String categoryId;
+        @Comment(value = "商品类别ID")
+        @Required(value = true)
+        private String categoryId;
 
         public String getCategoryId() {
             return categoryId;
@@ -57,7 +57,9 @@ public class GoodsCategory_Update_Api {
             this.categoryId = categoryId;
         }
 
-        @Comment(value = "商品类别名称") @Required(value = true) private String name;
+        @Comment(value = "商品类别名称")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -67,7 +69,9 @@ public class GoodsCategory_Update_Api {
             this.name = name;
         }
 
-        @Comment(value = "排序") @Required(value = true) private Integer reorder;
+        @Comment(value = "排序")
+        @Required(value = true)
+        private Integer reorder;
 
         public Integer getReorder() {
             return reorder;
