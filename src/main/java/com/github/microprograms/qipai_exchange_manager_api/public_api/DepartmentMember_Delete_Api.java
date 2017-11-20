@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "部门 - 删除")
+@Comment(value = "部门成员 - 删除")
 @MicroApiAnnotation(type = "read", version = "v1.0.16")
-public class Department_Delete_Api {
+public class DepartmentMember_Delete_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -18,16 +18,16 @@ public class Department_Delete_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "部门ID")
+        @Comment(value = "部门成员ID")
         @Required(value = true)
-        private String departmentId;
+        private String departmentMemberId;
 
-        public String getDepartmentId() {
-            return departmentId;
+        public String getDepartmentMemberId() {
+            return departmentMemberId;
         }
 
-        public void setDepartmentId(String departmentId) {
-            this.departmentId = departmentId;
+        public void setDepartmentMemberId(String departmentMemberId) {
+            this.departmentMemberId = departmentMemberId;
         }
     }
 }

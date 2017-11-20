@@ -796,6 +796,172 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "部门成员 - 查询列表",
+			"javaClassName": "DepartmentMember_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门成员列表",
+						"example": "example",
+						"javaType": "java.util.List<DepartmentMember>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门成员 - 添加",
+			"javaClassName": "DepartmentMember_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "成员姓名",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "所属部门ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentId",
+						"required": true
+					},
+					{
+						"comment": "联系电话",
+						"example": "example",
+						"javaType": "String",
+						"name": "phone",
+						"required": true
+					},
+					{
+						"comment": "邮箱地址",
+						"example": "example",
+						"javaType": "String",
+						"name": "emailAddress",
+						"required": true
+					},
+					{
+						"comment": "登录名",
+						"example": "example",
+						"javaType": "String",
+						"name": "loginName",
+						"required": true
+					},
+					{
+						"comment": "登录密码",
+						"example": "example",
+						"javaType": "String",
+						"name": "loginPassword",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门成员 - 删除",
+			"javaClassName": "DepartmentMember_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门成员ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentMemberId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门成员 - 更新",
+			"javaClassName": "DepartmentMember_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "成员姓名",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "所属部门ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentId",
+						"required": true
+					},
+					{
+						"comment": "联系电话",
+						"example": "example",
+						"javaType": "String",
+						"name": "phone",
+						"required": true
+					},
+					{
+						"comment": "邮箱地址",
+						"example": "example",
+						"javaType": "String",
+						"name": "emailAddress",
+						"required": true
+					},
+					{
+						"comment": "登录名",
+						"example": "example",
+						"javaType": "String",
+						"name": "loginName",
+						"required": true
+					},
+					{
+						"comment": "登录密码",
+						"example": "example",
+						"javaType": "String",
+						"name": "loginPassword",
+						"required": true
+					},
+					{
+						"comment": "是否启用(0否1是)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "enable",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -1864,5 +2030,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.15"
+	"version": "v1.0.16"
 }

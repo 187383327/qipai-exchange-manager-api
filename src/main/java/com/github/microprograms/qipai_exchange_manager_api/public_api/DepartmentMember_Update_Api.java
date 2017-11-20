@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "部门 - 更新")
+@Comment(value = "部门成员 - 更新")
 @MicroApiAnnotation(type = "read", version = "v1.0.16")
-public class Department_Update_Api {
+public class DepartmentMember_Update_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -18,19 +18,7 @@ public class Department_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "部门ID")
-        @Required(value = true)
-        private String departmentId;
-
-        public String getDepartmentId() {
-            return departmentId;
-        }
-
-        public void setDepartmentId(String departmentId) {
-            this.departmentId = departmentId;
-        }
-
-        @Comment(value = "部门名称")
+        @Comment(value = "成员姓名")
         @Required(value = true)
         private String name;
 
@@ -42,28 +30,64 @@ public class Department_Update_Api {
             this.name = name;
         }
 
-        @Comment(value = "职能描述")
+        @Comment(value = "所属部门ID")
         @Required(value = true)
-        private String desc;
+        private String departmentId;
 
-        public String getDesc() {
-            return desc;
+        public String getDepartmentId() {
+            return departmentId;
         }
 
-        public void setDesc(String desc) {
-            this.desc = desc;
+        public void setDepartmentId(String departmentId) {
+            this.departmentId = departmentId;
         }
 
-        @Comment(value = "权限列表(JsonArray)")
+        @Comment(value = "联系电话")
         @Required(value = true)
-        private String permissions;
+        private String phone;
 
-        public String getPermissions() {
-            return permissions;
+        public String getPhone() {
+            return phone;
         }
 
-        public void setPermissions(String permissions) {
-            this.permissions = permissions;
+        public void setPhone(String phone) {
+            this.phone = phone;
+        }
+
+        @Comment(value = "邮箱地址")
+        @Required(value = true)
+        private String emailAddress;
+
+        public String getEmailAddress() {
+            return emailAddress;
+        }
+
+        public void setEmailAddress(String emailAddress) {
+            this.emailAddress = emailAddress;
+        }
+
+        @Comment(value = "登录名")
+        @Required(value = true)
+        private String loginName;
+
+        public String getLoginName() {
+            return loginName;
+        }
+
+        public void setLoginName(String loginName) {
+            this.loginName = loginName;
+        }
+
+        @Comment(value = "登录密码")
+        @Required(value = true)
+        private String loginPassword;
+
+        public String getLoginPassword() {
+            return loginPassword;
+        }
+
+        public void setLoginPassword(String loginPassword) {
+            this.loginPassword = loginPassword;
         }
 
         @Comment(value = "是否启用(0否1是)")
