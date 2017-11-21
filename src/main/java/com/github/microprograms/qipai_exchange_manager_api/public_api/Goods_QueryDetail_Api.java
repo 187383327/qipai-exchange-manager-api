@@ -2,7 +2,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
@@ -26,7 +28,7 @@ public class Goods_QueryDetail_Api {
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             String finalCondition = buildFinalCondition(req);
-            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(Goods.class).where(finalCondition).build());
+            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(Goods.class, "g").where(finalCondition).leftJoin(GoodsCategory.class, "c", Condition.build("g.categoryId=", "c.id")).build());
             resp.setData(IgniteUtils.getJavaObject(selectRs, Goods.class));
         }
         return resp;
@@ -38,9 +40,7 @@ public class Goods_QueryDetail_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品ID")
-        @Required(value = true)
-        private String goodsId;
+        @Comment(value = "商品ID") @Required(value = true) private String goodsId;
 
         public String getGoodsId() {
             return goodsId;
@@ -53,9 +53,7 @@ public class Goods_QueryDetail_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "商品详情")
-        @Required(value = true)
-        private Goods data;
+        @Comment(value = "商品详情") @Required(value = true) private Goods data;
 
         public Goods getData() {
             return data;
