@@ -1369,6 +1369,14 @@
 					"name": "enable",
 					"primaryKey": 0,
 					"required": false
+				},
+				{
+					"comment": "是否删除(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "isDelete",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
 			"javaClassName": "RoomCard"
@@ -2206,5 +2214,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.20"
+	"version": "v1.0.21"
 }

@@ -3,9 +3,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.Pair;
@@ -19,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.20")
+@MicroApiAnnotation(type = "read", version = "v1.0.21")
 public class Goods_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -65,7 +63,9 @@ public class Goods_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品ID") @Required(value = true) private String goodsId;
+        @Comment(value = "商品ID")
+        @Required(value = true)
+        private String goodsId;
 
         public String getGoodsId() {
             return goodsId;
@@ -75,7 +75,9 @@ public class Goods_Update_Api {
             this.goodsId = goodsId;
         }
 
-        @Comment(value = "商品类别编号") @Required(value = true) private String categoryId;
+        @Comment(value = "商品类别编号")
+        @Required(value = true)
+        private String categoryId;
 
         public String getCategoryId() {
             return categoryId;
@@ -85,7 +87,9 @@ public class Goods_Update_Api {
             this.categoryId = categoryId;
         }
 
-        @Comment(value = "商品名") @Required(value = true) private String name;
+        @Comment(value = "商品名")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -95,7 +99,9 @@ public class Goods_Update_Api {
             this.name = name;
         }
 
-        @Comment(value = "商品价格(元宝)") @Required(value = true) private Integer price;
+        @Comment(value = "商品价格(元宝)")
+        @Required(value = true)
+        private Integer price;
 
         public Integer getPrice() {
             return price;
@@ -105,7 +111,9 @@ public class Goods_Update_Api {
             this.price = price;
         }
 
-        @Comment(value = "会员价格(元宝)") @Required(value = true) private Integer vipPrice;
+        @Comment(value = "会员价格(元宝)")
+        @Required(value = true)
+        private Integer vipPrice;
 
         public Integer getVipPrice() {
             return vipPrice;
@@ -115,7 +123,9 @@ public class Goods_Update_Api {
             this.vipPrice = vipPrice;
         }
 
-        @Comment(value = "钻石会员(元宝)") @Required(value = true) private Integer goldVipPrice;
+        @Comment(value = "钻石会员(元宝)")
+        @Required(value = true)
+        private Integer goldVipPrice;
 
         public Integer getGoldVipPrice() {
             return goldVipPrice;
@@ -125,7 +135,9 @@ public class Goods_Update_Api {
             this.goldVipPrice = goldVipPrice;
         }
 
-        @Comment(value = "排序") @Required(value = true) private Integer reorder;
+        @Comment(value = "排序")
+        @Required(value = true)
+        private Integer reorder;
 
         public Integer getReorder() {
             return reorder;
@@ -135,7 +147,9 @@ public class Goods_Update_Api {
             this.reorder = reorder;
         }
 
-        @Comment(value = "商品主图(JsonArray)") @Required(value = true) private String pictures;
+        @Comment(value = "商品主图(JsonArray)")
+        @Required(value = true)
+        private String pictures;
 
         public String getPictures() {
             return pictures;
@@ -145,7 +159,9 @@ public class Goods_Update_Api {
             this.pictures = pictures;
         }
 
-        @Comment(value = "详情(富文本)") @Required(value = true) private String detail;
+        @Comment(value = "详情(富文本)")
+        @Required(value = true)
+        private String detail;
 
         public String getDetail() {
             return detail;
