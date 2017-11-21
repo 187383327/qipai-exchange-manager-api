@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "部门成员 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.18")
+@MicroApiAnnotation(type = "read", version = "v1.0.19")
 public class DepartmentMember_Update_Api {
 
     public static Response execute(Request request) throws Exception {

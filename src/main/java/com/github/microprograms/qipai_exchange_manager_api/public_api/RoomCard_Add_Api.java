@@ -13,7 +13,7 @@ import com.github.microprograms.qipai_exchange_core.model.RoomCard;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 添加新房卡")
-@MicroApiAnnotation(type = "read", version = "v1.0.18")
+@MicroApiAnnotation(type = "read", version = "v1.0.19")
 public class RoomCard_Add_Api {
 
     public static Response execute(Request request) throws Exception {
