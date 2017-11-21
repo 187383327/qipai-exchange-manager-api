@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "商品 - 删除")
+@Comment(value = "房卡 - 删除")
 @MicroApiAnnotation(type = "read", version = "v1.0.18")
-public class Goods_Delete_Api {
+public class RoomCard_Delete_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -18,16 +18,16 @@ public class Goods_Delete_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品ID")
+        @Comment(value = "房卡ID")
         @Required(value = true)
-        private String goodsId;
+        private String roomCardId;
 
-        public String getGoodsId() {
-            return goodsId;
+        public String getRoomCardId() {
+            return roomCardId;
         }
 
-        public void setGoodsId(String goodsId) {
-            this.goodsId = goodsId;
+        public void setRoomCardId(String roomCardId) {
+            this.roomCardId = roomCardId;
         }
     }
 }

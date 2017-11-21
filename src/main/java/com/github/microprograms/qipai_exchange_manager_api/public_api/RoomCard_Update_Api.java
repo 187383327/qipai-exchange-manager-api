@@ -6,9 +6,9 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "部门 - 添加")
+@Comment(value = "房卡 - 更新")
 @MicroApiAnnotation(type = "read", version = "v1.0.18")
-public class Department_Add_Api {
+public class RoomCard_Update_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
@@ -18,7 +18,19 @@ public class Department_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "部门名称")
+        @Comment(value = "房卡ID")
+        @Required(value = true)
+        private String roomCardId;
+
+        public String getRoomCardId() {
+            return roomCardId;
+        }
+
+        public void setRoomCardId(String roomCardId) {
+            this.roomCardId = roomCardId;
+        }
+
+        @Comment(value = "房卡标题")
         @Required(value = true)
         private String name;
 
@@ -30,28 +42,28 @@ public class Department_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "职能描述")
+        @Comment(value = "价格(元)")
         @Required(value = true)
-        private String desc;
+        private Integer price;
 
-        public String getDesc() {
-            return desc;
+        public Integer getPrice() {
+            return price;
         }
 
-        public void setDesc(String desc) {
-            this.desc = desc;
+        public void setPrice(Integer price) {
+            this.price = price;
         }
 
-        @Comment(value = "权限列表(JsonArray)")
+        @Comment(value = "金币")
         @Required(value = true)
-        private String permissions;
+        private Integer goldCoin;
 
-        public String getPermissions() {
-            return permissions;
+        public Integer getGoldCoin() {
+            return goldCoin;
         }
 
-        public void setPermissions(String permissions) {
-            this.permissions = permissions;
+        public void setGoldCoin(Integer goldCoin) {
+            this.goldCoin = goldCoin;
         }
     }
 }

@@ -340,6 +340,59 @@
 			"type": "read"
 		},
 		{
+			"comment": "房卡 - 删除",
+			"javaClassName": "RoomCard_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "房卡ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "roomCardId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "房卡 - 更新",
+			"javaClassName": "RoomCard_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "房卡ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "roomCardId",
+						"required": true
+					},
+					{
+						"comment": "房卡标题",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "价格(元)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "price",
+						"required": true
+					},
+					{
+						"comment": "金币",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "goldCoin",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "库存 - 查询出库列表",
 			"javaClassName": "Stock_QueryOutList_Api",
 			"requestDefinition": {
@@ -2118,5 +2171,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.17"
+	"version": "v1.0.18"
 }
