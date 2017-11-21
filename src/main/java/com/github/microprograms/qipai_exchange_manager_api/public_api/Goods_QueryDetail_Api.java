@@ -28,14 +28,14 @@ public class Goods_QueryDetail_Api {
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             String finalCondition = buildFinalCondition(req);
-            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(Goods.class, "g").where(finalCondition).leftJoin(GoodsCategory.class, "c", Condition.build("g.categoryId=", "c.id")).build());
+            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(Goods.class, "g").fieldNames("g.*", "c.name as categoryName").where(finalCondition).leftJoin(GoodsCategory.class, "c", "g.categoryId=c.id").build());
             resp.setData(IgniteUtils.getJavaObject(selectRs, Goods.class));
         }
         return resp;
     }
 
     private static String buildFinalCondition(Req req) {
-        return Condition.build("id=", req.getGoodsId()).toString();
+        return Condition.build("g.id=", req.getGoodsId()).toString();
     }
 
     public static class Req extends Request {
