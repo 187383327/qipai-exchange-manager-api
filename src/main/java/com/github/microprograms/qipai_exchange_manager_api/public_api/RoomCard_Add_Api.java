@@ -13,7 +13,7 @@ import com.github.microprograms.qipai_exchange_core.model.RoomCard;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 添加新房卡")
-@MicroApiAnnotation(type = "read", version = "v1.0.21")
+@MicroApiAnnotation(type = "read", version = "v1.0.22")
 public class RoomCard_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -35,7 +35,9 @@ public class RoomCard_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "房卡标题") @Required(value = true) private String name;
+        @Comment(value = "房卡标题")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -45,7 +47,9 @@ public class RoomCard_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "价格(元)") @Required(value = true) private Integer price;
+        @Comment(value = "价格(元)")
+        @Required(value = true)
+        private Integer price;
 
         public Integer getPrice() {
             return price;
@@ -55,7 +59,9 @@ public class RoomCard_Add_Api {
             this.price = price;
         }
 
-        @Comment(value = "金币") @Required(value = true) private Integer goldCoin;
+        @Comment(value = "金币")
+        @Required(value = true)
+        private Integer goldCoin;
 
         public Integer getGoldCoin() {
             return goldCoin;

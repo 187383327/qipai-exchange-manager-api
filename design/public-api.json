@@ -555,6 +555,33 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品类别 - 查询详情",
+			"javaClassName": "GoodsCategory_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品类别ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "categoryId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品类别详情",
+						"example": "example",
+						"javaType": "GoodsCategory",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "商品类别 - 新增商品类别",
 			"javaClassName": "GoodsCategory_Add_Api",
 			"requestDefinition": {
@@ -2214,5 +2241,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.21"
+	"version": "v1.0.22"
 }

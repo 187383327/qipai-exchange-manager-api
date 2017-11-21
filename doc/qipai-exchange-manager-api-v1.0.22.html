@@ -1,0 +1,2820 @@
+
+<!DOCTYPE html/>
+<html lang="zh-CN">
+</html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <title>qipai-exchange-manager-api v1.0.22</title>
+    <style type="text/css">
+    .tail {
+          font-size: 14px;
+          text-align: center;
+    }
+    a:visited {
+          color: #333;
+    }
+    .api-name-bookmark {
+          color: #333;
+    }
+    .api-name {
+          color: #515151;
+    }
+    .api-field-name {
+          color: #00f;
+    }
+    .api-field-type {
+          color: green;
+    }
+    .api-field-required {
+          color: #853f26;
+    }
+    .api-field-comment {
+          color: gray;
+    }
+    .request-and-response-title {
+          color: #13C20F;
+    }
+    .alert {
+          padding: 15px;
+          margin-bottom: 20px;
+          border: 1px solid transparent;
+          border-radius: 4px;
+    }
+    .alert h4,p {
+          margin-top: 0;
+    }
+    .alert-success {
+          background-color: #dff0d8;
+          border-color: #d6e9c6;
+          color: #468847;
+    }
+    .alert-info {
+          background-color: #d9edf7;
+          border-color: #bce8f1;
+          color: #3a87ad;
+    }
+    .alert-warning {
+          background-color: #fcf8e3;
+          border-color: #fbeed5;
+          color: #c09853;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <h4>qipai-exchange-manager-api v1.0.22</h4>
+    </div>
+    <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口。每个接口都已定义快速跳转书签，点击超链接即可跳转。</h5>
+    <div class="alert alert-warning">
+        <p>共32个接口</p>
+        <ul>
+            <li class="api-name-bookmark">
+                <a href="#Goods_QueryList_Api">商品 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Goods_QueryDetail_Api">商品 - 查询详情</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Goods_Add_Api">商品 - 添加新商品</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Goods_Update_Api">商品 - 更新</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Goods_Delete_Api">商品 - 删除</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Goods_QueryAllHotWords_Api">商品 - 查询全部搜索热点词</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Goods_UpdateAllHotWords_Api">商品 - 更新全部搜索热点词</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#RoomCard_QueryList_Api">房卡 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#RoomCard_Add_Api">房卡 - 添加新房卡</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#RoomCard_Delete_Api">房卡 - 删除</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#RoomCard_Update_Api">房卡 - 更新</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Stock_QueryOutList_Api">库存 - 查询出库列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Stock_QueryInList_Api">库存 - 查询入库列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Stock_Add_Api">库存 - 新增入库</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsCategory_QueryAll_Api">商品类别 - 查询全部</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsCategory_QueryDetail_Api">商品类别 - 查询详情</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsCategory_Add_Api">商品类别 - 新增商品类别</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsCategory_Delete_Api">商品类别 - 删除商品类别</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsCategory_Update_Api">商品类别 - 更新商品类别</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#RoomCardOrder_QueryList_Api">房卡订单 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsOrder_QueryList_Api">商品订单 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#GoodsOrderItem_QueryAll_Api">商品订单项 - 查询全部</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Banner_QueryAll_Api">Banner - 查询全部</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Banner_UpdateAll_Api">Banner - 更新全部</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Department_QueryList_Api">部门 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Department_Add_Api">部门 - 添加</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Department_Delete_Api">部门 - 删除</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#Department_Update_Api">部门 - 更新</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#DepartmentMember_QueryList_Api">部门成员 - 查询列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#DepartmentMember_Add_Api">部门成员 - 添加</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#DepartmentMember_Delete_Api">部门成员 - 删除</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#DepartmentMember_Update_Api">部门成员 - 更新</a>
+            </li>
+        </ul>
+    </div>
+    <div class="alert alert-success">
+        <dt class="request-and-response-title">公共请求地址</dt>
+        <dd>
+            <span class="api-field-name">http://47.104.17.187:8081/qipai-exchange-manager-api</span>
+        </dd>
+        <dt class="request-and-response-title">公共错误码</dt>
+        <dd>
+            <span class="api-field-type">0</span>
+            <span class="api-field-comment">成功</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">1</span>
+            <span class="api-field-comment">请求数据无法解析</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">2</span>
+            <span class="api-field-comment">API未找到</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">3</span>
+            <span class="api-field-comment">API执行异常</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">4</span>
+            <span class="api-field-comment">未知异常</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">1010</span>
+            <span class="api-field-comment">资源不存在或已被删除</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">1011</span>
+            <span class="api-field-comment">字符串太长或太短</span>
+        </dd>
+        <dd>
+            <span class="api-field-type">1012</span>
+            <span class="api-field-comment">缺少必填的参数</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_QueryList_Api">
+        </a>
+        <h4 class="api-name">#1 商品 - 查询列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_QueryList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchKeyword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 关键字</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchBeginTimestamp</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 开始时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchEndTimestamp</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 结束时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchMinStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 最小库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchMaxStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 最大库存</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_QueryList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;,&quot;searchKeyword&quot;:&quot;example&quot;,&quot;searchBeginTimestamp&quot;:&quot;example&quot;,&quot;searchEndTimestamp&quot;:&quot;example&quot;,&quot;searchMinStock&quot;:&quot;example&quot;,&quot;searchMaxStock&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#Goods">Goods</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_QueryDetail_Api">
+        </a>
+        <h4 class="api-name">#2 商品 - 查询详情</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_QueryDetail_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_QueryDetail_Api&quot;,&quot;goodsId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <a href="#Goods">Goods</a>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品详情</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_Add_Api">
+        </a>
+        <h4 class="api-name">#3 商品 - 添加新商品</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_Add_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">vipPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">会员价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldVipPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">钻石会员(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">stock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pictures</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品主图(JsonArray)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">detail</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">详情(富文本)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_Add_Api&quot;,&quot;categoryId&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;vipPrice&quot;:&quot;example&quot;,&quot;goldVipPrice&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;,&quot;stock&quot;:&quot;example&quot;,&quot;pictures&quot;:&quot;example&quot;,&quot;detail&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_Update_Api">
+        </a>
+        <h4 class="api-name">#4 商品 - 更新</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_Update_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">vipPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">会员价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldVipPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">钻石会员(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pictures</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品主图(JsonArray)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">detail</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">详情(富文本)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_Update_Api&quot;,&quot;goodsId&quot;:&quot;example&quot;,&quot;categoryId&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;vipPrice&quot;:&quot;example&quot;,&quot;goldVipPrice&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;,&quot;pictures&quot;:&quot;example&quot;,&quot;detail&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_Delete_Api">
+        </a>
+        <h4 class="api-name">#5 商品 - 删除</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_Delete_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_Delete_Api&quot;,&quot;goodsId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_QueryAllHotWords_Api">
+        </a>
+        <h4 class="api-name">#6 商品 - 查询全部搜索热点词</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_QueryAllHotWords_Api</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_QueryAllHotWords_Api&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">java.util.List&lt;String&gt;</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">搜索热点词列表(全部)</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Goods_UpdateAllHotWords_Api">
+        </a>
+        <h4 class="api-name">#7 商品 - 更新全部搜索热点词</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Goods_UpdateAllHotWords_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">hotWords</span>
+            <span class="api-field-type">java.util.List&lt;String&gt;</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">搜索热点词列表(全部)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Goods_UpdateAllHotWords_Api&quot;,&quot;hotWords&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="RoomCard_QueryList_Api">
+        </a>
+        <h4 class="api-name">#8 房卡 - 查询列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为RoomCard_QueryList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;RoomCard_QueryList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#RoomCard">RoomCard</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="RoomCard_Add_Api">
+        </a>
+        <h4 class="api-name">#9 房卡 - 添加新房卡</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为RoomCard_Add_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡标题</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">价格(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldCoin</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">金币</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;RoomCard_Add_Api&quot;,&quot;name&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;goldCoin&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="RoomCard_Delete_Api">
+        </a>
+        <h4 class="api-name">#10 房卡 - 删除</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为RoomCard_Delete_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">roomCardId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;RoomCard_Delete_Api&quot;,&quot;roomCardId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="RoomCard_Update_Api">
+        </a>
+        <h4 class="api-name">#11 房卡 - 更新</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为RoomCard_Update_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">roomCardId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡标题</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">价格(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldCoin</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">金币</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;RoomCard_Update_Api&quot;,&quot;roomCardId&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;price&quot;:&quot;example&quot;,&quot;goldCoin&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Stock_QueryOutList_Api">
+        </a>
+        <h4 class="api-name">#12 库存 - 查询出库列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Stock_QueryOutList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchKeyword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 关键字</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Stock_QueryOutList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;,&quot;searchKeyword&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#GoodsOrderItem">GoodsOrderItem</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">出库列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Stock_QueryInList_Api">
+        </a>
+        <h4 class="api-name">#13 库存 - 查询入库列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Stock_QueryInList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchKeyword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 关键字</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Stock_QueryInList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;,&quot;searchKeyword&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#NewStock">NewStock</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">入库列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Stock_Add_Api">
+        </a>
+        <h4 class="api-name">#14 库存 - 新增入库</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Stock_Add_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">amount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">新增入库数量</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Stock_Add_Api&quot;,&quot;goodsId&quot;:&quot;example&quot;,&quot;amount&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsCategory_QueryAll_Api">
+        </a>
+        <h4 class="api-name">#15 商品类别 - 查询全部</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsCategory_QueryAll_Api</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsCategory_QueryAll_Api&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#GoodsCategory">GoodsCategory</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别列表(全部)</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsCategory_QueryDetail_Api">
+        </a>
+        <h4 class="api-name">#16 商品类别 - 查询详情</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsCategory_QueryDetail_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsCategory_QueryDetail_Api&quot;,&quot;categoryId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <a href="#GoodsCategory">GoodsCategory</a>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别详情</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsCategory_Add_Api">
+        </a>
+        <h4 class="api-name">#17 商品类别 - 新增商品类别</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsCategory_Add_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsCategory_Add_Api&quot;,&quot;name&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsCategory_Delete_Api">
+        </a>
+        <h4 class="api-name">#18 商品类别 - 删除商品类别</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsCategory_Delete_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsCategory_Delete_Api&quot;,&quot;categoryId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsCategory_Update_Api">
+        </a>
+        <h4 class="api-name">#19 商品类别 - 更新商品类别</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsCategory_Update_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsCategory_Update_Api&quot;,&quot;categoryId&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;reorder&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="RoomCardOrder_QueryList_Api">
+        </a>
+        <h4 class="api-name">#20 房卡订单 - 查询列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为RoomCardOrder_QueryList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchKeyword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 关键字</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchTransportReceiver</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 收货人</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchBeginTimestamp</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 开始时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchEndTimestamp</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 结束时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchStatus</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 订单状态</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;RoomCardOrder_QueryList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;,&quot;searchKeyword&quot;:&quot;example&quot;,&quot;searchTransportReceiver&quot;:&quot;example&quot;,&quot;searchBeginTimestamp&quot;:&quot;example&quot;,&quot;searchEndTimestamp&quot;:&quot;example&quot;,&quot;searchStatus&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#RoomCardOrder">RoomCardOrder</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡订单列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsOrder_QueryList_Api">
+        </a>
+        <h4 class="api-name">#21 商品订单 - 查询列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsOrder_QueryList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchKeyword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 关键字</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchBeginTimestamp</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 开始时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchEndTimestamp</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 结束时间戳</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchMinStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 最小库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">searchMaxStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">搜索 - 最大库存</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsOrder_QueryList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;,&quot;searchKeyword&quot;:&quot;example&quot;,&quot;searchBeginTimestamp&quot;:&quot;example&quot;,&quot;searchEndTimestamp&quot;:&quot;example&quot;,&quot;searchMinStock&quot;:&quot;example&quot;,&quot;searchMaxStock&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#GoodsOrder">GoodsOrder</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品订单列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="GoodsOrderItem_QueryAll_Api">
+        </a>
+        <h4 class="api-name">#22 商品订单项 - 查询全部</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为GoodsOrderItem_QueryAll_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsOrderId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品订单ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;GoodsOrderItem_QueryAll_Api&quot;,&quot;goodsOrderId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#GoodsOrderItem">GoodsOrderItem</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品订单项列表(全部)</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Banner_QueryAll_Api">
+        </a>
+        <h4 class="api-name">#23 Banner - 查询全部</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Banner_QueryAll_Api</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Banner_QueryAll_Api&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#Banner">Banner</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">Banner列表(全部)</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Banner_UpdateAll_Api">
+        </a>
+        <h4 class="api-name">#24 Banner - 更新全部</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Banner_UpdateAll_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">banners</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#Banner">Banner</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">Banner列表(全部)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Banner_UpdateAll_Api&quot;,&quot;banners&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Department_QueryList_Api">
+        </a>
+        <h4 class="api-name">#25 部门 - 查询列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Department_QueryList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Department_QueryList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#Department">Department</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Department_Add_Api">
+        </a>
+        <h4 class="api-name">#26 部门 - 添加</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Department_Add_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">desc</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">职能描述</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">permissions</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">权限列表(JsonArray)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Department_Add_Api&quot;,&quot;name&quot;:&quot;example&quot;,&quot;desc&quot;:&quot;example&quot;,&quot;permissions&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Department_Delete_Api">
+        </a>
+        <h4 class="api-name">#27 部门 - 删除</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Department_Delete_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Department_Delete_Api&quot;,&quot;departmentId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="Department_Update_Api">
+        </a>
+        <h4 class="api-name">#28 部门 - 更新</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为Department_Update_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">desc</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">职能描述</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">permissions</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">权限列表(JsonArray)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">enable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否启用(0否1是)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;Department_Update_Api&quot;,&quot;departmentId&quot;:&quot;example&quot;,&quot;name&quot;:&quot;example&quot;,&quot;desc&quot;:&quot;example&quot;,&quot;permissions&quot;:&quot;example&quot;,&quot;enable&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="DepartmentMember_QueryList_Api">
+        </a>
+        <h4 class="api-name">#29 部门成员 - 查询列表</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为DepartmentMember_QueryList_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageIndex</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页码(从0开始)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pageSize</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">页大小</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;DepartmentMember_QueryList_Api&quot;,&quot;pageIndex&quot;:&quot;example&quot;,&quot;pageSize&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <span>List&lt;</span>
+                <a href="#DepartmentMember">DepartmentMember</a>
+                <span>&gt;</span>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门成员列表</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pager</span>
+            <span class="api-field-type">com.github.microprograms.ignite_utils.sql.dml.PagerResponse</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">分页</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="DepartmentMember_Add_Api">
+        </a>
+        <h4 class="api-name">#30 部门成员 - 添加</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为DepartmentMember_Add_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">成员姓名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">所属部门ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">phone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">联系电话</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">emailAddress</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">邮箱地址</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">loginName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">登录名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">loginPassword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">登录密码</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;DepartmentMember_Add_Api&quot;,&quot;name&quot;:&quot;example&quot;,&quot;departmentId&quot;:&quot;example&quot;,&quot;phone&quot;:&quot;example&quot;,&quot;emailAddress&quot;:&quot;example&quot;,&quot;loginName&quot;:&quot;example&quot;,&quot;loginPassword&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="DepartmentMember_Delete_Api">
+        </a>
+        <h4 class="api-name">#31 部门成员 - 删除</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为DepartmentMember_Delete_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentMemberId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门成员ID</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;DepartmentMember_Delete_Api&quot;,&quot;departmentMemberId&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="DepartmentMember_Update_Api">
+        </a>
+        <h4 class="api-name">#32 部门成员 - 更新</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为DepartmentMember_Update_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">成员姓名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">所属部门ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">phone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">联系电话</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">emailAddress</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">邮箱地址</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">loginName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">登录名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">loginPassword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">登录密码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">enable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否启用(0否1是)</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;DepartmentMember_Update_Api&quot;,&quot;name&quot;:&quot;example&quot;,&quot;departmentId&quot;:&quot;example&quot;,&quot;phone&quot;:&quot;example&quot;,&quot;emailAddress&quot;:&quot;example&quot;,&quot;loginName&quot;:&quot;example&quot;,&quot;loginPassword&quot;:&quot;example&quot;,&quot;enable&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="GoodsCategory">
+        </a>
+        <h4 class="api-name">GoodsCategory 商品类别</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">添加时间</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="Goods">
+        </a>
+        <h4 class="api-name">Goods 商品</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">categoryName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品类别名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">vipPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">会员价格(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldVipPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">钻石会员(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">stock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">exchangeAmount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">兑换量</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">添加时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">pictures</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品主图(JsonArray)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">detail</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">详情(富文本)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">isDelete</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否删除(0否1是)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="RoomCard">
+        </a>
+        <h4 class="api-name">RoomCard 房卡</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡标题</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">价格(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldCoin</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">金币</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">salesVolume</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">销售数量</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">enable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">是否启用(0否1是)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">isDelete</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否删除(0否1是)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="RoomCardOrder">
+        </a>
+        <h4 class="api-name">RoomCardOrder 房卡订单</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">订单号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">提交时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">userId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">roomCardOrderName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">房卡标题</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">quantity</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">购买数量</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">orderAmount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">订单金额(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">status</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">订单状态(0待付款,1待收货,2已完成,3已取消)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="GoodsOrder">
+        </a>
+        <h4 class="api-name">GoodsOrder 商品订单</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">订单号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">提交时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">userId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportReceiver</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 收货人</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportPhone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 收货人手机号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportAddr</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 收货地址</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportCompany</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 物流公司</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportNumber</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 物流单号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">quantity</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">商品数量</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">orderAmount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">订单金额(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">status</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">订单状态(0待付款,1待收货,2已完成,3已取消)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">payChannel</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">支付方式(1微信)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="GoodsOrderItem">
+        </a>
+        <h4 class="api-name">GoodsOrderItem 商品订单项</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">orderId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">订单号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">price</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">单价(元宝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">validStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">可购库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">quantity</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">购买数量</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">remainingStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">剩余库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">totalPrice</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">总价(元宝)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="NewStock">
+        </a>
+        <h4 class="api-name">NewStock 新增入库</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品编号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goodsName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">商品名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">newStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">新增库存</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">remainingStock</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">剩余库存</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="Banner">
+        </a>
+        <h4 class="api-name">Banner 轮播图</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">位置</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">url</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">链接</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="HotWord">
+        </a>
+        <h4 class="api-name">HotWord 热点词</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">reorder</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">排序</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">hotWord</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">热点词</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="WithdrawCash">
+        </a>
+        <h4 class="api-name">WithdrawCash 提现</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">userId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">amount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">提现金额(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">申请时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">status</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">状态(0未审核1已同意2已拒绝)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">rejectReason</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">拒绝原因</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="User">
+        </a>
+        <h4 class="api-name">User 用户</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">nickname</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户昵称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">phone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">手机号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">level</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">会员等级</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">goldIngotAmount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">元宝数</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">walletAmount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">钱包 - 余额(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">walletRealname</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">钱包 - 提现账号姓名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">walletBankCardNumber</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">钱包 - 银行卡号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">consumptionAmount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">消费金额(元)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">注册时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">enable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否启用(0否1是)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportReceiver</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 收货人(默认)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">transportAddr</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">物流 - 收货地址(默认)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">referenceUserId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">推荐人ID</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="UserAddr">
+        </a>
+        <h4 class="api-name">UserAddr 用户收货地址</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">userId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">phone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">手机号</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">添加时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">favorite</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否为默认收货地址(0否1是)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">receiver</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">收货人</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">addr</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">收货地址</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="WalletBill">
+        </a>
+        <h4 class="api-name">WalletBill 钱包账单</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">userId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">type</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">类型(1入账,2提现)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">amount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">金额</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">inContributorUserId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">入账 - 贡献用户ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">inContributorUserLevel</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">入账 - 贡献用户等级(1一级,2二级)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="Department">
+        </a>
+        <h4 class="api-name">Department 部门</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">部门名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">desc</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">职能描述</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">permissions</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">权限列表(JsonArray)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">添加时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">memberCount</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">成员数量</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">enable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否启用(0否1是)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="DepartmentMember">
+        </a>
+        <h4 class="api-name">DepartmentMember 部门成员</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">name</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">成员姓名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">所属部门ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">departmentName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">所属部门名称</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">phone</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">联系电话</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">emailAddress</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">邮箱地址</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">loginName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">登录名</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">loginPassword</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">登录密码</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">添加时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">enable</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">是否启用(0否1是)</span>
+        </dd>
+    </div>
+    <div class="alert alert-success">
+        <a name="Permission">
+        </a>
+        <h4 class="api-name">Permission 权限</h4>
+        <dd>
+            <span class="api-field-name">id</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">权限ID(允许的字符有：英文字母、数字、下划线)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">desc</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">权限描述</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">dtCreate</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">添加时间</span>
+        </dd>
+    </div>
+    <div class="tail">
+        <p>
+            <span>GenerateBy</span>
+            <a href="https://github.com/microprograms/micro-api-sdk">MicroApiSdk</a>
+            <span>2017.11.21 10:20:47.102</span>
+        </p>
+    </div>
+</body>
