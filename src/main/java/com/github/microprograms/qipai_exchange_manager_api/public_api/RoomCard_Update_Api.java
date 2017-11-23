@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
-import com.github.microprograms.ignite_utils.sql.dml.Pair;
+import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
@@ -26,17 +26,17 @@ public class RoomCard_Update_Api {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            List<Pair> pairs = new ArrayList<>();
+            List<FieldToUpdate> fields = new ArrayList<>();
             if (StringUtils.isNoneBlank(req.getName())) {
-                pairs.add(new Pair("name=", req.getName()));
+                fields.add(new FieldToUpdate("name", req.getName()));
             }
             if (req.getPrice() != null) {
-                pairs.add(new Pair("price=", req.getPrice()));
+                fields.add(new FieldToUpdate("price", req.getPrice()));
             }
             if (req.getGoldCoin() != null) {
-                pairs.add(new Pair("goldCoin=", req.getGoldCoin()));
+                fields.add(new FieldToUpdate("goldCoin", req.getGoldCoin()));
             }
-            conn.createStatement().executeUpdate(new UpdateSql(RoomCard.class).pairs(pairs).where(buildFinalCondition(req)).build());
+            conn.createStatement().executeUpdate(new UpdateSql(RoomCard.class).fields(fields).where(buildFinalCondition(req)).build());
         }
         Response resp = new Response();
         return resp;

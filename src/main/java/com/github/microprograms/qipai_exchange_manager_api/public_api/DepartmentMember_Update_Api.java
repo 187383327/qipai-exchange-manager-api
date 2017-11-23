@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
-import com.github.microprograms.ignite_utils.sql.dml.Pair;
+import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
@@ -26,29 +26,29 @@ public class DepartmentMember_Update_Api {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            List<Pair> pairs = new ArrayList<>();
+            List<FieldToUpdate> fields = new ArrayList<>();
             if (StringUtils.isNoneBlank(req.getName())) {
-                pairs.add(new Pair("name=", req.getName()));
+                fields.add(new FieldToUpdate("name", req.getName()));
             }
             if (StringUtils.isNoneBlank(req.getDepartmentId())) {
-                pairs.add(new Pair("departmentId=", req.getDepartmentId()));
+                fields.add(new FieldToUpdate("departmentId", req.getDepartmentId()));
             }
             if (StringUtils.isNoneBlank(req.getPhone())) {
-                pairs.add(new Pair("phone=", req.getPhone()));
+                fields.add(new FieldToUpdate("phone", req.getPhone()));
             }
             if (StringUtils.isNoneBlank(req.getEmailAddress())) {
-                pairs.add(new Pair("emailAddress=", req.getEmailAddress()));
+                fields.add(new FieldToUpdate("emailAddress", req.getEmailAddress()));
             }
             if (StringUtils.isNoneBlank(req.getLoginName())) {
-                pairs.add(new Pair("loginName=", req.getLoginName()));
+                fields.add(new FieldToUpdate("loginName", req.getLoginName()));
             }
             if (StringUtils.isNoneBlank(req.getLoginPassword())) {
-                pairs.add(new Pair("loginPassword=", req.getLoginPassword()));
+                fields.add(new FieldToUpdate("loginPassword", req.getLoginPassword()));
             }
             if (req.getEnable() != null) {
-                pairs.add(new Pair("enable=", req.getEnable()));
+                fields.add(new FieldToUpdate("enable", req.getEnable()));
             }
-            conn.createStatement().executeUpdate(new UpdateSql(DepartmentMember.class).pairs(pairs).where(buildFinalCondition(req)).build());
+            conn.createStatement().executeUpdate(new UpdateSql(DepartmentMember.class).fields(fields).where(buildFinalCondition(req)).build());
         }
         Response resp = new Response();
         return resp;

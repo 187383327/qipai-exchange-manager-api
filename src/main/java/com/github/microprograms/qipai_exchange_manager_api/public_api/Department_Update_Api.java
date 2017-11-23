@@ -3,10 +3,12 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
-import com.github.microprograms.ignite_utils.sql.dml.Pair;
+import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
@@ -26,20 +28,20 @@ public class Department_Update_Api {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            List<Pair> pairs = new ArrayList<>();
+            List<FieldToUpdate> fields = new ArrayList<>();
             if (StringUtils.isNoneBlank(req.getName())) {
-                pairs.add(new Pair("name=", req.getName()));
+                fields.add(new FieldToUpdate("name", req.getName()));
             }
             if (StringUtils.isNoneBlank(req.getDesc())) {
-                pairs.add(new Pair("desc=", req.getDesc()));
+                fields.add(new FieldToUpdate("desc", req.getDesc()));
             }
             if (StringUtils.isNoneBlank(req.getPermissions())) {
-                pairs.add(new Pair("permissions=", req.getPermissions()));
+                fields.add(new FieldToUpdate("permissions", req.getPermissions()));
             }
             if (req.getEnable() != null) {
-                pairs.add(new Pair("enable=", req.getEnable()));
+                fields.add(new FieldToUpdate("enable", req.getEnable()));
             }
-            conn.createStatement().executeUpdate(new UpdateSql(Department.class).pairs(pairs).where(buildFinalCondition(req)).build());
+            conn.createStatement().executeUpdate(new UpdateSql(Department.class).fields(fields).where(buildFinalCondition(req)).build());
         }
         Response resp = new Response();
         return resp;
@@ -51,9 +53,7 @@ public class Department_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "部门ID")
-        @Required(value = true)
-        private String departmentId;
+        @Comment(value = "部门ID") @Required(value = true) private String departmentId;
 
         public String getDepartmentId() {
             return departmentId;
@@ -63,9 +63,7 @@ public class Department_Update_Api {
             this.departmentId = departmentId;
         }
 
-        @Comment(value = "部门名称")
-        @Required(value = true)
-        private String name;
+        @Comment(value = "部门名称") @Required(value = true) private String name;
 
         public String getName() {
             return name;
@@ -75,9 +73,7 @@ public class Department_Update_Api {
             this.name = name;
         }
 
-        @Comment(value = "职能描述")
-        @Required(value = true)
-        private String desc;
+        @Comment(value = "职能描述") @Required(value = true) private String desc;
 
         public String getDesc() {
             return desc;
@@ -87,9 +83,7 @@ public class Department_Update_Api {
             this.desc = desc;
         }
 
-        @Comment(value = "权限列表(JsonArray)")
-        @Required(value = true)
-        private String permissions;
+        @Comment(value = "权限列表(JsonArray)") @Required(value = true) private String permissions;
 
         public String getPermissions() {
             return permissions;
@@ -99,9 +93,7 @@ public class Department_Update_Api {
             this.permissions = permissions;
         }
 
-        @Comment(value = "是否启用(0否1是)")
-        @Required(value = true)
-        private Integer enable;
+        @Comment(value = "是否启用(0否1是)") @Required(value = true) private Integer enable;
 
         public Integer getEnable() {
             return enable;
