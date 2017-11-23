@@ -2028,7 +2028,7 @@
 				{
 					"comment": "金额",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "amount",
 					"primaryKey": 0,
 					"required": true
@@ -2241,5 +2241,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.22"
+	"version": "v1.0.23"
 }

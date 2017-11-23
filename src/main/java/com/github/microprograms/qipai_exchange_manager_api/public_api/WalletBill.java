@@ -57,13 +57,13 @@ public class WalletBill {
 
     @Comment(value = "金额")
     @Required(value = true)
-    private Integer amount;
+    private String amount;
 
-    public Integer getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

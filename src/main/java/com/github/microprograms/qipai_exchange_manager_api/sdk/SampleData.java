@@ -1,12 +1,16 @@
 package com.github.microprograms.qipai_exchange_manager_api.sdk;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 import com.alibaba.fastjson.JSON;
+import com.github.microprograms.ignite_utils.IgniteUtils;
+import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.model.Request;
+import com.github.microprograms.qipai_exchange_core.model.WalletBill;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_UpdateAll_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory;
@@ -16,6 +20,7 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCateg
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_UpdateAllHotWords_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.RoomCard_Add_Api;
+import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 public class SampleData {
     public static void main(String[] args) throws Exception {
@@ -27,6 +32,54 @@ public class SampleData {
         addHotWords();
         addBanners();
         addRoomCards();
+        addWalletBills();
+    }
+
+    private static void addWalletBills() throws Exception {
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            WalletBill obj = new WalletBill();
+            obj.setId(UUID.randomUUID().toString());
+            obj.setUserId("");
+            obj.setType(1);
+            obj.setInContributorUserId("ye13384761");
+            obj.setInContributorUserLevel(1);
+            obj.setAmount("11.29");
+            obj.setDtCreate(System.currentTimeMillis());
+            conn.createStatement().executeUpdate(InsertSql.build(obj));
+        }
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            WalletBill obj = new WalletBill();
+            obj.setId(UUID.randomUUID().toString());
+            obj.setUserId("");
+            obj.setType(1);
+            obj.setInContributorUserId("ye29173891");
+            obj.setInContributorUserLevel(2);
+            obj.setAmount("7.63");
+            obj.setDtCreate(System.currentTimeMillis());
+            conn.createStatement().executeUpdate(InsertSql.build(obj));
+        }
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            WalletBill obj = new WalletBill();
+            obj.setId(UUID.randomUUID().toString());
+            obj.setUserId("");
+            obj.setType(1);
+            obj.setInContributorUserId("ye47611338");
+            obj.setInContributorUserLevel(1);
+            obj.setAmount("37.04");
+            obj.setDtCreate(System.currentTimeMillis());
+            conn.createStatement().executeUpdate(InsertSql.build(obj));
+        }
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            WalletBill obj = new WalletBill();
+            obj.setId(UUID.randomUUID().toString());
+            obj.setUserId("");
+            obj.setType(1);
+            obj.setInContributorUserId("ye61133847");
+            obj.setInContributorUserLevel(1);
+            obj.setAmount("43.39");
+            obj.setDtCreate(System.currentTimeMillis());
+            conn.createStatement().executeUpdate(InsertSql.build(obj));
+        }
     }
 
     private static void addRoomCards() throws Exception {
