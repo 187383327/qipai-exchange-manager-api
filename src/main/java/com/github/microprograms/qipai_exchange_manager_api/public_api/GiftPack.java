@@ -78,4 +78,16 @@ public class GiftPack {
     public void setDtCreate(Long dtCreate) {
         this.dtCreate = dtCreate;
     }
+
+    @Comment(value = "是否删除(0否1是)")
+    @Required(value = true)
+    private Integer isDelete;
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
+    }
 }

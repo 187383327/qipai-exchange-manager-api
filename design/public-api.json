@@ -1171,6 +1171,154 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "礼包 - 查询列表",
+			"javaClassName": "GiftPack_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "礼包列表",
+						"example": "example",
+						"javaType": "java.util.List<GiftPack>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "礼包 - 添加",
+			"javaClassName": "GiftPack_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "礼包封面图",
+						"example": "example",
+						"javaType": "String",
+						"name": "coverImgUrl",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "礼包名称",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "礼包内容(JsonArray)",
+						"example": "example",
+						"javaType": "String",
+						"name": "content",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "会员专享礼包价",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "price",
+						"primaryKey": 0,
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "礼包 - 更新",
+			"javaClassName": "GiftPack_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "礼包ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "giftPackId",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "礼包封面图",
+						"example": "example",
+						"javaType": "String",
+						"name": "coverImgUrl",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "礼包名称",
+						"example": "example",
+						"javaType": "String",
+						"name": "name",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "礼包内容(JsonArray)",
+						"example": "example",
+						"javaType": "String",
+						"name": "content",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "会员专享礼包价",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "price",
+						"primaryKey": 0,
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "礼包 - 删除",
+			"javaClassName": "GiftPack_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "礼包ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "giftPackId",
+						"primaryKey": 0,
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -2320,6 +2468,14 @@
 					"name": "dtCreate",
 					"primaryKey": 0,
 					"required": true
+				},
+				{
+					"comment": "是否删除(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "isDelete",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
 			"javaClassName": "GiftPack"
@@ -2373,5 +2529,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.24"
+	"version": "v1.0.25"
 }

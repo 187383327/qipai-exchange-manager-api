@@ -7,12 +7,15 @@ import java.util.List;
 import java.util.UUID;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.qipai_exchange_core.model.WalletBill;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_UpdateAll_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.GiftPack_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_QueryAll_Api;
@@ -33,6 +36,39 @@ public class SampleData {
         addBanners();
         addRoomCards();
         addWalletBills();
+        addGiftPacks();
+    }
+
+    private static void addGiftPacks() throws Exception {
+        GiftPack_Add_Api.Req req1 = new GiftPack_Add_Api.Req();
+        req1.setName("会员礼包1");
+        req1.setCoverImgUrl("http://iph.href.lu/879x200?text=会员礼包1");
+        req1.setContent(_buildGiftPackContent(_buildGiftPackContentItem("123fe3ba-c04a-4518-9959-50dbc6ed2369", "蓓慈(BEICI)BZ501C全自动按摩足浴盆洗脚盆泡脚盆泡脚桶", 329), _buildGiftPackContentItem("2b215370-e13e-4f9d-b803-7d5e17246e29", "沂源苹果（Yiyuan Apple）泰国进口金枕头榴莲水果约2.5-3.5kg", 240), _buildGiftPackContentItem("34c2642b-da0d-48e9-ac83-6174be968153", "苏泊尔（SUPOR）电饭煲电饭锅5L大容量 火旋风球釜内胆CFXB50FC832-75", 369)).toJSONString());
+        req1.setPrice(599);
+        GiftPack_Add_Api.execute(req1);
+
+        GiftPack_Add_Api.Req req2 = new GiftPack_Add_Api.Req();
+        req2.setName("会员礼包2");
+        req2.setCoverImgUrl("http://iph.href.lu/879x200?text=会员礼包2");
+        req2.setContent(_buildGiftPackContent(_buildGiftPackContentItem("4692c83e-0671-4dc7-9984-2cf17fa54128", "拜格BAYCO双层沥水架 家用多功能厨具碗碟架BX3826", 59), _buildGiftPackContentItem("4717f46e-93cb-408b-b2fb-cc3f8e2b9d57", "恩济堂 润fei川贻贝秋梨膏清huo成人无添加秋梨膏雪梨膏 润fei350g+ 川贻贝325g+ 清huo", 65), _buildGiftPackContentItem("5359477e-0907-476d-a0b2-6d732e5fbd85", "椰树 牌椰汁椰子汁 植物蛋白饮料 椰奶245ml*24罐装整箱", 95)).toJSONString());
+        req2.setPrice(99);
+        GiftPack_Add_Api.execute(req2);
+    }
+
+    private static JSONObject _buildGiftPackContentItem(String goodsId, String goodsName, Integer goodsPrice) {
+        JSONObject json = new JSONObject();
+        json.put("goodsId", goodsId);
+        json.put("goodsName", goodsName);
+        json.put("goodsPrice", goodsPrice);
+        return json;
+    }
+
+    private static JSONArray _buildGiftPackContent(JSONObject... items) {
+        JSONArray jsonArray = new JSONArray();
+        for (JSONObject x : items) {
+            jsonArray.add(x);
+        }
+        return jsonArray;
     }
 
     private static void addWalletBills() throws Exception {

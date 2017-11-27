@@ -16,66 +16,54 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "房卡 - 更新")
+@Comment(value = "礼包 - 更新")
 @MicroApiAnnotation(type = "read", version = "v1.0.25")
-public class RoomCard_Update_Api {
+public class GiftPack_Update_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        if (StringUtils.isBlank(req.getRoomCardId())) {
+        if (StringUtils.isBlank(req.getGiftPackId())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             List<FieldToUpdate> fields = new ArrayList<>();
+            if (StringUtils.isNoneBlank(req.getCoverImgUrl())) {
+                fields.add(new FieldToUpdate("coverImgUrl", req.getCoverImgUrl()));
+            }
             if (StringUtils.isNoneBlank(req.getName())) {
                 fields.add(new FieldToUpdate("name", req.getName()));
             }
-            if (StringUtils.isNoneBlank(req.getCoverImgUrl())) {
-                fields.add(new FieldToUpdate("coverImgUrl", req.getCoverImgUrl()));
+            if (StringUtils.isNoneBlank(req.getContent())) {
+                fields.add(new FieldToUpdate("content", req.getContent()));
             }
             if (req.getPrice() != null) {
                 fields.add(new FieldToUpdate("price", req.getPrice()));
             }
-            if (req.getGoldCoin() != null) {
-                fields.add(new FieldToUpdate("goldCoin", req.getGoldCoin()));
-            }
-            conn.createStatement().executeUpdate(new UpdateSql(RoomCard.class).fields(fields).where(buildFinalCondition(req)).build());
+            conn.createStatement().executeUpdate(new UpdateSql(GiftPack.class).fields(fields).where(buildFinalCondition(req)).build());
         }
         Response resp = new Response();
         return resp;
     }
 
     private static String buildFinalCondition(Req req) {
-        return Condition.build("id=", req.getRoomCardId()).toString();
+        return Condition.build("id=", req.getGiftPackId()).toString();
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "房卡ID")
+        @Comment(value = "礼包ID")
         @Required(value = true)
-        private String roomCardId;
+        private String giftPackId;
 
-        public String getRoomCardId() {
-            return roomCardId;
+        public String getGiftPackId() {
+            return giftPackId;
         }
 
-        public void setRoomCardId(String roomCardId) {
-            this.roomCardId = roomCardId;
+        public void setGiftPackId(String giftPackId) {
+            this.giftPackId = giftPackId;
         }
 
-        @Comment(value = "房卡标题")
-        @Required(value = true)
-        private String name;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        @Comment(value = "房卡封面图")
+        @Comment(value = "礼包封面图")
         @Required(value = true)
         private String coverImgUrl;
 
@@ -87,7 +75,31 @@ public class RoomCard_Update_Api {
             this.coverImgUrl = coverImgUrl;
         }
 
-        @Comment(value = "价格(元)")
+        @Comment(value = "礼包名称")
+        @Required(value = true)
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        @Comment(value = "礼包内容(JsonArray)")
+        @Required(value = true)
+        private String content;
+
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
+        }
+
+        @Comment(value = "会员专享礼包价")
         @Required(value = true)
         private Integer price;
 
@@ -97,18 +109,6 @@ public class RoomCard_Update_Api {
 
         public void setPrice(Integer price) {
             this.price = price;
-        }
-
-        @Comment(value = "金币")
-        @Required(value = true)
-        private Integer goldCoin;
-
-        public Integer getGoldCoin() {
-            return goldCoin;
-        }
-
-        public void setGoldCoin(Integer goldCoin) {
-            this.goldCoin = goldCoin;
         }
     }
 }
