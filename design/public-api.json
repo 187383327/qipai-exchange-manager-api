@@ -349,6 +349,13 @@
 						"required": true
 					},
 					{
+						"comment": "房卡封面图",
+						"example": "example",
+						"javaType": "String",
+						"name": "coverImgUrl",
+						"required": true
+					},
+					{
 						"comment": "价格(元)",
 						"example": "example",
 						"javaType": "Integer",
@@ -399,6 +406,13 @@
 						"example": "example",
 						"javaType": "String",
 						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "房卡封面图",
+						"example": "example",
+						"javaType": "String",
+						"name": "coverImgUrl",
 						"required": true
 					},
 					{
@@ -711,7 +725,7 @@
 					{
 						"comment": "房卡订单列表",
 						"example": "example",
-						"javaType": "java.util.List<RoomCardOrder>",
+						"javaType": "java.util.List<MixOrder>",
 						"name": "data",
 						"required": true
 					},
@@ -787,7 +801,7 @@
 					{
 						"comment": "商品订单列表",
 						"example": "example",
-						"javaType": "java.util.List<GoodsOrder>",
+						"javaType": "java.util.List<MixOrder>",
 						"name": "data",
 						"required": true
 					},
@@ -1358,6 +1372,14 @@
 					"required": true
 				},
 				{
+					"comment": "房卡封面图",
+					"example": "example",
+					"javaType": "String",
+					"name": "coverImgUrl",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "房卡标题",
 					"example": "example",
 					"javaType": "String",
@@ -1409,7 +1431,7 @@
 			"javaClassName": "RoomCard"
 		},
 		{
-			"comment": "房卡订单",
+			"comment": "混合订单",
 			"fieldDefinitions": [
 				{
 					"comment": "订单号",
@@ -1417,14 +1439,6 @@
 					"javaType": "String",
 					"name": "id",
 					"primaryKey": 1,
-					"required": true
-				},
-				{
-					"comment": "提交时间",
-					"example": "example",
-					"javaType": "Long",
-					"name": "dtCreate",
-					"primaryKey": 0,
 					"required": true
 				},
 				{
@@ -1436,28 +1450,12 @@
 					"required": true
 				},
 				{
-					"comment": "房卡标题",
+					"comment": "提交时间",
 					"example": "example",
-					"javaType": "String",
-					"name": "roomCardOrderName",
+					"javaType": "Long",
+					"name": "dtCreate",
 					"primaryKey": 0,
 					"required": true
-				},
-				{
-					"comment": "购买数量",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "quantity",
-					"primaryKey": 0,
-					"required": false
-				},
-				{
-					"comment": "订单金额(元)",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "orderAmount",
-					"primaryKey": 0,
-					"required": false
 				},
 				{
 					"comment": "订单状态(0待付款,1待收货,2已完成,3已取消)",
@@ -1466,36 +1464,62 @@
 					"name": "status",
 					"primaryKey": 0,
 					"required": false
-				}
-			],
-			"javaClassName": "RoomCardOrder"
-		},
-		{
-			"comment": "商品订单",
-			"fieldDefinitions": [
-				{
-					"comment": "订单号",
-					"example": "example",
-					"javaType": "String",
-					"name": "id",
-					"primaryKey": 1,
-					"required": true
 				},
 				{
-					"comment": "提交时间",
+					"comment": "订单类型(1商品订单,2礼包订单,3房卡订单)",
 					"example": "example",
-					"javaType": "Long",
-					"name": "dtCreate",
+					"javaType": "Integer",
+					"name": "orderType",
 					"primaryKey": 0,
-					"required": true
+					"required": false
 				},
 				{
-					"comment": "用户ID",
+					"comment": "商品订单 - 商品数量",
 					"example": "example",
-					"javaType": "String",
-					"name": "userId",
+					"javaType": "Integer",
+					"name": "goodsOrder_goodsQuantity",
 					"primaryKey": 0,
-					"required": true
+					"required": false
+				},
+				{
+					"comment": "商品订单 - 订单金额(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goodsOrder_orderAmount",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "商品订单 - 商品明细(JsonArray)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "goodsOrder_detail",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "礼包订单 - 礼包ID",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "giftPackOrder_giftPackId",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "礼包订单 - 购买数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "giftPackOrder_buyQuantity",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "礼包订单 - 订单金额(元宝)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "giftPackOrder_orderAmount",
+					"primaryKey": 0,
+					"required": false
 				},
 				{
 					"comment": "物流 - 收货人",
@@ -1538,39 +1562,39 @@
 					"required": true
 				},
 				{
-					"comment": "商品数量",
+					"comment": "房卡订单 - 房卡ID",
 					"example": "example",
 					"javaType": "Integer",
-					"name": "quantity",
+					"name": "roomCardOrder_roomCardId",
 					"primaryKey": 0,
 					"required": false
 				},
 				{
-					"comment": "订单金额(元宝)",
+					"comment": "房卡订单 - 购买数量",
 					"example": "example",
 					"javaType": "Integer",
-					"name": "orderAmount",
+					"name": "roomCardOrder_buyQuantity",
 					"primaryKey": 0,
 					"required": false
 				},
 				{
-					"comment": "订单状态(0待付款,1待收货,2已完成,3已取消)",
+					"comment": "房卡订单 - 订单金额(元)",
 					"example": "example",
 					"javaType": "Integer",
-					"name": "status",
+					"name": "roomCardOrder_orderAmount",
 					"primaryKey": 0,
 					"required": false
 				},
 				{
-					"comment": "支付方式(1微信)",
+					"comment": "房卡订单 - 支付方式(1微信)",
 					"example": "example",
 					"javaType": "Integer",
-					"name": "payChannel",
+					"name": "roomCardOrder_payChannel",
 					"primaryKey": 0,
 					"required": false
 				}
 			],
-			"javaClassName": "GoodsOrder"
+			"javaClassName": "MixOrder"
 		},
 		{
 			"comment": "商品订单项",
@@ -1822,6 +1846,14 @@
 					"required": true
 				},
 				{
+					"comment": "头像",
+					"example": "example",
+					"javaType": "String",
+					"name": "avatarImgUrl",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "用户昵称",
 					"example": "example",
 					"javaType": "String",
@@ -1921,7 +1953,15 @@
 					"comment": "推荐人ID",
 					"example": "example",
 					"javaType": "String",
-					"name": "referenceUserId",
+					"name": "myLeaderId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "我的邀请人数",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "myFollowerCount",
 					"primaryKey": 0,
 					"required": true
 				}
@@ -2229,6 +2269,98 @@
 				}
 			],
 			"javaClassName": "Permission"
+		},
+		{
+			"comment": "会员礼包",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "礼包封面图",
+					"example": "example",
+					"javaType": "String",
+					"name": "coverImgUrl",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "礼包名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "name",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "礼包内容",
+					"example": "example",
+					"javaType": "String",
+					"name": "content",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "会员专享礼包价",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "price",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "添加时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "GiftPack"
+		},
+		{
+			"comment": "会员礼包购买历史记录",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "id",
+					"primaryKey": 1,
+					"required": true
+				},
+				{
+					"comment": "礼包ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "giftPackId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "用户ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "userId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "购买时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "GiftPackBuyHistory"
 		}
 	],
 	"serverAddressDefinition": {
@@ -2241,5 +2373,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.23"
+	"version": "v1.0.24"
 }

@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.23")
+@MicroApiAnnotation(type = "read", version = "v1.0.24")
 public class RoomCard_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -29,6 +29,9 @@ public class RoomCard_Update_Api {
             List<FieldToUpdate> fields = new ArrayList<>();
             if (StringUtils.isNoneBlank(req.getName())) {
                 fields.add(new FieldToUpdate("name", req.getName()));
+            }
+            if (StringUtils.isNoneBlank(req.getCoverImgUrl())) {
+                fields.add(new FieldToUpdate("coverImgUrl", req.getCoverImgUrl()));
             }
             if (req.getPrice() != null) {
                 fields.add(new FieldToUpdate("price", req.getPrice()));
@@ -70,6 +73,18 @@ public class RoomCard_Update_Api {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        @Comment(value = "房卡封面图")
+        @Required(value = true)
+        private String coverImgUrl;
+
+        public String getCoverImgUrl() {
+            return coverImgUrl;
+        }
+
+        public void setCoverImgUrl(String coverImgUrl) {
+            this.coverImgUrl = coverImgUrl;
         }
 
         @Comment(value = "价格(元)")

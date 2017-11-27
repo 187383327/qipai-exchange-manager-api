@@ -19,6 +19,18 @@ public class User {
         this.id = id;
     }
 
+    @Comment(value = "头像")
+    @Required(value = true)
+    private String avatarImgUrl;
+
+    public String getAvatarImgUrl() {
+        return avatarImgUrl;
+    }
+
+    public void setAvatarImgUrl(String avatarImgUrl) {
+        this.avatarImgUrl = avatarImgUrl;
+    }
+
     @Comment(value = "用户昵称")
     @Required(value = true)
     private String nickname;
@@ -165,13 +177,25 @@ public class User {
 
     @Comment(value = "推荐人ID")
     @Required(value = true)
-    private String referenceUserId;
+    private String myLeaderId;
 
-    public String getReferenceUserId() {
-        return referenceUserId;
+    public String getMyLeaderId() {
+        return myLeaderId;
     }
 
-    public void setReferenceUserId(String referenceUserId) {
-        this.referenceUserId = referenceUserId;
+    public void setMyLeaderId(String myLeaderId) {
+        this.myLeaderId = myLeaderId;
+    }
+
+    @Comment(value = "我的邀请人数")
+    @Required(value = true)
+    private Integer myFollowerCount;
+
+    public Integer getMyFollowerCount() {
+        return myFollowerCount;
+    }
+
+    public void setMyFollowerCount(Integer myFollowerCount) {
+        this.myFollowerCount = myFollowerCount;
     }
 }

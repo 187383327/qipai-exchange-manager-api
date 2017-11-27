@@ -85,24 +85,28 @@ public class SampleData {
     private static void addRoomCards() throws Exception {
         RoomCard_Add_Api.Req req1 = new RoomCard_Add_Api.Req();
         req1.setName("30元房卡");
+        req1.setCoverImgUrl("http://iph.href.lu/879x200?text=30元房卡");
         req1.setPrice(30);
         req1.setGoldCoin(30);
         RoomCard_Add_Api.execute(req1);
 
         RoomCard_Add_Api.Req req2 = new RoomCard_Add_Api.Req();
         req2.setName("50元房卡");
+        req1.setCoverImgUrl("http://iph.href.lu/879x200?text=50元房卡");
         req2.setPrice(50);
         req2.setGoldCoin(50);
         RoomCard_Add_Api.execute(req2);
 
         RoomCard_Add_Api.Req req3 = new RoomCard_Add_Api.Req();
         req3.setName("100元房卡");
+        req1.setCoverImgUrl("http://iph.href.lu/879x200?text=100元房卡");
         req3.setPrice(100);
         req3.setGoldCoin(100);
         RoomCard_Add_Api.execute(req3);
 
         RoomCard_Add_Api.Req req4 = new RoomCard_Add_Api.Req();
         req4.setName("200元房卡");
+        req1.setCoverImgUrl("http://iph.href.lu/879x200?text=200元房卡");
         req4.setPrice(200);
         req4.setGoldCoin(200);
         RoomCard_Add_Api.execute(req4);

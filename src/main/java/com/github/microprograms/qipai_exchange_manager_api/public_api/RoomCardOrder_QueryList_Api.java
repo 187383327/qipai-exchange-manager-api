@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "房卡订单 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.23")
+@MicroApiAnnotation(type = "read", version = "v1.0.24")
 public class RoomCardOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -107,13 +107,13 @@ public class RoomCardOrder_QueryList_Api {
 
         @Comment(value = "房卡订单列表")
         @Required(value = true)
-        private java.util.List<RoomCardOrder> data;
+        private java.util.List<MixOrder> data;
 
-        public java.util.List<RoomCardOrder> getData() {
+        public java.util.List<MixOrder> getData() {
             return data;
         }
 
-        public void setData(java.util.List<RoomCardOrder> data) {
+        public void setData(java.util.List<MixOrder> data) {
             this.data = data;
         }
 

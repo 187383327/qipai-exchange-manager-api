@@ -19,6 +19,18 @@ public class RoomCard {
         this.id = id;
     }
 
+    @Comment(value = "房卡封面图")
+    @Required(value = true)
+    private String coverImgUrl;
+
+    public String getCoverImgUrl() {
+        return coverImgUrl;
+    }
+
+    public void setCoverImgUrl(String coverImgUrl) {
+        this.coverImgUrl = coverImgUrl;
+    }
+
     @Comment(value = "房卡标题")
     @Required(value = true)
     private String name;

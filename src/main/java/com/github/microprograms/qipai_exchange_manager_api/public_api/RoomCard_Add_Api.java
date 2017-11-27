@@ -13,7 +13,7 @@ import com.github.microprograms.qipai_exchange_core.model.RoomCard;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 添加新房卡")
-@MicroApiAnnotation(type = "read", version = "v1.0.23")
+@MicroApiAnnotation(type = "read", version = "v1.0.24")
 public class RoomCard_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -24,6 +24,7 @@ public class RoomCard_Add_Api {
             obj.setEnable(1);
             obj.setGoldCoin(req.getGoldCoin());
             obj.setName(req.getName());
+            obj.setCoverImgUrl(req.getCoverImgUrl());
             obj.setPrice(req.getPrice());
             obj.setSalesVolume(0);
             obj.setIsDelete(0);
@@ -45,6 +46,18 @@ public class RoomCard_Add_Api {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        @Comment(value = "房卡封面图")
+        @Required(value = true)
+        private String coverImgUrl;
+
+        public String getCoverImgUrl() {
+            return coverImgUrl;
+        }
+
+        public void setCoverImgUrl(String coverImgUrl) {
+            this.coverImgUrl = coverImgUrl;
         }
 
         @Comment(value = "价格(元)")
