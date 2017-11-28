@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "商品订单项 - 查询全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.26")
+@MicroApiAnnotation(type = "read", version = "v1.0.27")
 public class GoodsOrderItem_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {

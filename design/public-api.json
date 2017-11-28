@@ -296,6 +296,47 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品 - 查询优选商品列表",
+			"javaClassName": "Goods_QueryChoiceList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "优选商品列表",
+						"example": "example",
+						"javaType": "java.util.List<Goods>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "商品 - 设置为优选商品",
 			"javaClassName": "Goods_SetAsChoice_Api",
 			"requestDefinition": {
@@ -2584,5 +2625,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.26"
+	"version": "v1.0.27"
 }

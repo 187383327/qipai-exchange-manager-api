@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品 - 设置为优选商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.26")
+@MicroApiAnnotation(type = "read", version = "v1.0.27")
 public class Goods_SetAsChoice_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -28,9 +28,7 @@ public class Goods_SetAsChoice_Api {
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             List<FieldToUpdate> fields = new ArrayList<>();
             fields.add(new FieldToUpdate("choice_isChoice", 1));
-            if (req.getChoice_reorder() != null) {
-                fields.add(new FieldToUpdate("choice_reorder", req.getChoice_reorder()));
-            }
+            fields.add(new FieldToUpdate("choice_reorder", req.getChoice_reorder() == null ? 0 : req.getChoice_reorder()));
             conn.createStatement().executeUpdate(new UpdateSql(Goods.class).fields(fields).where(buildFinalCondition(req)).build());
         }
         Response resp = new Response();
