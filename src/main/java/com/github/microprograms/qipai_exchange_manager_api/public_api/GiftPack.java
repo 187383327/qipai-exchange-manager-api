@@ -43,7 +43,7 @@ public class GiftPack {
         this.name = name;
     }
 
-    @Comment(value = "礼包内容")
+    @Comment(value = "礼包内容(JsonArray)")
     @Required(value = true)
     private String content;
 

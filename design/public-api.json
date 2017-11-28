@@ -296,6 +296,45 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品 - 设置为优选商品",
+			"javaClassName": "Goods_SetAsChoice_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "goodsId",
+						"required": true
+					},
+					{
+						"comment": "会员优选 - 排序",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "choice_reorder",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "商品 - 取消优选商品",
+			"javaClassName": "Goods_CancelChoice_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "商品ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "goodsId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "房卡 - 查询列表",
 			"javaClassName": "RoomCard_QueryList_Api",
 			"requestDefinition": {
@@ -1504,6 +1543,22 @@
 					"name": "isDelete",
 					"primaryKey": 0,
 					"required": true
+				},
+				{
+					"comment": "会员优选 - 是否为优选商品(0否1是)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "choice_isChoice",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "会员优选 - 排序",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "choice_reorder",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
 			"javaClassName": "Goods"
@@ -2446,7 +2501,7 @@
 					"required": true
 				},
 				{
-					"comment": "礼包内容",
+					"comment": "礼包内容(JsonArray)",
 					"example": "example",
 					"javaType": "String",
 					"name": "content",
@@ -2529,5 +2584,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.25"
+	"version": "v1.0.26"
 }

@@ -12,7 +12,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "礼包 - 添加")
-@MicroApiAnnotation(type = "read", version = "v1.0.25")
+@MicroApiAnnotation(type = "read", version = "v1.0.26")
 public class GiftPack_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -34,7 +34,9 @@ public class GiftPack_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "礼包封面图") @Required(value = true) private String coverImgUrl;
+        @Comment(value = "礼包封面图")
+        @Required(value = true)
+        private String coverImgUrl;
 
         public String getCoverImgUrl() {
             return coverImgUrl;
@@ -44,7 +46,9 @@ public class GiftPack_Add_Api {
             this.coverImgUrl = coverImgUrl;
         }
 
-        @Comment(value = "礼包名称") @Required(value = true) private String name;
+        @Comment(value = "礼包名称")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -54,7 +58,9 @@ public class GiftPack_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "礼包内容(JsonArray)") @Required(value = true) private String content;
+        @Comment(value = "礼包内容(JsonArray)")
+        @Required(value = true)
+        private String content;
 
         public String getContent() {
             return content;
@@ -64,7 +70,9 @@ public class GiftPack_Add_Api {
             this.content = content;
         }
 
-        @Comment(value = "会员专享礼包价") @Required(value = true) private Integer price;
+        @Comment(value = "会员专享礼包价")
+        @Required(value = true)
+        private Integer price;
 
         public Integer getPrice() {
             return price;
