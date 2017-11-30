@@ -15,6 +15,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.qipai_exchange_core.model.WalletBill;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_UpdateAll_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.ChoiceBanner_UpdateAll_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GiftPack_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory;
@@ -37,6 +38,7 @@ public class SampleData {
         addGoodsForDrink();
         addHotWords();
         addBanners();
+        addChoiceBanners();
         addRoomCards();
         addWalletBills();
         addGiftPacks();
@@ -172,6 +174,16 @@ public class SampleData {
         banners.add(buildBanner(3, "http://47.104.17.187/micro-file-server/4348aa6c-30b7-4ffd-b023-41963b5e3257.jpg"));
         req.setBanners(banners);
         Banner_UpdateAll_Api.execute(req);
+    }
+
+    private static void addChoiceBanners() throws Exception {
+        ChoiceBanner_UpdateAll_Api.Req req = new ChoiceBanner_UpdateAll_Api.Req();
+        List<Banner> banners = new ArrayList<>();
+        banners.add(buildBanner(1, "http://iph.href.lu/879x200?text=会员专区轮播图1"));
+        banners.add(buildBanner(2, "http://iph.href.lu/879x200?text=会员专区轮播图2"));
+        banners.add(buildBanner(3, "http://iph.href.lu/879x200?text=会员专区轮播图3"));
+        req.setBanners(banners);
+        ChoiceBanner_UpdateAll_Api.execute(req);
     }
 
     private static Banner buildBanner(int reorder, String url) {
