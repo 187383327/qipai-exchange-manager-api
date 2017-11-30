@@ -22,15 +22,17 @@ public class Banner_UpdateAll_Api {
         Req req = (Req) request;
         Resp resp = new Resp();
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            conn.createStatement().executeUpdate(new DeleteSql(Banner.class).where(Condition.build("type=", 1)).build());
             for (Banner x : req.getBanners()) {
                 if (x.getReorder() == null) {
                     continue;
                 }
-                conn.createStatement().executeUpdate(new DeleteSql(Banner.class).where(Condition.build("reorder=", x.getReorder())).build());
                 com.github.microprograms.qipai_exchange_core.model.Banner newBanner = new com.github.microprograms.qipai_exchange_core.model.Banner();
                 newBanner.setId(UUID.randomUUID().toString());
+                newBanner.setType(1);
                 newBanner.setReorder(x.getReorder());
                 newBanner.setUrl(x.getUrl());
+                newBanner.setDtCreate(System.currentTimeMillis());
                 conn.createStatement().executeUpdate(InsertSql.build(newBanner));
             }
         }
@@ -39,9 +41,7 @@ public class Banner_UpdateAll_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Banner列表(全部)")
-        @Required(value = true)
-        private java.util.List<Banner> banners;
+        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> banners;
 
         public java.util.List<Banner> getBanners() {
             return banners;
