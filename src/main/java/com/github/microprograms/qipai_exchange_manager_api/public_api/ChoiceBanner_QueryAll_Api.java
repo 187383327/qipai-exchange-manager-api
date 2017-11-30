@@ -6,42 +6,26 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "商品订单项 - 查询全部")
+@Comment(value = "会员专区Banner - 查询全部")
 @MicroApiAnnotation(type = "read", version = "v1.0.28")
-public class GoodsOrderItem_QueryAll_Api {
+public class ChoiceBanner_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
-        Req req = (Req) request;
         Resp resp = new Resp();
         return resp;
     }
 
-    public static class Req extends Request {
-
-        @Comment(value = "商品订单ID")
-        @Required(value = true)
-        private String goodsOrderId;
-
-        public String getGoodsOrderId() {
-            return goodsOrderId;
-        }
-
-        public void setGoodsOrderId(String goodsOrderId) {
-            this.goodsOrderId = goodsOrderId;
-        }
-    }
-
     public static class Resp extends Response {
 
-        @Comment(value = "商品订单项列表(全部)")
+        @Comment(value = "Banner列表(全部)")
         @Required(value = true)
-        private java.util.List<GoodsOrderItem> data;
+        private java.util.List<Banner> data;
 
-        public java.util.List<GoodsOrderItem> getData() {
+        public java.util.List<Banner> getData() {
             return data;
         }
 
-        public void setData(java.util.List<GoodsOrderItem> data) {
+        public void setData(java.util.List<Banner> data) {
             this.data = data;
         }
     }

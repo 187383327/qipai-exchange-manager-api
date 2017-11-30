@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "房卡订单 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.27")
+@MicroApiAnnotation(type = "read", version = "v1.0.28")
 public class RoomCardOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

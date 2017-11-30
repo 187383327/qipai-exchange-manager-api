@@ -6,43 +6,40 @@ import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
-@Comment(value = "商品订单项 - 查询全部")
+@Comment(value = "图文 - 更新")
 @MicroApiAnnotation(type = "read", version = "v1.0.28")
-public class GoodsOrderItem_QueryAll_Api {
+public class ImageText_Update_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Resp resp = new Resp();
+        Response resp = new Response();
         return resp;
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "商品订单ID")
+        @Comment(value = "图文ID")
         @Required(value = true)
-        private String goodsOrderId;
+        private String imageTextId;
 
-        public String getGoodsOrderId() {
-            return goodsOrderId;
+        public String getImageTextId() {
+            return imageTextId;
         }
 
-        public void setGoodsOrderId(String goodsOrderId) {
-            this.goodsOrderId = goodsOrderId;
+        public void setImageTextId(String imageTextId) {
+            this.imageTextId = imageTextId;
         }
-    }
 
-    public static class Resp extends Response {
-
-        @Comment(value = "商品订单项列表(全部)")
+        @Comment(value = "内容(富文本)")
         @Required(value = true)
-        private java.util.List<GoodsOrderItem> data;
+        private String content;
 
-        public java.util.List<GoodsOrderItem> getData() {
-            return data;
+        public String getContent() {
+            return content;
         }
 
-        public void setData(java.util.List<GoodsOrderItem> data) {
-            this.data = data;
+        public void setContent(String content) {
+            this.content = content;
         }
     }
 }

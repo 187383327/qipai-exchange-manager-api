@@ -956,6 +956,134 @@
 			"type": "read"
 		},
 		{
+			"comment": "会员专区Banner - 查询全部",
+			"javaClassName": "ChoiceBanner_QueryAll_Api",
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Banner列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<Banner>",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "会员专区Banner - 更新全部",
+			"javaClassName": "ChoiceBanner_UpdateAll_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Banner列表(全部)",
+						"example": "example",
+						"javaType": "java.util.List<Banner>",
+						"name": "banners",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "图文 - 查询列表",
+			"javaClassName": "ImageText_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "图文列表",
+						"example": "example",
+						"javaType": "java.util.List<ImageText>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "图文 - 新增",
+			"javaClassName": "ImageText_Add_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "内容(富文本)",
+						"example": "example",
+						"javaType": "String",
+						"name": "content",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "图文 - 删除",
+			"javaClassName": "ImageText_Delete_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "图文ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "imageTextId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "图文 - 更新",
+			"javaClassName": "ImageText_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "图文ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "imageTextId",
+						"required": true
+					},
+					{
+						"comment": "内容(富文本)",
+						"example": "example",
+						"javaType": "String",
+						"name": "content",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "部门 - 查询列表",
 			"javaClassName": "Department_QueryList_Api",
 			"requestDefinition": {
@@ -1670,6 +1798,14 @@
 					"name": "isDelete",
 					"primaryKey": 0,
 					"required": true
+				},
+				{
+					"comment": "创建时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
 			"javaClassName": "RoomCard"
@@ -1914,6 +2050,14 @@
 					"name": "totalPrice",
 					"primaryKey": 0,
 					"required": false
+				},
+				{
+					"comment": "创建时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
 			"javaClassName": "GoodsOrderItem"
@@ -1960,6 +2104,14 @@
 					"name": "remainingStock",
 					"primaryKey": 0,
 					"required": false
+				},
+				{
+					"comment": "创建时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
 			"javaClassName": "NewStock"
@@ -1976,11 +2128,57 @@
 					"required": true
 				},
 				{
-					"comment": "位置",
+					"comment": "类型(1首页,2会员专区)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "type",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "排序",
 					"example": "example",
 					"javaType": "Integer",
 					"name": "reorder",
 					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "图片链接",
+					"example": "example",
+					"javaType": "String",
+					"name": "url",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "详情的具体图文信息链接",
+					"example": "example",
+					"javaType": "String",
+					"name": "contentUrl",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "创建时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				}
+			],
+			"javaClassName": "Banner"
+		},
+		{
+			"comment": "图文",
+			"fieldDefinitions": [
+				{
+					"comment": "ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "id",
+					"primaryKey": 1,
 					"required": true
 				},
 				{
@@ -1990,9 +2188,25 @@
 					"name": "url",
 					"primaryKey": 0,
 					"required": true
+				},
+				{
+					"comment": "内容(富文本)",
+					"example": "example",
+					"javaType": "String",
+					"name": "content",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "创建时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
 				}
 			],
-			"javaClassName": "Banner"
+			"javaClassName": "ImageText"
 		},
 		{
 			"comment": "热点词",
@@ -2018,6 +2232,14 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "hotWord",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "创建时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtCreate",
 					"primaryKey": 0,
 					"required": true
 				}
@@ -2056,6 +2278,30 @@
 					"example": "example",
 					"javaType": "Long",
 					"name": "dtCreate",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "审核时间",
+					"example": "example",
+					"javaType": "Long",
+					"name": "dtAudit",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "审核人ID",
+					"example": "example",
+					"javaType": "Long",
+					"name": "auditorId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "审核人名称",
+					"example": "example",
+					"javaType": "Long",
+					"name": "auditorName",
 					"primaryKey": 0,
 					"required": true
 				},
@@ -2625,5 +2871,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.27"
+	"version": "v1.0.28"
 }

@@ -55,6 +55,42 @@ public class WithdrawCash {
         this.dtCreate = dtCreate;
     }
 
+    @Comment(value = "审核时间")
+    @Required(value = true)
+    private Long dtAudit;
+
+    public Long getDtAudit() {
+        return dtAudit;
+    }
+
+    public void setDtAudit(Long dtAudit) {
+        this.dtAudit = dtAudit;
+    }
+
+    @Comment(value = "审核人ID")
+    @Required(value = true)
+    private Long auditorId;
+
+    public Long getAuditorId() {
+        return auditorId;
+    }
+
+    public void setAuditorId(Long auditorId) {
+        this.auditorId = auditorId;
+    }
+
+    @Comment(value = "审核人名称")
+    @Required(value = true)
+    private Long auditorName;
+
+    public Long getAuditorName() {
+        return auditorName;
+    }
+
+    public void setAuditorName(Long auditorName) {
+        this.auditorName = auditorName;
+    }
+
     @Comment(value = "状态(0未审核1已同意2已拒绝)")
     @Required(value = true)
     private Integer status;

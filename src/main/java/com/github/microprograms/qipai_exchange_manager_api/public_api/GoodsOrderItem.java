@@ -114,4 +114,16 @@ public class GoodsOrderItem {
     public void setTotalPrice(Integer totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+    @Comment(value = "创建时间")
+    @Required(value = true)
+    private Long dtCreate;
+
+    public Long getDtCreate() {
+        return dtCreate;
+    }
+
+    public void setDtCreate(Long dtCreate) {
+        this.dtCreate = dtCreate;
+    }
 }

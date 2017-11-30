@@ -42,4 +42,16 @@ public class HotWord {
     public void setHotWord(String hotWord) {
         this.hotWord = hotWord;
     }
+
+    @Comment(value = "创建时间")
+    @Required(value = true)
+    private Long dtCreate;
+
+    public Long getDtCreate() {
+        return dtCreate;
+    }
+
+    public void setDtCreate(Long dtCreate) {
+        this.dtCreate = dtCreate;
+    }
 }

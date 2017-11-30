@@ -66,4 +66,16 @@ public class NewStock {
     public void setRemainingStock(Integer remainingStock) {
         this.remainingStock = remainingStock;
     }
+
+    @Comment(value = "创建时间")
+    @Required(value = true)
+    private Long dtCreate;
+
+    public Long getDtCreate() {
+        return dtCreate;
+    }
+
+    public void setDtCreate(Long dtCreate) {
+        this.dtCreate = dtCreate;
+    }
 }

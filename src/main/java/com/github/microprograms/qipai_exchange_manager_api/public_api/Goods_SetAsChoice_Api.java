@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品 - 设置为优选商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.27")
+@MicroApiAnnotation(type = "read", version = "v1.0.28")
 public class Goods_SetAsChoice_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -41,7 +41,9 @@ public class Goods_SetAsChoice_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品ID") @Required(value = true) private String goodsId;
+        @Comment(value = "商品ID")
+        @Required(value = true)
+        private String goodsId;
 
         public String getGoodsId() {
             return goodsId;
@@ -51,7 +53,9 @@ public class Goods_SetAsChoice_Api {
             this.goodsId = goodsId;
         }
 
-        @Comment(value = "会员优选 - 排序") @Required(value = true) private Integer choice_reorder;
+        @Comment(value = "会员优选 - 排序")
+        @Required(value = true)
+        private Integer choice_reorder;
 
         public Integer getChoice_reorder() {
             return choice_reorder;

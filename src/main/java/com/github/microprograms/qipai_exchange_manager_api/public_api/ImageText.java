@@ -5,7 +5,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @MicroEntityAnnotation()
-public class Banner {
+public class ImageText {
 
     @Comment(value = "ID")
     @Required(value = true)
@@ -19,31 +19,7 @@ public class Banner {
         this.id = id;
     }
 
-    @Comment(value = "类型(1首页,2会员专区)")
-    @Required(value = true)
-    private Integer type;
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    @Comment(value = "排序")
-    @Required(value = true)
-    private Integer reorder;
-
-    public Integer getReorder() {
-        return reorder;
-    }
-
-    public void setReorder(Integer reorder) {
-        this.reorder = reorder;
-    }
-
-    @Comment(value = "图片链接")
+    @Comment(value = "链接")
     @Required(value = true)
     private String url;
 
@@ -55,16 +31,16 @@ public class Banner {
         this.url = url;
     }
 
-    @Comment(value = "详情的具体图文信息链接")
+    @Comment(value = "内容(富文本)")
     @Required(value = true)
-    private String contentUrl;
+    private String content;
 
-    public String getContentUrl() {
-        return contentUrl;
+    public String getContent() {
+        return content;
     }
 
-    public void setContentUrl(String contentUrl) {
-        this.contentUrl = contentUrl;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Comment(value = "创建时间")
