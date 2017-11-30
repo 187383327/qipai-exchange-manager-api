@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.PagerRequest;
 import com.github.microprograms.ignite_utils.sql.dml.PagerResponse;
@@ -16,7 +15,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "图文 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.28")
+@MicroApiAnnotation(type = "read", version = "v1.0.29")
 public class ImageText_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

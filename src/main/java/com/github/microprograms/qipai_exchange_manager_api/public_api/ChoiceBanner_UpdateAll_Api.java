@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.util.UUID;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.DeleteSql;
@@ -16,7 +15,7 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_Que
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "会员专区Banner - 更新全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.28")
+@MicroApiAnnotation(type = "read", version = "v1.0.29")
 public class ChoiceBanner_UpdateAll_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -42,7 +41,9 @@ public class ChoiceBanner_UpdateAll_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> banners;
+        @Comment(value = "Banner列表(全部)")
+        @Required(value = true)
+        private java.util.List<Banner> banners;
 
         public java.util.List<Banner> getBanners() {
             return banners;

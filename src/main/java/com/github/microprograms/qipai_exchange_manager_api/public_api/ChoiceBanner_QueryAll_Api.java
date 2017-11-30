@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
@@ -15,7 +14,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "会员专区Banner - 查询全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.28")
+@MicroApiAnnotation(type = "read", version = "v1.0.29")
 public class ChoiceBanner_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -34,7 +33,9 @@ public class ChoiceBanner_QueryAll_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> data;
+        @Comment(value = "Banner列表(全部)")
+        @Required(value = true)
+        private java.util.List<Banner> data;
 
         public java.util.List<Banner> getData() {
             return data;

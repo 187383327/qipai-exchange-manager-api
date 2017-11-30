@@ -31,6 +31,18 @@ public class ImageText {
         this.url = url;
     }
 
+    @Comment(value = "标题")
+    @Required(value = true)
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     @Comment(value = "内容(富文本)")
     @Required(value = true)
     private String content;

@@ -2190,6 +2190,14 @@
 					"required": true
 				},
 				{
+					"comment": "标题",
+					"example": "example",
+					"javaType": "String",
+					"name": "title",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "内容(富文本)",
 					"example": "example",
 					"javaType": "String",
@@ -2871,5 +2879,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.28"
+	"version": "v1.0.29"
 }
