@@ -417,6 +417,33 @@
 			"type": "read"
 		},
 		{
+			"comment": "房卡 - 查询详情",
+			"javaClassName": "RoomCard_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "房卡ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "roomCardId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "房卡详情",
+						"example": "example",
+						"javaType": "RoomCard",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "房卡 - 添加新房卡",
 			"javaClassName": "RoomCard_Add_Api",
 			"requestDefinition": {
@@ -1034,6 +1061,14 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "标题",
+						"example": "example",
+						"javaType": "String",
+						"name": "title",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
 						"comment": "内容(富文本)",
 						"example": "example",
 						"javaType": "String",
@@ -1070,6 +1105,14 @@
 						"example": "example",
 						"javaType": "String",
 						"name": "imageTextId",
+						"required": true
+					},
+					{
+						"comment": "标题",
+						"example": "example",
+						"javaType": "String",
+						"name": "title",
+						"primaryKey": 0,
 						"required": true
 					},
 					{
@@ -2879,5 +2922,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.29"
+	"version": "v1.0.30"
 }

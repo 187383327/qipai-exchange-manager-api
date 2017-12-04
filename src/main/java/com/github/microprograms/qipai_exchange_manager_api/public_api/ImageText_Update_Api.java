@@ -3,7 +3,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -17,7 +19,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "图文 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.29")
+@MicroApiAnnotation(type = "read", version = "v1.0.30")
 public class ImageText_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -27,6 +29,9 @@ public class ImageText_Update_Api {
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             List<FieldToUpdate> fields = new ArrayList<>();
+            if (StringUtils.isNoneBlank(req.getTitle())) {
+                fields.add(new FieldToUpdate("title", req.getTitle()));
+            }
             if (StringUtils.isNoneBlank(req.getContent())) {
                 fields.add(new FieldToUpdate("content", req.getContent()));
             }
@@ -42,9 +47,7 @@ public class ImageText_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "图文ID")
-        @Required(value = true)
-        private String imageTextId;
+        @Comment(value = "图文ID") @Required(value = true) private String imageTextId;
 
         public String getImageTextId() {
             return imageTextId;
@@ -54,9 +57,17 @@ public class ImageText_Update_Api {
             this.imageTextId = imageTextId;
         }
 
-        @Comment(value = "内容(富文本)")
-        @Required(value = true)
-        private String content;
+        @Comment(value = "标题") @Required(value = true) private String title;
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        @Comment(value = "内容(富文本)") @Required(value = true) private String content;
 
         public String getContent() {
             return content;
