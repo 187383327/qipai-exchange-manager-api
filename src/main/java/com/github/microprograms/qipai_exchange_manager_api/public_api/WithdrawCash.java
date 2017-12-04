@@ -69,13 +69,13 @@ public class WithdrawCash {
 
     @Comment(value = "审核人ID")
     @Required(value = true)
-    private Long auditorId;
+    private String auditorId;
 
-    public Long getAuditorId() {
+    public String getAuditorId() {
         return auditorId;
     }
 
-    public void setAuditorId(Long auditorId) {
+    public void setAuditorId(String auditorId) {
         this.auditorId = auditorId;
     }
 

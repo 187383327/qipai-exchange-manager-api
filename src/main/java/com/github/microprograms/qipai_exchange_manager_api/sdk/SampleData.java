@@ -656,6 +656,7 @@ public class SampleData {
     private static void addGoodsCategory(String name) throws Exception {
         GoodsCategory_Add_Api.Req req = new GoodsCategory_Add_Api.Req();
         req.setName(name);
+        req.setPicture("http://iph.href.lu/879x200?text=" + name);
         GoodsCategory_Add_Api.execute(req);
     }
 

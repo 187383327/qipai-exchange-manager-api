@@ -43,7 +43,7 @@ public class MixOrder {
         this.dtCreate = dtCreate;
     }
 
-    @Comment(value = "订单状态(0待付款,1待收货,2已完成,3已取消)")
+    @Comment(value = "订单状态(1待付款,2待收货,3已完成,4已取消)")
     @Required(value = false)
     private Integer status;
 
@@ -55,7 +55,7 @@ public class MixOrder {
         this.status = status;
     }
 
-    @Comment(value = "订单类型(1商品订单,2礼包订单,3房卡订单)")
+    @Comment(value = "订单类型(1使用元宝支付的商品订单,2使用人民币支付的房卡订单,3使用元宝支付的礼包订单)")
     @Required(value = false)
     private Integer orderType;
 
@@ -93,25 +93,73 @@ public class MixOrder {
 
     @Comment(value = "商品订单 - 商品明细(JsonArray)")
     @Required(value = false)
-    private Integer goodsOrder_detail;
+    private String goodsOrder_detail;
 
-    public Integer getGoodsOrder_detail() {
+    public String getGoodsOrder_detail() {
         return goodsOrder_detail;
     }
 
-    public void setGoodsOrder_detail(Integer goodsOrder_detail) {
+    public void setGoodsOrder_detail(String goodsOrder_detail) {
         this.goodsOrder_detail = goodsOrder_detail;
+    }
+
+    @Comment(value = "房卡订单 - 房卡ID")
+    @Required(value = false)
+    private String roomCardOrder_roomCardId;
+
+    public String getRoomCardOrder_roomCardId() {
+        return roomCardOrder_roomCardId;
+    }
+
+    public void setRoomCardOrder_roomCardId(String roomCardOrder_roomCardId) {
+        this.roomCardOrder_roomCardId = roomCardOrder_roomCardId;
+    }
+
+    @Comment(value = "房卡订单 - 购买数量")
+    @Required(value = false)
+    private Integer roomCardOrder_buyQuantity;
+
+    public Integer getRoomCardOrder_buyQuantity() {
+        return roomCardOrder_buyQuantity;
+    }
+
+    public void setRoomCardOrder_buyQuantity(Integer roomCardOrder_buyQuantity) {
+        this.roomCardOrder_buyQuantity = roomCardOrder_buyQuantity;
+    }
+
+    @Comment(value = "房卡订单 - 订单金额(元)")
+    @Required(value = false)
+    private Integer roomCardOrder_orderAmount;
+
+    public Integer getRoomCardOrder_orderAmount() {
+        return roomCardOrder_orderAmount;
+    }
+
+    public void setRoomCardOrder_orderAmount(Integer roomCardOrder_orderAmount) {
+        this.roomCardOrder_orderAmount = roomCardOrder_orderAmount;
+    }
+
+    @Comment(value = "房卡订单 - 支付方式(1微信)")
+    @Required(value = false)
+    private Integer roomCardOrder_payChannel;
+
+    public Integer getRoomCardOrder_payChannel() {
+        return roomCardOrder_payChannel;
+    }
+
+    public void setRoomCardOrder_payChannel(Integer roomCardOrder_payChannel) {
+        this.roomCardOrder_payChannel = roomCardOrder_payChannel;
     }
 
     @Comment(value = "礼包订单 - 礼包ID")
     @Required(value = false)
-    private Integer giftPackOrder_giftPackId;
+    private String giftPackOrder_giftPackId;
 
-    public Integer getGiftPackOrder_giftPackId() {
+    public String getGiftPackOrder_giftPackId() {
         return giftPackOrder_giftPackId;
     }
 
-    public void setGiftPackOrder_giftPackId(Integer giftPackOrder_giftPackId) {
+    public void setGiftPackOrder_giftPackId(String giftPackOrder_giftPackId) {
         this.giftPackOrder_giftPackId = giftPackOrder_giftPackId;
     }
 
@@ -197,53 +245,5 @@ public class MixOrder {
 
     public void setTransportNumber(String transportNumber) {
         this.transportNumber = transportNumber;
-    }
-
-    @Comment(value = "房卡订单 - 房卡ID")
-    @Required(value = false)
-    private Integer roomCardOrder_roomCardId;
-
-    public Integer getRoomCardOrder_roomCardId() {
-        return roomCardOrder_roomCardId;
-    }
-
-    public void setRoomCardOrder_roomCardId(Integer roomCardOrder_roomCardId) {
-        this.roomCardOrder_roomCardId = roomCardOrder_roomCardId;
-    }
-
-    @Comment(value = "房卡订单 - 购买数量")
-    @Required(value = false)
-    private Integer roomCardOrder_buyQuantity;
-
-    public Integer getRoomCardOrder_buyQuantity() {
-        return roomCardOrder_buyQuantity;
-    }
-
-    public void setRoomCardOrder_buyQuantity(Integer roomCardOrder_buyQuantity) {
-        this.roomCardOrder_buyQuantity = roomCardOrder_buyQuantity;
-    }
-
-    @Comment(value = "房卡订单 - 订单金额(元)")
-    @Required(value = false)
-    private Integer roomCardOrder_orderAmount;
-
-    public Integer getRoomCardOrder_orderAmount() {
-        return roomCardOrder_orderAmount;
-    }
-
-    public void setRoomCardOrder_orderAmount(Integer roomCardOrder_orderAmount) {
-        this.roomCardOrder_orderAmount = roomCardOrder_orderAmount;
-    }
-
-    @Comment(value = "房卡订单 - 支付方式(1微信)")
-    @Required(value = false)
-    private Integer roomCardOrder_payChannel;
-
-    public Integer getRoomCardOrder_payChannel() {
-        return roomCardOrder_payChannel;
-    }
-
-    public void setRoomCardOrder_payChannel(Integer roomCardOrder_payChannel) {
-        this.roomCardOrder_payChannel = roomCardOrder_payChannel;
     }
 }

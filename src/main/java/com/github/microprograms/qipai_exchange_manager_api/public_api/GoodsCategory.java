@@ -31,6 +31,18 @@ public class GoodsCategory {
         this.name = name;
     }
 
+    @Comment(value = "商品类别图片URL")
+    @Required(value = true)
+    private String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     @Comment(value = "排序")
     @Required(value = true)
     private Integer reorder;

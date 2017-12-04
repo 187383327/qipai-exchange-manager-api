@@ -12,7 +12,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 新增商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.30")
+@MicroApiAnnotation(type = "read", version = "v1.0.31")
 public class GoodsCategory_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -21,6 +21,7 @@ public class GoodsCategory_Add_Api {
             GoodsCategory goodsCategory = new GoodsCategory();
             goodsCategory.setId(UUID.randomUUID().toString());
             goodsCategory.setName(req.getName());
+            goodsCategory.setPicture(req.getPicture());
             goodsCategory.setReorder(req.getReorder());
             goodsCategory.setDtCreate(System.currentTimeMillis());
             conn.createStatement().executeUpdate(InsertSql.build(goodsCategory));
@@ -31,9 +32,7 @@ public class GoodsCategory_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别名称")
-        @Required(value = true)
-        private String name;
+        @Comment(value = "商品类别名称") @Required(value = true) private String name;
 
         public String getName() {
             return name;
@@ -43,9 +42,17 @@ public class GoodsCategory_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "排序")
-        @Required(value = true)
-        private Integer reorder;
+        @Comment(value = "商品类别图片URL") @Required(value = true) private String picture;
+
+        public String getPicture() {
+            return picture;
+        }
+
+        public void setPicture(String picture) {
+            this.picture = picture;
+        }
+
+        @Comment(value = "排序") @Required(value = true) private Integer reorder;
 
         public Integer getReorder() {
             return reorder;

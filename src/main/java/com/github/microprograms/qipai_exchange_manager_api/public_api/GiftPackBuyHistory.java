@@ -31,6 +31,30 @@ public class GiftPackBuyHistory {
         this.giftPackId = giftPackId;
     }
 
+    @Comment(value = "礼包名称")
+    @Required(value = true)
+    private String giftPackName;
+
+    public String getGiftPackName() {
+        return giftPackName;
+    }
+
+    public void setGiftPackName(String giftPackName) {
+        this.giftPackName = giftPackName;
+    }
+
+    @Comment(value = "会员专享礼包价")
+    @Required(value = true)
+    private Integer giftPackPrice;
+
+    public Integer getGiftPackPrice() {
+        return giftPackPrice;
+    }
+
+    public void setGiftPackPrice(Integer giftPackPrice) {
+        this.giftPackPrice = giftPackPrice;
+    }
+
     @Comment(value = "用户ID")
     @Required(value = true)
     private String userId;

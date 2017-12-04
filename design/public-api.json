@@ -715,6 +715,14 @@
 						"required": true
 					},
 					{
+						"comment": "商品类别图片URL",
+						"example": "example",
+						"javaType": "String",
+						"name": "picture",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
 						"comment": "排序",
 						"example": "example",
 						"javaType": "Integer",
@@ -758,6 +766,14 @@
 						"example": "example",
 						"javaType": "String",
 						"name": "name",
+						"required": true
+					},
+					{
+						"comment": "商品类别图片URL",
+						"example": "example",
+						"javaType": "String",
+						"name": "picture",
+						"primaryKey": 0,
 						"required": true
 					},
 					{
@@ -1623,6 +1639,14 @@
 					"required": true
 				},
 				{
+					"comment": "商品类别图片URL",
+					"example": "example",
+					"javaType": "String",
+					"name": "picture",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "排序",
 					"example": "example",
 					"javaType": "Integer",
@@ -1881,7 +1905,7 @@
 					"required": true
 				},
 				{
-					"comment": "订单状态(0待付款,1待收货,2已完成,3已取消)",
+					"comment": "订单状态(1待付款,2待收货,3已完成,4已取消)",
 					"example": "example",
 					"javaType": "Integer",
 					"name": "status",
@@ -1889,7 +1913,7 @@
 					"required": false
 				},
 				{
-					"comment": "订单类型(1商品订单,2礼包订单,3房卡订单)",
+					"comment": "订单类型(1使用元宝支付的商品订单,2使用人民币支付的房卡订单,3使用元宝支付的礼包订单)",
 					"example": "example",
 					"javaType": "Integer",
 					"name": "orderType",
@@ -1915,15 +1939,47 @@
 				{
 					"comment": "商品订单 - 商品明细(JsonArray)",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "goodsOrder_detail",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "房卡订单 - 房卡ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "roomCardOrder_roomCardId",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "房卡订单 - 购买数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "roomCardOrder_buyQuantity",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "房卡订单 - 订单金额(元)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "roomCardOrder_orderAmount",
+					"primaryKey": 0,
+					"required": false
+				},
+				{
+					"comment": "房卡订单 - 支付方式(1微信)",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "roomCardOrder_payChannel",
 					"primaryKey": 0,
 					"required": false
 				},
 				{
 					"comment": "礼包订单 - 礼包ID",
 					"example": "example",
-					"javaType": "Integer",
+					"javaType": "String",
 					"name": "giftPackOrder_giftPackId",
 					"primaryKey": 0,
 					"required": false
@@ -1983,38 +2039,6 @@
 					"name": "transportNumber",
 					"primaryKey": 0,
 					"required": true
-				},
-				{
-					"comment": "房卡订单 - 房卡ID",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "roomCardOrder_roomCardId",
-					"primaryKey": 0,
-					"required": false
-				},
-				{
-					"comment": "房卡订单 - 购买数量",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "roomCardOrder_buyQuantity",
-					"primaryKey": 0,
-					"required": false
-				},
-				{
-					"comment": "房卡订单 - 订单金额(元)",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "roomCardOrder_orderAmount",
-					"primaryKey": 0,
-					"required": false
-				},
-				{
-					"comment": "房卡订单 - 支付方式(1微信)",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "roomCardOrder_payChannel",
-					"primaryKey": 0,
-					"required": false
 				}
 			],
 			"javaClassName": "MixOrder"
@@ -2051,6 +2075,14 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "goodsName",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "商品图片",
+					"example": "example",
+					"javaType": "String",
+					"name": "goodsPicture",
 					"primaryKey": 0,
 					"required": true
 				},
@@ -2343,7 +2375,7 @@
 				{
 					"comment": "审核人ID",
 					"example": "example",
-					"javaType": "Long",
+					"javaType": "String",
 					"name": "auditorId",
 					"primaryKey": 0,
 					"required": true
@@ -2893,6 +2925,22 @@
 					"required": true
 				},
 				{
+					"comment": "礼包名称",
+					"example": "example",
+					"javaType": "String",
+					"name": "giftPackName",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "会员专享礼包价",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "giftPackPrice",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "用户ID",
 					"example": "example",
 					"javaType": "String",
@@ -2922,5 +2970,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.30"
+	"version": "v1.0.31"
 }

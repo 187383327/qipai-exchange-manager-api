@@ -55,6 +55,18 @@ public class GoodsOrderItem {
         this.goodsName = goodsName;
     }
 
+    @Comment(value = "商品图片")
+    @Required(value = true)
+    private String goodsPicture;
+
+    public String getGoodsPicture() {
+        return goodsPicture;
+    }
+
+    public void setGoodsPicture(String goodsPicture) {
+        this.goodsPicture = goodsPicture;
+    }
+
     @Comment(value = "单价(元宝)")
     @Required(value = false)
     private Integer price;
