@@ -15,7 +15,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "图文 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.31")
+@MicroApiAnnotation(type = "read", version = "v1.0.32")
 public class ImageText_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

@@ -7,7 +7,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     /**资源不存在或已被删除*/
     not_exists(1010, "资源不存在或已被删除"), /**字符串太长或太短*/
     too_long_or_too_short(1011, "字符串太长或太短"), /**缺少必填的参数*/
-    missing_required_parameters(1012, "缺少必填的参数");
+    missing_required_parameters(1012, "缺少必填的参数"), /**商品类别数量超限*/
+    goods_category_over_limit(1013, "商品类别数量超限");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

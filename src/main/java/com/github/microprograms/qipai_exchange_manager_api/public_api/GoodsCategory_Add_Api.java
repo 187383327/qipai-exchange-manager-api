@@ -1,10 +1,15 @@
 package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.UUID;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
+import com.github.microprograms.ignite_utils.sql.dml.SelectCountSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
+import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Comment;
@@ -12,11 +17,15 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 新增商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.31")
+@MicroApiAnnotation(type = "read", version = "v1.0.32")
 public class GoodsCategory_Add_Api {
+    public static final int goods_category_limit = 5;
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
+        if (isFull()) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.goods_category_over_limit);
+        }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             GoodsCategory goodsCategory = new GoodsCategory();
             goodsCategory.setId(UUID.randomUUID().toString());
@@ -28,6 +37,17 @@ public class GoodsCategory_Add_Api {
         }
         Response resp = new Response();
         return resp;
+    }
+
+    private static int queryGoodsCategoryCount() throws SQLException {
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            ResultSet selectCountRs = conn.createStatement().executeQuery(new SelectCountSql(GoodsCategory.class).build());
+            return IgniteUtils.getCount(selectCountRs);
+        }
+    }
+
+    private static boolean isFull() throws SQLException {
+        return queryGoodsCategoryCount() >= goods_category_limit;
     }
 
     public static class Req extends Request {

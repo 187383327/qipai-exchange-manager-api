@@ -1615,6 +1615,11 @@
 			"code": 1012,
 			"message": "缺少必填的参数",
 			"name": "missing_required_parameters"
+		},
+		{
+			"code": 1013,
+			"message": "商品类别数量超限",
+			"name": "goods_category_over_limit"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -2970,5 +2975,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.31"
+	"version": "v1.0.32"
 }
