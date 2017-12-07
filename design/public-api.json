@@ -1072,6 +1072,33 @@
 			"type": "read"
 		},
 		{
+			"comment": "图文 - 查询详情",
+			"javaClassName": "ImageText_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "图文ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "imageTextId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "图文详情",
+						"example": "example",
+						"javaType": "ImageText",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "图文 - 新增",
 			"javaClassName": "ImageText_Add_Api",
 			"requestDefinition": {
@@ -1177,6 +1204,33 @@
 						"example": "example",
 						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
 						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门 - 查询详情",
+			"javaClassName": "Department_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门详情",
+						"example": "example",
+						"javaType": "Department",
+						"name": "data",
 						"required": true
 					}
 				]
@@ -1308,6 +1362,33 @@
 						"example": "example",
 						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
 						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "部门成员 - 查询详情",
+			"javaClassName": "DepartmentMember_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门成员ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentMemberId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "部门成员详情",
+						"example": "example",
+						"javaType": "DepartmentMember",
+						"name": "data",
 						"required": true
 					}
 				]
@@ -1474,6 +1555,34 @@
 						"example": "example",
 						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
 						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "礼包 - 查询详情",
+			"javaClassName": "GiftPack_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "礼包ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "giftPackId",
+						"primaryKey": 0,
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "礼包详情",
+						"example": "example",
+						"javaType": "GiftPack",
+						"name": "data",
 						"required": true
 					}
 				]
@@ -2975,5 +3084,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.33"
+	"version": "v1.0.34"
 }
