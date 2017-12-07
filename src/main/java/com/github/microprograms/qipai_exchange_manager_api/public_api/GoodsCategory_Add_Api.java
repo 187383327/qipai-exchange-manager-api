@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.ignite_utils.sql.dml.SelectCountSql;
@@ -17,8 +16,9 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 新增商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.32")
+@MicroApiAnnotation(type = "read", version = "v1.0.33")
 public class GoodsCategory_Add_Api {
+
     public static final int goods_category_limit = 5;
 
     public static Response execute(Request request) throws Exception {
@@ -52,7 +52,9 @@ public class GoodsCategory_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别名称") @Required(value = true) private String name;
+        @Comment(value = "商品类别名称")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -62,7 +64,9 @@ public class GoodsCategory_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "商品类别图片URL") @Required(value = true) private String picture;
+        @Comment(value = "商品类别图片URL")
+        @Required(value = true)
+        private String picture;
 
         public String getPicture() {
             return picture;
@@ -72,7 +76,9 @@ public class GoodsCategory_Add_Api {
             this.picture = picture;
         }
 
-        @Comment(value = "排序") @Required(value = true) private Integer reorder;
+        @Comment(value = "排序")
+        @Required(value = true)
+        private Integer reorder;
 
         public Integer getReorder() {
             return reorder;

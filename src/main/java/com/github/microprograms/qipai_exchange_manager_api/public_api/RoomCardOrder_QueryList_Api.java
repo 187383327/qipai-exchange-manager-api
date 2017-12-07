@@ -7,7 +7,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "房卡订单 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.32")
+@MicroApiAnnotation(type = "read", version = "v1.0.33")
 public class RoomCardOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -42,7 +42,7 @@ public class RoomCardOrder_QueryList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "搜索 - 关键字")
+        @Comment(value = "搜索 - 关键字(订单号/商品名/商品编号)")
         @Required(value = false)
         private String searchKeyword;
 
@@ -54,7 +54,7 @@ public class RoomCardOrder_QueryList_Api {
             this.searchKeyword = searchKeyword;
         }
 
-        @Comment(value = "搜索 - 收货人")
+        @Comment(value = "搜索 - 收货人(收货人/手机号)")
         @Required(value = false)
         private String searchTransportReceiver;
 

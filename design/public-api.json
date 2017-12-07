@@ -807,14 +807,14 @@
 						"required": true
 					},
 					{
-						"comment": "搜索 - 关键字",
+						"comment": "搜索 - 关键字(订单号/商品名/商品编号)",
 						"example": "example",
 						"javaType": "String",
 						"name": "searchKeyword",
 						"required": false
 					},
 					{
-						"comment": "搜索 - 收货人",
+						"comment": "搜索 - 收货人(收货人/手机号)",
 						"example": "example",
 						"javaType": "String",
 						"name": "searchTransportReceiver",
@@ -883,10 +883,17 @@
 						"required": true
 					},
 					{
-						"comment": "搜索 - 关键字",
+						"comment": "搜索 - 关键字(订单号/商品名/商品编号)",
 						"example": "example",
 						"javaType": "String",
 						"name": "searchKeyword",
+						"required": false
+					},
+					{
+						"comment": "搜索 - 收货人(收货人/手机号)",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchTransportReceiver",
 						"required": false
 					},
 					{
@@ -904,18 +911,11 @@
 						"required": false
 					},
 					{
-						"comment": "搜索 - 最小库存",
+						"comment": "状态(0全部,1待付款,2待收货,3已完成,4已取消)",
 						"example": "example",
 						"javaType": "Integer",
-						"name": "searchMinStock",
-						"required": false
-					},
-					{
-						"comment": "搜索 - 最大库存",
-						"example": "example",
-						"javaType": "Integer",
-						"name": "searchMaxStock",
-						"required": false
+						"name": "searchStatus",
+						"required": true
 					}
 				]
 			},
@@ -2975,5 +2975,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.32"
+	"version": "v1.0.33"
 }
