@@ -103,6 +103,18 @@ public class DepartmentMember {
         this.loginPassword = loginPassword;
     }
 
+    @Comment(value = "Token")
+    @Required(value = true)
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Comment(value = "添加时间")
     @Required(value = true)
     private Long dtCreate;

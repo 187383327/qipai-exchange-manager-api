@@ -1521,6 +1521,56 @@
 			"type": "read"
 		},
 		{
+			"comment": "系统 - 登录",
+			"javaClassName": "System_Login_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "登录名",
+						"example": "example",
+						"javaType": "String",
+						"name": "loginName",
+						"required": true
+					},
+					{
+						"comment": "登录密码",
+						"example": "example",
+						"javaType": "String",
+						"name": "loginPassword",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "个人资料详情",
+						"example": "example",
+						"javaType": "DepartmentMember",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "系统 - 退出",
+			"javaClassName": "System_Logout_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "礼包 - 查询列表",
 			"javaClassName": "GiftPack_QueryList_Api",
 			"requestDefinition": {
@@ -2909,6 +2959,14 @@
 					"required": true
 				},
 				{
+					"comment": "Token",
+					"example": "example",
+					"javaType": "String",
+					"name": "token",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "添加时间",
 					"example": "example",
 					"javaType": "Long",
@@ -3084,5 +3142,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.34"
+	"version": "v1.0.35"
 }
