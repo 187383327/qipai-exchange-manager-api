@@ -16,6 +16,10 @@ import com.github.microprograms.qipai_exchange_core.model.WalletBill;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_UpdateAll_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.ChoiceBanner_UpdateAll_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.Department;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.DepartmentMember_Add_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.Department_Add_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.Department_QueryList_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GiftPack_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory;
@@ -43,6 +47,32 @@ public class SampleData {
         addWalletBills();
         addGiftPacks();
         setAsChoice();
+        addDepartmentAndDepartmentMember();
+    }
+
+    private static void addDepartmentAndDepartmentMember() throws Exception {
+        Department_Add_Api.Req req = new Department_Add_Api.Req();
+        req.setName("测试");
+        req.setDesc("就是测试一下");
+        Department_Add_Api.execute(req);
+
+        Department_QueryList_Api.Req req1 = new Department_QueryList_Api.Req();
+        Department_QueryList_Api.Resp resp1 = (com.github.microprograms.qipai_exchange_manager_api.public_api.Department_QueryList_Api.Resp) Department_QueryList_Api.execute(req1);
+        Department department = null;
+        for (Department x : resp1.getData()) {
+            if ("测试".equals(x.getName())) {
+                department = x;
+            }
+        }
+
+        DepartmentMember_Add_Api.Req req2 = new DepartmentMember_Add_Api.Req();
+        req2.setDepartmentId(department.getId());
+        req2.setEmailAddress("test@test.com");
+        req2.setLoginName("test");
+        req2.setLoginPassword("pass");
+        req2.setName("测试");
+        req2.setPhone("13426290529");
+        DepartmentMember_Add_Api.execute(req2);
     }
 
     private static void setAsChoice() throws Exception {
