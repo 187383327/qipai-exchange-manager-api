@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -24,7 +22,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "系统 - 登录")
-@MicroApiAnnotation(type = "read", version = "v1.0.36")
+@MicroApiAnnotation(type = "read", version = "v1.0.37")
 public class System_Login_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -65,7 +63,9 @@ public class System_Login_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "登录名") @Required(value = true) private String loginName;
+        @Comment(value = "登录名")
+        @Required(value = true)
+        private String loginName;
 
         public String getLoginName() {
             return loginName;
@@ -75,7 +75,9 @@ public class System_Login_Api {
             this.loginName = loginName;
         }
 
-        @Comment(value = "登录密码") @Required(value = true) private String loginPassword;
+        @Comment(value = "登录密码")
+        @Required(value = true)
+        private String loginPassword;
 
         public String getLoginPassword() {
             return loginPassword;
@@ -88,7 +90,9 @@ public class System_Login_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "个人资料详情") @Required(value = true) private DepartmentMember data;
+        @Comment(value = "个人资料详情")
+        @Required(value = true)
+        private DepartmentMember data;
 
         public DepartmentMember getData() {
             return data;

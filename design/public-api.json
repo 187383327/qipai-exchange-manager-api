@@ -2588,6 +2588,38 @@
 					"required": true
 				},
 				{
+					"comment": "Token",
+					"example": "example",
+					"javaType": "String",
+					"name": "token",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "微信 - OPENID",
+					"example": "example",
+					"javaType": "String",
+					"name": "wxOpenId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "微信 - 昵称",
+					"example": "example",
+					"javaType": "String",
+					"name": "wxNickname",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "微信 - 头像",
+					"example": "example",
+					"javaType": "String",
+					"name": "wxAvatarImgUrl",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "头像",
 					"example": "example",
 					"javaType": "String",
@@ -3147,5 +3179,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.36"
+	"version": "v1.0.37"
 }

@@ -15,7 +15,7 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_Que
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "会员专区Banner - 更新全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.36")
+@MicroApiAnnotation(type = "read", version = "v1.0.37")
 public class ChoiceBanner_UpdateAll_Api {
 
     public static Response execute(Request request) throws Exception {

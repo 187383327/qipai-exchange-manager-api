@@ -3,7 +3,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -16,7 +15,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "系统 - 退出")
-@MicroApiAnnotation(type = "read", version = "v1.0.36")
+@MicroApiAnnotation(type = "read", version = "v1.0.37")
 public class System_Logout_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -37,7 +36,9 @@ public class System_Logout_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;

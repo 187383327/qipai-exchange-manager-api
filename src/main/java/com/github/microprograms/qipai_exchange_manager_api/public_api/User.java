@@ -19,6 +19,54 @@ public class User {
         this.id = id;
     }
 
+    @Comment(value = "Token")
+    @Required(value = true)
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    @Comment(value = "微信 - OPENID")
+    @Required(value = true)
+    private String wxOpenId;
+
+    public String getWxOpenId() {
+        return wxOpenId;
+    }
+
+    public void setWxOpenId(String wxOpenId) {
+        this.wxOpenId = wxOpenId;
+    }
+
+    @Comment(value = "微信 - 昵称")
+    @Required(value = true)
+    private String wxNickname;
+
+    public String getWxNickname() {
+        return wxNickname;
+    }
+
+    public void setWxNickname(String wxNickname) {
+        this.wxNickname = wxNickname;
+    }
+
+    @Comment(value = "微信 - 头像")
+    @Required(value = true)
+    private String wxAvatarImgUrl;
+
+    public String getWxAvatarImgUrl() {
+        return wxAvatarImgUrl;
+    }
+
+    public void setWxAvatarImgUrl(String wxAvatarImgUrl) {
+        this.wxAvatarImgUrl = wxAvatarImgUrl;
+    }
+
     @Comment(value = "头像")
     @Required(value = true)
     private String avatarImgUrl;
