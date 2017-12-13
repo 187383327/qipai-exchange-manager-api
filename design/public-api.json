@@ -1784,6 +1784,11 @@
 			"code": 1014,
 			"message": "账号和密码不匹配",
 			"name": "loginName_loginPassword_not_match"
+		},
+		{
+			"code": 1015,
+			"message": "Token已失效，请重新登录",
+			"name": "invalid_token"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -3179,5 +3184,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.37"
+	"version": "v1.0.38"
 }

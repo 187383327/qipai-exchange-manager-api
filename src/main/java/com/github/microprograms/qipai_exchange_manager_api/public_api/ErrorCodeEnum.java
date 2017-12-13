@@ -9,7 +9,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     too_long_or_too_short(1011, "字符串太长或太短"), /**缺少必填的参数*/
     missing_required_parameters(1012, "缺少必填的参数"), /**商品类别数量超限*/
     goods_category_over_limit(1013, "商品类别数量超限"), /**账号和密码不匹配*/
-    loginName_loginPassword_not_match(1014, "账号和密码不匹配");
+    loginName_loginPassword_not_match(1014, "账号和密码不匹配"), /**Token已失效，请重新登录*/
+    invalid_token(1015, "Token已失效，请重新登录");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;
