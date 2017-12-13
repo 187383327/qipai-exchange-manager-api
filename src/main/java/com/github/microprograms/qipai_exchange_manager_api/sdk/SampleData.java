@@ -47,32 +47,50 @@ public class SampleData {
         addWalletBills();
         addGiftPacks();
         setAsChoice();
-        addDepartmentAndDepartmentMember();
+        addDepartments();
+        addDepartmentMember();
     }
 
-    private static void addDepartmentAndDepartmentMember() throws Exception {
-        Department_Add_Api.Req req = new Department_Add_Api.Req();
-        req.setName("测试");
-        req.setDesc("就是测试一下");
-        Department_Add_Api.execute(req);
+    private static void addDepartments() throws Exception {
+        addDepartment("行政部", "Administrative Department");
+        addDepartment("财务部", "Financial Department");
+        addDepartment("质量管理部", "Quality Control Department");
+        addDepartment("营销部", "Sales Department");
+        addDepartment("营运部", "Operation Department");
+        addDepartment("技术部", "Technology Department");
+        addDepartment("维修部门", "Maintenance Department");
+        addDepartment("人力资源部", "Human Resources Department");
+        addDepartment("客户服务部", "Customer Service Department");
+    }
 
-        Department_QueryList_Api.Req req1 = new Department_QueryList_Api.Req();
-        Department_QueryList_Api.Resp resp1 = (com.github.microprograms.qipai_exchange_manager_api.public_api.Department_QueryList_Api.Resp) Department_QueryList_Api.execute(req1);
-        Department department = null;
-        for (Department x : resp1.getData()) {
-            if ("测试".equals(x.getName())) {
-                department = x;
+    private static void addDepartment(String name, String desc) throws Exception {
+        Department_Add_Api.Req req = new Department_Add_Api.Req();
+        req.setName(name);
+        req.setDesc(desc);
+        Department_Add_Api.execute(req);
+    }
+
+    private static Department queryDepartment(String name) throws Exception {
+        Department_QueryList_Api.Req req = new Department_QueryList_Api.Req();
+        Department_QueryList_Api.Resp resp = (com.github.microprograms.qipai_exchange_manager_api.public_api.Department_QueryList_Api.Resp) Department_QueryList_Api.execute(req);
+        for (Department x : resp.getData()) {
+            if (name.equals(x.getName())) {
+                return x;
             }
         }
+        return null;
+    }
 
-        DepartmentMember_Add_Api.Req req2 = new DepartmentMember_Add_Api.Req();
-        req2.setDepartmentId(department.getId());
-        req2.setEmailAddress("test@test.com");
-        req2.setLoginName("test");
-        req2.setLoginPassword("pass");
-        req2.setName("测试");
-        req2.setPhone("13426290529");
-        DepartmentMember_Add_Api.execute(req2);
+    private static void addDepartmentMember() throws Exception {
+        Department department = queryDepartment("技术部");
+        DepartmentMember_Add_Api.Req req = new DepartmentMember_Add_Api.Req();
+        req.setDepartmentId(department.getId());
+        req.setEmailAddress("test@test.com");
+        req.setLoginName("test");
+        req.setLoginPassword("pass");
+        req.setName("测试");
+        req.setPhone("13426290529");
+        DepartmentMember_Add_Api.execute(req);
     }
 
     private static void setAsChoice() throws Exception {
