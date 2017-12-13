@@ -52,21 +52,23 @@ public class SampleData {
     }
 
     private static void addDepartments() throws Exception {
-        addDepartment("行政部", "Administrative Department");
-        addDepartment("财务部", "Financial Department");
-        addDepartment("质量管理部", "Quality Control Department");
-        addDepartment("营销部", "Sales Department");
-        addDepartment("营运部", "Operation Department");
-        addDepartment("技术部", "Technology Department");
-        addDepartment("维修部门", "Maintenance Department");
-        addDepartment("人力资源部", "Human Resources Department");
-        addDepartment("客户服务部", "Customer Service Department");
+        String permissions = JSON.toJSONString(Arrays.asList("orderQuery", "orderUpdate", "orderDelete", "goodsAdd", "goodsUpdate", "goodsDelete", "roomCardAdd", "roomCardUpdate", "roomCardDelete", "withdrawCashAuditAgree", "withdrawCashAuditReject", "stockQuery", "stockUpdate", "bannerManage", "choiceBannerManage", "goodsHotWordsManage", "imageTextAdd", "departmentMemberQuery", "departmentMemberUpdate"));
+        addDepartment("行政部", "Administrative Department", permissions);
+        addDepartment("财务部", "Financial Department", permissions);
+        addDepartment("质量管理部", "Quality Control Department", permissions);
+        addDepartment("营销部", "Sales Department", permissions);
+        addDepartment("营运部", "Operation Department", permissions);
+        addDepartment("技术部", "Technology Department", permissions);
+        addDepartment("维修部门", "Maintenance Department", permissions);
+        addDepartment("人力资源部", "Human Resources Department", permissions);
+        addDepartment("客户服务部", "Customer Service Department", permissions);
     }
 
-    private static void addDepartment(String name, String desc) throws Exception {
+    private static void addDepartment(String name, String desc, String permissions) throws Exception {
         Department_Add_Api.Req req = new Department_Add_Api.Req();
         req.setName(name);
         req.setDesc(desc);
+        req.setPermissions(permissions);
         Department_Add_Api.execute(req);
     }
 
