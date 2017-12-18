@@ -67,6 +67,18 @@ public class User {
         this.wxAvatarImgUrl = wxAvatarImgUrl;
     }
 
+    @Comment(value = "极光推送 - 别名")
+    @Required(value = true)
+    private String jpushAlias;
+
+    public String getJpushAlias() {
+        return jpushAlias;
+    }
+
+    public void setJpushAlias(String jpushAlias) {
+        this.jpushAlias = jpushAlias;
+    }
+
     @Comment(value = "头像")
     @Required(value = true)
     private String avatarImgUrl;

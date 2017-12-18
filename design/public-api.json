@@ -2625,6 +2625,14 @@
 					"required": true
 				},
 				{
+					"comment": "极光推送 - 别名",
+					"example": "example",
+					"javaType": "String",
+					"name": "jpushAlias",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "头像",
 					"example": "example",
 					"javaType": "String",
@@ -3184,5 +3192,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.38"
+	"version": "v1.0.39"
 }
