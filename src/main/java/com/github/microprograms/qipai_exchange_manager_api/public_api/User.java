@@ -31,16 +31,16 @@ public class User {
         this.token = token;
     }
 
-    @Comment(value = "微信 - OPENID")
+    @Comment(value = "微信 - UNIONID")
     @Required(value = true)
-    private String wxOpenId;
+    private String wxUnionId;
 
-    public String getWxOpenId() {
-        return wxOpenId;
+    public String getWxUnionId() {
+        return wxUnionId;
     }
 
-    public void setWxOpenId(String wxOpenId) {
-        this.wxOpenId = wxOpenId;
+    public void setWxUnionId(String wxUnionId) {
+        this.wxUnionId = wxUnionId;
     }
 
     @Comment(value = "微信 - 昵称")

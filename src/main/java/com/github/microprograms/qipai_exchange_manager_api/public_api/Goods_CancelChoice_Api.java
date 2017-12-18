@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品 - 取消优选商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.39")
+@MicroApiAnnotation(type = "read", version = "v1.0.40")
 public class Goods_CancelChoice_Api {
 
     public static Response execute(Request request) throws Exception {

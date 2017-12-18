@@ -2601,10 +2601,10 @@
 					"required": true
 				},
 				{
-					"comment": "微信 - OPENID",
+					"comment": "微信 - UNIONID",
 					"example": "example",
 					"javaType": "String",
-					"name": "wxOpenId",
+					"name": "wxUnionId",
 					"primaryKey": 0,
 					"required": true
 				},
@@ -3192,5 +3192,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.39"
+	"version": "v1.0.40"
 }
