@@ -115,7 +115,7 @@ public class User {
         this.phone = phone;
     }
 
-    @Comment(value = "会员等级")
+    @Comment(value = "会员等级(0游客,1会员,2钻石会员)")
     @Required(value = true)
     private Integer level;
 

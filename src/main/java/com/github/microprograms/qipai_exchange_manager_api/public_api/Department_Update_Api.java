@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.40")
+@MicroApiAnnotation(type = "read", version = "v1.0.41")
 public class Department_Update_Api {
 
     public static Response execute(Request request) throws Exception {

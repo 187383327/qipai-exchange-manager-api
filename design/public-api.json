@@ -2401,6 +2401,14 @@
 					"required": true
 				},
 				{
+					"comment": "商品ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "goodsId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
 					"comment": "详情的具体图文信息链接",
 					"example": "example",
 					"javaType": "String",
@@ -2657,7 +2665,7 @@
 					"required": true
 				},
 				{
-					"comment": "会员等级",
+					"comment": "会员等级(0游客,1会员,2钻石会员)",
 					"example": "example",
 					"javaType": "Integer",
 					"name": "level",
@@ -3192,5 +3200,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.40"
+	"version": "v1.0.41"
 }

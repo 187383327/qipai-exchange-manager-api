@@ -55,6 +55,18 @@ public class Banner {
         this.url = url;
     }
 
+    @Comment(value = "商品ID")
+    @Required(value = true)
+    private String goodsId;
+
+    public String getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId;
+    }
+
     @Comment(value = "详情的具体图文信息链接")
     @Required(value = true)
     private String contentUrl;
