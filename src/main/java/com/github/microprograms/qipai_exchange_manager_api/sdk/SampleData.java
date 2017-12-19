@@ -21,14 +21,11 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Department
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Department_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Department_QueryList_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GiftPack_Add_Api;
-import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_QueryAll_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_QueryAll_Api.Resp;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_Add_Api;
-import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_QueryList_Api;
-import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_SetAsChoice_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_UpdateAllHotWords_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.RoomCard_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
@@ -46,7 +43,6 @@ public class SampleData {
         addRoomCards();
         addWalletBills();
         addGiftPacks();
-        setAsChoice();
         addDepartments();
         addDepartmentMember();
     }
@@ -93,18 +89,6 @@ public class SampleData {
         req.setName("测试");
         req.setPhone("13426290529");
         DepartmentMember_Add_Api.execute(req);
-    }
-
-    private static void setAsChoice() throws Exception {
-        Goods_QueryList_Api.Req req = new Goods_QueryList_Api.Req();
-        req.setSearchKeyword("手机");
-        Goods_QueryList_Api.Resp resp1 = (com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_QueryList_Api.Resp) Goods_QueryList_Api.execute(req);
-
-        for (Goods x : resp1.getData()) {
-            Goods_SetAsChoice_Api.Req _req = new Goods_SetAsChoice_Api.Req();
-            _req.setGoodsId(x.getId());
-            Goods_SetAsChoice_Api.execute(_req);
-        }
     }
 
     private static void addGiftPacks() throws Exception {
