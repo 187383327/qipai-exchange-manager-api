@@ -3140,8 +3140,8 @@
 		"url": "/qipai-exchange-manager-api"
 	},
 	"showdocDefinition": {
-		"apiKey": "e10daa276098ee3a100e5c577800075f2008791469",
-		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
+		"apiKey": "42e11c51ac571cf307e47ad6f855ead61928211086",
+		"apiToken": "b46d8b8812756ead968ddbd4d399a4cd611515808",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
 	"version": "v1.0.43"
