@@ -175,27 +175,15 @@ public class Goods {
         this.isDelete = isDelete;
     }
 
-    @Comment(value = "会员优选 - 是否为优选商品(0否1是)")
+    @Comment(value = "商品类型(1普通商品,2优选商品)")
     @Required(value = true)
-    private Integer choice_isChoice;
+    private Integer type;
 
-    public Integer getChoice_isChoice() {
-        return choice_isChoice;
+    public Integer getType() {
+        return type;
     }
 
-    public void setChoice_isChoice(Integer choice_isChoice) {
-        this.choice_isChoice = choice_isChoice;
-    }
-
-    @Comment(value = "会员优选 - 排序")
-    @Required(value = true)
-    private Integer choice_reorder;
-
-    public Integer getChoice_reorder() {
-        return choice_reorder;
-    }
-
-    public void setChoice_reorder(Integer choice_reorder) {
-        this.choice_reorder = choice_reorder;
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

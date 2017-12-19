@@ -1840,7 +1840,7 @@
 			"javaClassName": "GoodsCategory"
 		},
 		{
-			"comment": "商品",
+			"comment": "商品/优选商品",
 			"fieldDefinitions": [
 				{
 					"comment": "商品编号",
@@ -1955,18 +1955,10 @@
 					"required": true
 				},
 				{
-					"comment": "会员优选 - 是否为优选商品(0否1是)",
+					"comment": "商品类型(1普通商品,2优选商品)",
 					"example": "example",
 					"javaType": "Integer",
-					"name": "choice_isChoice",
-					"primaryKey": 0,
-					"required": true
-				},
-				{
-					"comment": "会员优选 - 排序",
-					"example": "example",
-					"javaType": "Integer",
-					"name": "choice_reorder",
+					"name": "type",
 					"primaryKey": 0,
 					"required": true
 				}
@@ -2087,7 +2079,7 @@
 					"required": false
 				},
 				{
-					"comment": "订单类型(1使用元宝支付的商品订单,2使用人民币支付的房卡订单,3使用元宝支付的礼包订单)",
+					"comment": "订单类型(1使用元宝支付的商品/优选商品订单,2使用人民币支付的房卡订单,3使用元宝支付的礼包订单)",
 					"example": "example",
 					"javaType": "Integer",
 					"name": "orderType",
@@ -2637,6 +2629,38 @@
 					"example": "example",
 					"javaType": "String",
 					"name": "jpushAlias",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "vv棋牌 - 游戏账号ID",
+					"example": "example",
+					"javaType": "String",
+					"name": "vvUserId",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "vv棋牌 - 元宝数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "vvIngot",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "vv棋牌 - 金币数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "vvBean",
+					"primaryKey": 0,
+					"required": true
+				},
+				{
+					"comment": "vv棋牌 - 房卡数量",
+					"example": "example",
+					"javaType": "Integer",
+					"name": "vvSpecialGold",
 					"primaryKey": 0,
 					"required": true
 				},
@@ -3200,5 +3224,5 @@
 		"apiToken": "3c97daaab1248ac6d45ba3fc07fc83c31541123743",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.41"
+	"version": "v1.0.42"
 }

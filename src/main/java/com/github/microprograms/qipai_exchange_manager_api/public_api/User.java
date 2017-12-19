@@ -79,6 +79,54 @@ public class User {
         this.jpushAlias = jpushAlias;
     }
 
+    @Comment(value = "vv棋牌 - 游戏账号ID")
+    @Required(value = true)
+    private String vvUserId;
+
+    public String getVvUserId() {
+        return vvUserId;
+    }
+
+    public void setVvUserId(String vvUserId) {
+        this.vvUserId = vvUserId;
+    }
+
+    @Comment(value = "vv棋牌 - 元宝数量")
+    @Required(value = true)
+    private Integer vvIngot;
+
+    public Integer getVvIngot() {
+        return vvIngot;
+    }
+
+    public void setVvIngot(Integer vvIngot) {
+        this.vvIngot = vvIngot;
+    }
+
+    @Comment(value = "vv棋牌 - 金币数量")
+    @Required(value = true)
+    private Integer vvBean;
+
+    public Integer getVvBean() {
+        return vvBean;
+    }
+
+    public void setVvBean(Integer vvBean) {
+        this.vvBean = vvBean;
+    }
+
+    @Comment(value = "vv棋牌 - 房卡数量")
+    @Required(value = true)
+    private Integer vvSpecialGold;
+
+    public Integer getVvSpecialGold() {
+        return vvSpecialGold;
+    }
+
+    public void setVvSpecialGold(Integer vvSpecialGold) {
+        this.vvSpecialGold = vvSpecialGold;
+    }
+
     @Comment(value = "头像")
     @Required(value = true)
     private String avatarImgUrl;

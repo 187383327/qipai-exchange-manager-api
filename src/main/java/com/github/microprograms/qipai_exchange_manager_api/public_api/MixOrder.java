@@ -55,7 +55,7 @@ public class MixOrder {
         this.status = status;
     }
 
-    @Comment(value = "订单类型(1使用元宝支付的商品订单,2使用人民币支付的房卡订单,3使用元宝支付的礼包订单)")
+    @Comment(value = "订单类型(1使用元宝支付的商品/优选商品订单,2使用人民币支付的房卡订单,3使用元宝支付的礼包订单)")
     @Required(value = false)
     private Integer orderType;
 
