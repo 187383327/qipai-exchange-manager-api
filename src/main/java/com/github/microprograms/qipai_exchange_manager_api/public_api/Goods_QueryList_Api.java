@@ -18,8 +18,8 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "商品 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.43")
+@Comment(value = "商品/优选商品 - 查询列表")
+@MicroApiAnnotation(type = "read", version = "v1.0.44")
 public class Goods_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -68,6 +68,18 @@ public class Goods_QueryList_Api {
 
         public void setPageSize(Integer pageSize) {
             this.pageSize = pageSize;
+        }
+
+        @Comment(value = "商品类型(1普通商品,2优选商品)")
+        @Required(value = true)
+        private Integer type;
+
+        public Integer getType() {
+            return type;
+        }
+
+        public void setType(Integer type) {
+            this.type = type;
         }
 
         @Comment(value = "搜索 - 关键字")

@@ -15,8 +15,8 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_core.model.HotWord;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "商品 - 查询全部搜索热点词")
-@MicroApiAnnotation(type = "read", version = "v1.0.43")
+@Comment(value = "商品/优选商品 - 查询全部搜索热点词")
+@MicroApiAnnotation(type = "read", version = "v1.0.44")
 public class Goods_QueryAllHotWords_Api {
 
     public static Response execute(Request request) throws Exception {

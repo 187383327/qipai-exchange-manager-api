@@ -1,7 +1,7 @@
 {
 	"apiDefinitions": [
 		{
-			"comment": "商品 - 查询列表",
+			"comment": "商品/优选商品 - 查询列表",
 			"javaClassName": "Goods_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
@@ -17,6 +17,13 @@
 						"example": "example",
 						"javaType": "Integer",
 						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "商品类型(1普通商品,2优选商品)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "type",
 						"required": true
 					},
 					{
@@ -77,7 +84,7 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品 - 查询详情",
+			"comment": "商品/优选商品 - 查询详情",
 			"javaClassName": "Goods_QueryDetail_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
@@ -104,16 +111,23 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品 - 添加新商品",
+			"comment": "商品/优选商品 - 添加新商品",
 			"javaClassName": "Goods_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "商品类型(1普通商品,2优选商品)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "type",
+						"required": true
+					},
 					{
 						"comment": "商品类别编号",
 						"example": "example",
 						"javaType": "String",
 						"name": "categoryId",
-						"required": true
+						"required": false
 					},
 					{
 						"comment": "商品名",
@@ -127,7 +141,7 @@
 						"example": "example",
 						"javaType": "Integer",
 						"name": "price",
-						"required": true
+						"required": false
 					},
 					{
 						"comment": "会员价格(元宝)",
@@ -176,7 +190,7 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品 - 更新",
+			"comment": "商品/优选商品 - 更新",
 			"javaClassName": "Goods_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
@@ -248,7 +262,7 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品 - 删除",
+			"comment": "商品/优选商品 - 删除",
 			"javaClassName": "Goods_Delete_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
@@ -264,7 +278,7 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品 - 查询全部搜索热点词",
+			"comment": "商品/优选商品 - 查询全部搜索热点词",
 			"javaClassName": "Goods_QueryAllHotWords_Api",
 			"responseDefinition": {
 				"fieldDefinitions": [
@@ -280,7 +294,7 @@
 			"type": "read"
 		},
 		{
-			"comment": "商品 - 更新全部搜索热点词",
+			"comment": "商品/优选商品 - 更新全部搜索热点词",
 			"javaClassName": "Goods_UpdateAllHotWords_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
@@ -3140,9 +3154,9 @@
 		"url": "/qipai-exchange-manager-api"
 	},
 	"showdocDefinition": {
-		"apiKey": "42e11c51ac571cf307e47ad6f855ead61928211086",
-		"apiToken": "b46d8b8812756ead968ddbd4d399a4cd611515808",
+		"apiKey": "2bfa4fb8339cee330cf559a0111e963d534431621",
+		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.43"
+	"version": "v1.0.44"
 }

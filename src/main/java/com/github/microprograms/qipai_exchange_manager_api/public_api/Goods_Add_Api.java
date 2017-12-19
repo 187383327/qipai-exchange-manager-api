@@ -11,8 +11,8 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "商品 - 添加新商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.43")
+@Comment(value = "商品/优选商品 - 添加新商品")
+@MicroApiAnnotation(type = "read", version = "v1.0.44")
 public class Goods_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -39,8 +39,20 @@ public class Goods_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "商品类别编号")
+        @Comment(value = "商品类型(1普通商品,2优选商品)")
         @Required(value = true)
+        private Integer type;
+
+        public Integer getType() {
+            return type;
+        }
+
+        public void setType(Integer type) {
+            this.type = type;
+        }
+
+        @Comment(value = "商品类别编号")
+        @Required(value = false)
         private String categoryId;
 
         public String getCategoryId() {
@@ -64,7 +76,7 @@ public class Goods_Add_Api {
         }
 
         @Comment(value = "商品价格(元宝)")
-        @Required(value = true)
+        @Required(value = false)
         private Integer price;
 
         public Integer getPrice() {
