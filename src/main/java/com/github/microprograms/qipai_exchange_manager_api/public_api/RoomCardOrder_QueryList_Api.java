@@ -40,7 +40,7 @@ public class RoomCardOrder_QueryList_Api {
     private static String buildFinalCondition(Req req) {
         ComplexCondition dtCreate = Where.and(Condition.build("dtCreate>", req.getSearchBeginTimestamp()), Condition.build("dtCreate<", req.getSearchEndTimestamp()));
         LikeCondition keyword = LikeCondition.build("id", req.getSearchKeyword());
-        ComplexCondition transportReceiver = Where.and(LikeCondition.build("transportReceiver", req.getSearchTransportReceiver()), LikeCondition.build("transportPhone", req.getSearchTransportReceiver()));
+        ComplexCondition transportReceiver = Where.or(LikeCondition.build("transportReceiver", req.getSearchTransportReceiver()), LikeCondition.build("transportPhone", req.getSearchTransportReceiver()));
         Condition status = (req.getSearchStatus() == null || req.getSearchStatus() == 0) ? null : Condition.build("status=", req.getSearchStatus());
         Condition orderType = Condition.build("orderType=", 2);
         return Where.and(dtCreate, keyword, transportReceiver, status, orderType).toString();
