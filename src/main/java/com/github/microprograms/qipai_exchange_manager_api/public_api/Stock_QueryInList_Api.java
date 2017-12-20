@@ -8,6 +8,7 @@ import com.github.microprograms.ignite_utils.sql.dml.PagerRequest;
 import com.github.microprograms.ignite_utils.sql.dml.PagerResponse;
 import com.github.microprograms.ignite_utils.sql.dml.SelectCountSql;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
+import com.github.microprograms.ignite_utils.sql.dml.Where;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
@@ -34,14 +35,12 @@ public class Stock_QueryInList_Api {
     }
 
     private static String buildFinalCondition(Req req) {
-        return LikeCondition.build("goodsName", req.getSearchKeyword()).toString();
+        return Where.and(LikeCondition.build("goodsName", req.getSearchKeyword())).toString();
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "页码(从0开始)")
-        @Required(value = true)
-        private Integer pageIndex;
+        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -51,9 +50,7 @@ public class Stock_QueryInList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小")
-        @Required(value = true)
-        private Integer pageSize;
+        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -63,9 +60,7 @@ public class Stock_QueryInList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "搜索 - 关键字")
-        @Required(value = false)
-        private String searchKeyword;
+        @Comment(value = "搜索 - 关键字") @Required(value = false) private String searchKeyword;
 
         public String getSearchKeyword() {
             return searchKeyword;
@@ -78,9 +73,7 @@ public class Stock_QueryInList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "入库列表")
-        @Required(value = true)
-        private java.util.List<NewStock> data;
+        @Comment(value = "入库列表") @Required(value = true) private java.util.List<NewStock> data;
 
         public java.util.List<NewStock> getData() {
             return data;
@@ -90,9 +83,7 @@ public class Stock_QueryInList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页")
-        @Required(value = true)
-        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;
