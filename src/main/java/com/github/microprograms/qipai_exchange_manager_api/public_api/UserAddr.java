@@ -55,6 +55,18 @@ public class UserAddr {
         this.dtCreate = dtCreate;
     }
 
+    @Comment(value = "设置为默认收货地址的时间")
+    @Required(value = true)
+    private Long dtFavorite;
+
+    public Long getDtFavorite() {
+        return dtFavorite;
+    }
+
+    public void setDtFavorite(Long dtFavorite) {
+        this.dtFavorite = dtFavorite;
+    }
+
     @Comment(value = "是否为默认收货地址(0否1是)")
     @Required(value = true)
     private Integer favorite;

@@ -31,6 +31,18 @@ public class MixOrder {
         this.userId = userId;
     }
 
+    @Comment(value = "微信 - UNIONID")
+    @Required(value = true)
+    private String wxUnionId;
+
+    public String getWxUnionId() {
+        return wxUnionId;
+    }
+
+    public void setWxUnionId(String wxUnionId) {
+        this.wxUnionId = wxUnionId;
+    }
+
     @Comment(value = "提交时间")
     @Required(value = true)
     private Long dtCreate;
@@ -67,7 +79,7 @@ public class MixOrder {
         this.orderType = orderType;
     }
 
-    @Comment(value = "商品订单 - 商品数量")
+    @Comment(value = "商品订单 - 商品总数量")
     @Required(value = false)
     private Integer goodsOrder_goodsQuantity;
 
@@ -79,7 +91,7 @@ public class MixOrder {
         this.goodsOrder_goodsQuantity = goodsOrder_goodsQuantity;
     }
 
-    @Comment(value = "商品订单 - 订单金额(元宝)")
+    @Comment(value = "商品订单 - 订单总金额(元宝)")
     @Required(value = false)
     private Integer goodsOrder_orderAmount;
 
@@ -127,7 +139,19 @@ public class MixOrder {
         this.roomCardOrder_buyQuantity = roomCardOrder_buyQuantity;
     }
 
-    @Comment(value = "房卡订单 - 订单金额(元)")
+    @Comment(value = "房卡订单 - 购买金币总数量(个)")
+    @Required(value = false)
+    private Integer roomCardOrder_buyBeanAmount;
+
+    public Integer getRoomCardOrder_buyBeanAmount() {
+        return roomCardOrder_buyBeanAmount;
+    }
+
+    public void setRoomCardOrder_buyBeanAmount(Integer roomCardOrder_buyBeanAmount) {
+        this.roomCardOrder_buyBeanAmount = roomCardOrder_buyBeanAmount;
+    }
+
+    @Comment(value = "房卡订单 - 订单总金额(元)")
     @Required(value = false)
     private Integer roomCardOrder_orderAmount;
 
@@ -149,6 +173,102 @@ public class MixOrder {
 
     public void setRoomCardOrder_payChannel(Integer roomCardOrder_payChannel) {
         this.roomCardOrder_payChannel = roomCardOrder_payChannel;
+    }
+
+    @Comment(value = "房卡订单 - 房卡明细(JsonObject)")
+    @Required(value = false)
+    private String roomCardOrder_detail;
+
+    public String getRoomCardOrder_detail() {
+        return roomCardOrder_detail;
+    }
+
+    public void setRoomCardOrder_detail(String roomCardOrder_detail) {
+        this.roomCardOrder_detail = roomCardOrder_detail;
+    }
+
+    @Comment(value = "房卡订单 - 微信支付 - 回调时间")
+    @Required(value = false)
+    private Long roomCardOrder_wxPay_dtNotify;
+
+    public Long getRoomCardOrder_wxPay_dtNotify() {
+        return roomCardOrder_wxPay_dtNotify;
+    }
+
+    public void setRoomCardOrder_wxPay_dtNotify(Long roomCardOrder_wxPay_dtNotify) {
+        this.roomCardOrder_wxPay_dtNotify = roomCardOrder_wxPay_dtNotify;
+    }
+
+    @Comment(value = "房卡订单 - 微信支付 - 原始通知内容")
+    @Required(value = false)
+    private String roomCardOrder_wxPay_rawNotify;
+
+    public String getRoomCardOrder_wxPay_rawNotify() {
+        return roomCardOrder_wxPay_rawNotify;
+    }
+
+    public void setRoomCardOrder_wxPay_rawNotify(String roomCardOrder_wxPay_rawNotify) {
+        this.roomCardOrder_wxPay_rawNotify = roomCardOrder_wxPay_rawNotify;
+    }
+
+    @Comment(value = "房卡订单 - 微信支付 - 是否支付成功(0否1是)")
+    @Required(value = false)
+    private Integer roomCardOrder_wxPay_isSuccess;
+
+    public Integer getRoomCardOrder_wxPay_isSuccess() {
+        return roomCardOrder_wxPay_isSuccess;
+    }
+
+    public void setRoomCardOrder_wxPay_isSuccess(Integer roomCardOrder_wxPay_isSuccess) {
+        this.roomCardOrder_wxPay_isSuccess = roomCardOrder_wxPay_isSuccess;
+    }
+
+    @Comment(value = "房卡订单 - HS Api - 请求时间")
+    @Required(value = false)
+    private Long roomCardOrder_hsApi_dtRequest;
+
+    public Long getRoomCardOrder_hsApi_dtRequest() {
+        return roomCardOrder_hsApi_dtRequest;
+    }
+
+    public void setRoomCardOrder_hsApi_dtRequest(Long roomCardOrder_hsApi_dtRequest) {
+        this.roomCardOrder_hsApi_dtRequest = roomCardOrder_hsApi_dtRequest;
+    }
+
+    @Comment(value = "房卡订单 - HS Api - 响应时间")
+    @Required(value = false)
+    private Long roomCardOrder_hsApi_dtResponse;
+
+    public Long getRoomCardOrder_hsApi_dtResponse() {
+        return roomCardOrder_hsApi_dtResponse;
+    }
+
+    public void setRoomCardOrder_hsApi_dtResponse(Long roomCardOrder_hsApi_dtResponse) {
+        this.roomCardOrder_hsApi_dtResponse = roomCardOrder_hsApi_dtResponse;
+    }
+
+    @Comment(value = "房卡订单 - HS Api - 原始请求参数")
+    @Required(value = false)
+    private String roomCardOrder_hsApi_rawRequest;
+
+    public String getRoomCardOrder_hsApi_rawRequest() {
+        return roomCardOrder_hsApi_rawRequest;
+    }
+
+    public void setRoomCardOrder_hsApi_rawRequest(String roomCardOrder_hsApi_rawRequest) {
+        this.roomCardOrder_hsApi_rawRequest = roomCardOrder_hsApi_rawRequest;
+    }
+
+    @Comment(value = "房卡订单 - HS Api - 原始响应参数")
+    @Required(value = false)
+    private String roomCardOrder_hsApi_rawResponse;
+
+    public String getRoomCardOrder_hsApi_rawResponse() {
+        return roomCardOrder_hsApi_rawResponse;
+    }
+
+    public void setRoomCardOrder_hsApi_rawResponse(String roomCardOrder_hsApi_rawResponse) {
+        this.roomCardOrder_hsApi_rawResponse = roomCardOrder_hsApi_rawResponse;
     }
 
     @Comment(value = "礼包订单 - 礼包ID")
