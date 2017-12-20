@@ -1505,6 +1505,33 @@
 			"type": "read"
 		},
 		{
+			"comment": "系统 - 检查Token是否有效",
+			"javaClassName": "System_IsValidToken_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "是否有效(0否1是)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "礼包 - 查询列表",
 			"javaClassName": "GiftPack_QueryList_Api",
 			"requestDefinition": {
@@ -1879,5 +1906,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.49"
+	"version": "v1.0.50"
 }
