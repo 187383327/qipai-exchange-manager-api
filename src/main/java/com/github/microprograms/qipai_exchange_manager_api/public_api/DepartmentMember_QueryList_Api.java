@@ -15,7 +15,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门成员 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.46")
+@MicroApiAnnotation(type = "read", version = "v1.0.47")
 public class DepartmentMember_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

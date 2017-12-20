@@ -1679,6 +1679,82 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "用户 - 查询列表",
+			"javaClassName": "User_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "搜索 - 用户ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchUserId",
+						"required": false
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "用户列表",
+						"example": "example",
+						"javaType": "java.util.List<User>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "用户 - 查询详情",
+			"javaClassName": "User_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "用户ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "userId",
+						"primaryKey": 0,
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "用户详情",
+						"example": "example",
+						"javaType": "User",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -1748,5 +1824,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.46"
+	"version": "v1.0.47"
 }
