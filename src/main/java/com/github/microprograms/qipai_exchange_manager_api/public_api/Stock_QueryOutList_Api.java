@@ -2,6 +2,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.LikeCondition;
 import com.github.microprograms.ignite_utils.sql.dml.PagerRequest;
@@ -34,14 +35,13 @@ public class Stock_QueryOutList_Api {
     }
 
     private static String buildFinalCondition(Req req) {
-        return LikeCondition.build("goodsName", req.getSearchKeyword()).toString();
+        LikeCondition goodsName = LikeCondition.build("goodsName", req.getSearchKeyword());
+        return goodsName == null ? null : goodsName.toString();
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "页码(从0开始)")
-        @Required(value = true)
-        private Integer pageIndex;
+        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -51,9 +51,7 @@ public class Stock_QueryOutList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小")
-        @Required(value = true)
-        private Integer pageSize;
+        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -63,9 +61,7 @@ public class Stock_QueryOutList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "搜索 - 关键字")
-        @Required(value = false)
-        private String searchKeyword;
+        @Comment(value = "搜索 - 关键字") @Required(value = false) private String searchKeyword;
 
         public String getSearchKeyword() {
             return searchKeyword;
@@ -78,9 +74,7 @@ public class Stock_QueryOutList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "出库列表")
-        @Required(value = true)
-        private java.util.List<GoodsOrderItem> data;
+        @Comment(value = "出库列表") @Required(value = true) private java.util.List<GoodsOrderItem> data;
 
         public java.util.List<GoodsOrderItem> getData() {
             return data;
@@ -90,9 +84,7 @@ public class Stock_QueryOutList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页")
-        @Required(value = true)
-        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;
