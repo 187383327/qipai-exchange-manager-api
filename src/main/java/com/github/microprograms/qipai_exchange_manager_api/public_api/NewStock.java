@@ -43,7 +43,19 @@ public class NewStock {
         this.goodsName = goodsName;
     }
 
-    @Comment(value = "新增库存")
+    @Comment(value = "旧库存数量(入库前)")
+    @Required(value = false)
+    private Integer oldStock;
+
+    public Integer getOldStock() {
+        return oldStock;
+    }
+
+    public void setOldStock(Integer oldStock) {
+        this.oldStock = oldStock;
+    }
+
+    @Comment(value = "新库存数量(入库后)")
     @Required(value = false)
     private Integer newStock;
 
@@ -55,16 +67,16 @@ public class NewStock {
         this.newStock = newStock;
     }
 
-    @Comment(value = "剩余库存")
+    @Comment(value = "入库量(变化数量)")
     @Required(value = false)
-    private Integer remainingStock;
+    private Integer amount;
 
-    public Integer getRemainingStock() {
-        return remainingStock;
+    public Integer getAmount() {
+        return amount;
     }
 
-    public void setRemainingStock(Integer remainingStock) {
-        this.remainingStock = remainingStock;
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 
     @Comment(value = "创建时间")
@@ -77,5 +89,17 @@ public class NewStock {
 
     public void setDtCreate(Long dtCreate) {
         this.dtCreate = dtCreate;
+    }
+
+    @Comment(value = "上次修改时间")
+    @Required(value = true)
+    private Long dtLastModify;
+
+    public Long getDtLastModify() {
+        return dtLastModify;
+    }
+
+    public void setDtLastModify(Long dtLastModify) {
+        this.dtLastModify = dtLastModify;
     }
 }

@@ -10,7 +10,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     missing_required_parameters(1012, "缺少必填的参数"), /**商品类别数量超限*/
     goods_category_over_limit(1013, "商品类别数量超限"), /**账号和密码不匹配*/
     loginName_loginPassword_not_match(1014, "账号和密码不匹配"), /**Token已失效，请重新登录*/
-    invalid_token(1015, "Token已失效，请重新登录");
+    invalid_token(1015, "Token已失效，请重新登录"), /**数据已被修改，请重新操作*/
+    concurrency_modification_exception(1016, "数据已被修改，请重新操作");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

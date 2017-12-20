@@ -90,4 +90,16 @@ public class GiftPack {
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
+
+    @Comment(value = "上次修改时间")
+    @Required(value = true)
+    private Long dtLastModify;
+
+    public Long getDtLastModify() {
+        return dtLastModify;
+    }
+
+    public void setDtLastModify(Long dtLastModify) {
+        this.dtLastModify = dtLastModify;
+    }
 }

@@ -114,4 +114,16 @@ public class RoomCard {
     public void setDtCreate(Long dtCreate) {
         this.dtCreate = dtCreate;
     }
+
+    @Comment(value = "上次修改时间")
+    @Required(value = true)
+    private Long dtLastModify;
+
+    public Long getDtLastModify() {
+        return dtLastModify;
+    }
+
+    public void setDtLastModify(Long dtLastModify) {
+        this.dtLastModify = dtLastModify;
+    }
 }

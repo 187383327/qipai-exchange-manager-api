@@ -90,4 +90,16 @@ public class WalletBill {
     public void setInContributorUserLevel(Integer inContributorUserLevel) {
         this.inContributorUserLevel = inContributorUserLevel;
     }
+
+    @Comment(value = "上次修改时间")
+    @Required(value = true)
+    private Long dtLastModify;
+
+    public Long getDtLastModify() {
+        return dtLastModify;
+    }
+
+    public void setDtLastModify(Long dtLastModify) {
+        this.dtLastModify = dtLastModify;
+    }
 }

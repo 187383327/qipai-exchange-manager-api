@@ -306,4 +306,16 @@ public class User {
     public void setMyFollowerCount(Integer myFollowerCount) {
         this.myFollowerCount = myFollowerCount;
     }
+
+    @Comment(value = "上次修改时间")
+    @Required(value = true)
+    private Long dtLastModify;
+
+    public Long getDtLastModify() {
+        return dtLastModify;
+    }
+
+    public void setDtLastModify(Long dtLastModify) {
+        this.dtLastModify = dtLastModify;
+    }
 }

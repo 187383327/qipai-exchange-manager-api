@@ -1723,6 +1723,11 @@
 			"code": 1015,
 			"message": "Token已失效，请重新登录",
 			"name": "invalid_token"
+		},
+		{
+			"code": 1016,
+			"message": "数据已被修改，请重新操作",
+			"name": "concurrency_modification_exception"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -1743,5 +1748,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.45"
+	"version": "v1.0.46"
 }
