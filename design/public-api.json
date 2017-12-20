@@ -1755,6 +1755,61 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "用户 - 查询我的邀请列表",
+			"javaClassName": "User_QueryFollowerList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "用户ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "userId",
+						"required": false
+					},
+					{
+						"comment": "等级(1一级,2二级,3三级)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "level",
+						"required": false
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "我的邀请列表",
+						"example": "example",
+						"javaType": "java.util.List<User>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -1824,5 +1879,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.47"
+	"version": "v1.0.49"
 }

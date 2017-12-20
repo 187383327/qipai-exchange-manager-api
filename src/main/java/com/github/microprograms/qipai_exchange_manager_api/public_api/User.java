@@ -295,6 +295,30 @@ public class User {
         this.myLeaderId = myLeaderId;
     }
 
+    @Comment(value = "推荐人ID1")
+    @Required(value = true)
+    private String myLeaderId1;
+
+    public String getMyLeaderId1() {
+        return myLeaderId1;
+    }
+
+    public void setMyLeaderId1(String myLeaderId1) {
+        this.myLeaderId1 = myLeaderId1;
+    }
+
+    @Comment(value = "推荐人ID2")
+    @Required(value = true)
+    private String myLeaderId2;
+
+    public String getMyLeaderId2() {
+        return myLeaderId2;
+    }
+
+    public void setMyLeaderId2(String myLeaderId2) {
+        this.myLeaderId2 = myLeaderId2;
+    }
+
     @Comment(value = "我的邀请人数")
     @Required(value = true)
     private Integer myFollowerCount;

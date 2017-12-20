@@ -2,9 +2,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
@@ -17,7 +15,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "用户 - 查询详情")
-@MicroApiAnnotation(type = "read", version = "v1.0.47")
+@MicroApiAnnotation(type = "read", version = "v1.0.49")
 public class User_QueryDetail_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -40,7 +38,9 @@ public class User_QueryDetail_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "用户ID") @Required(value = true) private String userId;
+        @Comment(value = "用户ID")
+        @Required(value = true)
+        private String userId;
 
         public String getUserId() {
             return userId;
@@ -53,7 +53,9 @@ public class User_QueryDetail_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户详情") @Required(value = true) private User data;
+        @Comment(value = "用户详情")
+        @Required(value = true)
+        private User data;
 
         public User getData() {
             return data;
