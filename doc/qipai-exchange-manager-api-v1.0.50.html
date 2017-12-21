@@ -3428,6 +3428,12 @@
             <span class="api-field-comment">微信 - UNIONID</span>
         </dd>
         <dd>
+            <span class="api-field-name">vvUserId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">vv棋牌 - 游戏账号ID</span>
+        </dd>
+        <dd>
             <span class="api-field-name">dtCreate</span>
             <span class="api-field-type">Long</span>
             <span class="api-field-required">必填</span>
@@ -3464,10 +3470,22 @@
             <span class="api-field-comment">商品订单 - 商品明细(JsonArray)</span>
         </dd>
         <dd>
+            <span class="api-field-name">roomCardOrder_myLeaderId</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">房卡订单 - 推荐人ID</span>
+        </dd>
+        <dd>
             <span class="api-field-name">roomCardOrder_roomCardId</span>
             <span class="api-field-type">String</span>
             <span class="api-field-required">可选</span>
             <span class="api-field-comment">房卡订单 - 房卡ID</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">roomCardOrder_roomCardName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">房卡订单 - 房卡标题</span>
         </dd>
         <dd>
             <span class="api-field-name">roomCardOrder_buyQuantity</span>
@@ -3500,10 +3518,22 @@
             <span class="api-field-comment">房卡订单 - 房卡明细(JsonObject)</span>
         </dd>
         <dd>
+            <span class="api-field-name">roomCardOrder_wxPay_dtRequest</span>
+            <span class="api-field-type">Long</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">房卡订单 - 微信支付 - 请求时间</span>
+        </dd>
+        <dd>
             <span class="api-field-name">roomCardOrder_wxPay_dtNotify</span>
             <span class="api-field-type">Long</span>
             <span class="api-field-required">可选</span>
             <span class="api-field-comment">房卡订单 - 微信支付 - 回调时间</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">roomCardOrder_wxPay_rawRequest</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">房卡订单 - 微信支付 - 原始请求</span>
         </dd>
         <dd>
             <span class="api-field-name">roomCardOrder_wxPay_rawNotify</span>
@@ -4468,7 +4498,7 @@
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/microprograms/micro-api-sdk">MicroApiSdk</a>
-            <span>2017.12.20 10:31:09.970</span>
+            <span>2017.12.21 09:32:25.552</span>
         </p>
     </div>
 </body>

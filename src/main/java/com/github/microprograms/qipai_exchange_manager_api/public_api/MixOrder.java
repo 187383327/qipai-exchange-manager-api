@@ -43,6 +43,18 @@ public class MixOrder {
         this.wxUnionId = wxUnionId;
     }
 
+    @Comment(value = "vv棋牌 - 游戏账号ID")
+    @Required(value = true)
+    private String vvUserId;
+
+    public String getVvUserId() {
+        return vvUserId;
+    }
+
+    public void setVvUserId(String vvUserId) {
+        this.vvUserId = vvUserId;
+    }
+
     @Comment(value = "提交时间")
     @Required(value = true)
     private Long dtCreate;
@@ -115,6 +127,18 @@ public class MixOrder {
         this.goodsOrder_detail = goodsOrder_detail;
     }
 
+    @Comment(value = "房卡订单 - 推荐人ID")
+    @Required(value = false)
+    private String roomCardOrder_myLeaderId;
+
+    public String getRoomCardOrder_myLeaderId() {
+        return roomCardOrder_myLeaderId;
+    }
+
+    public void setRoomCardOrder_myLeaderId(String roomCardOrder_myLeaderId) {
+        this.roomCardOrder_myLeaderId = roomCardOrder_myLeaderId;
+    }
+
     @Comment(value = "房卡订单 - 房卡ID")
     @Required(value = false)
     private String roomCardOrder_roomCardId;
@@ -125,6 +149,18 @@ public class MixOrder {
 
     public void setRoomCardOrder_roomCardId(String roomCardOrder_roomCardId) {
         this.roomCardOrder_roomCardId = roomCardOrder_roomCardId;
+    }
+
+    @Comment(value = "房卡订单 - 房卡标题")
+    @Required(value = false)
+    private String roomCardOrder_roomCardName;
+
+    public String getRoomCardOrder_roomCardName() {
+        return roomCardOrder_roomCardName;
+    }
+
+    public void setRoomCardOrder_roomCardName(String roomCardOrder_roomCardName) {
+        this.roomCardOrder_roomCardName = roomCardOrder_roomCardName;
     }
 
     @Comment(value = "房卡订单 - 购买数量")
@@ -187,6 +223,18 @@ public class MixOrder {
         this.roomCardOrder_detail = roomCardOrder_detail;
     }
 
+    @Comment(value = "房卡订单 - 微信支付 - 请求时间")
+    @Required(value = false)
+    private Long roomCardOrder_wxPay_dtRequest;
+
+    public Long getRoomCardOrder_wxPay_dtRequest() {
+        return roomCardOrder_wxPay_dtRequest;
+    }
+
+    public void setRoomCardOrder_wxPay_dtRequest(Long roomCardOrder_wxPay_dtRequest) {
+        this.roomCardOrder_wxPay_dtRequest = roomCardOrder_wxPay_dtRequest;
+    }
+
     @Comment(value = "房卡订单 - 微信支付 - 回调时间")
     @Required(value = false)
     private Long roomCardOrder_wxPay_dtNotify;
@@ -197,6 +245,18 @@ public class MixOrder {
 
     public void setRoomCardOrder_wxPay_dtNotify(Long roomCardOrder_wxPay_dtNotify) {
         this.roomCardOrder_wxPay_dtNotify = roomCardOrder_wxPay_dtNotify;
+    }
+
+    @Comment(value = "房卡订单 - 微信支付 - 原始请求")
+    @Required(value = false)
+    private String roomCardOrder_wxPay_rawRequest;
+
+    public String getRoomCardOrder_wxPay_rawRequest() {
+        return roomCardOrder_wxPay_rawRequest;
+    }
+
+    public void setRoomCardOrder_wxPay_rawRequest(String roomCardOrder_wxPay_rawRequest) {
+        this.roomCardOrder_wxPay_rawRequest = roomCardOrder_wxPay_rawRequest;
     }
 
     @Comment(value = "房卡订单 - 微信支付 - 原始通知内容")
