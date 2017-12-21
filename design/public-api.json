@@ -1532,6 +1532,38 @@
 			"type": "read"
 		},
 		{
+			"comment": "系统 - 修改我的密码",
+			"javaClassName": "System_UpdateMyPassword_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
+						"comment": "旧的登录密码",
+						"example": "example",
+						"javaType": "String",
+						"name": "oldLoginPassword",
+						"primaryKey": 0,
+						"required": true
+					},
+					{
+						"comment": "新的登录密码",
+						"example": "example",
+						"javaType": "String",
+						"name": "newLoginPassword",
+						"primaryKey": 0,
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "礼包 - 查询列表",
 			"javaClassName": "GiftPack_QueryList_Api",
 			"requestDefinition": {
@@ -1945,5 +1977,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.51"
+	"version": "v1.0.52"
 }

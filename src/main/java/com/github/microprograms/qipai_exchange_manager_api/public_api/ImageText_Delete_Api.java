@@ -14,7 +14,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "图文 - 删除")
-@MicroApiAnnotation(type = "read", version = "v1.0.51")
+@MicroApiAnnotation(type = "read", version = "v1.0.52")
 public class ImageText_Delete_Api {
 
     public static Response execute(Request request) throws Exception {

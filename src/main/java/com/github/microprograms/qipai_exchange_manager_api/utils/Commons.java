@@ -12,6 +12,7 @@ import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.DepartmentMember;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.MixOrder;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.RoomCard;
@@ -60,10 +61,6 @@ public class Commons {
         return queryObject(User.class, Condition.build("wxUnionId=", wxUnionId));
     }
 
-    public static User queryUserByToken(String token) throws SQLException {
-        return queryObject(User.class, Condition.build("token=", token));
-    }
-
     public static User queryUserById(String userId) throws SQLException {
         return queryObject(User.class, Condition.build("id=", userId));
     }
@@ -78,5 +75,9 @@ public class Commons {
         List<FieldToUpdate> fields = new ArrayList<>();
         fields.add(new FieldToUpdate("myLeaderId", myLeaderId));
         return updateFieldsForObject(User.class, fields, Condition.build("id=", userId));
+    }
+
+    public static DepartmentMember queryDepartmentMemberByToken(String token) throws SQLException {
+        return queryObject(DepartmentMember.class, Condition.build("token=", token));
     }
 }
