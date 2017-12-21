@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
@@ -27,7 +26,9 @@ public class SystemConfig_QueryAll_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "系统配置") @Required(value = true) private SystemConfig data;
+        @Comment(value = "系统配置")
+        @Required(value = true)
+        private SystemConfig data;
 
         public SystemConfig getData() {
             return data;

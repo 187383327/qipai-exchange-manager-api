@@ -55,7 +55,7 @@ public class WalletBill {
         this.dtCreate = dtCreate;
     }
 
-    @Comment(value = "金额")
+    @Comment(value = "金额(分)")
     @Required(value = true)
     private String amount;
 

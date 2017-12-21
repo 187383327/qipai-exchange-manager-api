@@ -3,7 +3,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
@@ -36,7 +35,9 @@ public class SystemConfig_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "会员升级条件 - 普通会员") @Required(value = false) private Integer vipLevelUpConditionCommonVip;
+        @Comment(value = "会员升级条件 - 普通会员")
+        @Required(value = false)
+        private Integer vipLevelUpConditionCommonVip;
 
         public Integer getVipLevelUpConditionCommonVip() {
             return vipLevelUpConditionCommonVip;
@@ -46,7 +47,9 @@ public class SystemConfig_Update_Api {
             this.vipLevelUpConditionCommonVip = vipLevelUpConditionCommonVip;
         }
 
-        @Comment(value = "会员升级条件 - 钻石会员") @Required(value = false) private Integer vipLevelUpConditionGoldVip;
+        @Comment(value = "会员升级条件 - 钻石会员")
+        @Required(value = false)
+        private Integer vipLevelUpConditionGoldVip;
 
         public Integer getVipLevelUpConditionGoldVip() {
             return vipLevelUpConditionGoldVip;
