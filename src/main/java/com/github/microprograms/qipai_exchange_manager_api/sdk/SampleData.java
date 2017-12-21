@@ -1,6 +1,8 @@
 package com.github.microprograms.qipai_exchange_manager_api.sdk;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +14,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.model.Request;
+import com.github.microprograms.qipai_exchange_core.model.SystemConfig;
 import com.github.microprograms.qipai_exchange_core.model.WalletBill;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_UpdateAll_Api;
@@ -46,6 +49,16 @@ public class SampleData {
         addGiftPacks();
         addDepartments();
         addDepartmentMember();
+        initSystemConfig();
+    }
+
+    private static void initSystemConfig() throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            SystemConfig obj = new SystemConfig();
+            obj.setVipLevelUpConditionCommonVip(5);
+            obj.setVipLevelUpConditionGoldVip(40);
+            conn.createStatement().executeUpdate(InsertSql.build(obj));
+        }
     }
 
     private static void addDepartments() throws Exception {
