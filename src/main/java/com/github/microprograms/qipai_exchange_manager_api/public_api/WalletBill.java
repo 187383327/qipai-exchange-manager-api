@@ -57,14 +57,38 @@ public class WalletBill {
 
     @Comment(value = "金额(分)")
     @Required(value = true)
-    private String amount;
+    private Integer amount;
 
-    public String getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
+    }
+
+    @Comment(value = "钱包 - 旧余额(分)")
+    @Required(value = true)
+    private Integer oldWalletAmount;
+
+    public Integer getOldWalletAmount() {
+        return oldWalletAmount;
+    }
+
+    public void setOldWalletAmount(Integer oldWalletAmount) {
+        this.oldWalletAmount = oldWalletAmount;
+    }
+
+    @Comment(value = "钱包 - 新余额(分)")
+    @Required(value = true)
+    private Integer newWalletAmount;
+
+    public Integer getNewWalletAmount() {
+        return newWalletAmount;
+    }
+
+    public void setNewWalletAmount(Integer newWalletAmount) {
+        this.newWalletAmount = newWalletAmount;
     }
 
     @Comment(value = "入账 - 贡献用户ID")
