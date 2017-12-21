@@ -1837,6 +1837,45 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "系统配置 - 查询全部",
+			"javaClassName": "SystemConfig_QueryAll_Api",
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "系统配置",
+						"example": "example",
+						"javaType": "SystemConfig",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "系统配置 - 更新",
+			"javaClassName": "SystemConfig_Update_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "会员升级条件 - 普通会员",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "vipLevelUpConditionCommonVip",
+						"required": false
+					},
+					{
+						"comment": "会员升级条件 - 钻石会员",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "vipLevelUpConditionGoldVip",
+						"required": false
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -1906,5 +1945,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.50"
+	"version": "v1.0.51"
 }

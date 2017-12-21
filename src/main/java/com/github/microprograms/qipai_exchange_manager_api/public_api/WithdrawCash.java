@@ -31,7 +31,7 @@ public class WithdrawCash {
         this.userId = userId;
     }
 
-    @Comment(value = "提现金额(元)")
+    @Comment(value = "提现金额(分)")
     @Required(value = true)
     private Integer amount;
 

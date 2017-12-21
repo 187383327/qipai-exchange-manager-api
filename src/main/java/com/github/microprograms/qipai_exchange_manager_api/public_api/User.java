@@ -187,7 +187,7 @@ public class User {
         this.goldIngotAmount = goldIngotAmount;
     }
 
-    @Comment(value = "钱包 - 余额(元)")
+    @Comment(value = "钱包 - 余额(分)")
     @Required(value = true)
     private Integer walletAmount;
 

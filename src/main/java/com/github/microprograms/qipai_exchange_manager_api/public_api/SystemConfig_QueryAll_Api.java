@@ -2,10 +2,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
-import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
-import com.github.microprograms.ignite_utils.sql.dml.Sort;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
@@ -13,35 +12,28 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "Banner - 查询全部")
+@Comment(value = "系统配置 - 查询全部")
 @MicroApiAnnotation(type = "read", version = "v1.0.51")
-public class Banner_QueryAll_Api {
+public class SystemConfig_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
         Resp resp = new Resp();
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            String finalCondition = buildFinalCondition();
-            ResultSet rs = conn.createStatement().executeQuery(new SelectSql(Banner.class).where(finalCondition).sorts(Sort.asc("reorder")).build());
-            resp.setData(IgniteUtils.getJavaObjectList(rs, Banner.class));
+            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(SystemConfig.class).build());
+            resp.setData(IgniteUtils.getJavaObject(selectRs, SystemConfig.class));
         }
         return resp;
     }
 
-    private static String buildFinalCondition() {
-        return Condition.build("type=", "1").toString();
-    }
-
     public static class Resp extends Response {
 
-        @Comment(value = "Banner列表(全部)")
-        @Required(value = true)
-        private java.util.List<Banner> data;
+        @Comment(value = "系统配置") @Required(value = true) private SystemConfig data;
 
-        public java.util.List<Banner> getData() {
+        public SystemConfig getData() {
             return data;
         }
 
-        public void setData(java.util.List<Banner> data) {
+        public void setData(SystemConfig data) {
             this.data = data;
         }
     }

@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
-    <title>qipai-exchange-manager-api v1.0.50</title>
+    <title>qipai-exchange-manager-api v1.0.51</title>
     <style type="text/css">
     .tail {
           font-size: 14px;
@@ -63,11 +63,11 @@
 </head>
 <body>
     <div>
-        <h4>qipai-exchange-manager-api v1.0.50</h4>
+        <h4>qipai-exchange-manager-api v1.0.51</h4>
     </div>
     <h5>小提示：利用浏览器搜索功能Ctrl+F可快速定位API接口。每个接口都已定义快速跳转书签，点击超链接即可跳转。</h5>
     <div class="alert alert-warning">
-        <p>共53个接口</p>
+        <p>共55个接口</p>
         <ul>
             <li class="api-name-bookmark">
                 <a href="#Goods_QueryList_Api">商品/优选商品 - 查询列表</a>
@@ -227,6 +227,12 @@
             </li>
             <li class="api-name-bookmark">
                 <a href="#User_QueryFollowerList_Api">用户 - 查询我的邀请列表</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#SystemConfig_QueryAll_Api">系统配置 - 查询全部</a>
+            </li>
+            <li class="api-name-bookmark">
+                <a href="#SystemConfig_Update_Api">系统配置 - 更新</a>
             </li>
         </ul>
     </div>
@@ -3198,6 +3204,92 @@
             <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;,&quot;pager&quot;:&quot;example&quot;}</span>
         </dd>
     </div>
+    <div class="alert alert-info">
+        <a name="SystemConfig_QueryAll_Api">
+        </a>
+        <h4 class="api-name">#54 系统配置 - 查询全部</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为SystemConfig_QueryAll_Api</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;SystemConfig_QueryAll_Api&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">data</span>
+            <span class="api-field-type">
+                <a href="#SystemConfig">SystemConfig</a>
+            </span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">系统配置</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;,&quot;data&quot;:&quot;example&quot;}</span>
+        </dd>
+    </div>
+    <div class="alert alert-info">
+        <a name="SystemConfig_Update_Api">
+        </a>
+        <h4 class="api-name">#55 系统配置 - 更新</h4>
+        <dt class="request-and-response-title">请求字段</dt>
+        <dd>
+            <span class="api-field-name">apiName</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">接口名 - 固定为SystemConfig_Update_Api</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">vipLevelUpConditionCommonVip</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">会员升级条件 - 普通会员</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">vipLevelUpConditionGoldVip</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">可选</span>
+            <span class="api-field-comment">会员升级条件 - 钻石会员</span>
+        </dd>
+        <dt class="request-and-response-title">请求示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;apiName&quot;:&quot;SystemConfig_Update_Api&quot;,&quot;vipLevelUpConditionCommonVip&quot;:&quot;example&quot;,&quot;vipLevelUpConditionGoldVip&quot;:&quot;example&quot;}</span>
+        </dd>
+        <dt class="request-and-response-title">响应字段</dt>
+        <dd>
+            <span class="api-field-name">code</span>
+            <span class="api-field-type">Integer</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误码(0正常,非0错误)</span>
+        </dd>
+        <dd>
+            <span class="api-field-name">message</span>
+            <span class="api-field-type">String</span>
+            <span class="api-field-required">必填</span>
+            <span class="api-field-comment">错误提示</span>
+        </dd>
+        <dt class="request-and-response-title">响应示例</dt>
+        <dd>
+            <span class="entity-example">{&quot;code&quot;:0,&quot;message&quot;:&quot;成功&quot;}</span>
+        </dd>
+    </div>
     <div class="alert alert-success">
         <a name="GoodsCategory">
         </a>
@@ -4521,7 +4613,7 @@
         <p>
             <span>GenerateBy</span>
             <a href="https://github.com/microprograms/micro-api-sdk">MicroApiSdk</a>
-            <span>2017.12.21 12:29:58.491</span>
+            <span>2017.12.21 12:33:34.439</span>
         </p>
     </div>
 </body>

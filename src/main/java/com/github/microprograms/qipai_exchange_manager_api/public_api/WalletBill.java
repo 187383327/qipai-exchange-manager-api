@@ -79,7 +79,7 @@ public class WalletBill {
         this.inContributorUserId = inContributorUserId;
     }
 
-    @Comment(value = "入账 - 贡献用户等级(1一级,2二级)")
+    @Comment(value = "入账 - 贡献用户等级(1一级,2二级,3三级)")
     @Required(value = true)
     private Integer inContributorUserLevel;
 
