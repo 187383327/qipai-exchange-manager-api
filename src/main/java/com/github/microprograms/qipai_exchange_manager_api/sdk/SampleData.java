@@ -55,6 +55,7 @@ public class SampleData {
     private static void initSystemConfig() throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             SystemConfig obj = new SystemConfig();
+            obj.setId("default");
             obj.setVipLevelUpConditionCommonVip(5);
             obj.setVipLevelUpConditionGoldVip(40);
             conn.createStatement().executeUpdate(InsertSql.build(obj));
