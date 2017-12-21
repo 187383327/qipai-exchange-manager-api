@@ -97,9 +97,9 @@ public class SampleData {
         DepartmentMember_Add_Api.Req req = new DepartmentMember_Add_Api.Req();
         req.setDepartmentId(department.getId());
         req.setEmailAddress("test@test.com");
-        req.setLoginName("test");
+        req.setLoginName("admin");
         req.setLoginPassword("pass");
-        req.setName("测试");
+        req.setName("管理员");
         req.setPhone("13426290529");
         DepartmentMember_Add_Api.execute(req);
     }
