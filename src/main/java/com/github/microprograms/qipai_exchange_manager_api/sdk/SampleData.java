@@ -38,6 +38,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 public class SampleData {
     public static void main(String[] args) throws Exception {
         addBaseDate();
+        addExtDate();
     }
 
     private static void addBaseDate() throws Exception {

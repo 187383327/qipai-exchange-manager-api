@@ -127,16 +127,28 @@ public class MixOrder {
         this.goodsOrder_detail = goodsOrder_detail;
     }
 
-    @Comment(value = "房卡订单 - 推荐人ID")
+    @Comment(value = "房卡订单 - 推荐人 - 用户ID")
     @Required(value = false)
-    private String roomCardOrder_myLeaderId;
+    private String roomCardOrder_myLeader_userId;
 
-    public String getRoomCardOrder_myLeaderId() {
-        return roomCardOrder_myLeaderId;
+    public String getRoomCardOrder_myLeader_userId() {
+        return roomCardOrder_myLeader_userId;
     }
 
-    public void setRoomCardOrder_myLeaderId(String roomCardOrder_myLeaderId) {
-        this.roomCardOrder_myLeaderId = roomCardOrder_myLeaderId;
+    public void setRoomCardOrder_myLeader_userId(String roomCardOrder_myLeader_userId) {
+        this.roomCardOrder_myLeader_userId = roomCardOrder_myLeader_userId;
+    }
+
+    @Comment(value = "房卡订单 - 推荐人 - vv游戏账号ID")
+    @Required(value = false)
+    private String roomCardOrder_myLeader_vvUserId;
+
+    public String getRoomCardOrder_myLeader_vvUserId() {
+        return roomCardOrder_myLeader_vvUserId;
+    }
+
+    public void setRoomCardOrder_myLeader_vvUserId(String roomCardOrder_myLeader_vvUserId) {
+        this.roomCardOrder_myLeader_vvUserId = roomCardOrder_myLeader_vvUserId;
     }
 
     @Comment(value = "房卡订单 - 房卡ID")

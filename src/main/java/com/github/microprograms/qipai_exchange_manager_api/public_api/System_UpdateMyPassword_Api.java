@@ -3,9 +3,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -47,7 +45,9 @@ public class System_UpdateMyPassword_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -57,7 +57,9 @@ public class System_UpdateMyPassword_Api {
             this.token = token;
         }
 
-        @Comment(value = "旧的登录密码") @Required(value = true) private String oldLoginPassword;
+        @Comment(value = "旧的登录密码")
+        @Required(value = true)
+        private String oldLoginPassword;
 
         public String getOldLoginPassword() {
             return oldLoginPassword;
@@ -67,7 +69,9 @@ public class System_UpdateMyPassword_Api {
             this.oldLoginPassword = oldLoginPassword;
         }
 
-        @Comment(value = "新的登录密码") @Required(value = true) private String newLoginPassword;
+        @Comment(value = "新的登录密码")
+        @Required(value = true)
+        private String newLoginPassword;
 
         public String getNewLoginPassword() {
             return newLoginPassword;
