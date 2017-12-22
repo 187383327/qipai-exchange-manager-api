@@ -37,7 +37,17 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 public class SampleData {
     public static void main(String[] args) throws Exception {
+        addBaseDate();
+    }
+
+    private static void addBaseDate() throws Exception {
         addGoodsCategorys();
+        addDepartments();
+        addDepartmentMember();
+        initSystemConfig();
+    }
+
+    private static void addExtDate() throws Exception {
         addChoiceGoods();
         addGoodsForPhone();
         addGoodsForDomesticAppliance();
@@ -48,9 +58,6 @@ public class SampleData {
         addChoiceBanners();
         addRoomCards();
         addGiftPacks();
-        addDepartments();
-        addDepartmentMember();
-        initSystemConfig();
     }
 
     private static void initSystemConfig() throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
