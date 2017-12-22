@@ -25,7 +25,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "库存 - 新增入库")
-@MicroApiAnnotation(type = "read", version = "v1.0.54")
+@MicroApiAnnotation(type = "read", version = "v1.0.55")
 public class Stock_Add_Api {
 
     public static Response execute(Request request) throws Exception {

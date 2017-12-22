@@ -12,7 +12,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "系统配置 - 查询全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.54")
+@MicroApiAnnotation(type = "read", version = "v1.0.55")
 public class SystemConfig_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {

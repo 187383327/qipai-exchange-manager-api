@@ -2009,6 +2009,54 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "财务 - 查询入账列表",
+			"javaClassName": "Finance_QueryInBillList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					},
+					{
+						"comment": "搜索 - 关键字(订单号)",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchKeyword",
+						"required": false
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "入账列表",
+						"example": "example",
+						"javaType": "java.util.List<MixOrder>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -2078,5 +2126,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.54"
+	"version": "v1.0.55"
 }
