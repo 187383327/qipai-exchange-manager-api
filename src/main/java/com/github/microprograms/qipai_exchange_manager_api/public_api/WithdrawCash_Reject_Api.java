@@ -45,7 +45,7 @@ public class WithdrawCash_Reject_Api {
             fields.add(new FieldToUpdate("auditorId", departmentMember.getId()));
             fields.add(new FieldToUpdate("auditorName", departmentMember.getName()));
             fields.add(new FieldToUpdate("dtAudit", System.currentTimeMillis()));
-            if (req.getRejectReason() != null) {
+            if (StringUtils.isNotBlank(req.getRejectReason())) {
                 fields.add(new FieldToUpdate("rejectReason", req.getRejectReason()));
             }
             conn.createStatement().executeUpdate(new UpdateSql(WithdrawCash.class).fields(fields).where(buildFinalCondition(req)).build());
@@ -59,9 +59,7 @@ public class WithdrawCash_Reject_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -71,9 +69,7 @@ public class WithdrawCash_Reject_Api {
             this.token = token;
         }
 
-        @Comment(value = "提现申请ID")
-        @Required(value = true)
-        private String withdrawCashId;
+        @Comment(value = "提现申请ID") @Required(value = true) private String withdrawCashId;
 
         public String getWithdrawCashId() {
             return withdrawCashId;
@@ -83,9 +79,7 @@ public class WithdrawCash_Reject_Api {
             this.withdrawCashId = withdrawCashId;
         }
 
-        @Comment(value = "拒绝原因")
-        @Required(value = true)
-        private String rejectReason;
+        @Comment(value = "拒绝原因") @Required(value = true) private String rejectReason;
 
         public String getRejectReason() {
             return rejectReason;
