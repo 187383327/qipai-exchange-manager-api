@@ -3,9 +3,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -20,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "提现申请 - 拒绝")
-@MicroApiAnnotation(type = "read", version = "v1.0.53")
+@MicroApiAnnotation(type = "read", version = "v1.0.54")
 public class WithdrawCash_Reject_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -61,7 +59,9 @@ public class WithdrawCash_Reject_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -71,7 +71,9 @@ public class WithdrawCash_Reject_Api {
             this.token = token;
         }
 
-        @Comment(value = "提现申请ID") @Required(value = true) private String withdrawCashId;
+        @Comment(value = "提现申请ID")
+        @Required(value = true)
+        private String withdrawCashId;
 
         public String getWithdrawCashId() {
             return withdrawCashId;
@@ -81,7 +83,9 @@ public class WithdrawCash_Reject_Api {
             this.withdrawCashId = withdrawCashId;
         }
 
-        @Comment(value = "拒绝原因") @Required(value = true) private Integer rejectReason;
+        @Comment(value = "拒绝原因")
+        @Required(value = true)
+        private Integer rejectReason;
 
         public Integer getRejectReason() {
             return rejectReason;

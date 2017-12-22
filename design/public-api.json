@@ -1927,6 +1927,13 @@
 						"javaType": "Integer",
 						"name": "pageSize",
 						"required": true
+					},
+					{
+						"comment": "搜索 - 用户ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchUserId",
+						"required": false
 					}
 				]
 			},
@@ -2071,5 +2078,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.53"
+	"version": "v1.0.54"
 }

@@ -31,6 +31,18 @@ public class WithdrawCash {
         this.userId = userId;
     }
 
+    @Comment(value = "vv棋牌 - 游戏账号ID")
+    @Required(value = true)
+    private String vvUserId;
+
+    public String getVvUserId() {
+        return vvUserId;
+    }
+
+    public void setVvUserId(String vvUserId) {
+        this.vvUserId = vvUserId;
+    }
+
     @Comment(value = "提现金额(分)")
     @Required(value = true)
     private Integer amount;
