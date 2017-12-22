@@ -2,6 +2,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.util.UUID;
+
+import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.DeleteSql;
@@ -32,6 +35,7 @@ public class ChoiceBanner_UpdateAll_Api {
                 newBanner.setType(2);
                 newBanner.setReorder(x.getReorder());
                 newBanner.setUrl(x.getUrl());
+                newBanner.setGoodsId(StringUtils.isBlank(x.getGoodsId()) ? "" : x.getGoodsId());
                 newBanner.setDtCreate(System.currentTimeMillis());
                 conn.createStatement().executeUpdate(InsertSql.build(newBanner));
             }
@@ -41,9 +45,7 @@ public class ChoiceBanner_UpdateAll_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Banner列表(全部)")
-        @Required(value = true)
-        private java.util.List<Banner> banners;
+        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> banners;
 
         public java.util.List<Banner> getBanners() {
             return banners;

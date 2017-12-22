@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 import com.alibaba.fastjson.JSON;
@@ -23,11 +24,13 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Department
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Department_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Department_QueryList_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GiftPack_Add_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_QueryAll_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.GoodsCategory_QueryAll_Api.Resp;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_Add_Api;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_QueryList_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_UpdateAllHotWords_Api;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.RoomCard_Add_Api;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
@@ -166,12 +169,27 @@ public class SampleData {
         RoomCard_Add_Api.execute(req4);
     }
 
+    private static Goods randomGoods() throws Exception {
+        Goods_QueryList_Api.Req req = new Goods_QueryList_Api.Req();
+        Goods_QueryList_Api.Resp resp = (com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_QueryList_Api.Resp) Goods_QueryList_Api.execute(req);
+        List<Goods> data = resp.getData();
+        return data.get(new Random().nextInt(data.size()));
+    }
+
+    private static Goods randomChoiceGoods() throws Exception {
+        Goods_QueryList_Api.Req req = new Goods_QueryList_Api.Req();
+        req.setType(2);
+        Goods_QueryList_Api.Resp resp = (com.github.microprograms.qipai_exchange_manager_api.public_api.Goods_QueryList_Api.Resp) Goods_QueryList_Api.execute(req);
+        List<Goods> data = resp.getData();
+        return data.get(new Random().nextInt(data.size()));
+    }
+
     private static void addBanners() throws Exception {
         Banner_UpdateAll_Api.Req req = new Banner_UpdateAll_Api.Req();
         List<Banner> banners = new ArrayList<>();
-        banners.add(buildBanner(1, "http://47.104.17.187/micro-file-server/1b04a7b5-3773-4fba-9fde-90ab4e56353e.jpg"));
-        banners.add(buildBanner(2, "http://47.104.17.187/micro-file-server/b525089d-4429-4fd0-8d94-7e987ff99341.jpg"));
-        banners.add(buildBanner(3, "http://47.104.17.187/micro-file-server/4348aa6c-30b7-4ffd-b023-41963b5e3257.jpg"));
+        banners.add(buildBanner(1, "http://47.104.17.187/micro-file-server/1b04a7b5-3773-4fba-9fde-90ab4e56353e.jpg", randomGoods().getId()));
+        banners.add(buildBanner(2, "http://47.104.17.187/micro-file-server/b525089d-4429-4fd0-8d94-7e987ff99341.jpg", randomGoods().getId()));
+        banners.add(buildBanner(3, "http://47.104.17.187/micro-file-server/4348aa6c-30b7-4ffd-b023-41963b5e3257.jpg", randomGoods().getId()));
         req.setBanners(banners);
         Banner_UpdateAll_Api.execute(req);
     }
@@ -179,18 +197,19 @@ public class SampleData {
     private static void addChoiceBanners() throws Exception {
         ChoiceBanner_UpdateAll_Api.Req req = new ChoiceBanner_UpdateAll_Api.Req();
         List<Banner> banners = new ArrayList<>();
-        banners.add(buildBanner(1, "http://iph.href.lu/879x200?text=会员专区轮播图1"));
-        banners.add(buildBanner(2, "http://iph.href.lu/879x200?text=会员专区轮播图2"));
-        banners.add(buildBanner(3, "http://iph.href.lu/879x200?text=会员专区轮播图3"));
+        banners.add(buildBanner(1, "http://iph.href.lu/879x200?text=会员专区轮播图1", randomChoiceGoods().getId()));
+        banners.add(buildBanner(2, "http://iph.href.lu/879x200?text=会员专区轮播图2", randomChoiceGoods().getId()));
+        banners.add(buildBanner(3, "http://iph.href.lu/879x200?text=会员专区轮播图3", randomChoiceGoods().getId()));
         req.setBanners(banners);
         ChoiceBanner_UpdateAll_Api.execute(req);
     }
 
-    private static Banner buildBanner(int reorder, String url) {
+    private static Banner buildBanner(int reorder, String url, String goodsId) {
         Banner banner = new Banner();
         banner.setId(UUID.randomUUID().toString());
         banner.setReorder(reorder);
         banner.setUrl(url);
+        banner.setGoodsId(goodsId);
         return banner;
     }
 
