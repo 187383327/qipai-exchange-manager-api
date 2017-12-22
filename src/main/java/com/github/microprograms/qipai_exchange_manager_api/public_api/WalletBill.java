@@ -103,6 +103,18 @@ public class WalletBill {
         this.inContributorUserId = inContributorUserId;
     }
 
+    @Comment(value = "入账 - 贡献用户的vv游戏ID")
+    @Required(value = true)
+    private String inContributorVvUserId;
+
+    public String getInContributorVvUserId() {
+        return inContributorVvUserId;
+    }
+
+    public void setInContributorVvUserId(String inContributorVvUserId) {
+        this.inContributorVvUserId = inContributorVvUserId;
+    }
+
     @Comment(value = "入账 - 贡献用户等级(1一级,2二级,3三级)")
     @Required(value = true)
     private Integer inContributorUserLevel;
