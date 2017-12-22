@@ -2002,7 +2002,7 @@
 					{
 						"comment": "拒绝原因",
 						"example": "example",
-						"javaType": "Integer",
+						"javaType": "String",
 						"name": "rejectReason",
 						"required": true
 					}

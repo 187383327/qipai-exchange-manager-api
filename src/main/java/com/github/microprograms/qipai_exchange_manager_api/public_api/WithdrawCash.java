@@ -43,6 +43,30 @@ public class WithdrawCash {
         this.vvUserId = vvUserId;
     }
 
+    @Comment(value = "提现账号姓名")
+    @Required(value = true)
+    private String realname;
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    @Comment(value = "银行卡号")
+    @Required(value = true)
+    private String bankCardNumber;
+
+    public String getBankCardNumber() {
+        return bankCardNumber;
+    }
+
+    public void setBankCardNumber(String bankCardNumber) {
+        this.bankCardNumber = bankCardNumber;
+    }
+
     @Comment(value = "提现金额(分)")
     @Required(value = true)
     private Integer amount;
@@ -117,13 +141,13 @@ public class WithdrawCash {
 
     @Comment(value = "拒绝原因")
     @Required(value = true)
-    private Integer rejectReason;
+    private String rejectReason;
 
-    public Integer getRejectReason() {
+    public String getRejectReason() {
         return rejectReason;
     }
 
-    public void setRejectReason(Integer rejectReason) {
+    public void setRejectReason(String rejectReason) {
         this.rejectReason = rejectReason;
     }
 

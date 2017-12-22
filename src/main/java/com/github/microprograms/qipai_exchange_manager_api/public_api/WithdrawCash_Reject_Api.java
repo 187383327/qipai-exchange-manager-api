@@ -85,13 +85,13 @@ public class WithdrawCash_Reject_Api {
 
         @Comment(value = "拒绝原因")
         @Required(value = true)
-        private Integer rejectReason;
+        private String rejectReason;
 
-        public Integer getRejectReason() {
+        public String getRejectReason() {
             return rejectReason;
         }
 
-        public void setRejectReason(Integer rejectReason) {
+        public void setRejectReason(String rejectReason) {
             this.rejectReason = rejectReason;
         }
     }
