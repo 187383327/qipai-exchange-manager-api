@@ -295,6 +295,18 @@ public class User {
         this.myLeaderId = myLeaderId;
     }
 
+    @Comment(value = "推荐人的vv游戏ID")
+    @Required(value = true)
+    private String myLeaderVvUserId;
+
+    public String getMyLeaderVvUserId() {
+        return myLeaderVvUserId;
+    }
+
+    public void setMyLeaderVvUserId(String myLeaderVvUserId) {
+        this.myLeaderVvUserId = myLeaderVvUserId;
+    }
+
     @Comment(value = "推荐人ID1")
     @Required(value = true)
     private String myLeaderId1;
