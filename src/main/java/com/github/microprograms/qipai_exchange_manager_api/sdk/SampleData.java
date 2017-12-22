@@ -65,7 +65,7 @@ public class SampleData {
 
     private static void addRootUser() throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
-            String json = "{\"jpushAlias\":\"015ccdaed68f49f59ece538e6685d234\",\"myLeaderId\":\"\",\"enable\":1,\"wxUnionId\":\"o3biht2w7-0vAVpdptnVCjIbPVI0\",\"id\":\"015ccdae-d68f-49f5-9ece-538e6685d234\",\"vvUserId\":\"888888\",\"wxAvatarImgUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/vubQ3VPHcTqo8BoP8IiaQqE79W7wRRMl2U91LTta5SJwaNL99xLSMZqBs75Je7Gb0UYIQADjsWLdA5nkAI3Ks2Q/0\",\"level\":0,\"wxNickname\":\"_A VV棋牌客服07\",\"token\":\"f919d05f-290f-41a1-861e-97f683da6b28\",\"dtCreate\":1513935998300}";
+            String json = "{\"jpushAlias\":\"015ccdaed68f49f59ece538e6685d234\",\"myLeaderId\":\"\",\"enable\":1,\"wxUnionId\":\"o3biht2w7-0vAVpdptnVCjIbPVI0\",\"id\":\"015ccdae-d68f-49f5-9ece-538e6685d234\",\"vvUserId\":\"888888\",\"wxAvatarImgUrl\":\"https://wx.qlogo.cn/mmopen/vi_32/vubQ3VPHcTqo8BoP8IiaQqE79W7wRRMl2U91LTta5SJwaNL99xLSMZqBs75Je7Gb0UYIQADjsWLdA5nkAI3Ks2Q/0\",\"level\":0,\"wxNickname\":\"_A VV棋牌客服07\",\"token\":\"f919d05f-290f-41a1-861e-97f683da6b28\",\"dtCreate\":1513935998300,\"walletAmount\":0}";
             User rootUser = JSON.parseObject(json, User.class);
             conn.createStatement().executeUpdate(InsertSql.build(rootUser));
         }
