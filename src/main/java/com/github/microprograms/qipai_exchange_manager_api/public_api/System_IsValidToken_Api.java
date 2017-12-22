@@ -10,7 +10,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 
 @Comment(value = "系统 - 检查Token是否有效")
-@MicroApiAnnotation(type = "read", version = "v1.0.52")
+@MicroApiAnnotation(type = "read", version = "v1.0.53")
 public class System_IsValidToken_Api {
 
     public static Response execute(Request request) throws Exception {

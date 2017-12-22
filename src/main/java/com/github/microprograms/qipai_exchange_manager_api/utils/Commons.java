@@ -17,6 +17,7 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.MixOrder;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.RoomCard;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.User;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.WithdrawCash;
 
 public class Commons {
     public static String generateOrderId() {
@@ -79,5 +80,9 @@ public class Commons {
 
     public static DepartmentMember queryDepartmentMemberByToken(String token) throws SQLException {
         return queryObject(DepartmentMember.class, Condition.build("token=", token));
+    }
+
+    public static WithdrawCash queryWithdrawCashById(String withdrawCashId) throws SQLException {
+        return queryObject(WithdrawCash.class, Condition.build("id=", withdrawCashId));
     }
 }

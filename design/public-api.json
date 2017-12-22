@@ -1908,6 +1908,100 @@
 				]
 			},
 			"type": "read"
+		},
+		{
+			"comment": "提现申请 - 查询列表",
+			"javaClassName": "WithdrawCash_QueryList_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "页码(从0开始)",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageIndex",
+						"required": true
+					},
+					{
+						"comment": "页大小",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "pageSize",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "提现申请列表",
+						"example": "example",
+						"javaType": "java.util.List<WithdrawCash>",
+						"name": "data",
+						"required": true
+					},
+					{
+						"comment": "分页",
+						"example": "example",
+						"javaType": "com.github.microprograms.ignite_utils.sql.dml.PagerResponse",
+						"name": "pager",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "提现申请 - 同意",
+			"javaClassName": "WithdrawCash_Agree_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
+						"comment": "提现申请ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "withdrawCashId",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "提现申请 - 拒绝",
+			"javaClassName": "WithdrawCash_Reject_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
+						"comment": "提现申请ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "withdrawCashId",
+						"required": true
+					},
+					{
+						"comment": "拒绝原因",
+						"example": "example",
+						"javaType": "Integer",
+						"name": "rejectReason",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
 		}
 	],
 	"comment": "qipai-exchange-manager-api",
@@ -1977,5 +2071,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.52"
+	"version": "v1.0.53"
 }

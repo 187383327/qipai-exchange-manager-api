@@ -14,7 +14,7 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_Que
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 更新全部搜索热点词")
-@MicroApiAnnotation(type = "read", version = "v1.0.52")
+@MicroApiAnnotation(type = "read", version = "v1.0.53")
 public class Goods_UpdateAllHotWords_Api {
 
     public static Response execute(Request request) throws Exception {

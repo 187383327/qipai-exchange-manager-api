@@ -16,7 +16,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "库存 - 查询出库列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.52")
+@MicroApiAnnotation(type = "read", version = "v1.0.53")
 public class Stock_QueryOutList_Api {
 
     public static Response execute(Request request) throws Exception {

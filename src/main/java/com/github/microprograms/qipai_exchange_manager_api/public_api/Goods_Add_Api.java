@@ -12,7 +12,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 添加新商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.52")
+@MicroApiAnnotation(type = "read", version = "v1.0.53")
 public class Goods_Add_Api {
 
     public static Response execute(Request request) throws Exception {
