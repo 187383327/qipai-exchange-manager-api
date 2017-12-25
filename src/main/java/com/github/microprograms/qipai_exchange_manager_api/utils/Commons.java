@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
@@ -20,18 +19,6 @@ import com.github.microprograms.qipai_exchange_manager_api.public_api.User;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.WithdrawCash;
 
 public class Commons {
-    public static String generateOrderId() {
-        return generateUuid32();
-    }
-
-    public static String generateUuid32() {
-        return generateUuid().replaceAll("-", "").substring(0, 32);
-    }
-
-    public static String generateUuid() {
-        return UUID.randomUUID().toString();
-    }
-
     public static <T> T queryObject(Class<T> clz, Object where) throws SQLException {
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(clz).where(where).build());

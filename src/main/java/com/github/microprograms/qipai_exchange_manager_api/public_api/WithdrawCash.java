@@ -117,13 +117,13 @@ public class WithdrawCash {
 
     @Comment(value = "审核人名称")
     @Required(value = true)
-    private Long auditorName;
+    private String auditorName;
 
-    public Long getAuditorName() {
+    public String getAuditorName() {
         return auditorName;
     }
 
-    public void setAuditorName(Long auditorName) {
+    public void setAuditorName(String auditorName) {
         this.auditorName = auditorName;
     }
 

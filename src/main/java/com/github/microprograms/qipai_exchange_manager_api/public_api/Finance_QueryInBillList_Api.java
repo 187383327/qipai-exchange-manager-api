@@ -2,7 +2,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.LikeCondition;
@@ -45,7 +44,9 @@ public class Finance_QueryInBillList_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
+        @Comment(value = "页码(从0开始)")
+        @Required(value = true)
+        private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -55,7 +56,9 @@ public class Finance_QueryInBillList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
+        @Comment(value = "页大小")
+        @Required(value = true)
+        private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -65,7 +68,9 @@ public class Finance_QueryInBillList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "搜索 - 关键字(订单号)") @Required(value = false) private String searchKeyword;
+        @Comment(value = "搜索 - 关键字(订单号)")
+        @Required(value = false)
+        private String searchKeyword;
 
         public String getSearchKeyword() {
             return searchKeyword;
@@ -78,7 +83,9 @@ public class Finance_QueryInBillList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "入账列表") @Required(value = true) private java.util.List<MixOrder> data;
+        @Comment(value = "入账列表")
+        @Required(value = true)
+        private java.util.List<MixOrder> data;
 
         public java.util.List<MixOrder> getData() {
             return data;
@@ -88,7 +95,9 @@ public class Finance_QueryInBillList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页")
+        @Required(value = true)
+        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;

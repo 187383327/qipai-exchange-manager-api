@@ -354,4 +354,16 @@ public class User {
     public void setDtLastModify(Long dtLastModify) {
         this.dtLastModify = dtLastModify;
     }
+
+    @Comment(value = "会员专区 - 我的人头币余额")
+    @Required(value = true)
+    private Integer headCoinAmount;
+
+    public Integer getHeadCoinAmount() {
+        return headCoinAmount;
+    }
+
+    public void setHeadCoinAmount(Integer headCoinAmount) {
+        this.headCoinAmount = headCoinAmount;
+    }
 }
