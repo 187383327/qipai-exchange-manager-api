@@ -35,15 +35,13 @@ public class User_QueryList_Api {
     }
 
     private static String buildFinalCondition(Req req) {
-        LikeCondition id = LikeCondition.build("id", req.getSearchUserId());
+        LikeCondition id = LikeCondition.build("vvUserId", req.getSearchUserId());
         return Where.and(id).toString();
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "页码(从0开始)")
-        @Required(value = true)
-        private Integer pageIndex;
+        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -53,9 +51,7 @@ public class User_QueryList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小")
-        @Required(value = true)
-        private Integer pageSize;
+        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -65,9 +61,7 @@ public class User_QueryList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "搜索 - 用户ID")
-        @Required(value = false)
-        private String searchUserId;
+        @Comment(value = "搜索 - 用户ID") @Required(value = false) private String searchUserId;
 
         public String getSearchUserId() {
             return searchUserId;
@@ -80,9 +74,7 @@ public class User_QueryList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户列表")
-        @Required(value = true)
-        private java.util.List<User> data;
+        @Comment(value = "用户列表") @Required(value = true) private java.util.List<User> data;
 
         public java.util.List<User> getData() {
             return data;
@@ -92,9 +84,7 @@ public class User_QueryList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页")
-        @Required(value = true)
-        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;
