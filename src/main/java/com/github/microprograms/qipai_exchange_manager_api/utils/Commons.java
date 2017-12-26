@@ -6,14 +6,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
+import com.alibaba.fastjson.JSON;
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.SelectSql;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.Department;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.DepartmentMember;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Goods;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.MixOrder;
+import com.github.microprograms.qipai_exchange_manager_api.public_api.PermissionEnum;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.RoomCard;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.User;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.WithdrawCash;
@@ -67,6 +72,18 @@ public class Commons {
 
     public static DepartmentMember queryDepartmentMemberByToken(String token) throws SQLException {
         return queryObject(DepartmentMember.class, Condition.build("token=", token));
+    }
+
+    public static Department queryDepartmentById(String departmentId) throws SQLException {
+        return queryObject(Department.class, Condition.build("id=", departmentId));
+    }
+
+    public static boolean hasPermission(Department department, PermissionEnum permission) throws SQLException {
+        String permissions = department.getPermissions();
+        if (StringUtils.isBlank(permissions)) {
+            return false;
+        }
+        return JSON.parseArray(department.getPermissions()).contains(permission.getId());
     }
 
     public static WithdrawCash queryWithdrawCashById(String withdrawCashId) throws SQLException {

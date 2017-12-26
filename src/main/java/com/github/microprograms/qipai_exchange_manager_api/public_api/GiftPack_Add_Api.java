@@ -12,7 +12,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "礼包 - 添加")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class GiftPack_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -33,6 +33,18 @@ public class GiftPack_Add_Api {
     }
 
     public static class Req extends Request {
+
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
 
         @Comment(value = "礼包封面图")
         @Required(value = true)

@@ -18,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "提现申请 - 同意")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class WithdrawCash_Agree_Api {
 
     public static Response execute(Request request) throws Exception {

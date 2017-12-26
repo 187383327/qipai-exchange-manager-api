@@ -19,7 +19,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class Goods_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -46,6 +46,18 @@ public class Goods_QueryList_Api {
     }
 
     public static class Req extends Request {
+
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
 
         @Comment(value = "页码(从0开始)")
         @Required(value = true)

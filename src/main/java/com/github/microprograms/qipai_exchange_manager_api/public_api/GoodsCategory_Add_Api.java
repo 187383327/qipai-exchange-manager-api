@@ -16,7 +16,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 新增商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class GoodsCategory_Add_Api {
 
     public static final int goods_category_limit = 5;
@@ -51,6 +51,18 @@ public class GoodsCategory_Add_Api {
     }
 
     public static class Req extends Request {
+
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
 
         @Comment(value = "商品类别名称")
         @Required(value = true)

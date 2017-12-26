@@ -13,7 +13,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.github.microprograms.ignite_utils.IgniteUtils;
+import com.github.microprograms.ignite_utils.sql.dml.Condition;
+import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
+import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.qipai_exchange_core.model.SystemConfig;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner;
@@ -40,6 +43,7 @@ public class SampleData {
     public static void main(String[] args) throws Exception {
         addBaseDate();
         // addExtDate();
+        updateUserHeadCoinAmount("273747", 200);
     }
 
     private static void addBaseDate() throws Exception {
@@ -61,6 +65,15 @@ public class SampleData {
         addChoiceBanners();
         addRoomCards();
         addGiftPacks();
+    }
+
+    private static void updateUserHeadCoinAmount(String vvUserId, int headCoinAmount) throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            String finalCondition = Condition.build("vvUserId=", vvUserId).toString();
+            List<FieldToUpdate> fields = new ArrayList<>();
+            fields.add(new FieldToUpdate("headCoinAmount", headCoinAmount));
+            conn.createStatement().executeUpdate(new UpdateSql(User.class).fields(fields).where(finalCondition).build());
+        }
     }
 
     private static void addRootUser() throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {

@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门成员 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class DepartmentMember_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -59,6 +59,18 @@ public class DepartmentMember_Update_Api {
     }
 
     public static class Req extends Request {
+
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
 
         @Comment(value = "成员姓名")
         @Required(value = true)

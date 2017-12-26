@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "用户 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class User_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -41,7 +41,21 @@ public class User_QueryList_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
+
+        @Comment(value = "页码(从0开始)")
+        @Required(value = true)
+        private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -51,7 +65,9 @@ public class User_QueryList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
+        @Comment(value = "页大小")
+        @Required(value = true)
+        private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -61,7 +77,9 @@ public class User_QueryList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "搜索 - 用户ID") @Required(value = false) private String searchUserId;
+        @Comment(value = "搜索 - 用户ID")
+        @Required(value = false)
+        private String searchUserId;
 
         public String getSearchUserId() {
             return searchUserId;
@@ -74,7 +92,9 @@ public class User_QueryList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "用户列表") @Required(value = true) private java.util.List<User> data;
+        @Comment(value = "用户列表")
+        @Required(value = true)
+        private java.util.List<User> data;
 
         public java.util.List<User> getData() {
             return data;
@@ -84,7 +104,9 @@ public class User_QueryList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页")
+        @Required(value = true)
+        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;

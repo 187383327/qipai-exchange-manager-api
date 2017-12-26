@@ -6,6 +6,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "页码(从0开始)",
 						"example": "example",
 						"javaType": "Integer",
@@ -89,6 +96,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品ID",
 						"example": "example",
 						"javaType": "String",
@@ -115,6 +129,13 @@
 			"javaClassName": "Goods_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "商品类型(1普通商品,2优选商品)",
 						"example": "example",
@@ -195,6 +216,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品ID",
 						"example": "example",
 						"javaType": "String",
@@ -267,6 +295,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品ID",
 						"example": "example",
 						"javaType": "String",
@@ -299,6 +334,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "搜索热点词列表(全部)",
 						"example": "example",
 						"javaType": "java.util.List<String>",
@@ -314,6 +356,13 @@
 			"javaClassName": "RoomCard_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -356,6 +405,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "房卡ID",
 						"example": "example",
 						"javaType": "String",
@@ -382,6 +438,13 @@
 			"javaClassName": "RoomCard_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "房卡标题",
 						"example": "example",
@@ -420,6 +483,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "房卡ID",
 						"example": "example",
 						"javaType": "String",
@@ -435,6 +505,13 @@
 			"javaClassName": "RoomCard_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "房卡ID",
 						"example": "example",
@@ -479,6 +556,13 @@
 			"javaClassName": "Stock_QueryOutList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -528,6 +612,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "页码(从0开始)",
 						"example": "example",
 						"javaType": "Integer",
@@ -576,6 +667,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品编号",
 						"example": "example",
 						"javaType": "String",
@@ -615,6 +713,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品类别ID",
 						"example": "example",
 						"javaType": "String",
@@ -641,6 +746,13 @@
 			"javaClassName": "GoodsCategory_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "商品类别名称",
 						"example": "example",
@@ -673,6 +785,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品类别ID",
 						"example": "example",
 						"javaType": "String",
@@ -688,6 +807,13 @@
 			"javaClassName": "GoodsCategory_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "商品类别ID",
 						"example": "example",
@@ -726,6 +852,13 @@
 			"javaClassName": "RoomCardOrder_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -803,6 +936,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "页码(从0开始)",
 						"example": "example",
 						"javaType": "Integer",
@@ -879,6 +1019,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "商品订单ID",
 						"example": "example",
 						"javaType": "String",
@@ -922,6 +1069,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "Banner列表(全部)",
 						"example": "example",
 						"javaType": "java.util.List<Banner>",
@@ -954,6 +1108,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "Banner列表(全部)",
 						"example": "example",
 						"javaType": "java.util.List<Banner>",
@@ -969,6 +1130,13 @@
 			"javaClassName": "ImageText_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -1011,6 +1179,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "图文ID",
 						"example": "example",
 						"javaType": "String",
@@ -1038,6 +1213,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "标题",
 						"example": "example",
 						"javaType": "String",
@@ -1062,6 +1244,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "图文ID",
 						"example": "example",
 						"javaType": "String",
@@ -1077,6 +1266,13 @@
 			"javaClassName": "ImageText_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "图文ID",
 						"example": "example",
@@ -1108,6 +1304,13 @@
 			"javaClassName": "Department_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -1150,6 +1353,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "部门ID",
 						"example": "example",
 						"javaType": "String",
@@ -1176,6 +1386,13 @@
 			"javaClassName": "Department_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "部门名称",
 						"example": "example",
@@ -1207,6 +1424,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "部门ID",
 						"example": "example",
 						"javaType": "String",
@@ -1222,6 +1446,13 @@
 			"javaClassName": "Department_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "部门ID",
 						"example": "example",
@@ -1267,6 +1498,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "页码(从0开始)",
 						"example": "example",
 						"javaType": "Integer",
@@ -1308,6 +1546,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "部门成员ID",
 						"example": "example",
 						"javaType": "String",
@@ -1334,6 +1579,13 @@
 			"javaClassName": "DepartmentMember_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "成员姓名",
 						"example": "example",
@@ -1386,6 +1638,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "部门成员ID",
 						"example": "example",
 						"javaType": "String",
@@ -1401,6 +1660,13 @@
 			"javaClassName": "DepartmentMember_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "成员姓名",
 						"example": "example",
@@ -1569,6 +1835,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "页码(从0开始)",
 						"example": "example",
 						"javaType": "Integer",
@@ -1610,6 +1883,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "礼包ID",
 						"example": "example",
 						"javaType": "String",
@@ -1637,6 +1917,13 @@
 			"javaClassName": "GiftPack_Add_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "礼包封面图",
 						"example": "example",
@@ -1678,6 +1965,13 @@
 			"javaClassName": "GiftPack_Update_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "礼包ID",
 						"example": "example",
@@ -1728,6 +2022,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "礼包ID",
 						"example": "example",
 						"javaType": "String",
@@ -1744,6 +2045,13 @@
 			"javaClassName": "User_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -1793,6 +2101,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "用户ID",
 						"example": "example",
 						"javaType": "String",
@@ -1820,6 +2135,13 @@
 			"javaClassName": "User_QueryFollowerList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -1892,6 +2214,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "会员升级条件 - 普通会员",
 						"example": "example",
 						"javaType": "Integer",
@@ -1914,6 +2243,13 @@
 			"javaClassName": "WithdrawCash_QueryList_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "页码(从0开始)",
 						"example": "example",
@@ -2016,6 +2352,13 @@
 			"requestDefinition": {
 				"fieldDefinitions": [
 					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
 						"comment": "页码(从0开始)",
 						"example": "example",
 						"javaType": "Integer",
@@ -2063,6 +2406,13 @@
 			"javaClassName": "Debug_ThrowErrorCode_Api",
 			"requestDefinition": {
 				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
 					{
 						"comment": "错误码",
 						"example": "example",
@@ -2122,6 +2472,11 @@
 			"code": 1016,
 			"message": "数据已被修改，请重新操作",
 			"name": "concurrency_modification_exception"
+		},
+		{
+			"code": 1017,
+			"message": "权限不足",
+			"name": "permission_denied"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -2142,5 +2497,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.56"
+	"version": "v1.0.58"
 }

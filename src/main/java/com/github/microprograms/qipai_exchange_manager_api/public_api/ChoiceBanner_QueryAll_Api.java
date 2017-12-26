@@ -14,7 +14,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "会员专区Banner - 查询全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.56")
+@MicroApiAnnotation(type = "read", version = "v1.0.58")
 public class ChoiceBanner_QueryAll_Api {
 
     public static Response execute(Request request) throws Exception {
