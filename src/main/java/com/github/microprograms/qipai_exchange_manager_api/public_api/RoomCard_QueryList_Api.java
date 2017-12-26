@@ -17,7 +17,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.55")
+@MicroApiAnnotation(type = "read", version = "v1.0.56")
 public class RoomCard_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -40,7 +40,9 @@ public class RoomCard_QueryList_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
+        @Comment(value = "页码(从0开始)")
+        @Required(value = true)
+        private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -50,7 +52,9 @@ public class RoomCard_QueryList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
+        @Comment(value = "页大小")
+        @Required(value = true)
+        private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -63,7 +67,9 @@ public class RoomCard_QueryList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "房卡列表") @Required(value = true) private java.util.List<RoomCard> data;
+        @Comment(value = "房卡列表")
+        @Required(value = true)
+        private java.util.List<RoomCard> data;
 
         public java.util.List<RoomCard> getData() {
             return data;
@@ -73,7 +79,9 @@ public class RoomCard_QueryList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页")
+        @Required(value = true)
+        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;
