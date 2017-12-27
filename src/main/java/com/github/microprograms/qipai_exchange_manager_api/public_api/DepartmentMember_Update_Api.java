@@ -75,7 +75,7 @@ public class DepartmentMember_Update_Api {
     }
 
     private static String buildFinalCondition(Req req) {
-        return Condition.build("id=", req.getDepartmentId()).toString();
+        return Condition.build("token=", req.getToken()).toString();
     }
 
     public static class Req extends Request {
