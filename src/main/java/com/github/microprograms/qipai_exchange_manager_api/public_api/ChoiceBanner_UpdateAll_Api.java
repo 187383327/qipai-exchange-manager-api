@@ -2,12 +2,15 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.util.UUID;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.DeleteSql;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
+import com.github.microprograms.micro_api_runtime.enums.MicroApiReserveResponseCodeEnum;
 import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
@@ -35,7 +38,9 @@ public class ChoiceBanner_UpdateAll_Api {
         if (!Commons.hasPermission(department, PermissionEnum.choiceBannerManage)) {
             throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
         }
-        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+        Connection conn = IgniteUtils.getConnection(Consts.jdbc_url);
+        try {
+            conn.setAutoCommit(false);
             conn.createStatement().executeUpdate(new DeleteSql(Banner.class).where(Condition.build("type=", 2)).build());
             for (Banner x : req.getBanners()) {
                 if (x.getReorder() == null) {
@@ -54,6 +59,15 @@ public class ChoiceBanner_UpdateAll_Api {
                 newBanner.setDtCreate(System.currentTimeMillis());
                 conn.createStatement().executeUpdate(InsertSql.build(newBanner));
             }
+            conn.commit();
+        } catch (MicroApiExecuteException e) {
+            conn.rollback();
+            resp.error(e.getResponseCode(), e.getCause());
+        } catch (Exception e) {
+            conn.rollback();
+            resp.error(MicroApiReserveResponseCodeEnum.api_execute_exception, e);
+        } finally {
+            conn.close();
         }
         return resp;
     }
