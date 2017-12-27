@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.ComplexCondition;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
@@ -23,7 +22,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.59")
+@MicroApiAnnotation(type = "read", version = "v1.0.60")
 public class Goods_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -74,7 +73,9 @@ public class Goods_QueryList_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -84,7 +85,9 @@ public class Goods_QueryList_Api {
             this.token = token;
         }
 
-        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
+        @Comment(value = "页码(从0开始)")
+        @Required(value = true)
+        private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -94,7 +97,9 @@ public class Goods_QueryList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
+        @Comment(value = "页大小")
+        @Required(value = true)
+        private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -104,7 +109,9 @@ public class Goods_QueryList_Api {
             this.pageSize = pageSize;
         }
 
-        @Comment(value = "商品类型(1普通商品,2优选商品)") @Required(value = true) private Integer type;
+        @Comment(value = "商品类型(1普通商品,2优选商品)")
+        @Required(value = true)
+        private Integer type;
 
         public Integer getType() {
             return type;
@@ -114,7 +121,9 @@ public class Goods_QueryList_Api {
             this.type = type;
         }
 
-        @Comment(value = "搜索 - 关键字") @Required(value = false) private String searchKeyword;
+        @Comment(value = "搜索 - 关键字")
+        @Required(value = false)
+        private String searchKeyword;
 
         public String getSearchKeyword() {
             return searchKeyword;
@@ -124,7 +133,9 @@ public class Goods_QueryList_Api {
             this.searchKeyword = searchKeyword;
         }
 
-        @Comment(value = "搜索 - 开始时间戳") @Required(value = false) private Long searchBeginTimestamp;
+        @Comment(value = "搜索 - 开始时间戳")
+        @Required(value = false)
+        private Long searchBeginTimestamp;
 
         public Long getSearchBeginTimestamp() {
             return searchBeginTimestamp;
@@ -134,7 +145,9 @@ public class Goods_QueryList_Api {
             this.searchBeginTimestamp = searchBeginTimestamp;
         }
 
-        @Comment(value = "搜索 - 结束时间戳") @Required(value = false) private Long searchEndTimestamp;
+        @Comment(value = "搜索 - 结束时间戳")
+        @Required(value = false)
+        private Long searchEndTimestamp;
 
         public Long getSearchEndTimestamp() {
             return searchEndTimestamp;
@@ -144,7 +157,9 @@ public class Goods_QueryList_Api {
             this.searchEndTimestamp = searchEndTimestamp;
         }
 
-        @Comment(value = "搜索 - 最小库存") @Required(value = false) private Integer searchMinStock;
+        @Comment(value = "搜索 - 最小库存")
+        @Required(value = false)
+        private Integer searchMinStock;
 
         public Integer getSearchMinStock() {
             return searchMinStock;
@@ -154,7 +169,9 @@ public class Goods_QueryList_Api {
             this.searchMinStock = searchMinStock;
         }
 
-        @Comment(value = "搜索 - 最大库存") @Required(value = false) private Integer searchMaxStock;
+        @Comment(value = "搜索 - 最大库存")
+        @Required(value = false)
+        private Integer searchMaxStock;
 
         public Integer getSearchMaxStock() {
             return searchMaxStock;
@@ -167,7 +184,9 @@ public class Goods_QueryList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "商品列表") @Required(value = true) private java.util.List<Goods> data;
+        @Comment(value = "商品列表")
+        @Required(value = true)
+        private java.util.List<Goods> data;
 
         public java.util.List<Goods> getData() {
             return data;
@@ -177,7 +196,9 @@ public class Goods_QueryList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页")
+        @Required(value = true)
+        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;

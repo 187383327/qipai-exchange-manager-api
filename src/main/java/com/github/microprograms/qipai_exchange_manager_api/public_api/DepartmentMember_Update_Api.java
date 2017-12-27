@@ -3,9 +3,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -20,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门成员 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.59")
+@MicroApiAnnotation(type = "read", version = "v1.0.60")
 public class DepartmentMember_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -80,7 +78,9 @@ public class DepartmentMember_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -90,7 +90,9 @@ public class DepartmentMember_Update_Api {
             this.token = token;
         }
 
-        @Comment(value = "成员姓名") @Required(value = true) private String name;
+        @Comment(value = "成员姓名")
+        @Required(value = true)
+        private String name;
 
         public String getName() {
             return name;
@@ -100,7 +102,9 @@ public class DepartmentMember_Update_Api {
             this.name = name;
         }
 
-        @Comment(value = "所属部门ID") @Required(value = true) private String departmentId;
+        @Comment(value = "所属部门ID")
+        @Required(value = true)
+        private String departmentId;
 
         public String getDepartmentId() {
             return departmentId;
@@ -110,7 +114,9 @@ public class DepartmentMember_Update_Api {
             this.departmentId = departmentId;
         }
 
-        @Comment(value = "联系电话") @Required(value = true) private String phone;
+        @Comment(value = "联系电话")
+        @Required(value = true)
+        private String phone;
 
         public String getPhone() {
             return phone;
@@ -120,7 +126,9 @@ public class DepartmentMember_Update_Api {
             this.phone = phone;
         }
 
-        @Comment(value = "邮箱地址") @Required(value = true) private String emailAddress;
+        @Comment(value = "邮箱地址")
+        @Required(value = true)
+        private String emailAddress;
 
         public String getEmailAddress() {
             return emailAddress;
@@ -130,7 +138,9 @@ public class DepartmentMember_Update_Api {
             this.emailAddress = emailAddress;
         }
 
-        @Comment(value = "登录名") @Required(value = true) private String loginName;
+        @Comment(value = "登录名")
+        @Required(value = true)
+        private String loginName;
 
         public String getLoginName() {
             return loginName;
@@ -140,7 +150,9 @@ public class DepartmentMember_Update_Api {
             this.loginName = loginName;
         }
 
-        @Comment(value = "登录密码") @Required(value = true) private String loginPassword;
+        @Comment(value = "登录密码")
+        @Required(value = true)
+        private String loginPassword;
 
         public String getLoginPassword() {
             return loginPassword;
@@ -150,7 +162,9 @@ public class DepartmentMember_Update_Api {
             this.loginPassword = loginPassword;
         }
 
-        @Comment(value = "是否启用(0否1是)") @Required(value = true) private Integer enable;
+        @Comment(value = "是否启用(0否1是)")
+        @Required(value = true)
+        private Integer enable;
 
         public Integer getEnable() {
             return enable;

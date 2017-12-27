@@ -3,7 +3,6 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
@@ -16,7 +15,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "系统配置 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.59")
+@MicroApiAnnotation(type = "read", version = "v1.0.60")
 public class SystemConfig_Update_Api {
 
     public static Response execute(Request request) throws Exception {

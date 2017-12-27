@@ -2,9 +2,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.ComplexCondition;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
@@ -24,7 +22,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡订单 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.59")
+@MicroApiAnnotation(type = "read", version = "v1.0.60")
 public class RoomCardOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

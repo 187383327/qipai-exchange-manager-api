@@ -18,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "会员专区Banner - 更新全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.59")
+@MicroApiAnnotation(type = "read", version = "v1.0.60")
 public class ChoiceBanner_UpdateAll_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -46,7 +46,11 @@ public class ChoiceBanner_UpdateAll_Api {
                 newBanner.setType(2);
                 newBanner.setReorder(x.getReorder());
                 newBanner.setUrl(x.getUrl());
-                newBanner.setGoodsId(StringUtils.isBlank(x.getGoodsId()) ? "" : x.getGoodsId());
+                String goodsId = x.getGoodsId();
+                if (StringUtils.isNotBlank(goodsId) && Commons.queryGoodsById(goodsId) == null) {
+                    throw new MicroApiExecuteException(ErrorCodeEnum.invalid_goods_id);
+                }
+                newBanner.setGoodsId(StringUtils.isBlank(goodsId) ? "" : goodsId);
                 newBanner.setDtCreate(System.currentTimeMillis());
                 conn.createStatement().executeUpdate(InsertSql.build(newBanner));
             }
@@ -56,9 +60,7 @@ public class ChoiceBanner_UpdateAll_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -68,9 +70,7 @@ public class ChoiceBanner_UpdateAll_Api {
             this.token = token;
         }
 
-        @Comment(value = "Banner列表(全部)")
-        @Required(value = true)
-        private java.util.List<Banner> banners;
+        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> banners;
 
         public java.util.List<Banner> getBanners() {
             return banners;

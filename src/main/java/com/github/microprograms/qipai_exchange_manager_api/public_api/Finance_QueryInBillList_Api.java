@@ -18,7 +18,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "财务 - 查询入账列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.59")
+@MicroApiAnnotation(type = "read", version = "v1.0.60")
 public class Finance_QueryInBillList_Api {
 
     public static Response execute(Request request) throws Exception {

@@ -2482,6 +2482,11 @@
 			"code": 1018,
 			"message": "没有字段需要更新，请填写需要更新的字段",
 			"name": "no_fields_need_to_be_updated"
+		},
+		{
+			"code": 1019,
+			"message": "无效的商品ID",
+			"name": "invalid_goods_id"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -2502,5 +2507,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.59"
+	"version": "v1.0.60"
 }
