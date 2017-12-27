@@ -60,7 +60,7 @@ public class BackupDatabase {
     }
 
     private static <T> void write(List<Class<?>> list) throws SQLException, IOException {
-        String time = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String time = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         File dir = new File(String.format("backup/%s/", time));
         if (!dir.exists()) {
             dir.mkdirs();
