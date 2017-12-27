@@ -37,7 +37,7 @@ public class RecoveryDatabase {
     private static void recovery(List<?> list) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, SQLException {
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             for (Object x : list) {
-                conn.createStatement().executeUpdate(InsertSql.build(x));
+                System.out.println(conn.createStatement().executeUpdate(InsertSql.build(x)));
             }
         }
     }
