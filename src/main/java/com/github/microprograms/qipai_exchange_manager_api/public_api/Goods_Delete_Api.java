@@ -14,6 +14,7 @@ import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Comment;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
+import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 删除")
@@ -22,6 +23,17 @@ public class Goods_Delete_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
+        if (StringUtils.isBlank(req.getToken())) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
+        }
+        DepartmentMember departmentMember = Commons.queryDepartmentMemberByToken(req.getToken());
+        if (departmentMember == null) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.invalid_token);
+        }
+        Department department = Commons.queryDepartmentById(departmentMember.getDepartmentId());
+        if (!Commons.hasPermission(department, PermissionEnum.goodsDelete)) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
+        }
         if (StringUtils.isBlank(req.getGoodsId())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }

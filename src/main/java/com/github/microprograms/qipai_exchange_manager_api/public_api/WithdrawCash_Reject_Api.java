@@ -31,6 +31,10 @@ public class WithdrawCash_Reject_Api {
         if (departmentMember == null) {
             throw new MicroApiExecuteException(ErrorCodeEnum.invalid_token);
         }
+        Department department = Commons.queryDepartmentById(departmentMember.getDepartmentId());
+        if (!Commons.hasPermission(department, PermissionEnum.withdrawCashAuditReject)) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
+        }
         if (StringUtils.isBlank(req.getWithdrawCashId())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }

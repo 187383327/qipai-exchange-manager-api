@@ -2,13 +2,18 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.sql.Connection;
 import java.util.UUID;
+
+import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
+import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Comment;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
+import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 添加新商品")
@@ -17,6 +22,17 @@ public class Goods_Add_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
+        if (StringUtils.isBlank(req.getToken())) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
+        }
+        DepartmentMember departmentMember = Commons.queryDepartmentMemberByToken(req.getToken());
+        if (departmentMember == null) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.invalid_token);
+        }
+        Department department = Commons.queryDepartmentById(departmentMember.getDepartmentId());
+        if (!Commons.hasPermission(department, PermissionEnum.goodsAdd)) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
+        }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             Goods goods = new Goods();
             goods.setId(UUID.randomUUID().toString());
@@ -40,9 +56,7 @@ public class Goods_Add_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -52,9 +66,7 @@ public class Goods_Add_Api {
             this.token = token;
         }
 
-        @Comment(value = "商品类型(1普通商品,2优选商品)")
-        @Required(value = true)
-        private Integer type;
+        @Comment(value = "商品类型(1普通商品,2优选商品)") @Required(value = true) private Integer type;
 
         public Integer getType() {
             return type;
@@ -64,9 +76,7 @@ public class Goods_Add_Api {
             this.type = type;
         }
 
-        @Comment(value = "商品类别编号")
-        @Required(value = false)
-        private String categoryId;
+        @Comment(value = "商品类别编号") @Required(value = false) private String categoryId;
 
         public String getCategoryId() {
             return categoryId;
@@ -76,9 +86,7 @@ public class Goods_Add_Api {
             this.categoryId = categoryId;
         }
 
-        @Comment(value = "商品名")
-        @Required(value = true)
-        private String name;
+        @Comment(value = "商品名") @Required(value = true) private String name;
 
         public String getName() {
             return name;
@@ -88,9 +96,7 @@ public class Goods_Add_Api {
             this.name = name;
         }
 
-        @Comment(value = "商品价格(元宝)")
-        @Required(value = false)
-        private Integer price;
+        @Comment(value = "商品价格(元宝)") @Required(value = false) private Integer price;
 
         public Integer getPrice() {
             return price;
@@ -100,9 +106,7 @@ public class Goods_Add_Api {
             this.price = price;
         }
 
-        @Comment(value = "会员价格(元宝)")
-        @Required(value = true)
-        private Integer vipPrice;
+        @Comment(value = "会员价格(元宝)") @Required(value = true) private Integer vipPrice;
 
         public Integer getVipPrice() {
             return vipPrice;
@@ -112,9 +116,7 @@ public class Goods_Add_Api {
             this.vipPrice = vipPrice;
         }
 
-        @Comment(value = "钻石会员(元宝)")
-        @Required(value = true)
-        private Integer goldVipPrice;
+        @Comment(value = "钻石会员(元宝)") @Required(value = true) private Integer goldVipPrice;
 
         public Integer getGoldVipPrice() {
             return goldVipPrice;
@@ -124,9 +126,7 @@ public class Goods_Add_Api {
             this.goldVipPrice = goldVipPrice;
         }
 
-        @Comment(value = "排序")
-        @Required(value = true)
-        private Integer reorder;
+        @Comment(value = "排序") @Required(value = true) private Integer reorder;
 
         public Integer getReorder() {
             return reorder;
@@ -136,9 +136,7 @@ public class Goods_Add_Api {
             this.reorder = reorder;
         }
 
-        @Comment(value = "库存")
-        @Required(value = true)
-        private Integer stock;
+        @Comment(value = "库存") @Required(value = true) private Integer stock;
 
         public Integer getStock() {
             return stock;
@@ -148,9 +146,7 @@ public class Goods_Add_Api {
             this.stock = stock;
         }
 
-        @Comment(value = "商品主图(JsonArray)")
-        @Required(value = true)
-        private String pictures;
+        @Comment(value = "商品主图(JsonArray)") @Required(value = true) private String pictures;
 
         public String getPictures() {
             return pictures;
@@ -160,9 +156,7 @@ public class Goods_Add_Api {
             this.pictures = pictures;
         }
 
-        @Comment(value = "详情(富文本)")
-        @Required(value = true)
-        private String detail;
+        @Comment(value = "详情(富文本)") @Required(value = true) private String detail;
 
         public String getDetail() {
             return detail;

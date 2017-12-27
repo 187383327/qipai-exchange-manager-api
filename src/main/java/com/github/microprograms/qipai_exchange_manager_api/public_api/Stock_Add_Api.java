@@ -31,6 +31,17 @@ public class Stock_Add_Api {
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
         Response resp = new Response();
+        if (StringUtils.isBlank(req.getToken())) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
+        }
+        DepartmentMember departmentMember = Commons.queryDepartmentMemberByToken(req.getToken());
+        if (departmentMember == null) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.invalid_token);
+        }
+        Department department = Commons.queryDepartmentById(departmentMember.getDepartmentId());
+        if (!Commons.hasPermission(department, PermissionEnum.stockUpdate)) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
+        }
         if (StringUtils.isBlank(req.getGoodsId())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
