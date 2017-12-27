@@ -43,6 +43,7 @@ public class SampleData {
     public static void main(String[] args) throws Exception {
         // addBaseDate();
         // addExtDate();
+        updateUserHeadCoinAmount("273747", 200);
         updateUserHeadCoinAmount("790942", 200);
     }
 
