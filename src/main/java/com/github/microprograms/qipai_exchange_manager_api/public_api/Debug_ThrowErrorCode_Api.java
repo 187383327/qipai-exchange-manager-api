@@ -8,7 +8,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 
 @Comment(value = "调试 - 抛出错误码")
-@MicroApiAnnotation(type = "read", version = "v1.0.60")
+@MicroApiAnnotation(type = "read", version = "v1.0.61")
 public class Debug_ThrowErrorCode_Api {
 
     public static Response execute(Request request) throws Exception {

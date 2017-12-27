@@ -14,7 +14,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 删除商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.60")
+@MicroApiAnnotation(type = "read", version = "v1.0.61")
 public class GoodsCategory_Delete_Api {
 
     public static Response execute(Request request) throws Exception {

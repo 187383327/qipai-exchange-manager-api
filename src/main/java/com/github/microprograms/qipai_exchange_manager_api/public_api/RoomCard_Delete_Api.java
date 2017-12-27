@@ -18,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 删除")
-@MicroApiAnnotation(type = "read", version = "v1.0.60")
+@MicroApiAnnotation(type = "read", version = "v1.0.61")
 public class RoomCard_Delete_Api {
 
     public static Response execute(Request request) throws Exception {
