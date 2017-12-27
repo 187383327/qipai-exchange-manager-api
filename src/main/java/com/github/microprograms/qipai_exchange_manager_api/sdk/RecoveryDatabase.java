@@ -19,7 +19,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 public class RecoveryDatabase {
     public static void main(String[] args) throws Exception {
-        read("backup/20171227112055");
+        read("backup/20171227214732");
     }
 
     private static void read(String dir) throws ClassNotFoundException, IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SQLException {
