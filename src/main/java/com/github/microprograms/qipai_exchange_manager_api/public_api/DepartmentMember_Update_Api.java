@@ -3,7 +3,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -17,7 +19,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门成员 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.58")
+@MicroApiAnnotation(type = "read", version = "v1.0.59")
 public class DepartmentMember_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -47,6 +49,9 @@ public class DepartmentMember_Update_Api {
             }
             if (req.getEnable() != null) {
                 fields.add(new FieldToUpdate("enable", req.getEnable()));
+            }
+            if (fields.isEmpty()) {
+                throw new MicroApiExecuteException(ErrorCodeEnum.no_fields_need_to_be_updated);
             }
             conn.createStatement().executeUpdate(new UpdateSql(DepartmentMember.class).fields(fields).where(buildFinalCondition(req)).build());
         }

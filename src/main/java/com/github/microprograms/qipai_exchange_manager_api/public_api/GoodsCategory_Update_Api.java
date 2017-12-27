@@ -3,7 +3,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -17,7 +19,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品类别 - 更新商品类别")
-@MicroApiAnnotation(type = "read", version = "v1.0.58")
+@MicroApiAnnotation(type = "read", version = "v1.0.59")
 public class GoodsCategory_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -36,6 +38,9 @@ public class GoodsCategory_Update_Api {
             if (req.getReorder() != null) {
                 fields.add(new FieldToUpdate("reorder", req.getReorder()));
             }
+            if (fields.isEmpty()) {
+                throw new MicroApiExecuteException(ErrorCodeEnum.no_fields_need_to_be_updated);
+            }
             conn.createStatement().executeUpdate(new UpdateSql(GoodsCategory.class).fields(fields).where(buildFinalCondition(req)).build());
         }
         Response resp = new Response();
@@ -48,9 +53,7 @@ public class GoodsCategory_Update_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -60,9 +63,7 @@ public class GoodsCategory_Update_Api {
             this.token = token;
         }
 
-        @Comment(value = "商品类别ID")
-        @Required(value = true)
-        private String categoryId;
+        @Comment(value = "商品类别ID") @Required(value = true) private String categoryId;
 
         public String getCategoryId() {
             return categoryId;
@@ -72,9 +73,7 @@ public class GoodsCategory_Update_Api {
             this.categoryId = categoryId;
         }
 
-        @Comment(value = "商品类别名称")
-        @Required(value = true)
-        private String name;
+        @Comment(value = "商品类别名称") @Required(value = true) private String name;
 
         public String getName() {
             return name;
@@ -84,9 +83,7 @@ public class GoodsCategory_Update_Api {
             this.name = name;
         }
 
-        @Comment(value = "商品类别图片URL")
-        @Required(value = true)
-        private String picture;
+        @Comment(value = "商品类别图片URL") @Required(value = true) private String picture;
 
         public String getPicture() {
             return picture;
@@ -96,9 +93,7 @@ public class GoodsCategory_Update_Api {
             this.picture = picture;
         }
 
-        @Comment(value = "排序")
-        @Required(value = true)
-        private Integer reorder;
+        @Comment(value = "排序") @Required(value = true) private Integer reorder;
 
         public Integer getReorder() {
             return reorder;

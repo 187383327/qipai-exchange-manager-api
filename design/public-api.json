@@ -2477,6 +2477,11 @@
 			"code": 1017,
 			"message": "权限不足",
 			"name": "permission_denied"
+		},
+		{
+			"code": 1018,
+			"message": "没有字段需要更新，请填写需要更新的字段",
+			"name": "no_fields_need_to_be_updated"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -2497,5 +2502,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.58"
+	"version": "v1.0.59"
 }

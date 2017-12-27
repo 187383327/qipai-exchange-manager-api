@@ -12,7 +12,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     loginName_loginPassword_not_match(1014, "账号和密码不匹配"), /**Token已失效，请重新登录*/
     invalid_token(1015, "Token已失效，请重新登录"), /**数据已被修改，请重新操作*/
     concurrency_modification_exception(1016, "数据已被修改，请重新操作"), /**权限不足*/
-    permission_denied(1017, "权限不足");
+    permission_denied(1017, "权限不足"), /**没有字段需要更新，请填写需要更新的字段*/
+    no_fields_need_to_be_updated(1018, "没有字段需要更新，请填写需要更新的字段");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

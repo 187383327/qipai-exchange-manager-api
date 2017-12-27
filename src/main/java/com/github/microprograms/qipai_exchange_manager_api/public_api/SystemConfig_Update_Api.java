@@ -3,10 +3,12 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
+import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Comment;
@@ -14,7 +16,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "系统配置 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.58")
+@MicroApiAnnotation(type = "read", version = "v1.0.59")
 public class SystemConfig_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -26,6 +28,9 @@ public class SystemConfig_Update_Api {
             }
             if (req.getVipLevelUpConditionGoldVip() != null) {
                 fields.add(new FieldToUpdate("vipLevelUpConditionGoldVip", req.getVipLevelUpConditionGoldVip()));
+            }
+            if (fields.isEmpty()) {
+                throw new MicroApiExecuteException(ErrorCodeEnum.no_fields_need_to_be_updated);
             }
             conn.createStatement().executeUpdate(new UpdateSql(SystemConfig.class).fields(fields).build());
         }
