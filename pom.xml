@@ -104,12 +104,12 @@
         <dependency>
             <groupId>com.github.microprograms</groupId>
             <artifactId>qipai-exchange-core</artifactId>
-            <version>1.0.45</version>
+            <version>1.0.45.r1</version>
         </dependency>
         <dependency>
             <groupId>com.github.microprograms</groupId>
             <artifactId>ignite-utils</artifactId>
-            <version>1.0.21</version>
+            <version>1.0.24</version>
         </dependency>
         <dependency>
             <groupId>com.github.microprograms</groupId>

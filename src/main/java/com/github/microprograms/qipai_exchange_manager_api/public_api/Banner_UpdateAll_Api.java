@@ -2,13 +2,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.util.UUID;
 
-import javax.cache.Cache.Entry;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
-import org.apache.ignite.cache.query.SqlFieldsQuery;
-import org.apache.ignite.cache.query.SqlQuery;
 import org.apache.ignite.transactions.Transaction;
 
 import com.github.microprograms.ignite_utils.NativeIgniteUtils;
@@ -42,11 +38,9 @@ public class Banner_UpdateAll_Api {
             throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
         }
         Ignite ignite = IgnitionUtils.getIgnite();
-        IgniteCache<Object, Object> bannerTable = NativeIgniteUtils.getTable(Banner.class, ignite);
+        IgniteCache<String, Banner> bannerTable = NativeIgniteUtils.getTable(Banner.class, ignite);
         try (Transaction tx = ignite.transactions().txStart()) {
-            for (Entry<String, Banner> x : bannerTable.query(new SqlQuery<String, Banner>(Banner.class, "type=1"))) {
-                bannerTable.remove(x.getKey());
-            }
+            NativeIgniteUtils.delete(Banner.class, "type=1", bannerTable);
             for (Banner x : req.getBanners()) {
                 com.github.microprograms.qipai_exchange_core.model.Banner newBanner = new com.github.microprograms.qipai_exchange_core.model.Banner();
                 newBanner.setId(UUID.randomUUID().toString());
@@ -59,7 +53,7 @@ public class Banner_UpdateAll_Api {
                 }
                 newBanner.setGoodsId(StringUtils.isBlank(goodsId) ? "" : goodsId);
                 newBanner.setDtCreate(System.currentTimeMillis());
-                bannerTable.query(new SqlFieldsQuery(InsertSql.build(newBanner)));
+                NativeIgniteUtils.query(InsertSql.build(newBanner), bannerTable);
             }
             tx.commit();
         }
