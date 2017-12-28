@@ -487,6 +487,30 @@ public class MixOrder {
         this.transportConsignerName = transportConsignerName;
     }
 
+    @Comment(value = "物流 - 用户是否已确认收货(0未确认1已确认)")
+    @Required(value = true)
+    private Integer transportIsConfirmReceived;
+
+    public Integer getTransportIsConfirmReceived() {
+        return transportIsConfirmReceived;
+    }
+
+    public void setTransportIsConfirmReceived(Integer transportIsConfirmReceived) {
+        this.transportIsConfirmReceived = transportIsConfirmReceived;
+    }
+
+    @Comment(value = "物流 - 用户确认收货时间")
+    @Required(value = true)
+    private Long transportDtConfirmReceived;
+
+    public Long getTransportDtConfirmReceived() {
+        return transportDtConfirmReceived;
+    }
+
+    public void setTransportDtConfirmReceived(Long transportDtConfirmReceived) {
+        this.transportDtConfirmReceived = transportDtConfirmReceived;
+    }
+
     @Comment(value = "上次修改时间")
     @Required(value = true)
     private Long dtLastModify;

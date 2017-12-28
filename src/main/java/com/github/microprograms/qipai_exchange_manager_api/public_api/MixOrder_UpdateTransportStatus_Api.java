@@ -3,9 +3,7 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -56,7 +54,9 @@ public class MixOrder_UpdateTransportStatus_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -66,7 +66,9 @@ public class MixOrder_UpdateTransportStatus_Api {
             this.token = token;
         }
 
-        @Comment(value = "订单ID") @Required(value = true) private String mixOrderId;
+        @Comment(value = "订单ID")
+        @Required(value = true)
+        private String mixOrderId;
 
         public String getMixOrderId() {
             return mixOrderId;
@@ -76,7 +78,9 @@ public class MixOrder_UpdateTransportStatus_Api {
             this.mixOrderId = mixOrderId;
         }
 
-        @Comment(value = "物流 - 物流公司") @Required(value = true) private String transportCompany;
+        @Comment(value = "物流 - 物流公司")
+        @Required(value = true)
+        private String transportCompany;
 
         public String getTransportCompany() {
             return transportCompany;
@@ -86,7 +90,9 @@ public class MixOrder_UpdateTransportStatus_Api {
             this.transportCompany = transportCompany;
         }
 
-        @Comment(value = "物流 - 物流单号") @Required(value = true) private String transportNumber;
+        @Comment(value = "物流 - 物流单号")
+        @Required(value = true)
+        private String transportNumber;
 
         public String getTransportNumber() {
             return transportNumber;
