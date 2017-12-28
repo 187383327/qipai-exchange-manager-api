@@ -14,26 +14,26 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "商品/优选商品 - 查询详情")
+@Comment(value = "订单 - 查询详情")
 @MicroApiAnnotation(type = "read", version = "v1.0.62")
-public class Goods_QueryDetail_Api {
+public class MixOrder_QueryDetail_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
         Resp resp = new Resp();
-        if (StringUtils.isBlank(req.getGoodsId())) {
+        if (StringUtils.isBlank(req.getMixOrderId())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             String finalCondition = buildFinalCondition(req);
-            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(Goods.class, "g").fieldNames("g.*", "c.name as categoryName").where(finalCondition).leftJoin(GoodsCategory.class, "c", "g.categoryId=c.id").build());
-            resp.setData(IgniteUtils.getJavaObject(selectRs, Goods.class));
+            ResultSet selectRs = conn.createStatement().executeQuery(new SelectSql(MixOrder.class).where(finalCondition).build());
+            resp.setData(IgniteUtils.getJavaObject(selectRs, MixOrder.class));
         }
         return resp;
     }
 
     private static String buildFinalCondition(Req req) {
-        return Condition.build("g.id=", req.getGoodsId()).toString();
+        return Condition.build("id=", req.getMixOrderId()).toString();
     }
 
     public static class Req extends Request {
@@ -50,30 +50,30 @@ public class Goods_QueryDetail_Api {
             this.token = token;
         }
 
-        @Comment(value = "商品ID")
+        @Comment(value = "订单ID")
         @Required(value = true)
-        private String goodsId;
+        private String mixOrderId;
 
-        public String getGoodsId() {
-            return goodsId;
+        public String getMixOrderId() {
+            return mixOrderId;
         }
 
-        public void setGoodsId(String goodsId) {
-            this.goodsId = goodsId;
+        public void setMixOrderId(String mixOrderId) {
+            this.mixOrderId = mixOrderId;
         }
     }
 
     public static class Resp extends Response {
 
-        @Comment(value = "商品详情")
+        @Comment(value = "订单详情")
         @Required(value = true)
-        private Goods data;
+        private MixOrder data;
 
-        public Goods getData() {
+        public MixOrder getData() {
             return data;
         }
 
-        public void setData(Goods data) {
+        public void setData(MixOrder data) {
             this.data = data;
         }
     }

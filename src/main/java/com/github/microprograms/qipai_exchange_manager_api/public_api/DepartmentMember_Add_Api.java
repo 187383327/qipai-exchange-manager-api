@@ -14,7 +14,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门成员 - 添加")
-@MicroApiAnnotation(type = "read", version = "v1.0.61")
+@MicroApiAnnotation(type = "read", version = "v1.0.62")
 public class DepartmentMember_Add_Api {
 
     public static Response execute(Request request) throws Exception {

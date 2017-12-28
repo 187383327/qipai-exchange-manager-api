@@ -1,12 +1,10 @@
 package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.util.UUID;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.transactions.Transaction;
-
 import com.github.microprograms.ignite_utils.NativeIgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
@@ -20,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.IgnitionUtils;
 
 @Comment(value = "Banner - 更新全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.61")
+@MicroApiAnnotation(type = "read", version = "v1.0.62")
 public class Banner_UpdateAll_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -62,7 +60,9 @@ public class Banner_UpdateAll_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -72,7 +72,9 @@ public class Banner_UpdateAll_Api {
             this.token = token;
         }
 
-        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> banners;
+        @Comment(value = "Banner列表(全部)")
+        @Required(value = true)
+        private java.util.List<Banner> banners;
 
         public java.util.List<Banner> getBanners() {
             return banners;

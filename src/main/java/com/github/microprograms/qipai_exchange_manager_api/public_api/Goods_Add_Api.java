@@ -15,7 +15,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 添加新商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.61")
+@MicroApiAnnotation(type = "read", version = "v1.0.62")
 public class Goods_Add_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -43,7 +43,6 @@ public class Goods_Add_Api {
             goods.setReorder(req.getReorder() == null ? 0 : req.getReorder());
             goods.setStock(req.getStock() == null ? 0 : req.getStock());
             goods.setPictures(req.getPictures());
-            goods.setDetail(req.getDetail());
             goods.setDtCreate(System.currentTimeMillis());
             goods.setIsDelete(0);
             conn.createStatement().executeUpdate(InsertSql.build(goods));
@@ -172,18 +171,6 @@ public class Goods_Add_Api {
 
         public void setPictures(String pictures) {
             this.pictures = pictures;
-        }
-
-        @Comment(value = "详情(富文本)")
-        @Required(value = true)
-        private String detail;
-
-        public String getDetail() {
-            return detail;
-        }
-
-        public void setDetail(String detail) {
-            this.detail = detail;
         }
     }
 }

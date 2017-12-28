@@ -439,6 +439,54 @@ public class MixOrder {
         this.transportNumber = transportNumber;
     }
 
+    @Comment(value = "物流 - 是否已发货(0未发货1已发货)")
+    @Required(value = true)
+    private Integer transportIsDelivered;
+
+    public Integer getTransportIsDelivered() {
+        return transportIsDelivered;
+    }
+
+    public void setTransportIsDelivered(Integer transportIsDelivered) {
+        this.transportIsDelivered = transportIsDelivered;
+    }
+
+    @Comment(value = "物流 - 发货时间")
+    @Required(value = true)
+    private Long transportDtDelivered;
+
+    public Long getTransportDtDelivered() {
+        return transportDtDelivered;
+    }
+
+    public void setTransportDtDelivered(Long transportDtDelivered) {
+        this.transportDtDelivered = transportDtDelivered;
+    }
+
+    @Comment(value = "物流 - 发货人ID")
+    @Required(value = true)
+    private String transportConsignerId;
+
+    public String getTransportConsignerId() {
+        return transportConsignerId;
+    }
+
+    public void setTransportConsignerId(String transportConsignerId) {
+        this.transportConsignerId = transportConsignerId;
+    }
+
+    @Comment(value = "物流 - 发货人名称")
+    @Required(value = true)
+    private String transportConsignerName;
+
+    public String getTransportConsignerName() {
+        return transportConsignerName;
+    }
+
+    public void setTransportConsignerName(String transportConsignerName) {
+        this.transportConsignerName = transportConsignerName;
+    }
+
     @Comment(value = "上次修改时间")
     @Required(value = true)
     private Long dtLastModify;

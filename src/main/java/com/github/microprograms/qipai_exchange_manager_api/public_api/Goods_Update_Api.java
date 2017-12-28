@@ -18,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.61")
+@MicroApiAnnotation(type = "read", version = "v1.0.62")
 public class Goods_Update_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -59,9 +59,6 @@ public class Goods_Update_Api {
             }
             if (StringUtils.isNoneBlank(req.getPictures())) {
                 fields.add(new FieldToUpdate("pictures", req.getPictures()));
-            }
-            if (StringUtils.isNoneBlank(req.getDetail())) {
-                fields.add(new FieldToUpdate("detail", req.getDetail()));
             }
             if (fields.isEmpty()) {
                 throw new MicroApiExecuteException(ErrorCodeEnum.no_fields_need_to_be_updated);
@@ -184,18 +181,6 @@ public class Goods_Update_Api {
 
         public void setPictures(String pictures) {
             this.pictures = pictures;
-        }
-
-        @Comment(value = "详情(富文本)")
-        @Required(value = true)
-        private String detail;
-
-        public String getDetail() {
-            return detail;
-        }
-
-        public void setDetail(String detail) {
-            this.detail = detail;
         }
     }
 }

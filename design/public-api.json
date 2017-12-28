@@ -125,6 +125,36 @@
 			"type": "read"
 		},
 		{
+			"comment": "商品/优选商品 - 更新富文本",
+			"javaClassName": "Goods_UpdateRichText_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
+						"comment": "商品ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "goodsId",
+						"required": true
+					},
+					{
+						"comment": "详情(富文本)",
+						"example": "example",
+						"javaType": "String",
+						"name": "detail",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "商品/优选商品 - 添加新商品",
 			"javaClassName": "Goods_Add_Api",
 			"requestDefinition": {
@@ -198,13 +228,6 @@
 						"javaType": "String",
 						"name": "pictures",
 						"required": true
-					},
-					{
-						"comment": "详情(富文本)",
-						"example": "example",
-						"javaType": "String",
-						"name": "detail",
-						"required": true
 					}
 				]
 			},
@@ -276,13 +299,6 @@
 						"example": "example",
 						"javaType": "String",
 						"name": "pictures",
-						"required": true
-					},
-					{
-						"comment": "详情(富文本)",
-						"example": "example",
-						"javaType": "String",
-						"name": "detail",
 						"required": true
 					}
 				]
@@ -2402,6 +2418,77 @@
 			"type": "read"
 		},
 		{
+			"comment": "订单 - 查询详情",
+			"javaClassName": "MixOrder_QueryDetail_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
+						"comment": "订单ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "mixOrderId",
+						"required": true
+					}
+				]
+			},
+			"responseDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "订单详情",
+						"example": "example",
+						"javaType": "MixOrder",
+						"name": "data",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
+			"comment": "订单 - 更新发货状态",
+			"javaClassName": "MixOrder_UpdateTransportStatus_Api",
+			"requestDefinition": {
+				"fieldDefinitions": [
+					{
+						"comment": "Token",
+						"example": "example",
+						"javaType": "String",
+						"name": "token",
+						"required": true
+					},
+					{
+						"comment": "订单ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "mixOrderId",
+						"required": true
+					},
+					{
+						"comment": "物流 - 物流公司",
+						"example": "example",
+						"javaType": "String",
+						"name": "transportCompany",
+						"required": true
+					},
+					{
+						"comment": "物流 - 物流单号",
+						"example": "example",
+						"javaType": "String",
+						"name": "transportNumber",
+						"required": true
+					}
+				]
+			},
+			"type": "read"
+		},
+		{
 			"comment": "调试 - 抛出错误码",
 			"javaClassName": "Debug_ThrowErrorCode_Api",
 			"requestDefinition": {
@@ -2523,5 +2610,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.61"
+	"version": "v1.0.62"
 }

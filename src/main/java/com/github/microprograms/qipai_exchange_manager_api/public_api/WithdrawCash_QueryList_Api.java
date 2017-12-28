@@ -18,7 +18,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "提现申请 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.61")
+@MicroApiAnnotation(type = "read", version = "v1.0.62")
 public class WithdrawCash_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

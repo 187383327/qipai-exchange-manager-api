@@ -259,7 +259,6 @@ public class SampleData {
         req1.setStock(999);
         req1.setPrice(15);
         req1.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/s450x450_jfs/t9085/22/907696059/71305/93f88c62/59b85847N20776d8e.jpg")));
-        req1.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req1);
 
         Goods_Add_Api.Req req2 = new Goods_Add_Api.Req();
@@ -268,7 +267,6 @@ public class SampleData {
         req2.setStock(999);
         req2.setPrice(10);
         req2.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/s450x450_jfs/t4036/222/34888999/70223/aa81730b/58390f1dN558d5940.jpg")));
-        req2.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req2);
 
         Goods_Add_Api.Req req3 = new Goods_Add_Api.Req();
@@ -277,7 +275,6 @@ public class SampleData {
         req3.setStock(999);
         req3.setPrice(1);
         req3.setPictures(JSON.toJSONString(Arrays.asList("http://img13.360buyimg.com/n1/s450x450_jfs/t13945/189/147124321/61733/584f84c1/5a0478ffN9ac6edb1.jpg")));
-        req3.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req3);
 
         Goods_Add_Api.Req req4 = new Goods_Add_Api.Req();
@@ -286,7 +283,6 @@ public class SampleData {
         req4.setStock(999);
         req4.setPrice(7);
         req4.setPictures(JSON.toJSONString(Arrays.asList("http://img13.360buyimg.com/n5/s450x450_jfs/t3181/363/6439995132/73170/fc296ee1/58a6a68fN23fa0310.jpg")));
-        req4.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req4);
 
         Goods_Add_Api.Req req5 = new Goods_Add_Api.Req();
@@ -295,7 +291,6 @@ public class SampleData {
         req5.setStock(999);
         req5.setPrice(2);
         req5.setPictures(JSON.toJSONString(Arrays.asList("http://img11.360buyimg.com/n1/s450x450_jfs/t5281/145/77907999/147814/21568a1e/58f840aaNe7ccf8fc.jpg")));
-        req5.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req5);
     }
 
@@ -310,7 +305,6 @@ public class SampleData {
         req1.setVipPrice(5000);
         req1.setGoldVipPrice(4500);
         req1.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/s450x450_jfs/t9085/22/907696059/71305/93f88c62/59b85847N20776d8e.jpg")));
-        req1.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req1);
 
         Goods_Add_Api.Req req2 = new Goods_Add_Api.Req();
@@ -321,7 +315,6 @@ public class SampleData {
         req2.setVipPrice(3000);
         req2.setGoldVipPrice(2500);
         req2.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/s450x450_jfs/t4036/222/34888999/70223/aa81730b/58390f1dN558d5940.jpg")));
-        req2.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req2);
 
         Goods_Add_Api.Req req3 = new Goods_Add_Api.Req();
@@ -332,7 +325,6 @@ public class SampleData {
         req3.setVipPrice(450);
         req3.setGoldVipPrice(400);
         req3.setPictures(JSON.toJSONString(Arrays.asList("http://img13.360buyimg.com/n1/s450x450_jfs/t13945/189/147124321/61733/584f84c1/5a0478ffN9ac6edb1.jpg")));
-        req3.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req3);
 
         Goods_Add_Api.Req req4 = new Goods_Add_Api.Req();
@@ -343,7 +335,6 @@ public class SampleData {
         req4.setVipPrice(950);
         req4.setGoldVipPrice(900);
         req4.setPictures(JSON.toJSONString(Arrays.asList("http://img13.360buyimg.com/n5/s450x450_jfs/t3181/363/6439995132/73170/fc296ee1/58a6a68fN23fa0310.jpg")));
-        req4.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req4);
 
         Goods_Add_Api.Req req5 = new Goods_Add_Api.Req();
@@ -354,7 +345,6 @@ public class SampleData {
         req5.setVipPrice(450);
         req5.setGoldVipPrice(400);
         req5.setPictures(JSON.toJSONString(Arrays.asList("http://img11.360buyimg.com/n1/s450x450_jfs/t5281/145/77907999/147814/21568a1e/58f840aaNe7ccf8fc.jpg")));
-        req5.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req5);
     }
 
@@ -369,7 +359,6 @@ public class SampleData {
         req1.setVipPrice(219);
         req1.setGoldVipPrice(209);
         req1.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t6037/223/6817942242/393538/598f1ed6/5976fa3fN4d96c64b.jpg")));
-        req1.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req1);
 
         Goods_Add_Api.Req req2 = new Goods_Add_Api.Req();
@@ -380,7 +369,6 @@ public class SampleData {
         req2.setVipPrice(359);
         req2.setGoldVipPrice(349);
         req2.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t3298/271/4216356238/300371/ecfe1808/583b8b98N636caba9.jpg")));
-        req2.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req2);
 
         Goods_Add_Api.Req req3 = new Goods_Add_Api.Req();
@@ -391,7 +379,6 @@ public class SampleData {
         req3.setVipPrice(26);
         req3.setGoldVipPrice(16);
         req3.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t3850/312/962278155/264920/3a40c2c4/581ffb02Nd1e0cbc7.jpg")));
-        req3.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req3);
 
         Goods_Add_Api.Req req4 = new Goods_Add_Api.Req();
@@ -402,7 +389,6 @@ public class SampleData {
         req4.setVipPrice(289);
         req4.setGoldVipPrice(279);
         req4.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t3001/278/1256167307/289997/572ed0e2/57c0112cN3f9db356.jpg")));
-        req4.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req4);
 
         Goods_Add_Api.Req req5 = new Goods_Add_Api.Req();
@@ -413,7 +399,6 @@ public class SampleData {
         req5.setVipPrice(63);
         req5.setGoldVipPrice(53);
         req5.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t3145/277/3214881006/429177/24f78180/57ee434dN7bb2facb.jpg")));
-        req5.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req5);
 
         Goods_Add_Api.Req req6 = new Goods_Add_Api.Req();
@@ -424,7 +409,6 @@ public class SampleData {
         req6.setVipPrice(10);
         req6.setGoldVipPrice(5);
         req6.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t2209/178/1743188891/278290/36e6b1/5672b402N54afbfae.jpg")));
-        req6.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req6);
 
         Goods_Add_Api.Req req7 = new Goods_Add_Api.Req();
@@ -435,7 +419,6 @@ public class SampleData {
         req7.setVipPrice(49);
         req7.setGoldVipPrice(39);
         req7.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t2530/164/1143342025/237405/d6e2d144/568f4bedNa1a36a96.jpg")));
-        req7.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req7);
 
         Goods_Add_Api.Req req8 = new Goods_Add_Api.Req();
@@ -446,7 +429,6 @@ public class SampleData {
         req8.setVipPrice(239);
         req8.setGoldVipPrice(229);
         req8.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t6049/125/3873829600/291794/e067fa7b/595b49dbN2ea03bb3.jpg")));
-        req8.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req8);
 
         Goods_Add_Api.Req req9 = new Goods_Add_Api.Req();
@@ -457,7 +439,6 @@ public class SampleData {
         req9.setVipPrice(149);
         req9.setGoldVipPrice(139);
         req9.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t6376/342/968377821/192489/69923e59/59488f1bN53fe3f72.jpg")));
-        req9.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req9);
 
         Goods_Add_Api.Req req10 = new Goods_Add_Api.Req();
@@ -468,7 +449,6 @@ public class SampleData {
         req10.setVipPrice(169);
         req10.setGoldVipPrice(159);
         req10.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t5902/27/114844914/213731/1bbe26a2/592517eaN0e8fdf6b.jpg")));
-        req10.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req10);
 
         Goods_Add_Api.Req req11 = new Goods_Add_Api.Req();
@@ -479,7 +459,6 @@ public class SampleData {
         req11.setVipPrice(19);
         req11.setGoldVipPrice(9);
         req11.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t8068/201/1479891310/433015/a418b73/59ba26d2N2c22a814.jpg")));
-        req11.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req11);
 
         Goods_Add_Api.Req req12 = new Goods_Add_Api.Req();
@@ -490,7 +469,6 @@ public class SampleData {
         req12.setVipPrice(7);
         req12.setGoldVipPrice(5);
         req12.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t2287/359/1993093377/43724/119b5817/56e917c4N0f2d73b8.jpg")));
-        req12.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req12);
 
         Goods_Add_Api.Req req13 = new Goods_Add_Api.Req();
@@ -501,7 +479,6 @@ public class SampleData {
         req13.setVipPrice(29);
         req13.setGoldVipPrice(19);
         req13.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t4585/45/2112776157/82837/273ce2be/59190b05N5cdb7430.jpg")));
-        req13.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req13);
 
         Goods_Add_Api.Req req14 = new Goods_Add_Api.Req();
@@ -512,7 +489,6 @@ public class SampleData {
         req14.setVipPrice(7);
         req14.setGoldVipPrice(5);
         req14.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t6973/301/474205166/172285/698f85c7/5976e972N960e5d56.jpg")));
-        req14.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req14);
 
         Goods_Add_Api.Req req15 = new Goods_Add_Api.Req();
@@ -523,7 +499,6 @@ public class SampleData {
         req15.setVipPrice(219);
         req15.setGoldVipPrice(209);
         req15.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t3667/211/238057207/252527/cbc413c6/580444d7N5822b038.jpg")));
-        req15.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req15);
 
         Goods_Add_Api.Req req16 = new Goods_Add_Api.Req();
@@ -534,7 +509,6 @@ public class SampleData {
         req16.setVipPrice(319);
         req16.setGoldVipPrice(309);
         req16.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t3394/182/1991303904/67061/e1a0aa0e/5837f8eeN49c95dac.jpg")));
-        req16.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req16);
 
         Goods_Add_Api.Req req17 = new Goods_Add_Api.Req();
@@ -545,7 +519,6 @@ public class SampleData {
         req17.setVipPrice(689);
         req17.setGoldVipPrice(679);
         req17.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t13471/67/268586315/90054/27e6b692/5a07a986N8a4f3f53.jpg")));
-        req17.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req17);
     }
 
@@ -560,7 +533,6 @@ public class SampleData {
         req1.setVipPrice(239);
         req1.setGoldVipPrice(229);
         req1.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t5719/189/278700984/261407/b8e0b68f/591e745dNd9ccaa5f.jpg")));
-        req1.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req1);
 
         Goods_Add_Api.Req req2 = new Goods_Add_Api.Req();
@@ -571,7 +543,6 @@ public class SampleData {
         req2.setVipPrice(1250);
         req2.setGoldVipPrice(1150);
         req2.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t5167/13/411963192/119843/f3bf3d7d/58ff0fe7Nd9cbdfcc.jpg")));
-        req2.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req2);
 
         Goods_Add_Api.Req req3 = new Goods_Add_Api.Req();
@@ -582,7 +553,6 @@ public class SampleData {
         req3.setVipPrice(238);
         req3.setGoldVipPrice(228);
         req3.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t4654/121/2213302771/330019/390fdb32/58ec98a0Nd96add03.jpg")));
-        req3.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req3);
 
         Goods_Add_Api.Req req4 = new Goods_Add_Api.Req();
@@ -593,7 +563,6 @@ public class SampleData {
         req4.setVipPrice(85);
         req4.setGoldVipPrice(75);
         req4.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t10789/22/1668150998/792429/45742bb5/59e4dbd0N537cf038.jpg")));
-        req4.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req4);
 
         Goods_Add_Api.Req req5 = new Goods_Add_Api.Req();
@@ -604,7 +573,6 @@ public class SampleData {
         req5.setVipPrice(179);
         req5.setGoldVipPrice(169);
         req5.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t5770/120/5285506332/266858/a160b64a/595ca898Na233663d.jpg")));
-        req5.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req5);
 
         Goods_Add_Api.Req req6 = new Goods_Add_Api.Req();
@@ -615,7 +583,6 @@ public class SampleData {
         req6.setVipPrice(230);
         req6.setGoldVipPrice(220);
         req6.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t10144/67/2342258982/330252/673fc943/59f45546N541defaf.jpg")));
-        req6.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req6);
 
         Goods_Add_Api.Req req7 = new Goods_Add_Api.Req();
@@ -626,7 +593,6 @@ public class SampleData {
         req7.setVipPrice(230);
         req7.setGoldVipPrice(220);
         req7.setPictures(JSON.toJSONString(Arrays.asList("https://img10.360buyimg.com/n1/jfs/t9724/241/374601438/197731/d13db74d/59cdbf40N2a4f2497.jpg")));
-        req7.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req7);
 
         Goods_Add_Api.Req req8 = new Goods_Add_Api.Req();
@@ -637,7 +603,6 @@ public class SampleData {
         req8.setVipPrice(230);
         req8.setGoldVipPrice(220);
         req8.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t5851/56/9123571032/303833/d234e010/5982cb1fNc0786acb.jpg")));
-        req8.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req8);
     }
 
@@ -652,7 +617,6 @@ public class SampleData {
         req1.setVipPrice(55);
         req1.setGoldVipPrice(45);
         req1.setPictures(JSON.toJSONString(Arrays.asList("https://img11.360buyimg.com/n1/jfs/t3835/285/2004267255/402246/20af879/58491066N6fcc5f37.jpg")));
-        req1.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req1);
 
         Goods_Add_Api.Req req2 = new Goods_Add_Api.Req();
@@ -663,7 +627,6 @@ public class SampleData {
         req2.setVipPrice(98);
         req2.setGoldVipPrice(88);
         req2.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t6922/328/894894275/167314/b94218f3/597af908Ne08c3e15.jpg")));
-        req2.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req2);
 
         Goods_Add_Api.Req req3 = new Goods_Add_Api.Req();
@@ -674,7 +637,6 @@ public class SampleData {
         req3.setVipPrice(85);
         req3.setGoldVipPrice(75);
         req3.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t3256/258/3295862742/219315/f215c798/57ee14d1N27e2a7b6.jpg")));
-        req3.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req3);
 
         Goods_Add_Api.Req req4 = new Goods_Add_Api.Req();
@@ -685,7 +647,6 @@ public class SampleData {
         req4.setVipPrice(46);
         req4.setGoldVipPrice(36);
         req4.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t3187/140/2572673133/289541/7a295a03/57e345a2Nc9a907f0.jpg")));
-        req4.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req4);
 
         Goods_Add_Api.Req req5 = new Goods_Add_Api.Req();
@@ -696,7 +657,6 @@ public class SampleData {
         req5.setVipPrice(46);
         req5.setGoldVipPrice(36);
         req5.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t5470/187/813799820/404565/e00414f1/5907dc85N6743e74e.jpg")));
-        req5.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req5);
 
         Goods_Add_Api.Req req6 = new Goods_Add_Api.Req();
@@ -707,7 +667,6 @@ public class SampleData {
         req6.setVipPrice(150);
         req6.setGoldVipPrice(140);
         req6.setPictures(JSON.toJSONString(Arrays.asList("https://img12.360buyimg.com/n1/jfs/t11845/126/557645448/140918/f0c6b9fa/59f2f3e4N6cc09bfc.jpg")));
-        req6.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req6);
 
         Goods_Add_Api.Req req7 = new Goods_Add_Api.Req();
@@ -718,7 +677,6 @@ public class SampleData {
         req7.setVipPrice(198);
         req7.setGoldVipPrice(188);
         req7.setPictures(JSON.toJSONString(Arrays.asList("https://img13.360buyimg.com/n1/jfs/t5164/48/2455868102/379208/65a667b3/591aab05N66bca230.jpg")));
-        req7.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req7);
 
         Goods_Add_Api.Req req8 = new Goods_Add_Api.Req();
@@ -729,7 +687,6 @@ public class SampleData {
         req8.setVipPrice(108);
         req8.setGoldVipPrice(98);
         req8.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t3082/319/321405801/346930/8f153a4b/57b13b01Neb5ace64.jpg")));
-        req8.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req8);
 
         Goods_Add_Api.Req req9 = new Goods_Add_Api.Req();
@@ -740,7 +697,6 @@ public class SampleData {
         req9.setVipPrice(290);
         req9.setGoldVipPrice(280);
         req9.setPictures(JSON.toJSONString(Arrays.asList("https://img14.360buyimg.com/n1/jfs/t4942/323/1271110462/293430/b2a27bfa/58eeecbeN7dc57a08.jpg")));
-        req9.setDetail("这里是详情(富文本)");
         Goods_Add_Api.execute(req9);
     }
 

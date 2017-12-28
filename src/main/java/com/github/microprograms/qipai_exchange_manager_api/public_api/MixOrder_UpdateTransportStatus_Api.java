@@ -17,13 +17,12 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
-@Comment(value = "提现申请 - 拒绝")
+@Comment(value = "订单 - 更新发货状态")
 @MicroApiAnnotation(type = "read", version = "v1.0.62")
-public class WithdrawCash_Reject_Api {
+public class MixOrder_UpdateTransportStatus_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        Response resp = new Response();
         if (StringUtils.isBlank(req.getToken())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
@@ -31,41 +30,35 @@ public class WithdrawCash_Reject_Api {
         if (departmentMember == null) {
             throw new MicroApiExecuteException(ErrorCodeEnum.invalid_token);
         }
-        Department department = Commons.queryDepartmentById(departmentMember.getDepartmentId());
-        if (!Commons.hasPermission(department, PermissionEnum.withdrawCashAuditReject)) {
-            throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
-        }
-        if (StringUtils.isBlank(req.getWithdrawCashId())) {
+        if (StringUtils.isBlank(req.getMixOrderId())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
-        }
-        WithdrawCash withdrawCash = Commons.queryWithdrawCashById(req.getWithdrawCashId());
-        if (withdrawCash == null) {
-            throw new MicroApiExecuteException(ErrorCodeEnum.not_exists);
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             List<FieldToUpdate> fields = new ArrayList<>();
-            // 状态(0未审核1已同意2已拒绝)
-            fields.add(new FieldToUpdate("status", 2));
-            fields.add(new FieldToUpdate("auditorId", departmentMember.getId()));
-            fields.add(new FieldToUpdate("auditorName", departmentMember.getName()));
-            fields.add(new FieldToUpdate("dtAudit", System.currentTimeMillis()));
-            if (StringUtils.isNotBlank(req.getRejectReason())) {
-                fields.add(new FieldToUpdate("rejectReason", req.getRejectReason()));
+            if (StringUtils.isNoneBlank(req.getTransportCompany())) {
+                fields.add(new FieldToUpdate("transportCompany", req.getTransportCompany()));
             }
-            conn.createStatement().executeUpdate(new UpdateSql(WithdrawCash.class).fields(fields).where(buildFinalCondition(req)).build());
+            if (StringUtils.isNoneBlank(req.getTransportNumber())) {
+                fields.add(new FieldToUpdate("transportNumber", req.getTransportNumber()));
+            }
+            // 物流 - 是否已发货(0未发货1已发货)
+            fields.add(new FieldToUpdate("transportIsDelivered", 1));
+            fields.add(new FieldToUpdate("transportConsignerId", departmentMember.getId()));
+            fields.add(new FieldToUpdate("transportConsignerName", departmentMember.getName()));
+            fields.add(new FieldToUpdate("transportDtDelivered", System.currentTimeMillis()));
+            conn.createStatement().executeUpdate(new UpdateSql(MixOrder.class).fields(fields).where(buildFinalCondition(req)).build());
         }
+        Response resp = new Response();
         return resp;
     }
 
     private static String buildFinalCondition(Req req) {
-        return Condition.build("id=", req.getWithdrawCashId()).toString();
+        return Condition.build("id=", req.getMixOrderId()).toString();
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -75,28 +68,34 @@ public class WithdrawCash_Reject_Api {
             this.token = token;
         }
 
-        @Comment(value = "提现申请ID")
-        @Required(value = true)
-        private String withdrawCashId;
+        @Comment(value = "订单ID") @Required(value = true) private String mixOrderId;
 
-        public String getWithdrawCashId() {
-            return withdrawCashId;
+        public String getMixOrderId() {
+            return mixOrderId;
         }
 
-        public void setWithdrawCashId(String withdrawCashId) {
-            this.withdrawCashId = withdrawCashId;
+        public void setMixOrderId(String mixOrderId) {
+            this.mixOrderId = mixOrderId;
         }
 
-        @Comment(value = "拒绝原因")
-        @Required(value = true)
-        private String rejectReason;
+        @Comment(value = "物流 - 物流公司") @Required(value = true) private String transportCompany;
 
-        public String getRejectReason() {
-            return rejectReason;
+        public String getTransportCompany() {
+            return transportCompany;
         }
 
-        public void setRejectReason(String rejectReason) {
-            this.rejectReason = rejectReason;
+        public void setTransportCompany(String transportCompany) {
+            this.transportCompany = transportCompany;
+        }
+
+        @Comment(value = "物流 - 物流单号") @Required(value = true) private String transportNumber;
+
+        public String getTransportNumber() {
+            return transportNumber;
+        }
+
+        public void setTransportNumber(String transportNumber) {
+            this.transportNumber = transportNumber;
         }
     }
 }

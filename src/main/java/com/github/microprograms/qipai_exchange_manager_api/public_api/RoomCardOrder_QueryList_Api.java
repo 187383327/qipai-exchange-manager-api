@@ -22,7 +22,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡订单 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.61")
+@MicroApiAnnotation(type = "read", version = "v1.0.62")
 public class RoomCardOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
