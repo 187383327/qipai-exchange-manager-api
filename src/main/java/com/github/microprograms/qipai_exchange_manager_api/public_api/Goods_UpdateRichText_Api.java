@@ -24,7 +24,8 @@ public class Goods_UpdateRichText_Api {
         if (!dir.exists()) {
             dir.mkdirs();
         }
-        Writer writer = new FileWriter(new File(dir, req.getGoodsId()));
+        String filename = String.format("%s.html", req.getGoodsId());
+        Writer writer = new FileWriter(new File(dir, filename));
         try {
             IOUtils.write(req.getDetail(), writer);
         } finally {
