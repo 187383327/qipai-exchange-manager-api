@@ -1,3 +1,4 @@
 {
+	"goods_detail_dir": "/usr/share/nginx/html/vv-vip-center-goods-detail",
 	"jdbc_url": "jdbc:ignite:thin://47.104.78.152/public"
 }
