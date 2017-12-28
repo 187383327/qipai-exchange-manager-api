@@ -3,7 +3,9 @@ package com.github.microprograms.qipai_exchange_manager_api.public_api;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -23,7 +25,7 @@ public class MixOrder_UpdateTransportStatus_Api {
 
     public static Response execute(Request request) throws Exception {
         Req req = (Req) request;
-        if (StringUtils.isBlank(req.getToken())) {
+        if (StringUtils.isBlank(req.getToken()) || StringUtils.isBlank(req.getTransportCompany()) || StringUtils.isBlank(req.getTransportNumber())) {
             throw new MicroApiExecuteException(ErrorCodeEnum.missing_required_parameters);
         }
         DepartmentMember departmentMember = Commons.queryDepartmentMemberByToken(req.getToken());
@@ -35,12 +37,8 @@ public class MixOrder_UpdateTransportStatus_Api {
         }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             List<FieldToUpdate> fields = new ArrayList<>();
-            if (StringUtils.isNoneBlank(req.getTransportCompany())) {
-                fields.add(new FieldToUpdate("transportCompany", req.getTransportCompany()));
-            }
-            if (StringUtils.isNoneBlank(req.getTransportNumber())) {
-                fields.add(new FieldToUpdate("transportNumber", req.getTransportNumber()));
-            }
+            fields.add(new FieldToUpdate("transportCompany", req.getTransportCompany()));
+            fields.add(new FieldToUpdate("transportNumber", req.getTransportNumber()));
             // 物流 - 是否已发货(0未发货1已发货)
             fields.add(new FieldToUpdate("transportIsDelivered", 1));
             fields.add(new FieldToUpdate("transportConsignerId", departmentMember.getId()));
