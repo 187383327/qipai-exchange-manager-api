@@ -43,9 +43,8 @@ public class SampleData {
     public static void main(String[] args) throws Exception {
         // addBaseDate();
         // addExtDate();
-//        updateUserHeadCoinAmount("893351", 200);
-//        updateUserHeadCoinAmount("790942", 200);
-        addBanners();
+        // updateUserHeadCoinAmount("893351", 200);
+        // updateUserHeadCoinAmount("790942", 200);
     }
 
     private static void addBaseDate() throws Exception {
@@ -219,7 +218,7 @@ public class SampleData {
 
     private static void addBanners() throws Exception {
         Banner_UpdateAll_Api.Req req = new Banner_UpdateAll_Api.Req();
-        req.setToken("0733b5ed-c985-400b-a303-41cd706a6b3b");
+        req.setToken("9000a2e5-fe0e-4638-9192-f2d255d346f6");
         List<Banner> banners = new ArrayList<>();
         banners.add(buildBanner(1, "http://47.104.17.187/micro-file-server/1b04a7b5-3773-4fba-9fde-90ab4e56353e.jpg", randomGoods().getId()));
         banners.add(buildBanner(2, "http://47.104.17.187/micro-file-server/b525089d-4429-4fd0-8d94-7e987ff99341.jpg", randomGoods().getId()));

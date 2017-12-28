@@ -82,6 +82,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.microprograms</groupId>
+            <artifactId>micro-relational-data-model-sdk</artifactId>
+            <version>1.0.2.r2</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-spring</artifactId>
             <version>2.3.0</version>
@@ -104,7 +109,7 @@
         <dependency>
             <groupId>com.github.microprograms</groupId>
             <artifactId>ignite-utils</artifactId>
-            <version>1.0.20</version>
+            <version>1.0.21</version>
         </dependency>
         <dependency>
             <groupId>com.github.microprograms</groupId>

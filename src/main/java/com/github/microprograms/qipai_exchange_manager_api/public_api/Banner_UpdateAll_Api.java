@@ -1,14 +1,19 @@
 package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
-import java.sql.Connection;
 import java.util.UUID;
+
+import javax.cache.Cache.Entry;
+
 import org.apache.commons.lang3.StringUtils;
-import com.github.microprograms.ignite_utils.IgniteUtils;
-import com.github.microprograms.ignite_utils.sql.dml.Condition;
-import com.github.microprograms.ignite_utils.sql.dml.DeleteSql;
+import org.apache.ignite.Ignite;
+import org.apache.ignite.IgniteCache;
+import org.apache.ignite.cache.query.SqlFieldsQuery;
+import org.apache.ignite.cache.query.SqlQuery;
+import org.apache.ignite.transactions.Transaction;
+
+import com.github.microprograms.ignite_utils.NativeIgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
-import com.github.microprograms.micro_api_runtime.enums.MicroApiReserveResponseCodeEnum;
 import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
 import com.github.microprograms.micro_api_runtime.model.Request;
 import com.github.microprograms.micro_api_runtime.model.Response;
@@ -16,7 +21,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Comme
 import com.github.microprograms.micro_entity_definition_runtime.annotation.Required;
 import com.github.microprograms.qipai_exchange_manager_api.public_api.Banner_QueryAll_Api.Resp;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
-import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
+import com.github.microprograms.qipai_exchange_manager_api.utils.IgnitionUtils;
 
 @Comment(value = "Banner - 更新全部")
 @MicroApiAnnotation(type = "read", version = "v1.0.61")
@@ -36,14 +41,13 @@ public class Banner_UpdateAll_Api {
         if (!Commons.hasPermission(department, PermissionEnum.bannerManage)) {
             throw new MicroApiExecuteException(ErrorCodeEnum.permission_denied);
         }
-        Connection conn = IgniteUtils.getConnection(Consts.jdbc_url);
-        try {
-            conn.setAutoCommit(false);
-            conn.createStatement().executeUpdate(new DeleteSql(Banner.class).where(Condition.build("type=", 1)).build());
+        Ignite ignite = IgnitionUtils.getIgnite();
+        IgniteCache<Object, Object> bannerTable = NativeIgniteUtils.getTable(Banner.class, ignite);
+        try (Transaction tx = ignite.transactions().txStart()) {
+            for (Entry<String, Banner> x : bannerTable.query(new SqlQuery<String, Banner>(Banner.class, "type=1"))) {
+                bannerTable.remove(x.getKey());
+            }
             for (Banner x : req.getBanners()) {
-                if (x.getReorder() == null) {
-                    continue;
-                }
                 com.github.microprograms.qipai_exchange_core.model.Banner newBanner = new com.github.microprograms.qipai_exchange_core.model.Banner();
                 newBanner.setId(UUID.randomUUID().toString());
                 newBanner.setType(1);
@@ -55,26 +59,16 @@ public class Banner_UpdateAll_Api {
                 }
                 newBanner.setGoodsId(StringUtils.isBlank(goodsId) ? "" : goodsId);
                 newBanner.setDtCreate(System.currentTimeMillis());
-                conn.createStatement().executeUpdate(InsertSql.build(newBanner));
+                bannerTable.query(new SqlFieldsQuery(InsertSql.build(newBanner)));
             }
-            conn.commit();
-        } catch (MicroApiExecuteException e) {
-            conn.rollback();
-            resp.error(e.getResponseCode(), e.getCause());
-        } catch (Exception e) {
-            conn.rollback();
-            resp.error(MicroApiReserveResponseCodeEnum.api_execute_exception, e);
-        } finally {
-            conn.close();
+            tx.commit();
         }
         return resp;
     }
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -84,9 +78,7 @@ public class Banner_UpdateAll_Api {
             this.token = token;
         }
 
-        @Comment(value = "Banner列表(全部)")
-        @Required(value = true)
-        private java.util.List<Banner> banners;
+        @Comment(value = "Banner列表(全部)") @Required(value = true) private java.util.List<Banner> banners;
 
         public java.util.List<Banner> getBanners() {
             return banners;
