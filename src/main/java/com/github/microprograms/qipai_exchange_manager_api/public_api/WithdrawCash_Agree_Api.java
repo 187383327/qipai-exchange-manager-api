@@ -24,7 +24,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "提现申请 - 同意")
-@MicroApiAnnotation(type = "read", version = "v1.0.62")
+@MicroApiAnnotation(type = "read", version = "v1.0.63")
 public class WithdrawCash_Agree_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -48,6 +48,12 @@ public class WithdrawCash_Agree_Api {
         if (withdrawCash == null) {
             throw new MicroApiExecuteException(ErrorCodeEnum.not_exists);
         }
+        String userId = withdrawCash.getUserId();
+        int amount = withdrawCash.getAmount();
+        User user = Commons.queryUserById(userId);
+        if (amount > user.getWalletAmount()) {
+            throw new MicroApiExecuteException(ErrorCodeEnum.low_wallet_amount);
+        }
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             List<FieldToUpdate> fields = new ArrayList<>();
             // 状态(0未审核1已同意2已拒绝)
@@ -56,24 +62,23 @@ public class WithdrawCash_Agree_Api {
             fields.add(new FieldToUpdate("auditorName", departmentMember.getName()));
             fields.add(new FieldToUpdate("dtAudit", System.currentTimeMillis()));
             conn.createStatement().executeUpdate(new UpdateSql(WithdrawCash.class).fields(fields).where(buildFinalCondition(req)).build());
-            withdrawCash(withdrawCash.getUserId(), withdrawCash.getAmount());
+            withdrawCash(user, amount);
         }
         return resp;
     }
 
-    private static void withdrawCash(String userId, int amount) throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        User user = Commons.queryUserById(userId);
+    private static void withdrawCash(User user, int amount) throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         int oldWalletAmount = user.getWalletAmount();
         // 更新钱包余额
         int newWalletAmount = oldWalletAmount - amount;
         List<FieldToUpdate> fields = new ArrayList<>();
         fields.add(new FieldToUpdate("walletAmount", newWalletAmount));
-        Commons.updateFieldsForObject(User.class, fields, Condition.build("id=", userId));
+        Commons.updateFieldsForObject(User.class, fields, Condition.build("id=", user.getId()));
         // 插入钱包入账记录
         try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
             WalletBill obj = new WalletBill();
             obj.setId(UUID.randomUUID().toString());
-            obj.setUserId(userId);
+            obj.setUserId(user.getId());
             // 类型(1入账,2提现)
             obj.setType(2);
             obj.setAmount(amount);

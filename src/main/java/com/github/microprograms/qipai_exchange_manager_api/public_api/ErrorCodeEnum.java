@@ -14,7 +14,8 @@ public enum ErrorCodeEnum implements ResponseCode {
     concurrency_modification_exception(1016, "数据已被修改，请重新操作"), /**权限不足*/
     permission_denied(1017, "权限不足"), /**没有字段需要更新，请填写需要更新的字段*/
     no_fields_need_to_be_updated(1018, "没有字段需要更新，请填写需要更新的字段"), /**无效的商品ID*/
-    invalid_goods_id(1019, "无效的商品ID");
+    invalid_goods_id(1019, "无效的商品ID"), /**可提余额不足*/
+    low_wallet_amount(1020, "可提余额不足");
 
     private ErrorCodeEnum(int code, String message) {
         this.code = code;

@@ -1,12 +1,10 @@
 package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
 import java.util.UUID;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.transactions.Transaction;
-
 import com.github.microprograms.ignite_utils.NativeIgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
@@ -20,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.IgnitionUtils;
 
 @Comment(value = "会员专区Banner - 更新全部")
-@MicroApiAnnotation(type = "read", version = "v1.0.62")
+@MicroApiAnnotation(type = "read", version = "v1.0.63")
 public class ChoiceBanner_UpdateAll_Api {
 
     public static Response execute(Request request) throws Exception {

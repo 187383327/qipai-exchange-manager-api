@@ -2590,6 +2590,11 @@
 			"code": 1019,
 			"message": "无效的商品ID",
 			"name": "invalid_goods_id"
+		},
+		{
+			"code": 1020,
+			"message": "可提余额不足",
+			"name": "low_wallet_amount"
 		}
 	],
 	"javaPackageName": "com.github.microprograms.qipai_exchange_manager_api.public_api",
@@ -2610,5 +2615,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.62"
+	"version": "v1.0.63"
 }

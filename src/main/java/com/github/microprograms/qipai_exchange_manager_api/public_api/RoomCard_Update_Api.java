@@ -18,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "房卡 - 更新")
-@MicroApiAnnotation(type = "read", version = "v1.0.62")
+@MicroApiAnnotation(type = "read", version = "v1.0.63")
 public class RoomCard_Update_Api {
 
     public static Response execute(Request request) throws Exception {
