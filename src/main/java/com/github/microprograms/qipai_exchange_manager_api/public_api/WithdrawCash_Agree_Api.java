@@ -1,12 +1,18 @@
 package com.github.microprograms.qipai_exchange_manager_api.public_api;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
+import com.github.microprograms.ignite_utils.sql.dml.InsertSql;
 import com.github.microprograms.ignite_utils.sql.dml.UpdateSql;
 import com.github.microprograms.micro_api_runtime.annotation.MicroApiAnnotation;
 import com.github.microprograms.micro_api_runtime.exception.MicroApiExecuteException;
@@ -50,8 +56,32 @@ public class WithdrawCash_Agree_Api {
             fields.add(new FieldToUpdate("auditorName", departmentMember.getName()));
             fields.add(new FieldToUpdate("dtAudit", System.currentTimeMillis()));
             conn.createStatement().executeUpdate(new UpdateSql(WithdrawCash.class).fields(fields).where(buildFinalCondition(req)).build());
+            withdrawCash(withdrawCash.getUserId(), withdrawCash.getAmount());
         }
         return resp;
+    }
+
+    private static void withdrawCash(String userId, int amount) throws SQLException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        User user = Commons.queryUserById(userId);
+        int oldWalletAmount = user.getWalletAmount();
+        // 更新钱包余额
+        int newWalletAmount = oldWalletAmount - amount;
+        List<FieldToUpdate> fields = new ArrayList<>();
+        fields.add(new FieldToUpdate("walletAmount", newWalletAmount));
+        Commons.updateFieldsForObject(User.class, fields, Condition.build("id=", userId));
+        // 插入钱包入账记录
+        try (Connection conn = IgniteUtils.getConnection(Consts.jdbc_url)) {
+            WalletBill obj = new WalletBill();
+            obj.setId(UUID.randomUUID().toString());
+            obj.setUserId(userId);
+            // 类型(1入账,2提现)
+            obj.setType(2);
+            obj.setAmount(amount);
+            obj.setOldWalletAmount(oldWalletAmount);
+            obj.setNewWalletAmount(newWalletAmount);
+            obj.setDtCreate(System.currentTimeMillis());
+            conn.createStatement().executeUpdate(InsertSql.build(obj));
+        }
     }
 
     private static String buildFinalCondition(Req req) {
@@ -60,9 +90,7 @@ public class WithdrawCash_Agree_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token")
-        @Required(value = true)
-        private String token;
+        @Comment(value = "Token") @Required(value = true) private String token;
 
         public String getToken() {
             return token;
@@ -72,9 +100,7 @@ public class WithdrawCash_Agree_Api {
             this.token = token;
         }
 
-        @Comment(value = "提现申请ID")
-        @Required(value = true)
-        private String withdrawCashId;
+        @Comment(value = "提现申请ID") @Required(value = true) private String withdrawCashId;
 
         public String getWithdrawCashId() {
             return withdrawCashId;
