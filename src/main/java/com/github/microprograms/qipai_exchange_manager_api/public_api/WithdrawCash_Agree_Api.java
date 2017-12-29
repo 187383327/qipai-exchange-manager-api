@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
 import com.github.microprograms.ignite_utils.sql.dml.FieldToUpdate;
@@ -95,7 +93,9 @@ public class WithdrawCash_Agree_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -105,7 +105,9 @@ public class WithdrawCash_Agree_Api {
             this.token = token;
         }
 
-        @Comment(value = "提现申请ID") @Required(value = true) private String withdrawCashId;
+        @Comment(value = "提现申请ID")
+        @Required(value = true)
+        private String withdrawCashId;
 
         public String getWithdrawCashId() {
             return withdrawCashId;
