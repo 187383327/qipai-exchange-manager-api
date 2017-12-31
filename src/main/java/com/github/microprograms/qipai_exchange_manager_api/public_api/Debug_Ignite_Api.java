@@ -10,7 +10,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.IgnitionUtils;
 
 @Comment(value = "调试 - Ignite")
-@MicroApiAnnotation(type = "read", version = "v1.0.63")
+@MicroApiAnnotation(type = "read", version = "v1.0.64")
 public class Debug_Ignite_Api {
 
     public static Response execute(Request request) throws Exception {

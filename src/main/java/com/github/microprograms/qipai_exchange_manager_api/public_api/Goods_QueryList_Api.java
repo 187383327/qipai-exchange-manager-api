@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
 import com.github.microprograms.ignite_utils.IgniteUtils;
 import com.github.microprograms.ignite_utils.sql.dml.ComplexCondition;
 import com.github.microprograms.ignite_utils.sql.dml.Condition;
@@ -24,7 +27,7 @@ import com.github.microprograms.micro_entity_definition_runtime.annotation.Requi
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.63")
+@MicroApiAnnotation(type = "read", version = "v1.0.64")
 public class Goods_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -69,8 +72,9 @@ public class Goods_QueryList_Api {
         ComplexCondition stock = Where.and(Condition.build("stock>", req.getSearchMinStock()), Condition.build("stock<", req.getSearchMaxStock()));
         LikeCondition keyword = LikeCondition.build("name", req.getSearchKeyword());
         Condition isDelete = Condition.build("isDelete=", "0");
+        Condition categoryId = Condition.build("categoryId=", StringUtils.isBlank(req.getSearchCategoryId()) ? null : req.getSearchCategoryId());
         Condition type = Condition.build("type=", req.getType() == null ? 1 : req.getType());
-        return Where.and(dtCreate, stock, keyword, isDelete, type).toString();
+        return Where.and(dtCreate, stock, keyword, isDelete, categoryId, type).toString();
     }
 
     public static class Req extends Request {
@@ -123,6 +127,16 @@ public class Goods_QueryList_Api {
 
         public void setSearchKeyword(String searchKeyword) {
             this.searchKeyword = searchKeyword;
+        }
+
+        @Comment(value = "搜索 - 商品类别ID(不传或传空字符串表示忽略此条件)") @Required(value = false) private String searchCategoryId;
+
+        public String getSearchCategoryId() {
+            return searchCategoryId;
+        }
+
+        public void setSearchCategoryId(String searchCategoryId) {
+            this.searchCategoryId = searchCategoryId;
         }
 
         @Comment(value = "搜索 - 开始时间戳") @Required(value = false) private Long searchBeginTimestamp;

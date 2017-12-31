@@ -15,7 +15,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品/优选商品 - 添加新商品")
-@MicroApiAnnotation(type = "read", version = "v1.0.63")
+@MicroApiAnnotation(type = "read", version = "v1.0.64")
 public class Goods_Add_Api {
 
     public static Response execute(Request request) throws Exception {

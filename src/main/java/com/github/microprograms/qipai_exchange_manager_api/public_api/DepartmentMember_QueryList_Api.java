@@ -19,7 +19,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "部门成员 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.63")
+@MicroApiAnnotation(type = "read", version = "v1.0.64")
 public class DepartmentMember_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {
@@ -48,7 +48,9 @@ public class DepartmentMember_QueryList_Api {
 
     public static class Req extends Request {
 
-        @Comment(value = "Token") @Required(value = true) private String token;
+        @Comment(value = "Token")
+        @Required(value = true)
+        private String token;
 
         public String getToken() {
             return token;
@@ -58,7 +60,9 @@ public class DepartmentMember_QueryList_Api {
             this.token = token;
         }
 
-        @Comment(value = "页码(从0开始)") @Required(value = true) private Integer pageIndex;
+        @Comment(value = "页码(从0开始)")
+        @Required(value = true)
+        private Integer pageIndex;
 
         public Integer getPageIndex() {
             return pageIndex;
@@ -68,7 +72,9 @@ public class DepartmentMember_QueryList_Api {
             this.pageIndex = pageIndex;
         }
 
-        @Comment(value = "页大小") @Required(value = true) private Integer pageSize;
+        @Comment(value = "页大小")
+        @Required(value = true)
+        private Integer pageSize;
 
         public Integer getPageSize() {
             return pageSize;
@@ -81,7 +87,9 @@ public class DepartmentMember_QueryList_Api {
 
     public static class Resp extends Response {
 
-        @Comment(value = "部门成员列表") @Required(value = true) private java.util.List<DepartmentMember> data;
+        @Comment(value = "部门成员列表")
+        @Required(value = true)
+        private java.util.List<DepartmentMember> data;
 
         public java.util.List<DepartmentMember> getData() {
             return data;
@@ -91,7 +99,9 @@ public class DepartmentMember_QueryList_Api {
             this.data = data;
         }
 
-        @Comment(value = "分页") @Required(value = true) private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
+        @Comment(value = "分页")
+        @Required(value = true)
+        private com.github.microprograms.ignite_utils.sql.dml.PagerResponse pager;
 
         public com.github.microprograms.ignite_utils.sql.dml.PagerResponse getPager() {
             return pager;

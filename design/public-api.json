@@ -41,6 +41,13 @@
 						"required": false
 					},
 					{
+						"comment": "搜索 - 商品类别ID(不传或传空字符串表示忽略此条件)",
+						"example": "example",
+						"javaType": "String",
+						"name": "searchCategoryId",
+						"required": false
+					},
+					{
 						"comment": "搜索 - 开始时间戳",
 						"example": "example",
 						"javaType": "Long",
@@ -2615,5 +2622,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.63"
+	"version": "v1.0.64"
 }
