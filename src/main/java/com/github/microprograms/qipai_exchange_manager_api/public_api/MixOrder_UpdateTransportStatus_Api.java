@@ -18,7 +18,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "订单 - 更新发货状态")
-@MicroApiAnnotation(type = "read", version = "v1.0.64")
+@MicroApiAnnotation(type = "read", version = "v1.0.65")
 public class MixOrder_UpdateTransportStatus_Api {
 
     public static Response execute(Request request) throws Exception {

@@ -23,7 +23,7 @@ import com.github.microprograms.qipai_exchange_manager_api.utils.Commons;
 import com.github.microprograms.qipai_exchange_manager_api.utils.Consts;
 
 @Comment(value = "商品订单 - 查询列表")
-@MicroApiAnnotation(type = "read", version = "v1.0.64")
+@MicroApiAnnotation(type = "read", version = "v1.0.65")
 public class GoodsOrder_QueryList_Api {
 
     public static Response execute(Request request) throws Exception {

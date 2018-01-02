@@ -1691,6 +1691,13 @@
 						"required": true
 					},
 					{
+						"comment": "部门成员ID",
+						"example": "example",
+						"javaType": "String",
+						"name": "departmentMemberId",
+						"required": true
+					},
+					{
 						"comment": "成员姓名",
 						"example": "example",
 						"javaType": "String",
@@ -2622,5 +2629,5 @@
 		"apiToken": "a72909c6472f45af919054a6d6de6f14903116277",
 		"url": "https://www.showdoc.cc/server/api/item/updateByApi"
 	},
-	"version": "v1.0.64"
+	"version": "v1.0.65"
 }
